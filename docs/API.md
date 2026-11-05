@@ -56,6 +56,13 @@ The code follows physics, and example 3, because a method that moves values in t
 
 Response: the NPM score, A and C point breakdowns, `less_healthy` against the food (4+) or drink (1+) threshold, the model id, the basis (always `per_100g`), an optional `per_portion` view when `portion_g` is given, and an evidence note stating the values were caller-supplied and not verified by ShelfScale.
 
+**Traffic lights.** Every assessment also carries `traffic_lights`, the UK front-of-pack colours for fat, saturates, sugars and salt, implemented from the DH/FSA *Guide to creating a front of pack (FoP) nutrition label* (updated November 2016), Annex 3 (`src/shelfscale/traffic_lights.py`):
+
+- Food is coloured per 100 g, whether or not it is sold by volume. Drinks are coloured per 100 ml, so drink colours need per-100 ml values: a drink submitted with `basis: "per_100ml"` (and its `specific_gravity`) is coloured; a drink submitted per 100 g gets `colours: null` and a `not_assessed` reason. ShelfScale does not assume a density to fill the gap.
+- Red-only per-portion cut-offs apply when the portion is more than 100 g (food, from `portion_g`) or more than 150 ml (drink, from `portion_ml`, drinks only). They override the per-100 colour; each nutrient says which rule decided it (`decided_by`).
+- Total fat is not an NPM input, so it is the optional `nutrients.fat_g`. Without it, fat is reported as not assessed; the other three are still coloured. Salt comes from `salt_g`, or from `sodium_mg` / 400.
+- Energy is not colour coded, and there is no overall colour: the guidance defines neither.
+
 ### POST /v1/assess/bulk
 Assess a range in one call: `{"products": [ ... ]}` with the single-product shape per item.
 

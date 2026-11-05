@@ -1,10 +1,13 @@
-"""Assessment service: single and bulk UK NPM 2004/05 scoring.
+"""Assessment service: UK NPM 2004/05 scoring and front-of-pack traffic lights.
 
-The service scores nutrient values supplied by the caller. It does not look
-values up and it does not verify them: where the values came from is the
-caller's evidence, and every response says so. Database-backed assessment
-( values resolved from ShelfScale's own provenance-carrying data) is a
-separate layer specified in docs/API.md.
+Two layers:
+
+- ``assess_values`` assesses nutrient values that are already per 100 g.
+  It is the one place scores and colours are computed, for caller-supplied
+  values and for values ShelfScale looks up itself.
+- ``assess_product`` and ``assess_bulk`` take caller-supplied payloads,
+  validate and convert them, and call ``assess_values``. ShelfScale does not
+  verify caller-supplied values, and every response says so.
 """
 
 from __future__ import annotations
@@ -12,6 +15,7 @@ from __future__ import annotations
 from typing import Any, Iterable
 
 from .npm import calculate_npm
+from .traffic_lights import traffic_lights
 
 MODEL_ID = "uk-npm-2004/05"
 MAX_BULK_ITEMS = 1000
@@ -22,10 +26,9 @@ MAX_BULK_ITEMS = 1000
 SCORING_BASIS = "per_100g"
 INPUT_BASES = ("per_100g", "per_100ml")
 _PER_AMOUNT_FIELDS = (
-    "energy_kj", "saturated_fat_g", "total_sugars_g", "protein_g",
+    "energy_kj", "fat_g", "saturated_fat_g", "total_sugars_g", "protein_g",
     "sodium_mg", "salt_g", "fibre_nsp_g", "fibre_aoac_g",
 )
-
 _REQUIRED_NUTRIENTS = (
     "energy_kj",
     "saturated_fat_g",
@@ -34,6 +37,88 @@ _REQUIRED_NUTRIENTS = (
     "protein_g",
 )
 _FIBRE_FIELDS = ("fibre_nsp_g", "fibre_aoac_g")
+_NPM_FIELDS = (
+    "energy_kj", "saturated_fat_g", "total_sugars_g", "fruit_veg_nuts_percent",
+    "protein_g", "sodium_mg", "salt_g", "fibre_nsp_g", "fibre_aoac_g",
+)
+
+
+def _salt_g(values: dict[str, float]) -> float:
+    return values["salt_g"] if "salt_g" in values else values["sodium_mg"] / 400.0
+
+
+def _traffic_light_inputs(values: dict[str, float]) -> dict[str, float | None]:
+    return {
+        "fat": values.get("fat_g"),
+        "saturates": values["saturated_fat_g"],
+        "sugars": values["total_sugars_g"],
+        "salt": _salt_g(values),
+    }
+
+
+def assess_values(
+    *,
+    per_100g: dict[str, float],
+    is_drink: bool,
+    per_100ml: dict[str, float] | None = None,
+    portion_g: float | None = None,
+    portion_ml: float | None = None,
+) -> dict[str, Any]:
+    """Score per-100 g values with NPM and colour them with traffic lights.
+
+    ``per_100g`` needs the NPM inputs (exactly one of sodium_mg/salt_g and
+    of fibre_nsp_g/fibre_aoac_g) and may carry fat_g for traffic lights.
+    Drink colours need per-100 ml values (``per_100ml``, same keys); without
+    them drink colours are reported as not assessed, never assumed.
+    """
+    npm = calculate_npm(is_drink=is_drink, **{k: v for k, v in per_100g.items() if k in _NPM_FIELDS})
+    fibre_field = "fibre_nsp_g" if npm.fibre_method == "nsp" else "fibre_aoac_g"
+
+    if not is_drink:
+        lights = traffic_lights(is_drink=False, per_100=_traffic_light_inputs(per_100g), portion=portion_g)
+    elif per_100ml is not None:
+        lights = traffic_lights(is_drink=True, per_100=_traffic_light_inputs(per_100ml), portion=portion_ml)
+    else:
+        lights = {
+            "scheme": "uk-fop-2016",
+            "basis": "per_100ml",
+            "product_type": "drink",
+            "colours": None,
+            "not_assessed": (
+                "Drink traffic lights are assessed per 100 ml (FoP guidance, Table 3). "
+                "These values are per 100 g; supply basis 'per_100ml' with specific_gravity."
+            ),
+        }
+
+    result: dict[str, Any] = {
+        "model": MODEL_ID,
+        "basis": SCORING_BASIS,
+        "score": npm.score,
+        "less_healthy": npm.less_healthy,
+        "a_points": npm.a_points,
+        "c_points": npm.c_points,
+        "total_a": npm.total_a,
+        "total_c": npm.total_c,
+        "protein_counted": npm.protein_counted,
+        "fibre_method": npm.fibre_method,
+        "traffic_lights": lights,
+    }
+    if portion_g is not None:
+        factor = portion_g / 100.0
+        per_portion = {
+            "portion_g": portion_g,
+            "energy_kj": round(per_100g["energy_kj"] * factor, 1),
+            "energy_kcal": round(per_100g["energy_kj"] * factor / 4.184, 1),
+            "saturated_fat_g": round(per_100g["saturated_fat_g"] * factor, 2),
+            "total_sugars_g": round(per_100g["total_sugars_g"] * factor, 2),
+            "salt_g": round(_salt_g(per_100g) * factor, 3),
+            fibre_field: round(per_100g[fibre_field] * factor, 2),
+            "protein_g": round(per_100g["protein_g"] * factor, 2),
+        }
+        if "fat_g" in per_100g:
+            per_portion["fat_g"] = round(per_100g["fat_g"] * factor, 2)
+        result["per_portion"] = per_portion
+    return result
 
 
 def _require_number(nutrients: dict, name: str) -> float:
@@ -45,18 +130,29 @@ def _require_number(nutrients: dict, name: str) -> float:
     return float(value)
 
 
+def _positive(payload: dict, name: str) -> float | None:
+    value = payload.get(name)
+    if value is None:
+        return None
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or value <= 0:
+        raise ValueError(f"{name} must be a positive number.")
+    return float(value)
+
+
 def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
-    """Assess one product from its per-100 g nutrient values (food and drink).
+    """Assess one product from caller-supplied nutrient values.
 
     Payload shape:
         {
           "id": "sku-123",                  # or "name"
           "is_drink": false,
-          "basis": "per_100g",              # optional; or "per_100ml" with
+          "basis": "per_100g",              # or "per_100ml" with
           "specific_gravity": 1.04,         #   a specific gravity (g/ml)
-          "portion_g": 30,                  # optional, for per-portion view
+          "portion_g": 30,                  # optional: per-portion view; food traffic lights
+          "portion_ml": 330,                # optional, drinks: per-portion traffic lights
           "nutrients": {
-            "energy_kj": 1800, "saturated_fat_g": 4.0, "total_sugars_g": 20,
+            "energy_kj": 1800, "fat_g": 9.0, "saturated_fat_g": 4.0,
+            "total_sugars_g": 20,
             "sodium_mg": 300,               # or "salt_g": 0.75
             "fruit_veg_nuts_percent": 0, "protein_g": 6.0,
             "fibre_nsp_g": 1.6              # or "fibre_aoac_g": 2.0
@@ -73,12 +169,12 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("basis must be 'per_100g' or 'per_100ml'.")
     gravity = None
     if basis == "per_100ml":
-        gravity = payload.get("specific_gravity")
-        if gravity is None:
+        if payload.get("specific_gravity") is None:
             raise ValueError(
                 "basis 'per_100ml' needs specific_gravity (g/ml). NPM scores per "
                 "100 g, and per-100 ml values cannot be converted without it."
             )
+        gravity = payload.get("specific_gravity")
         if isinstance(gravity, bool) or not isinstance(gravity, (int, float)) or gravity <= 0:
             raise ValueError("specific_gravity must be a positive number (g/ml).")
         gravity = float(gravity)
@@ -89,24 +185,29 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("Product needs a 'nutrients' object.")
 
     values = {name: _require_number(nutrients, name) for name in _REQUIRED_NUTRIENTS}
-    sodium_mg = nutrients.get("sodium_mg")
-    salt_g = nutrients.get("salt_g")
-    if sodium_mg is not None:
-        values["sodium_mg"] = _require_number(nutrients, "sodium_mg")
-    if salt_g is not None:
-        values["salt_g"] = _require_number(nutrients, "salt_g")
+    for optional in ("sodium_mg", "salt_g", "fat_g"):
+        if nutrients.get(optional) is not None:
+            values[optional] = _require_number(nutrients, optional)
     fibre_given = [name for name in _FIBRE_FIELDS if nutrients.get(name) is not None]
     if len(fibre_given) != 1:
         raise ValueError(
             "Supply exactly one of nutrients.fibre_nsp_g or nutrients.fibre_aoac_g "
             "(NSP is preferred where known)."
         )
-    fibre_field = fibre_given[0]
-    values[fibre_field] = _require_number(nutrients, fibre_field)
+    values[fibre_given[0]] = _require_number(nutrients, fibre_given[0])
 
+    is_drink = payload.get("is_drink", False)
+    if not isinstance(is_drink, bool):
+        raise ValueError("is_drink must be true or false (a JSON boolean).")
+    portion_g = _positive(payload, "portion_g")
+    portion_ml = _positive(payload, "portion_ml")
+    if portion_ml is not None and not is_drink:
+        raise ValueError("portion_ml applies to drinks only; use portion_g for food.")
+
+    per_100ml = None
     conversion = None
     if gravity is not None:
-        supplied = dict(values)
+        per_100ml = dict(values)
         for name in _PER_AMOUNT_FIELDS:
             if name in values:
                 values[name] = values[name] / gravity
@@ -117,28 +218,21 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
             "rule": "value_per_100g = value_per_100ml / specific_gravity",
             "unchanged": ["fruit_veg_nuts_percent"],
             "values": {
-                name: {"per_100ml": supplied[name], "per_100g": values[name]}
+                name: {"per_100ml": per_100ml[name], "per_100g": values[name]}
                 for name in _PER_AMOUNT_FIELDS if name in values
             },
         }
 
-    is_drink = payload.get("is_drink", False)
-    if not isinstance(is_drink, bool):
-        raise ValueError("is_drink must be true or false (a JSON boolean).")
-    result = calculate_npm(is_drink=is_drink, **values)
-
-    response: dict[str, Any] = {
+    assessment = assess_values(
+        per_100g=values,
+        is_drink=is_drink,
+        per_100ml=per_100ml if is_drink else None,
+        portion_g=portion_g,
+        portion_ml=portion_ml,
+    )
+    return {
         "id": product_id,
-        "model": MODEL_ID,
-        "basis": SCORING_BASIS,
-        "score": result.score,
-        "less_healthy": result.less_healthy,
-        "a_points": result.a_points,
-        "c_points": result.c_points,
-        "total_a": result.total_a,
-        "total_c": result.total_c,
-        "protein_counted": result.protein_counted,
-        "fibre_method": result.fibre_method,
+        **assessment,
         "input_conversion": conversion,
         "evidence_note": (
             "Score computed from caller-supplied nutrient values. "
@@ -146,59 +240,41 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         ),
     }
 
-    portion_g = payload.get("portion_g")
-    if portion_g is not None:
-        if isinstance(portion_g, bool) or not isinstance(portion_g, (int, float)) or portion_g <= 0:
-            raise ValueError("portion_g must be a positive number.")
-        factor = float(portion_g) / 100.0
-        sodium_for_portion = values.get("sodium_mg")
-        if sodium_for_portion is None:
-            sodium_for_portion = values["salt_g"] * 400.0
-        response["per_portion"] = {
-            "portion_g": float(portion_g),
-            "energy_kj": round(values["energy_kj"] * factor, 1),
-            "energy_kcal": round(values["energy_kj"] * factor / 4.184, 1),
-            "saturated_fat_g": round(values["saturated_fat_g"] * factor, 2),
-            "total_sugars_g": round(values["total_sugars_g"] * factor, 2),
-            "salt_g": round(sodium_for_portion / 400.0 * factor, 3),
-            fibre_field: round(values[fibre_field] * factor, 2),
-            "protein_g": round(values["protein_g"] * factor, 2),
-        }
-    return response
+
+def run_bulk(payload: dict[str, Any], key: str, handle) -> tuple[list, list, int]:
+    """Shared bulk rule: partial success, a per-row error list, a size limit."""
+    if not isinstance(payload, dict):
+        raise ValueError("Bulk payload must be an object.")
+    items = payload.get(key)
+    if not isinstance(items, list) or not items:
+        raise ValueError(f"Bulk payload needs a non-empty '{key}' list.")
+    if len(items) > MAX_BULK_ITEMS:
+        raise ValueError(
+            f"Bulk limit is {MAX_BULK_ITEMS} items per synchronous call. "
+            "Larger ranges use the asynchronous bulk job in docs/API.md."
+        )
+    results: list[dict[str, Any]] = []
+    errors: list[dict[str, Any]] = []
+    for index, item in enumerate(items):
+        item_id = (item.get("id") or item.get("name")) if isinstance(item, dict) else None
+        try:
+            results.append(handle(item))
+        except (ValueError, TypeError, AttributeError) as exc:
+            errors.append({"index": index, "id": item_id, "error": str(exc)})
+    return results, errors, len(items)
 
 
 def assess_bulk(payload: dict[str, Any]) -> dict[str, Any]:
     """Assess many products in one call.
 
     Partial success is a rule, not an accident: a bad row is reported in
-    ``errors`` and never blocks the rest of the range. That is what a
-    retailer or university scoring thousands of products needs.
+    ``errors`` and never blocks the rest of the range.
     """
-    if not isinstance(payload, dict):
-        raise ValueError("Bulk payload must be an object.")
-    products: Iterable[Any] = payload.get("products") or []
-    products = list(products)
-    if not products:
-        raise ValueError("Bulk payload needs a non-empty 'products' list.")
-    if len(products) > MAX_BULK_ITEMS:
-        raise ValueError(
-            f"Bulk limit is {MAX_BULK_ITEMS} products per synchronous call. "
-            "Larger ranges use the asynchronous bulk job in docs/API.md."
-        )
-
-    results: list[dict[str, Any]] = []
-    errors: list[dict[str, Any]] = []
-    for index, item in enumerate(products):
-        item_id = item.get("id") or item.get("name") if isinstance(item, dict) else None
-        try:
-            results.append(assess_product(item))
-        except (ValueError, TypeError, AttributeError) as exc:
-            errors.append({"index": index, "id": item_id, "error": str(exc)})
-
+    results, errors, received = run_bulk(payload, "products", assess_product)
     return {
         "model": MODEL_ID,
         "summary": {
-            "received": len(products),
+            "received": received,
             "assessed": len(results),
             "failed": len(errors),
             "less_healthy": sum(1 for r in results if r["less_healthy"]),
