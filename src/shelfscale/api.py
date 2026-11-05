@@ -4,6 +4,8 @@ Endpoints:
     GET  /health          -> {"status": "ok", "model": "uk-npm-2004/05"}
     POST /v1/assess       -> one product  (see service.assess_product)
     POST /v1/assess/bulk  -> many products (see service.assess_bulk)
+    POST /v1/lookup       -> one CoFID food by code or exact name (see cofid_assess)
+    POST /v1/lookup/bulk  -> many lookups (see cofid_assess.lookup_bulk)
 
 Run locally:
     PYTHONPATH=src python3 -m shelfscale.api --port 8765
@@ -19,7 +21,15 @@ import argparse
 import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
+from .cofid_assess import lookup_and_assess, lookup_bulk
 from .service import MODEL_ID, assess_bulk, assess_product
+
+ROUTES = {
+    "/v1/assess": assess_product,
+    "/v1/assess/bulk": assess_bulk,
+    "/v1/lookup": lookup_and_assess,
+    "/v1/lookup/bulk": lookup_bulk,
+}
 
 MAX_BODY_BYTES = 5_000_000
 
@@ -42,7 +52,7 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(404, {"error": "Not found."})
 
     def do_POST(self) -> None:  # noqa: N802
-        if self.path not in ("/v1/assess", "/v1/assess/bulk"):
+        if self.path not in ROUTES:
             self._send_json(404, {"error": "Not found."})
             return
         length = int(self.headers.get("Content-Length") or 0)
@@ -55,10 +65,7 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(400, {"error": "Request body must be valid JSON."})
             return
         try:
-            if self.path == "/v1/assess":
-                self._send_json(200, assess_product(payload))
-            else:
-                self._send_json(200, assess_bulk(payload))
+            self._send_json(200, ROUTES[self.path](payload))
         except ValueError as exc:
             self._send_json(400, {"error": str(exc)})
 

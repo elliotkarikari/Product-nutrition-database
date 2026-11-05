@@ -73,6 +73,23 @@ Rules that matter to bulk users:
 - **Synchronous limit: 1,000 products per call.** Larger ranges use the asynchronous bulk job below.
 - Every result names the model version, so a range scored today can be compared honestly with the same range scored after a model or data change.
 
+### POST /v1/lookup
+Look up one CoFID 2021 food and, where it is scorable, assess it. Lookup is its own endpoint rather than a mode of `/v1/assess`, because the request shape is different (a food reference, not nutrient values).
+
+Request: `{"code": "13-669"}` or `{"name": "Milk, whole, pasteurised, average"}` (exactly one; the name must match exactly), plus optional `fvn_percent` (0-100) and `portion_g`.
+
+Response: the query, the CoFID release (source, edition, file URL, retrieval date, sha256, licence, attribution), a `note`, and `matches`: every food with that code or name. Codes and names are not unique in CoFID 2021 (13-669 is two foods), so this is always a list; no match is a gap and is said to be one. Each match carries all its observations with provenance (source, edition, food code, table, nutrient code and label, unit, basis, method, value text) and an `assessment`:
+
+- `inputs` says where every assessment input came from: the CoFID nutrient code and its value, "trace counted as 0", `derived_from_group`, or `caller_supplied`.
+- Energy KJ, saturated fat SATFOD, total sugars TOTSUG, sodium NA, protein PROT, fat FAT (traffic lights only). Fibre is NSP (ENGFIB) where CoFID gives a value, otherwise AOAC (AOACFIB); `fibre_method` names it.
+- **Fruit, vegetables and nuts (decided by Elliot, November 5, 2026).** CoFID has no FVN percentage. A food in CoFID group D (vegetables), F (fruit) or G (nuts and seeds) carries 100%, labelled `derived_from_group`. Any other food is not yet scorable unless the request supplies `fvn_percent`, labelled `caller_supplied`. FVN is never zero-filled and never estimated from the food's name. *Open:* the group rule gives 100% to potatoes (DA*), vegetable dishes (DR), seeds (GA) and sugared fruit (FA), which the NPM guidance would not count in full; the mapping is one table in `src/shelfscale/cofid_assess.py` awaiting Elliot's ruling.
+- Drink status comes from the CoFID group: P (beverages), Q (alcoholic), BH (milk-based drinks), FC (fruit juices). The response says which group decided it.
+- Alcoholic drinks (Q) are per 100 ml in CoFID; they are converted to per 100 g by the food's own CoFID specific gravity, and are not scorable without one. Other drinks have no per-100 ml values in CoFID, so their traffic lights are not assessed.
+- `scorable: false` lists `missing_inputs` by name and gives no score. `scorable: true` adds the same NPM and traffic-light block as `/v1/assess`.
+
+### POST /v1/lookup/bulk
+`{"items": [ ... ]}`, each item shaped like a `/v1/lookup` request. Same rules as `/v1/assess/bulk`: partial success, per-row `errors` with index and reason, a 1,000-item synchronous limit. The summary counts received, looked up, failed, no match, foods matched and scorable.
+
 ### Asynchronous bulk jobs (specified, for ranges above the sync limit)
 - `POST /v1/bulk-jobs` accepts a file or a product list plus an optional webhook URL and an idempotency key, and returns a job id immediately.
 - On completion the API calls the webhook with the result location. A status endpoint exists for systems that cannot receive webhooks; clients should prefer the webhook over polling.
@@ -82,7 +99,7 @@ Rules that matter to bulk users:
 ## Two modes of assessment
 
 1. **Supplied mode (live in the prototype).** The caller provides nutrient values; ShelfScale scores them and says plainly that it has not verified them. This is the mode a university teaching lab or a brand scoring its own specification data uses.
-2. **Lookup mode (follows the CoFID importer).** The caller provides a GTIN, a product name or a recipe; ShelfScale resolves values from its own provenance-carrying data and returns the observations and sources behind the score. A score in lookup mode always names its data release.
+2. **Lookup mode (live for CoFID 2021 foods: `/v1/lookup`).** The caller names a CoFID food by code or exact name; ShelfScale returns its observations with provenance and the data release, and scores it where every input can be sourced. GTIN, product-name and recipe lookup come later.
 
 ## Production requirements before public hosting
 
