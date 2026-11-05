@@ -26,6 +26,10 @@ Decisions encoded here (each is one table or constant):
   and are not scorable without one. Other foods are per 100 g; a drink
   among them has no per-100 ml values, so its traffic lights are not
   assessed (no density is assumed).
+- NPM 2018 (shadow model): free sugars only from the caller (free_sugars_g,
+  caller_supplied), never from total sugars; AOAC fibre only (AOACFIB);
+  fruit, vegetables, nuts and seeds by the same group rule, or the caller's
+  fvns_g; alcoholic drinks (Q) are out of scope.
 """
 
 from __future__ import annotations
@@ -33,7 +37,8 @@ from __future__ import annotations
 from typing import Any
 
 from .lookup import lookup_cofid
-from .service import assess_values, run_bulk
+from .npm2018 import MODEL_ID as NPM2018_ID
+from .service import MODEL_ID, assess_values, dual_summary, npm2018_block, run_bulk, verdict_changes
 
 FVN_GROUP_PREFIXES = ("D", "F", "G")
 FVN_EXCLUDED_BY_GUIDANCE = ("DA",)      # potatoes: "do not count" (NPM guidance, section 2)
@@ -72,7 +77,8 @@ def _is_drink(group: str | None) -> bool:
 
 
 def assess_cofid_food(food: dict[str, Any], *, fvn_percent: float | None,
-                      portion_g: float | None) -> dict[str, Any]:
+                      portion_g: float | None, free_sugars_g: float | None = None,
+                      fvns_g: float | None = None) -> dict[str, Any]:
     """Assessment block for one CoFID food (as returned by lookup_cofid)."""
     by_code = {o["nutrient_code"]: o for o in food["observations"]}
     group = food["group"]
@@ -138,21 +144,26 @@ def assess_cofid_food(food: dict[str, Any], *, fvn_percent: float | None,
         f"Treated as a {'drink' if is_drink else 'food'} because its CoFID group is {group} "
         f"(drink groups: {', '.join(DRINK_GROUP_PREFIXES)})."
     )
-    per_100ml = None
+    gravity = None
     conversion = None
     if alcoholic:
         gravity, how = _value(by_code.get(SPECIFIC_GRAVITY))
         if not gravity:
             missing.append(f"specific gravity (values are per 100 ml; {how})")
+            gravity = None
         else:
-            amounts = [k for k in values if k != "fruit_veg_nuts_percent"]
-            per_100ml = {k: values[k] for k in amounts}
-            for k in amounts:
-                values[k] = values[k] / gravity
             conversion = {"from_basis": "per_100ml", "to_basis": "per_100g",
                           "specific_gravity": gravity, "gravity_source": SPECIFIC_GRAVITY,
                           "rule": "value_per_100g = value_per_100ml / specific_gravity"}
+    per_100ml = None
+    if gravity:
+        amounts = [k for k in values if k != "fruit_veg_nuts_percent"]
+        per_100ml = {k: values[k] for k in amounts}
+        for k in amounts:
+            values[k] = values[k] / gravity
 
+    npm2018 = _npm2018_for_food(by_code, values, inputs, group=group, is_drink=is_drink,
+                                alcoholic=alcoholic, free_sugars_g=free_sugars_g, fvns_g=fvns_g)
     block: dict[str, Any] = {
         "is_drink": is_drink,
         "drink_status": drink_note,
@@ -160,12 +171,58 @@ def assess_cofid_food(food: dict[str, Any], *, fvn_percent: float | None,
         "input_conversion": conversion,
     }
     if missing:
-        block["scorable"] = False
-        block["missing_inputs"] = missing
+        models = {
+            MODEL_ID: {"model": MODEL_ID, "status": "in force", "scorable": False,
+                       "missing_inputs": missing},
+            NPM2018_ID: npm2018,
+        }
+        block.update(models=models, verdict_changes_under_2018=verdict_changes(models))
         return block
-    block["scorable"] = True
     block.update(assess_values(per_100g=values, is_drink=is_drink, per_100ml=per_100ml,
-                               portion_g=portion_g))
+                               portion_g=portion_g, npm2018=npm2018))
+    return block
+
+
+def _npm2018_for_food(by_code: dict[str, Any], values: dict[str, float],
+                      inputs: dict[str, dict[str, Any]], *, group: str | None, is_drink: bool,
+                      alcoholic: bool, free_sugars_g: float | None,
+                      fvns_g: float | None) -> dict[str, Any]:
+    """The NPM 2018 block for a CoFID food.
+
+    Free sugars honesty rule (Elliot, November 5, 2026): CoFID records total
+    sugars, not free sugars, so a CoFID food is not scorable under 2018
+    unless the caller supplies free_sugars_g. Total sugars are never used.
+    """
+    if alcoholic:
+        return npm2018_block({}, is_drink=True, not_applicable=(
+            f"CoFID group {group} is alcoholic beverages; NPM 2018 applies to foods and "
+            "non-alcoholic drinks only."))
+    values_2018 = {k: values[k] for k in ("energy_kj", "saturated_fat_g", "protein_g", "sodium_mg")
+                   if k in values}
+    labels = {k: f"CoFID {inputs[k]['cofid_code']} ({inputs[k]['source']})" for k in values_2018}
+    if free_sugars_g is not None:
+        values_2018["free_sugars_g"] = free_sugars_g
+    aoac = by_code.get("AOACFIB")
+    if aoac is not None and aoac.get("value_kind") in ("number", "trace"):
+        values_2018["fibre_aoac_g"], how = _value(aoac)
+        labels["fibre_aoac_g"] = f"CoFID AOACFIB ({how})"
+    elif "fibre_nsp_g" in values:
+        values_2018["fibre_nsp_g"] = values["fibre_nsp_g"]    # named as the reason AOAC is missing
+    if fvns_g is not None:
+        values_2018["fvns_g"] = fvns_g
+    elif "fruit_veg_nuts_percent" in values:
+        fvn = inputs["fruit_veg_nuts_percent"]
+        if fvn["source"] == "caller_supplied":
+            values_2018["fruit_veg_nuts_percent"] = values["fruit_veg_nuts_percent"]
+        else:
+            values_2018["fvns_g"] = values["fruit_veg_nuts_percent"]
+            labels["fvns_g"] = f"{fvn['source']} (same CoFID group rule as 2004/05)"
+    block = npm2018_block(values_2018, is_drink=is_drink, labels=labels)
+    if free_sugars_g is None:
+        block["free_sugars_note"] = (
+            "CoFID records total sugars, not free sugars. Supply free_sugars_g "
+            "(g per 100 g of this food) for a 2018 score; total sugars are never used instead."
+        )
     return block
 
 
@@ -191,9 +248,12 @@ def lookup_and_assess(payload: dict[str, Any]) -> dict[str, Any]:
             raise ValueError(f"{field} must be a string.")
     fvn = _number(payload, "fvn_percent", minimum=0, maximum=100)
     portion_g = _number(payload, "portion_g", minimum=0, inclusive_min=False)
+    free_sugars_g = _number(payload, "free_sugars_g", minimum=0, maximum=100)
+    fvns_g = _number(payload, "fvns_g", minimum=0, maximum=100)
     result = lookup_cofid(code=code, name=name)    # raises unless exactly one
     for food in result["matches"]:
-        food["assessment"] = assess_cofid_food(food, fvn_percent=fvn, portion_g=portion_g)
+        food["assessment"] = assess_cofid_food(food, fvn_percent=fvn, portion_g=portion_g,
+                                               free_sugars_g=free_sugars_g, fvns_g=fvns_g)
     result["mode"] = "lookup"
     result["evidence_note"] = (
         "Values are CoFID 2021 observations with their provenance. Assessment inputs "
@@ -214,7 +274,8 @@ def lookup_bulk(payload: dict[str, Any]) -> dict[str, Any]:
             "failed": len(errors),
             "no_match": sum(1 for r in results if not r["matches"]),
             "foods_matched": len(matches),
-            "scorable": sum(1 for m in matches if m["assessment"]["scorable"]),
+            **dual_summary([m["assessment"]["models"] for m in matches],
+                           [m["assessment"]["verdict_changes_under_2018"] for m in matches]),
         },
         "results": results,
         "errors": errors,

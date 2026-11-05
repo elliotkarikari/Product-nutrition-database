@@ -101,8 +101,9 @@ class TestExample6UnderDivision(unittest.TestCase):
         self.assertAlmostEqual(values["total_sugars_g"]["per_100g"], 9.9 / 1.04)
         # The guidance's own column reads 184 kJ and 10.3 g (multiplied).
         self.assertNotAlmostEqual(values["energy_kj"]["per_100g"], 184, places=0)
-        self.assertEqual(result["score"], 2)
-        self.assertTrue(result["less_healthy"])
+        old = result["models"]["uk-npm-2004/05"]
+        self.assertEqual(old["score"], 2)
+        self.assertTrue(old["less_healthy"])
         self.assertEqual(result["input_conversion"]["unchanged"], ["fruit_veg_nuts_percent"])
 
 

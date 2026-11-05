@@ -25,6 +25,8 @@ from http.server import ThreadingHTTPServer
 from shelfscale.api import Handler
 from shelfscale.lookup import cofid_release
 
+OLD, NEW = "uk-npm-2004/05", "uk-npm-2018"
+
 
 def setUpModule():
     cofid_release()   # build the import once, before the server times requests
@@ -62,11 +64,12 @@ class TestLookupApi(unittest.TestCase):
         self.assertIn("share this food code", body["note"])
         aubergine = next(m for m in body["matches"] if m["food_id"] == "13-669@row55")
         a = aubergine["assessment"]
-        self.assertTrue(a["scorable"])
-        self.assertEqual(a["a_points"], {"energy": 0, "saturated_fat": 0, "total_sugars": 1, "sodium": 0})
-        self.assertEqual(a["c_points"], {"fruit_veg_nuts": 5, "fibre": 5, "protein": 1})
-        self.assertEqual(a["score"], -10)
-        self.assertEqual(a["fibre_method"], "nsp")
+        m = a["models"][OLD]
+        self.assertTrue(m["scorable"])
+        self.assertEqual(m["a_points"], {"energy": 0, "saturated_fat": 0, "total_sugars": 1, "sodium": 0})
+        self.assertEqual(m["c_points"], {"fruit_veg_nuts": 5, "fibre": 5, "protein": 1})
+        self.assertEqual(m["score"], -10)
+        self.assertEqual(m["fibre_method"], "nsp")
         self.assertEqual(a["inputs"]["fibre"]["cofid_code"], "ENGFIB")
         self.assertEqual(a["inputs"]["fruit_veg_nuts_percent"]["source"], "derived_from_group")
         self.assertFalse(a["is_drink"])
@@ -84,59 +87,64 @@ class TestLookupApi(unittest.TestCase):
         status, body = self._post("/v1/lookup", {"code": "12-596"})
         self.assertEqual(status, 200)
         a = body["matches"][0]["assessment"]
-        self.assertFalse(a["scorable"])
-        self.assertEqual(len(a["missing_inputs"]), 1)
-        self.assertTrue(a["missing_inputs"][0].startswith("fruit_veg_nuts_percent"))
-        self.assertNotIn("score", a)
+        m = a["models"][OLD]
+        self.assertFalse(m["scorable"])
+        self.assertEqual(len(m["missing_inputs"]), 1)
+        self.assertTrue(m["missing_inputs"][0].startswith("fruit_veg_nuts_percent"))
+        self.assertNotIn("score", m)
+        self.assertIsNone(a["verdict_changes_under_2018"])
         self.assertEqual(a["inputs"]["fruit_veg_nuts_percent"]["source"], "not available")
 
     def test_caller_supplied_fvn(self):
         status, body = self._post("/v1/lookup", {"code": "12-596", "fvn_percent": 0})
         self.assertEqual(status, 200)
         a = body["matches"][0]["assessment"]
-        self.assertTrue(a["scorable"])
+        m = a["models"][OLD]
+        self.assertTrue(m["scorable"])
         self.assertEqual(a["inputs"]["fruit_veg_nuts_percent"],
                          {"value": 0.0, "source": "caller_supplied"})
-        self.assertEqual((a["total_a"], a["total_c"], a["score"]), (3, 2, 1))
-        self.assertFalse(a["less_healthy"])
+        self.assertEqual((m["total_a"], m["total_c"], m["score"]), (3, 2, 1))
+        self.assertFalse(m["less_healthy"])
 
     def test_potatoes_score_with_fvn_zero_excluded_by_guidance(self):
         status, body = self._post("/v1/lookup", {"code": "13-486"})
         a = body["matches"][0]["assessment"]
-        self.assertTrue(a["scorable"])
+        m = a["models"][OLD]
+        self.assertTrue(m["scorable"])
         fvn = a["inputs"]["fruit_veg_nuts_percent"]
         self.assertEqual((fvn["value"], fvn["source"]), (0.0, "excluded_by_guidance"))
-        self.assertEqual((a["total_a"], a["total_c"], a["score"]), (7, 6, 1))
-        self.assertFalse(a["less_healthy"])
+        self.assertEqual((m["total_a"], m["total_c"], m["score"]), (7, 6, 1))
+        self.assertFalse(m["less_healthy"])
 
     def test_potato_fvn_can_be_overridden_by_the_caller(self):
         status, body = self._post("/v1/lookup", {"code": "13-486", "fvn_percent": 100})
         a = body["matches"][0]["assessment"]
         self.assertEqual(a["inputs"]["fruit_veg_nuts_percent"]["source"], "caller_supplied")
-        self.assertEqual(a["score"], -4)
+        self.assertEqual(a["models"][OLD]["score"], -4)
 
     def test_protein_rule_applies_once_potato_fvn_is_zero(self):
         # Chips fried in dripping: A = 15, so with FVN below 5 protein cannot count.
         status, body = self._post("/v1/lookup", {"code": "50-686"})
-        a = body["matches"][0]["assessment"]
-        self.assertEqual((a["total_a"], a["protein_counted"], a["score"]), (15, False, 12))
-        self.assertTrue(a["less_healthy"])
+        m = body["matches"][0]["assessment"]["models"][OLD]
+        self.assertEqual((m["total_a"], m["protein_counted"], m["score"]), (15, False, 12))
+        self.assertTrue(m["less_healthy"])
 
     def test_vegetable_dishes_need_caller_fvn(self):
         status, body = self._post("/v1/lookup", {"name": "Aubergine, stuffed with rice"})
         a = body["matches"][0]["assessment"]
-        self.assertFalse(a["scorable"])
-        self.assertIn("vegetable dishes", a["missing_inputs"][0])
+        self.assertFalse(a["models"][OLD]["scorable"])
+        self.assertIn("vegetable dishes", a["models"][OLD]["missing_inputs"][0])
         status, body = self._post("/v1/lookup", {"name": "Aubergine, stuffed with rice",
                                                  "fvn_percent": 60})
-        self.assertTrue(body["matches"][0]["assessment"]["scorable"])
+        self.assertTrue(body["matches"][0]["assessment"]["models"][OLD]["scorable"])
 
     def test_alcoholic_drink_without_gravity_names_it(self):
         status, body = self._post("/v1/lookup", {"code": "17-506", "fvn_percent": 0})
         a = body["matches"][0]["assessment"]
         self.assertTrue(a["is_drink"])
-        self.assertFalse(a["scorable"])
-        self.assertTrue(any("specific gravity" in m for m in a["missing_inputs"]))
+        self.assertFalse(a["models"][OLD]["scorable"])
+        self.assertTrue(any("specific gravity" in m for m in a["models"][OLD]["missing_inputs"]))
+        self.assertFalse(a["models"][NEW]["applicable"])     # alcoholic: outside NPM 2018
 
     def test_bulk_partial_success(self):
         status, body = self._post("/v1/lookup/bulk", {"items": [
@@ -149,7 +157,10 @@ class TestLookupApi(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertEqual(body["summary"], {
             "received": 5, "looked_up": 3, "failed": 2, "no_match": 1,
-            "foods_matched": 3, "scorable": 3,
+            "foods_matched": 3,
+            "less_healthy": {OLD: 0, NEW: 0},
+            "scorable": {OLD: 3, NEW: 0},
+            "verdict_changes_under_2018": 0,
         })
         self.assertEqual([e["index"] for e in body["errors"]], [3, 4])
         self.assertIn("string", body["errors"][0]["error"])

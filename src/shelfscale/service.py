@@ -1,4 +1,4 @@
-"""Assessment service: UK NPM 2004/05 scoring and front-of-pack traffic lights.
+"""Assessment service: NPM 2004/05 (in force), NPM 2018 (shadow) and traffic lights.
 
 Two layers:
 
@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import Any, Iterable
 
 from .npm import calculate_npm
+from .npm2018 import MODEL_ID as NPM2018_ID, STATUS as NPM2018_STATUS, calculate_npm2018
 from .traffic_lights import traffic_lights
 
 MODEL_ID = "uk-npm-2004/05"
@@ -26,7 +27,7 @@ MAX_BULK_ITEMS = 1000
 SCORING_BASIS = "per_100g"
 INPUT_BASES = ("per_100g", "per_100ml")
 _PER_AMOUNT_FIELDS = (
-    "energy_kj", "fat_g", "saturated_fat_g", "total_sugars_g", "protein_g",
+    "energy_kj", "fat_g", "saturated_fat_g", "total_sugars_g", "free_sugars_g", "protein_g",
     "sodium_mg", "salt_g", "fibre_nsp_g", "fibre_aoac_g",
 )
 _REQUIRED_NUTRIENTS = (
@@ -56,6 +57,101 @@ def _traffic_light_inputs(values: dict[str, float]) -> dict[str, float | None]:
     }
 
 
+def npm2018_block(
+    values: dict[str, float],
+    *,
+    is_drink: bool,
+    labels: dict[str, str] | None = None,
+    not_applicable: str | None = None,
+) -> dict[str, Any]:
+    """The NPM 2018 shadow-model result for per-100 g values, or why there is none.
+
+    Free sugars are never taken from total sugars; AOAC fibre is never
+    derived from NSP. ``labels`` names where each input came from
+    (default: caller_supplied).
+    """
+    labels = labels or {}
+    block: dict[str, Any] = {"model": NPM2018_ID, "status": NPM2018_STATUS}
+    if not_applicable:
+        return {**block, "applicable": False, "scorable": False, "reason": not_applicable}
+    inputs: dict[str, Any] = {}
+    missing: list[str] = []
+
+    def take(name: str, value: float | None, source: str, why_missing: str) -> None:
+        if value is None:
+            missing.append(f"{name} ({why_missing})")
+        inputs[name] = {"value": value, "source": source if value is not None else "not available"}
+
+    for name in ("energy_kj", "saturated_fat_g", "protein_g"):
+        take(name, values.get(name), labels.get(name, "caller_supplied"), "not available")
+    take("free_sugars_g", values.get("free_sugars_g"), labels.get("free_sugars_g", "caller_supplied"),
+         "NPM 2018 scores free sugars; total sugars are never used in their place")
+    if "salt_g" in values:
+        take("salt_g", values["salt_g"], labels.get("salt_g", "caller_supplied"), "")
+    elif "sodium_mg" in values:
+        take("salt_g", values["sodium_mg"] / 400.0,
+             f"from sodium_mg ({labels.get('sodium_mg', 'caller_supplied')}): salt = sodium x 2.5", "")
+    else:
+        take("salt_g", None, "", "not available")
+    if "fibre_aoac_g" in values:
+        take("fibre_aoac_g", values["fibre_aoac_g"], labels.get("fibre_aoac_g", "caller_supplied"), "")
+    else:
+        take("fibre_aoac_g", None, "",
+             "NPM 2018 uses AOAC fibre; only NSP is available and the guidance names no conversion factor"
+             if "fibre_nsp_g" in values else "not available")
+    if "fvns_g" in values:
+        take("fvns_g", values["fvns_g"], labels.get("fvns_g", "caller_supplied"), "")
+    elif "fruit_veg_nuts_percent" in values:
+        take("fvns_g", values["fruit_veg_nuts_percent"],
+             f"from fruit_veg_nuts_percent ({labels.get('fruit_veg_nuts_percent', 'caller_supplied')}); "
+             "2004/05 definition, which does not count seeds; send fvns_g to be exact", "")
+    else:
+        take("fvns_g", None, "", "not available")
+
+    block["inputs"] = inputs
+    if missing:
+        return {**block, "applicable": True, "scorable": False, "missing_inputs": missing}
+    result = calculate_npm2018(is_drink=is_drink, **{k: v["value"] for k, v in inputs.items()})
+    return {
+        **block,
+        "applicable": True,
+        "scorable": True,
+        "score": result.score,
+        "less_healthy": result.less_healthy,
+        "a_points": result.a_points,
+        "c_points": result.c_points,
+        "total_a": result.total_a,
+        "total_c": result.total_c,
+        "protein_counted": result.protein_counted,
+        "fibre_method": "aoac",
+    }
+
+
+def npm0405_block(values: dict[str, float], *, is_drink: bool) -> dict[str, Any]:
+    npm = calculate_npm(is_drink=is_drink, **{k: v for k, v in values.items() if k in _NPM_FIELDS})
+    return {
+        "model": MODEL_ID,
+        "status": "in force",
+        "scorable": True,
+        "score": npm.score,
+        "less_healthy": npm.less_healthy,
+        "a_points": npm.a_points,
+        "c_points": npm.c_points,
+        "total_a": npm.total_a,
+        "total_c": npm.total_c,
+        "protein_counted": npm.protein_counted,
+        "fibre_method": npm.fibre_method,
+    }
+
+
+def verdict_changes(models: dict[str, dict[str, Any]]) -> bool | None:
+    """True or False when both models scored; None when either could not."""
+    old, new = models[MODEL_ID], models[NPM2018_ID]
+    if not (old.get("scorable") and new.get("scorable")):
+        return None
+    return old["less_healthy"] != new["less_healthy"]
+
+
 def assess_values(
     *,
     per_100g: dict[str, float],
@@ -63,16 +159,20 @@ def assess_values(
     per_100ml: dict[str, float] | None = None,
     portion_g: float | None = None,
     portion_ml: float | None = None,
+    npm2018: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Score per-100 g values with NPM and colour them with traffic lights.
+    """Score per-100 g values under both models and colour them with traffic lights.
 
-    ``per_100g`` needs the NPM inputs (exactly one of sodium_mg/salt_g and
-    of fibre_nsp_g/fibre_aoac_g) and may carry fat_g for traffic lights.
-    Drink colours need per-100 ml values (``per_100ml``, same keys); without
-    them drink colours are reported as not assessed, never assumed.
+    ``per_100g`` needs the NPM 2004/05 inputs (exactly one of sodium_mg/salt_g
+    and of fibre_nsp_g/fibre_aoac_g); it may carry fat_g (traffic lights) and
+    free_sugars_g / fvns_g (NPM 2018). ``npm2018`` replaces the 2018 block
+    when the caller has built it from other inputs (lookup mode). Drink colours need per-100 ml values;
+    without them drink colours are reported as not assessed, never assumed.
     """
-    npm = calculate_npm(is_drink=is_drink, **{k: v for k, v in per_100g.items() if k in _NPM_FIELDS})
-    fibre_field = "fibre_nsp_g" if npm.fibre_method == "nsp" else "fibre_aoac_g"
+    old = npm0405_block(per_100g, is_drink=is_drink)
+    new = npm2018 if npm2018 is not None else npm2018_block(per_100g, is_drink=is_drink)
+    models = {MODEL_ID: old, NPM2018_ID: new}
+    fibre_field = "fibre_nsp_g" if old["fibre_method"] == "nsp" else "fibre_aoac_g"
 
     if not is_drink:
         lights = traffic_lights(is_drink=False, per_100=_traffic_light_inputs(per_100g), portion=portion_g)
@@ -91,16 +191,9 @@ def assess_values(
         }
 
     result: dict[str, Any] = {
-        "model": MODEL_ID,
         "basis": SCORING_BASIS,
-        "score": npm.score,
-        "less_healthy": npm.less_healthy,
-        "a_points": npm.a_points,
-        "c_points": npm.c_points,
-        "total_a": npm.total_a,
-        "total_c": npm.total_c,
-        "protein_counted": npm.protein_counted,
-        "fibre_method": npm.fibre_method,
+        "models": models,
+        "verdict_changes_under_2018": verdict_changes(models),
         "traffic_lights": lights,
     }
     if portion_g is not None:
@@ -115,8 +208,9 @@ def assess_values(
             fibre_field: round(per_100g[fibre_field] * factor, 2),
             "protein_g": round(per_100g["protein_g"] * factor, 2),
         }
-        if "fat_g" in per_100g:
-            per_portion["fat_g"] = round(per_100g["fat_g"] * factor, 2)
+        for optional in ("fat_g", "free_sugars_g"):
+            if optional in per_100g:
+                per_portion[optional] = round(per_100g[optional] * factor, 2)
         result["per_portion"] = per_portion
     return result
 
@@ -155,7 +249,9 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
             "total_sugars_g": 20,
             "sodium_mg": 300,               # or "salt_g": 0.75
             "fruit_veg_nuts_percent": 0, "protein_g": 6.0,
-            "fibre_nsp_g": 1.6              # or "fibre_aoac_g": 2.0
+            "fibre_nsp_g": 1.6,             # or "fibre_aoac_g": 2.0
+            "free_sugars_g": 12.0,          # optional; needed for the NPM 2018 shadow score
+            "fvns_g": 0                     # optional; NPM 2018 fruit, veg, nuts and seeds
           }
         }
     """
@@ -185,7 +281,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("Product needs a 'nutrients' object.")
 
     values = {name: _require_number(nutrients, name) for name in _REQUIRED_NUTRIENTS}
-    for optional in ("sodium_mg", "salt_g", "fat_g"):
+    for optional in ("sodium_mg", "salt_g", "fat_g", "free_sugars_g", "fvns_g"):
         if nutrients.get(optional) is not None:
             values[optional] = _require_number(nutrients, optional)
     fibre_given = [name for name in _FIBRE_FIELDS if nutrients.get(name) is not None]
@@ -216,7 +312,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
             "to_basis": SCORING_BASIS,
             "specific_gravity": gravity,
             "rule": "value_per_100g = value_per_100ml / specific_gravity",
-            "unchanged": ["fruit_veg_nuts_percent"],
+            "unchanged": [k for k in ("fruit_veg_nuts_percent", "fvns_g") if k in values],
             "values": {
                 name: {"per_100ml": per_100ml[name], "per_100g": values[name]}
                 for name in _PER_AMOUNT_FIELDS if name in values
@@ -272,13 +368,29 @@ def assess_bulk(payload: dict[str, Any]) -> dict[str, Any]:
     """
     results, errors, received = run_bulk(payload, "products", assess_product)
     return {
-        "model": MODEL_ID,
+        "models": [MODEL_ID, NPM2018_ID],
         "summary": {
             "received": received,
             "assessed": len(results),
             "failed": len(errors),
-            "less_healthy": sum(1 for r in results if r["less_healthy"]),
+            **dual_summary([r["models"] for r in results],
+                           [r["verdict_changes_under_2018"] for r in results]),
         },
         "results": results,
         "errors": errors,
+    }
+
+
+def dual_summary(models: list[dict[str, dict[str, Any]]], changes: list[bool | None]) -> dict[str, Any]:
+    """Per-model counts for a bulk summary, and how many verdicts change under 2018."""
+    return {
+        "less_healthy": {
+            model_id: sum(1 for m in models if m[model_id].get("scorable") and m[model_id]["less_healthy"])
+            for model_id in (MODEL_ID, NPM2018_ID)
+        },
+        "scorable": {
+            model_id: sum(1 for m in models if m[model_id].get("scorable"))
+            for model_id in (MODEL_ID, NPM2018_ID)
+        },
+        "verdict_changes_under_2018": sum(1 for c in changes if c),
     }

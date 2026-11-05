@@ -8,6 +8,8 @@ from http.server import ThreadingHTTPServer
 from shelfscale.api import Handler
 from shelfscale.service import assess_bulk, assess_product
 
+OLD, NEW = "uk-npm-2004/05", "uk-npm-2018"
+
 BEANS = {
     "id": "beans-400g",
     "nutrients": {
@@ -39,9 +41,11 @@ SWEET_DRINK = {
 class TestService(unittest.TestCase):
     def test_single_assessment(self):
         result = assess_product(BEANS)
-        self.assertEqual(result["score"], -2)
-        self.assertFalse(result["less_healthy"])
-        self.assertEqual(result["model"], "uk-npm-2004/05")
+        old = result["models"][OLD]
+        self.assertEqual((old["model"], old["status"]), (OLD, "in force"))
+        self.assertEqual(old["score"], -2)
+        self.assertFalse(old["less_healthy"])
+        self.assertNotIn("score", result)       # migrated: no single-model top-level fields
 
     def test_portion_view(self):
         result = assess_product({**BEANS, "portion_g": 200})
@@ -60,7 +64,9 @@ class TestService(unittest.TestCase):
         self.assertEqual(result["summary"]["received"], 3)
         self.assertEqual(result["summary"]["assessed"], 2)
         self.assertEqual(result["summary"]["failed"], 1)
-        self.assertEqual(result["summary"]["less_healthy"], 1)
+        self.assertEqual(result["summary"]["less_healthy"], {OLD: 1, NEW: 0})
+        self.assertEqual(result["summary"]["scorable"], {OLD: 2, NEW: 0})
+        self.assertEqual(result["summary"]["verdict_changes_under_2018"], 0)
         self.assertEqual(result["errors"][0]["id"], "broken")
 
     def test_basis_is_per_100g_for_drinks_too(self):
@@ -80,17 +86,18 @@ class TestService(unittest.TestCase):
                     assess_product({**SWEET_DRINK, "basis": "per_100ml",
                                     "specific_gravity": bad})
         unconverted = assess_product({**BEANS, "basis": "per_100g"})
-        self.assertEqual(unconverted["score"], -2)
+        self.assertEqual(unconverted["models"][OLD]["score"], -2)
         self.assertIsNone(unconverted["input_conversion"])
 
     def test_fibre_nsp_or_aoac_exactly_one(self):
         nsp = assess_product({**BEANS, "nutrients": {
             **{k: v for k, v in BEANS["nutrients"].items() if k != "fibre_aoac_g"},
             "fibre_nsp_g": 3.0}, "portion_g": 100})
-        self.assertEqual((nsp["c_points"]["fibre"], nsp["fibre_method"]), (4, "nsp"))
+        self.assertEqual((nsp["models"][OLD]["c_points"]["fibre"], nsp["models"][OLD]["fibre_method"]),
+                         (4, "nsp"))
         self.assertEqual(nsp["per_portion"]["fibre_nsp_g"], 3.0)
         aoac = assess_product(BEANS)
-        self.assertEqual(aoac["fibre_method"], "aoac")
+        self.assertEqual(aoac["models"][OLD]["fibre_method"], "aoac")
         with self.assertRaisesRegex(ValueError, "exactly one"):
             assess_product({**BEANS, "nutrients": {**BEANS["nutrients"], "fibre_nsp_g": 3.0}})
         neither = {k: v for k, v in BEANS["nutrients"].items() if k != "fibre_aoac_g"}
@@ -102,7 +109,7 @@ class TestService(unittest.TestCase):
             with self.subTest(value=bad):
                 with self.assertRaisesRegex(ValueError, "is_drink"):
                     assess_product({**BEANS, "is_drink": bad})
-        self.assertFalse(assess_product({**BEANS, "is_drink": False})["less_healthy"])
+        self.assertFalse(assess_product({**BEANS, "is_drink": False})["models"][OLD]["less_healthy"])
 
     def test_bulk_requires_products(self):
         with self.assertRaises(ValueError):
