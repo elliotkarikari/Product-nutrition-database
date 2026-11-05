@@ -1,0 +1,37 @@
+{
+  "source_id": "uk-food-portion-sizes-2002",
+  "dataset": "Food Portion Sizes",
+  "edition": "3rd edition (2002)",
+  "publisher": "Food Standards Agency; published by TSO (ISBN 9780112429616)",
+  "citation": "Food Standards Agency (2002). Food Portion Sizes, 3rd edition. London: TSO. ISBN 9780112429616.",
+  "url": "https://www.tsoshop.co.uk/product/9780112429616/Food-portion-sizes",
+  "rights": "Crown copyright. NOT covered by the Open Government Licence.",
+  "decision": "Food Portion Sizes (3rd edition, Food Standards Agency, published by TSO, 2002). Crown copyright. NOT covered by the Open Government Licence. Included in this public repository on Elliot Karikari's decision of November 5, 2026, with his reasoning: the weights are individual facts; the data was transcribed by hand from his own copy of the book; he accepts the compilation-rights question as his call. This is not a licence.",
+  "decision_reference": "SPEC.md section 12; data/source-register.yaml entry uk-food-portion-sizes-2002; recorded in commit e42c5fc",
+  "transcription": {
+    "statement": "Elliot confirmed on November 5, 2026 that this file is his hand transcription of the book, made from his own copy.",
+    "evidence_note": "The file shares character-level OCR artefacts with the tabula extraction of the book PDF on main (FoodPortionSizes_PDF.csv), for example 'm1s' for 'mls', 'I' for '1', 'l00g' for '100g', and the same '3. 8g' in the same entry, and it keeps one layout artefact of that extraction. Other OCR errors in the extraction are corrected in it. The most likely history is that the extraction was cleaned and restructured by hand against the book. Recorded here as found, not tidied. Because of this shared origin, agreement between the two files is not independent confirmation of a value."
+  },
+  "retrieved": "2026-11-05",
+  "route": "Copied byte for byte from main of elliotkarikari/Product-nutrition-database at commit cfadc8a3f5eff7cae890ea8031d8de3ae600165f, path Data/Processed/FoodPortionSized/Processed_Food_Portion_Sizes.csv (git blob 127d35aedb881322b7cad5855949ef092160e9d4).",
+  "files": [
+    {
+      "role": "transcription",
+      "name": "Processed_Food_Portion_Sizes.csv",
+      "encoding": "cp1252 (Windows-1252)",
+      "bytes": 165574,
+      "path_on_main": "Data/Processed/FoodPortionSized/Processed_Food_Portion_Sizes.csv",
+      "git_blob": "127d35aedb881322b7cad5855949ef092160e9d4",
+      "sha256": "d47ea6504ad0dad554e82b99ca440bbefa7bc9ab5599b769d8cf8d882133aae7"
+    }
+  ],
+  "check_only": {
+    "name": "FoodPortionSizes_PDF.csv",
+    "path_on_main": "Data/Processed/FoodPortionSized/FoodPortionSizes_PDF.csv",
+    "git_blob": "1f4904e0b5024cf0ff8fb2ac641857ce4c06c8e2",
+    "sha256": "cd5816a5da578e140a8094822916210624fc201ac9c936fe8ea1904205448dd1",
+    "role": "Tabula extraction of the book PDF. Used only to check the transcription (scripts/reconcile_fps.py); never an import source; not copied into this repository.",
+    "report": "docs/FPS_IMPORT_REPORT.md"
+  },
+  "not_sources": "The three _VJ files on main are not sources and nothing from them is in this repository (Elliot's instruction; tests/test_no_vj_content.py)."
+}

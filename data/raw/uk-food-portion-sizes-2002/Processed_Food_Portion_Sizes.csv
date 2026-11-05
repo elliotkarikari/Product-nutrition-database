@@ -1,0 +1,2653 @@
+,Group,Brand,Food Name,Portion Consumed,Weight
+1,BABY FOODS,Boots,"First Harvest,Dessert starter",,125g
+2,BABY FOODS,Boots,"First Harvest, Infant desserts",,125g
+3,BABY FOODS,Boots,"First Harvest,Infant savouries",,125g
+4,BABY FOODS,Boots,"First Harvest,Junior desserts",,190g
+5,BABY FOODS,Boots,"First Harvest,Junior savouries",,190g
+6,BABY FOODS,Boots,"First Harvest,Savoury starters",,125g
+7,BABY FOODS,Cow and Gate,Ready to drink baby juice (125m1s),,130g
+8,BABY FOODS,Cow and Gate,Ready to drink baby juice,Stage 1 jars,150g
+9,BABY FOODS,Cow and Gate,Ready to drink baby juice,Stage 2 jars,200g
+10,BABY FOODS,,Dried/powdered baby foods,1 average tablespoon,5g
+11,BABY FOODS,Baby Danone,Fromage frais,,60g
+12,BABY FOODS,Heinz,Fromage frais,Jar,150g
+13,BABY FOODS,Heinz,Desserts,Can,128g
+14,BABY FOODS,Heinz,Desserts,Jar,163g
+15,BABY FOODS,Heinz,Savoury dishes,Can,128g
+16,BABY FOODS,Heinz,Savoury dishes,Jar,128g
+17,BABY FOODS,Heinz,Savoury dishes,Can,163g
+18,BABY FOODS,Heinz,Savoury dishes,Standard Jar,163g
+19,BABY FOODS,Heinz,Savoury dishes,Large Jar,200g
+20,BABY FOODS,Milupa,Baby Rice Flakes,1 tablespoon,5g
+21,BABY FOODS,Milupa,Fine Oat Flakes,1 tablespoon,2.5g
+22,BABY FOODS,Milupa,Infant Foods,1 tablespoon,5g
+23,BABY FOODS,Milupa,"Junior Foods,",1 tablespoon,5g
+24,BABY FOODS,Milupa,Junior Drink,1 heaped teaspoon,3. 8g
+25,BABY FOODS,Milupa,Sugarfree Fennel Infant Drink,1 scoop,0.3g
+26,BABY FOODS,Milupa,Wholewheat Flakes,1 tablespoon,5g
+27,BABY FOODS,Robinson's,Ready to drink baby juice (250m1s),,260g
+28,BABY FOODS,Boots,"Rusks, Original",,6g
+29,BABY FOODS,Boots,"Rusks, Ruskmen",,8g
+30,BABY FOODS,Boots,"Rusks, Low sugar, flavoured",,10g
+31,BABY FOODS,Farley's,Rusks,,17g
+32,BABY FOODS,Liga,Rusks,,8g
+33,BABY FOODS,Cow & Gate,Yoghurts (baby), Jar,150g
+34,BABY FOODS,"Heinz, yoghurt dessert",Yoghurts (baby), Jar,150g
+35,BABY FOODS,St lvel Baby & Toddler,Yoghurts (baby),,90g
+36,BEVERAGES,Babycham,Sparkling perry,I bottle,100g
+37,BEVERAGES,,Barley wine ,I bottle,180g
+38,BEVERAGES,,"Beer, lager",1 pint,574g
+39,BEVERAGES,,"Beer, lager",1/2 pint,287g
+40,BEVERAGES,,"Beer, lager",bottle ,250/300g
+41,BEVERAGES,,"Beer, lager",small can,333g
+42,BEVERAGES,,"Beer, lager",large can,444g
+43,BEVERAGES,,Liqueurs ,1 measure,25g
+44,BEVERAGES,,Sherry ,"1 glass, small",50g
+45,BEVERAGES,,Sherry ,large,l00g
+46,BEVERAGES,,Spirits ,"1 measure, (England and Wales)",23g
+47,BEVERAGES,,Spirits ,"1 measure, (Scotland)",27g
+48,BEVERAGES,,Spirits ,"1 measure, (N. Ireland)",35g
+49,BEVERAGES,,Spirits ,1 airline measure,48g
+50,BEVERAGES,,Spirits ,1 miniature,29g
+51,BEVERAGES,,Vermouth,1 measure,48g
+52,BEVERAGES,,Wine ,I average glass,125g
+53,BEVERAGES,,Wine ,I small bottle,200g
+54,BEVERAGES,,Wine ,1 half bottle,375g
+55,BEVERAGES,,Wine ,1 average bottle,750ml
+56,BEVERAGES,Lucozade,Carbonated bottled drink,glass bottle,250ml
+57,BEVERAGES,Own brand,Carbonated bottled drink,"plastic bottle, large",500ml
+58,BEVERAGES,Own brand,Carbonated bottled drink,"plastic bottle, standard",250ml
+59,BEVERAGES,,Carbonated canned drink,slim can,250ml
+60,BEVERAGES,,Carbonated canned drink,sports/large can,500ml
+61,BEVERAGES,,Carbonated canned drink,standard can,330ml
+62,BEVERAGES,,Carbonated canned drink,trial/funsize/baby can,150ml
+63,BEVERAGES,,Calypso,Cup drinks,191g
+64,BEVERAGES,,Scotts,Cup drinks,191g
+65,BEVERAGES,,Dilutable still drinks,average measure,50g
+66,BEVERAGES,,"Fresh orange juice, 1 orange, freshly squeezed",,50g
+67,BEVERAGES,,Fruit Juice,average glass,160g
+68,BEVERAGES,,Fruit Juice,individual carton,200g
+69,BEVERAGES,,Fruit Juice,tall tumbler,300g
+70,BEVERAGES,,Fruit Juice,wine glass,120g
+71,BEVERAGES,,Fruit Juice,Britvic canned,173g
+72,BEVERAGES,,Fruit Juice,pub bottle,110g
+73,BEVERAGES,,Lime cordial,in 1/2 pint lager,45g
+74,BEVERAGES,,Lime cordial,in 1 pint lager,90g
+75,BEVERAGES,,Mineral water,large,500g
+76,BEVERAGES,,Mineral water,standard,330g
+77,BEVERAGES,,Mineral water,small,250g
+78,BEVERAGES,,Mineral water,"Evian, small",200g
+79,BEVERAGES,,Mineral water,"canned, standard",330g
+80,BEVERAGES,,Mineral water,"canned, small",250g
+81,BEVERAGES,,Mixers,pub bottle,110g
+82,BEVERAGES,Schweppes,Mixers,bottled,250ml
+83,BEVERAGES,Schweppes,Mixers,"standard, bottle",330ml
+84,BEVERAGES,Schweppes,"Mixers, tonic water", canned,170ml
+85,BEVERAGES,Capri Sun,Pouch drinks,,208g
+86,BEVERAGES,Geebee Twist & Squeeze,Pouch drinks,,201g
+87,BEVERAGES,Lucozade Sport Isotonic drink,Pouch drinks,,250g
+88,BEVERAGES,Luvly Jubbly,Pouch drinks,,206g
+89,BEVERAGES,Del Monte ,Fruit Troop,200m1 cartons ,206g
+90,BEVERAGES,Five Alive ,Fruit juice drinks,200m1 cartons ,206g
+91,BEVERAGES,Libby's C ,Fruit juice drinks,200m1 cartons ,208g
+92,BEVERAGES,Libby's Urn Bongo,Fruit juice drinks,200m1 cartons ,206g
+93,BEVERAGES,Suncrest,Fruit drinks,200m1 cartons ,206g
+94,BEVERAGES,C-Vit,Fruit drinks,250m1 cartons ,263g
+95,BEVERAGES,Own brand,Fruit drinks,,257g
+96,BEVERAGES,Own brand,Fruit drinks,,257g
+97,BEVERAGES,"Own brand, Hi juice ",Fruit drinks,,260g
+98,BEVERAGES,Quosh,Fruit drinks,,257g
+99,BEVERAGES,Robinson's Special 'R' ,Fruit drinks,,253g
+100,BEVERAGES,Rowntree,Fruit drinks,,257g
+101,BEVERAGES,Wells,"Fruit drinks, Sugar free",,253g
+102,BEVERAGES,Ribena ,"Fruit drinks, concentrate",average measure,38g
+103,BEVERAGES,Ribena ,"Fruit drinks, concentrate",individual carton,263g
+104,BEVERAGES,Ribena ,"Fruit drinks, concentrate",kingsize carton,394g
+105,BEVERAGES,,"Squash, concentrate",average measure,50g
+106,BEVERAGES,,"Squash, diluted, (1:4)",,250g
+107,BEVERAGES,Cadbury,Cadbury's highlights Milk Stick Pack,1 sachet,11g
+108,BEVERAGES,,Chocolate break,1 sachet,28g
+109,BEVERAGES,Nestle,"Chocolate drinks, instant","1 sachet, average",11g
+110,BEVERAGES,Nestle,Chococino, 1 sachet,20g
+111,BEVERAGES,,Cocoa,1 teaspoon heaped,6g
+112,BEVERAGES,,Cocoa,level,2g
+113,BEVERAGES,,Coffee,1 average cup,190g
+114,BEVERAGES,,Coffee,1 average mug,260g
+115,BEVERAGES,,Coffee,1 average vending machine cup,170g
+116,BEVERAGES,,Coffee,"1 teaspoon instant, heaped",2g
+117,BEVERAGES,,Coffee,"2 teaspoon instant, level",1g
+118,BEVERAGES,Nescafe,Cappucino,1 sachet,13g
+119,BEVERAGES,Nescafe,"Cappucino, unsweetened",1 sachet,12g
+120,BEVERAGES,,Drinking chocolate,1 mug,18g
+121,BEVERAGES,,"Horlicks chocolate malted, food drink",1 mug,20g
+122,BEVERAGES,,"Horlicks, instant, low fat",1 sachet,32g
+123,BEVERAGES,,Horlicks malted food drink,I mug,25g
+124,BEVERAGES,,Horlicks malted food drink,1 sachet,23g
+125,BEVERAGES,,"Lemon tea, instant",1 teaspoon,2g
+126,BEVERAGES,,"Lemon tea, instant",for 1 mug,6g
+127,BEVERAGES,,Nesquik, for 1 tumbler of milk,15g
+128,BEVERAGES,,Nesquik,1 rounded teaspoon,5g
+129,BEVERAGES,,Ovaltine, for 1 mug,20g
+130,BEVERAGES,,Ovaltine,1 sachet,23g
+131,BEVERAGES,,"Ovaltine, light",1 sachet,20g
+132,BEVERAGES,,Tea,1 average cup,190g
+133,BEVERAGES,,Tea,1 average mug,260g
+134,BEVERAGES,,Tea,1 average vending machine cup,170g
+135,BISCUITS,,Abbey Crunch,,9g
+136,BISCUITS,,"All butter shortbread, McVities",,20g
+137,BISCUITS,,All butter thins,,5g
+138,BISCUITS,,Animals,,10g
+139,BISCUITS,,"Arrowroot, thin",,8g
+140,BISCUITS,,Assorted creams,,12g
+141,BISCUITS,,Bandit,,24g
+142,BISCUITS,,Bath Oliver,,15g
+143,BISCUITS,,Blue Ribband,standard,22g
+144,BISCUITS,,Blue Ribband,mini,12g
+145,BISCUITS,McVities ,"Boasters, double chocolate",,19g
+146,BISCUITS,McVities ,"Boasters, hazlenut/pecan",,17g
+147,BISCUITS,,Bourbon,,13g
+148,BISCUITS,,Brandy snaps,,15g
+149,BISCUITS,,Breakaway,,24g
+150,BISCUITS,,Butter crunch,,7g
+151,BISCUITS,,Butter puffs,,10g
+152,BISCUITS,Tunnocks,"Caramel wafer,",,27g
+153,BISCUITS,,Carr's Table Water,large,8g
+154,BISCUITS,,Carr's Table Water,small,3g
+155,BISCUITS,,"Carr's Table Water, sesame seeds",,3g
+156,BISCUITS,Boots,Cereal bars,,30g
+157,BISCUITS,,Cheddars,,4g
+158,BISCUITS,,Mini Cheddars,bag,33g
+159,BISCUITS,,Mini Cheddars,each,2g
+160,BISCUITS,,Cheese sandwich,,7g
+161,BISCUITS,,Cheese thins,,4g
+162,BISCUITS,,Chocolate and nut cookies,,8g
+163,BISCUITS,,Chocolate chip gingers,,13g
+164,BISCUITS,,Chocolate chip oaties,,7g
+165,BISCUITS,Boots,Chocolate coated ginger and pear bar,,45g
+166,BISCUITS,,Chocolate fingers,,6g
+167,BISCUITS,Fox's,Classic bar,,34g
+168,BISCUITS,,Club (all except wafer),,24g
+169,BISCUITS,,Club wafer,,19g
+170,BISCUITS,,Cluster ,(all varieties),28g
+171,BISCUITS,,Coconut cookies,,15g
+172,BISCUITS,,Coconut mallows,,11g
+173,BISCUITS,Boots,Cookies,,17g
+174,BISCUITS,,Mini cookies,per bag,30g
+175,BISCUITS,Boots,Mini cookies,per bag,40g
+176,BISCUITS,,Corn crisp,1.0/8,20g
+177,BISCUITS,,Cream crackers,,7g
+178,BISCUITS,,Crispbread,crackerbread,10g
+179,BISCUITS,,Crispbread,extra thin,5g
+180,BISCUITS,,Crispbread,"Kavli, muesli",10g
+181,BISCUITS,,Crispbread,Ryvita,10g
+182,BISCUITS,,Crispbread,Scanda,6g
+183,BISCUITS,,Crispbread,wholewheat,15g
+184,BISCUITS,Jordans,Crunchy bars,,33g
+185,BISCUITS,,Custard creams,,11g
+186,BISCUITS,McVities ,"Digestive, chocolate bar",,19g
+187,BISCUITS,McVities ,"Digestive, chocolate",,18g
+188,BISCUITS,McVities ,"Digestive, creams",,14g
+189,BISCUITS,,"Digestive, full coated",,20g
+190,BISCUITS,McVities ,Digestive,,15g
+191,BISCUITS,,"Digestive, sweetmeal",,13g
+192,BISCUITS,,"Digestive, sweetmeal, chocolate",,13g
+193,BISCUITS,,Farleys rusk,,17g
+194,BISCUITS,,Farmhouse crackers,,8g
+195,BISCUITS,,Fig rolls,,15g
+196,BISCUITS,,"Fingers, chocolate coated",,6g
+197,BISCUITS,,54321',,21g
+198,BISCUITS,,Fivers,,17g
+199,BISCUITS,Boots,Flapjacks,,70g
+200,BISCUITS,,Flapjacks,Large,90g
+201,BISCUITS,,Flapjacks,Yoghurt coated,50g
+202,BISCUITS,,French toast,,8g
+203,BISCUITS,,Fruit shortcake,,10g
+204,BISCUITS,,Fruit Shrewsbury,,15g
+205,BISCUITS,,Garibaldi,,10g
+206,BISCUITS,Boots,Giant cookies,,60g
+207,BISCUITS,Paterson Bronte,Giant cookies,,60g
+208,BISCUITS,Own brand,Giant cookies,,50g
+209,BISCUITS,McVities ,"Ginger bar, chocolate coated",,28g
+210,BISCUITS,,Ginger crunch creams,,13g
+211,BISCUITS,,Ginger nuts,,10g
+212,BISCUITS,,Ginger snaps,,7g
+213,BISCUITS,,Ginger thins,,7g
+214,BISCUITS,,Gipsy creams,,13g
+215,BISCUITS,,Gold bar,,22g
+216,BISCUITS,,Golden crumble,,9g
+217,BISCUITS,,Golden crunch creams,,13g
+218,BISCUITS,,Harvest crunch bars,,20g
+219,BISCUITS,,Hi-Lo crackers,,5g
+220,BISCUITS,,Hob-nob bar,,27g
+221,BISCUITS,,"Hob-nobs, chocolate coated",,16g
+222,BISCUITS,,"Hob-nobs, creams",,14g
+223,BISCUITS,,"Hob-nobs, plain",,14g
+224,BISCUITS,,Hovis crackers,,7g
+225,BISCUITS,,Iced gems,per bag,30g
+226,BISCUITS,,Iced gems,each,2g
+227,BISCUITS,,Iced ring biscuits,,12g
+228,BISCUITS,,Iced shorties,,9g
+229,BISCUITS,,Jaffa cakes,,13g
+230,BISCUITS,,Jam rings,,13g
+231,BISCUITS,,Jam sandwich creams,,13g
+232,BISCUITS,,Jamboree mallow,,20g
+233,BISCUITS,,Jammy dodgers,,17g
+234,BISCUITS,,Jaspers,,13g
+235,BISCUITS,,"Jaspers, chocolate coated",,15g
+236,BISCUITS,,Jump cereal bar,,21g
+237,BISCUITS,,"Kavli, muesli crispbread",,10g
+238,BISCUITS,,Kracka wheat,,7g
+239,BISCUITS,,Krisprolls,,10g
+240,BISCUITS,,Lemon puffs,,10g
+241,BISCUITS,,Lincoln biscuits,,8g
+242,BISCUITS,,Mallows,,17g
+243,BISCUITS,,Malted milk,,9g
+244,BISCUITS,,Malted milk creams,,12g
+245,BISCUITS,,Marie,,8g
+246,BISCUITS,,Marshmallow teacake,,18g
+247,BISCUITS,,Maryland cookies,,9g
+248,BISCUITS,Boots,Mini cookies,bag,40g
+249,BISCUITS,McVities ,Mini cookies,bag,30g
+250,BISCUITS,,Mini cookies,each,3g
+251,BISCUITS,,Misbits,,10g
+252,BISCUITS,,Montana,,29g
+253,BISCUITS,,Morning coffee,,5g
+254,BISCUITS,,Munchmallow,,18g
+255,BISCUITS,,"Nice, finger",,5g
+256,BISCUITS,,Oatcakes,round,13g
+257,BISCUITS,,Oatcakes,triangle,17g
+258,BISCUITS,,Orange creams,,12g
+259,BISCUITS,Jordans,"Original crunchy bars,",,33g
+260,BISCUITS,,Peanut sticks,bag,30g
+261,BISCUITS,,Penguin,,25g
+262,BISCUITS,,Petit beurre,,7g
+263,BISCUITS,,Petticoat tails,,13g
+264,BISCUITS,,"Plain chocolate digestive, sweetmeal",,13g
+265,BISCUITS,McVities,Plain chocolate homewheat,,17g
+266,BISCUITS,,"Raisin and honey, Prewetts",,15g
+267,BISCUITS,,Rice cake,,7g
+268,BISCUITS,,Rich tea,,7g
+269,BISCUITS,,"Rich tea, chocolate coated",,13g
+270,BISCUITS,,"Ritz, cheese sandwich",,8g
+271,BISCUITS,,"Ritz, plain",,3g
+272,BISCUITS,McVities,"Riva, 2 piece bar",,25g
+273,BISCUITS,,Rocky biscuit,,29g
+274,BISCUITS,,Ryvita,,10g
+275,BISCUITS,,"Sesame seed thins, crackers",,4g
+276,BISCUITS,,Shortbread finger,,13g
+277,BISCUITS,,Shortcake,,10g
+278,BISCUITS,,"Snack, Cadbury's",,5g
+279,BISCUITS,,Snowballs,,25g
+280,BISCUITS,,Taxi,,14g
+281,BISCUITS,,Tetley tea folk,,24g
+282,BISCUITS,,Thin arrowroot,,8g
+283,BISCUITS,,Toffypops,,18g
+284,BISCUITS,,Tracker,standard,37g
+285,BISCUITS,,Tracker,"packet of 6, each",27g
+286,BISCUITS,,Tracker,buttermunch,18g
+287,BISCUITS,,Treacle crunch creams,,13g
+288,BISCUITS,,Trio,,24g
+289,BISCUITS,,Triple bar,,22g
+290,BISCUITS,,Tuc,each,5g
+291,BISCUITS,,Tuc,savoury sandwich,14g
+292,BISCUITS,,"Tuc, mini",bag,25g
+293,BISCUITS,,"Tuc, mini",each,2g
+294,BISCUITS,,Twiglets,standard,50g
+295,BISCUITS,,Twiglets,"packet of 6, each",25g
+296,BISCUITS,,Twiglets,each,1g
+297,BISCUITS,,Typhoo Tea Break,each,24g
+298,BISCUITS,Prewetts,TroI bar,,28g
+299,BISCUITS,,"United, golden crunch,orange,mint",,21g
+300,BISCUITS,,Viennese fingers,,21g
+301,BISCUITS,,"Viscount, mint/orange",,16g
+302,BISCUITS,,"Wafer, not coated",,15g
+303,BISCUITS,,"Wafer, pink filled",,7g
+304,BISCUITS,,"Wafers for ice cream, see Ice creams and ice blues",,
+306,BISCUITS,,Water biscuits,,8g
+307,BISCUITS,,"Wholemeal, bran",,15g
+308,BISCUITS,,"Wholemeal, crispbread",,5g
+309,BISCUITS,,"Wholemeal, shortbread",,15g
+310,BISCUITS,,"YoYo, mint",,19g
+311,BISCUITS,,"YoYo, toffee",,20g
+312,BISCUITS,,Cheese biscuits,,4g
+313,BISCUITS,,Cream sandwich biscuits,,12g
+314,BISCUITS,,Full coated chocolate biscuits,,24g
+315,BISCUITS,,Semi-sweet biscuits e.g. Marie,,7g
+316,BISCUITS,,"Sweet biscuits, cookies, crunch",,10g
+317,BISCUITS,,"Wafer biscuits, (cream filled, not ice-cream wafers)",,7g
+318,BREAD,,Bagel plain,,70g
+319,BREAD,,Breadstick,"each, 7g",140g
+320,BREAD,,Brioche,individual,45g
+321,BREAD,,"Chapati white or brown, average, without fat","6 in pack, 55g",330g
+322,BREAD,,"Chapati white or brown, average, with fat","6 in pack, 60g",360g
+323,BREAD,,"Croissant chocolate, 'pain-au-chocolat'",,60g
+324,BREAD,,"Croissant chocolate, mini",,35g
+325,BREAD,,"Croissant chocolate, plain",,60g
+326,BREAD,,"Croissant chocolate, savoury filled",,90g
+327,BREAD,,"Croutons with soup, homemade",,25g
+328,BREAD,,"Croutons with soup, purchased",,15g
+331,BREAD,,"Danish style light bread, sliced, toasted",,18g
+332,BREAD,,French stick,"2"" slice",40g
+333,BREAD,,French stick,"6"" slice",120g
+334,BREAD,,"French toast bread coated in egg, fried,",1 slice,70g
+335,BREAD,,Garlic bread,1 slice,20g
+336,BREAD,,Garlic bread,1 slice with cheese,40g
+337,BREAD,,Garlic bread,restaurant portion,60g
+339,BREAD,,"Muffin white, toasted",,68g
+340,BREAD,,"wholemeal, toasted",,72g
+341,BREAD,,"Naan bread, filled",,155g
+342,BREAD,,"Naan bread, plain",,160g
+343,BREAD,,"Nimble, sliced",1 slice fresh,20g
+344,BREAD,,"Nimble, sliced, toasted",,18g
+345,BREAD,,"Papadum, fried",,13g
+346,BREAD,,"Papadum, grilled",,10g
+347,BREAD,,"Paratha, plain",,140g
+348,BREAD,,"Paratha, stuffed",,170g
+349,BREAD,,"Pikelets, toasted, each",,25g
+350,BREAD,,Pitta bread,"'mini', picnic",35g
+351,BREAD,,Pitta bread,small,75g
+352,BREAD,,Pitta bread,large,95g
+353,BREAD,,"Potato cake/bread, fried",1 farl,65g
+354,BREAD,,"Potato cake/bread, grilled",2 farl,56g
+355,BREAD,,Pumpernickel,I average slice,33g
+356,BREAD,,"Pun, fried",,70g
+357,BREAD,,"Rolls, bagel",,70g
+358,BREAD,,"Rolls, bap, granary, white or wholemeal ","(6"" diameter)",112g
+359,BREAD,,bridge roll,,20g
+360,BREAD,,granary roll,,56g
+361,BREAD,,"Rolls, hamburger bun, bakers",,85g
+362,BREAD,,"Rolls, prepacked",,50g
+363,BREAD,Hovis,"Rolls, 'mini loaf'",,40g
+364,BREAD,,krisp roll e.g. Pogeus,,10g
+365,BREAD,,"white roll, crusty",,50g
+366,BREAD,,"white roll, soft",,45g
+367,BREAD,,"wholemeal roll, crusty",,48g
+368,BREAD,,"wholemeal roll, soft",,48g
+369,BREAD,,"Roti, bread, cooked in tandoor",,100g
+370,BREAD,,Rye bread,1 average slice,25g
+371,BREAD,,"Slimcea, sliced",1 slice fresh,15g
+372,BREAD,,"Slimcea, sliced, toasted",,13g
+373,BREAD,,Soda bread, 1 farl,130g
+374,BREAD,,Staffordshire oatcake,,50g
+375,BREAD,,Toasting loaf white,1 slice fresh,27g
+376,BREAD,,"Toasting loaf white, toasted",1 slice fresh,24g
+377,BREAD,,"White crusty bread, small loaf, ",1 slice fresh,27g
+378,BREAD,,"White crusty bread, small loaf, toasted",1 slice fresh,24g
+379,BREAD,,"White crusty bread, large loaf",1 medium slice fresh,35g
+380,BREAD,,"White crusty bread, large loaf, toasted",1 medium slice fresh,31g
+381,BREAD,,"White crusty bread, large loaf",1 thick slice fresh,50g
+382,BREAD,,"White crusty bread, large loaf, toasted",1 thick slice fresh,45g
+383,BREAD,"(including Premium, soft-grain white loaves)","White sliced bread, small loaf",1 slice fresh,25g
+384,BREAD,,"White sliced bread, small loaf, toasted",1 slice fresh,20g
+385,BREAD,,"White sliced bread, large loaf",1 thin slice fresh,31g
+386,BREAD,,"White sliced bread, large loaf, toasted",2 thin slice fresh,22g
+387,BREAD,,"White sliced bread, large loaf",1 medium slice fresh,36g
+388,BREAD,,"White sliced bread, large loaf, toasted",1 medium slice fresh,27g
+389,BREAD,,"White sliced bread, large loaf",1 thick slice fresh,44g
+390,BREAD,,"White sliced bread, large loaf, toasted",1 thick slice fresh,34g
+391,BREAD,,"Wholemeal sliced bread, small loaf",1 slice fresh,25g
+392,BREAD,"(including brown, granary, wheatgerm loaves)","Wholemeal sliced bread, small loaf, toasted",1 slice fresh,23g
+393,BREAD,,"Wholemeal sliced bread, large loaf",1 medium slice fresh,36g
+394,BREAD,,"Wholemeal sliced bread, large loaf, toased",1 medium slice fresh,31g
+395,BREAD,,"Wholemeal sliced bread, large loaf",1 thick slice fresh,44g
+396,BREAD,,"Wholemeal sliced bread, large loaf, toased",1 thick slice fresh,40g
+397,BREAD,,"Wholemeal unsliced bread, small loaf, ",1 average slice fresh,30g
+398,BREAD,,"Wholemeal unsliced bread, small loaf, toasted",1 average slice fresh,27g
+399,BREAD,,"Wholemeal unsliced bread, large loaf ",1 medium slice fresh,38g
+400,BREAD,,"Wholemeal unsliced bread, large loaf, toasted",1 medium slice fresh,33g
+401,BREAD,,"Wholemeal unsliced bread, large loaf",1 thick slice fresh,55g
+402,BREAD,,"Wholemeal unsliced bread, large loaf, toasted",1 thick slice fresh,50g
+403,BREAKFAST CEREALS,,"All-Bran type cereals e.g. Branbuds, Grapenuts, All-Bran","1 average portion, small",30g
+404,BREAKFAST CEREALS,,"All-Bran type cereals e.g. Branbuds, Grapenuts, All-Bran",medium,40g
+405,BREAKFAST CEREALS,,"All-Bran type cereals e.g. Branbuds, Grapenuts, All-Bran",large,60g
+406,BREAKFAST CEREALS,,"All-Bran type cereals e.g. Branbuds, Grapenuts, All-Bran",1 tablespoon,7g
+407,BREAKFAST CEREALS,Nestle,Clusters,1 average portion,30g
+408,BREAKFAST CEREALS,"Branflakes, Weetaflakes, Frosties, Crunchy Nut Cornflakes, Fruit and Fibre, Golden Crackles",Cornflake type cereals,"I average portion, small",20g
+409,BREAKFAST CEREALS,"Branflakes, Weetaflakes, Frosties, Crunchy Nut Cornflakes, Fruit and Fibre, Golden Crackles",Cornflake type cereals,medium,30g
+410,BREAKFAST CEREALS,"Branflakes, Weetaflakes, Frosties, Crunchy Nut Cornflakes, Fruit and Fibre, Golden Crackles",Cornflake type cereals,large,50g
+411,BREAKFAST CEREALS,,"Cornflake type cereals, Branflakes",1 tablespoon,8g
+412,BREAKFAST CEREALS,,"Cornflake type cereals, Cornflakes",1 tablespoon,6g
+413,BREAKFAST CEREALS,,"Cornflake type cereals, Frosties",1 tablespoon,8g
+414,BREAKFAST CEREALS,,"Cornflake type cereals, Golden Crackles",1 tablespoon,7g
+415,BREAKFAST CEREALS,,"Cornflake type cereals, Cornflakes",I variety pack,17g
+416,BREAKFAST CEREALS,,"Cornflake type cereals, Frosties/Crunchy Nut, Cornflakes",I variety pack,23g
+417,BREAKFAST CEREALS,,"Cornflake type cereals, Golden Crackles",,25g
+418,BREAKFAST CEREALS,,"Instant oat cereal e.g. Ready Brek, made up weight","average portion, small (1/6 pint milk)",130g
+419,BREAKFAST CEREALS,,"Instant oat cereal e.g. Ready Brek, made up weight",medium (1/4 pint milk),180g
+420,BREAKFAST CEREALS,,"Instant oat cereal e.g. Ready Brek, made up weight",large (1/3  pint milk),225g
+421,BREAKFAST CEREALS,Nestle,Lucky Charms,,30g
+422,BREAKFAST CEREALS,"Alpen, Country Store","Muesli cereals, not crunchy","1 average portion, small",30g
+423,BREAKFAST CEREALS,"Alpen, Country Store","Muesli cereals, not crunchy",medium,50g
+424,BREAKFAST CEREALS,"Alpen, Country Store","Muesli cereals, not crunchy",large,80g
+425,BREAKFAST CEREALS,"Alpen, Country Store","Muesli cereals, not crunchy",1 4oz cup muesli,100g
+426,BREAKFAST CEREALS,"Alpen, Country Store","Muesli cereals, not crunchy",1 sachet Alpen,40g
+427,BREAKFAST CEREALS,"Alpen, Country Store","Muesli cereals, not crunchy",1 tablespoon,15g
+428,BREAKFAST CEREALS,"Original Crunchy, Harvest Crunch","Muesli, crunchy","1 average portion, small",40g
+429,BREAKFAST CEREALS,"Original Crunchy, Harvest Crunch","Muesli, crunchy",medium,60g
+430,BREAKFAST CEREALS,"Original Crunchy, Harvest Crunch","Muesli, crunchy",large,100g
+431,BREAKFAST CEREALS,"Original Crunchy, Harvest Crunch","Muesli, crunchy",1 tablespoon,20g
+432,BREAKFAST CEREALS,Nestle,Multi Cheerios,1 tablespoon,5g
+433,BREAKFAST CEREALS,Kelloggs,Pop Tarts,each,52g
+434,BREAKFAST CEREALS,,"Porridge, made up weight","average portion, small",110g
+435,BREAKFAST CEREALS,,"Porridge, made up weight",medium,160g
+436,BREAKFAST CEREALS,,"Porridge, made up weight",large,210g
+437,BREAKFAST CEREALS,,Puffed wheat,1 average portion,20g
+438,BREAKFAST CEREALS,,Puffed wheat,1 tablespoon,3g
+439,BREAKFAST CEREALS,"Rice Krispies, Ricicles, Puffed Rice, Cocopops, Special K",Rice Krispie type cereals,"I average portion, small",20g
+440,BREAKFAST CEREALS,,Rice Krispie type cereals,medium,30g
+441,BREAKFAST CEREALS,,Rice Krispie type cereals,large,45g
+442,BREAKFAST CEREALS,,Rice Krispie type cereals,1 tablespoon,4g
+443,BREAKFAST CEREALS,,"Rice Krispie type cereals, Cocopops",1 variety pack,30g
+444,BREAKFAST CEREALS,,"Rice Krispie type cereals, Rice Krispies",2 variety pack,20g
+445,BREAKFAST CEREALS,,"Rice Krispie type cereals, Ricicles",3 variety pack,30g
+446,BREAKFAST CEREALS,Nestle,Shredded Wheat,average portion (2),45g
+447,BREAKFAST CEREALS,Nestle,Shredded Wheat,each,22g
+448,BREAKFAST CEREALS,Nestle,Shredded Wheat,"Mini, average portion, small",35g
+449,BREAKFAST CEREALS,Nestle,Shredded Wheat,medium,45g
+450,BREAKFAST CEREALS,Nestle,Shredded Wheat,large,70g
+451,BREAKFAST CEREALS,Nestle,Shreddies,average portion,45g
+452,BREAKFAST CEREALS,,"Splitz type cereal, raisin","average portion, small",25g
+453,BREAKFAST CEREALS,,"Splitz type cereal, raisin",medium,40g
+454,BREAKFAST CEREALS,,"Splitz type cereal, raisin",large,60g
+455,BREAKFAST CEREALS,,"Splitz type cereal, raisin",1 tablespoon (7 pieces),9g
+456,BREAKFAST CEREALS,,"Start multi-grain, Kelloggs",1 tablespoon (15 pieces),6g
+457,BREAKFAST CEREALS,,"Sugar puff type cereals, Sugar Puffs, Smacks","1 average portion, small",20g
+458,BREAKFAST CEREALS,,"Sugar puff type cereals, Sugar Puffs, Smacks",medium,30g
+459,BREAKFAST CEREALS,,"Sugar puff type cereals, Sugar Puffs, Smacks",large,50g
+460,BREAKFAST CEREALS,,"Sugar puff type cereals, Sugar Puffs, Smacks",1 tablespoon,6g
+461,BREAKFAST CEREALS,,Weetabix,1 bisk,20g
+462,CAKES,,Almond slice,,35g
+463,CAKES,,"American muffins, purchased",,85g
+464,CAKES,,"Angel sandwich, purchased",average slice,40g
+465,CAKES,,Apple and mincemeat tart ,individual,88g
+466,CAKES,,Apple strudel,slice,115g
+467,CAKES,,Apple sundae,,53g
+468,CAKES,,Apple turnover,individual,100g
+469,CAKES,,Bakewell tart,individual,43g
+470,CAKES,,slice of large tart,,120g
+471,CAKES,,"Baklava, Greek pastry",,100g
+472,CAKES,,Banana cake average,slice,85g
+473,CAKES,Mr Kipling,"Battenburg, mini,  purchased","individual, 5 in a pack",32g
+474,CAKES,,Belgian bun,,110g
+475,CAKES,,Black forest gateau,average portion,90g
+476,CAKES,,Blackcurrant and apple,slice,32g
+477,CAKES,,Blackcurrant sundae,,55g
+478,CAKES,,Chelsea bun,,78g
+479,CAKES,,Cherry bakewell,,46g
+480,CAKES,,Cherry fruit cake,average slice,42g
+481,CAKES,,Cherry,slice,38g
+482,CAKES,,Chocolate cake with buttercream,average slice,65g
+483,CAKES,,Chocolate cake with buttercream,"frozen, average slice",35g
+484,CAKES,,Chocolate cupcake,,40g
+485,CAKES,,"Chocolate éclair, bakery or home-made",,90g
+486,CAKES,,"Chocolate éclair, purchased, frozen, fresh cream",,35g
+487,CAKES,,"Chocolate fancy, Lyons",,25g
+488,CAKES,,Chocolate fudge slice,,98g
+489,CAKES,,Chocolate krispie cake,,25g
+490,CAKES,,Chocolate mini roll,,25g
+491,CAKES,,"Chocolate swirl, Lyons",,28g
+492,CAKES,,"Choux bun, filled with cream",,112g
+493,CAKES,,Coconut cake,average slice,40g
+494,CAKES,,"Coconut crunch cake, Lyons",,27g
+495,CAKES,,Coconut pyramid,,25g
+496,CAKES,,Country slice,,38g
+497,CAKES,,Cream horn,,60g
+498,CAKES,,Cream slice,,100g
+499,CAKES,,"Cupcakes, Lyons, purchased, iced",,39g
+500,CAKES,,Currant bun,,60g
+501,CAKES,,Custard tart,individual,94g
+502,CAKES,,Custard tart,slice of large tart,140g
+503,CAKES,,Dairy cream sponge,average slice,39g
+504,CAKES,,Danish pastry,large,180g
+505,CAKES,,Danish pastry,medium,110g
+506,CAKES,,Devonshire split,,65g
+507,CAKES,,"Doughnut, apple filling",,85g
+508,CAKES,,"Doughnut, cream, custard filling",,75g
+509,CAKES,,"Doughnut, iced",,75g
+510,CAKES,,"Doughnut, jam filling",,75g
+511,CAKES,,"Doughnut, large, iced or filled",,130g
+512,CAKES,,"Doughnut, ring",,60g
+513,CAKES,,Eccies cake,,45g
+514,CAKES,,Fairy cake,,28g
+515,CAKES,,Flake cake,,31g
+516,CAKES,,Flapjack,medium slice,60g
+517,CAKES,,Flapjack,large slice,90g
+518,CAKES,,Florentines,,60g
+519,CAKES,,"French fancy, fondant fancy",,30g
+520,CAKES,,"Fruit cake, plain, homemade",average slice,90g
+521,CAKES,,"Fruit cake, plain,  purchased",average slice,60g
+522,CAKES,,"Fruit cake, rich",average slice,70g
+523,CAKES,,"Fruit cake, rich with marzipan and icing",,70g
+524,CAKES,,Fruit malt loaf,,35g
+525,CAKES,,Fruit pies - see Puddings and fruit pies,,
+526,CAKES,,Gateau with fresh cream,average slice,85g
+527,CAKES,,Gateau with fresh cream,individual pot,90g
+528,CAKES,,Gingerbread man,,50g
+529,CAKES,,"Gingerbread, parkin",,50g
+530,CAKES,,Hot cross bun,,50g
+531,CAKES,,Iced bun,,65g
+532,CAKES,,Jam tart,individual,34g
+533,CAKES,,Jam tart,slice of large tart,90g
+534,CAKES,,Jamaica ginger cake,average slice,35g
+535,CAKES,,Lemon meringue pie,average slice,150g
+536,CAKES,,Lemon meringue pie,individual,39g
+537,CAKES,,Macaroons,,28g
+538,CAKES,,"Madeira, purchased",average slice,40g
+539,CAKES,,Melting moment,,30g
+540,CAKES,,"Meringue, with cream",,28g
+541,CAKES,,"Meringue, without cream",,8g
+542,CAKES,,Mince pie,individual,55g
+543,CAKES,,Mince pie,slice of large pie,90g
+544,CAKES,,Mini-roll,chocolate/vanilla,25g
+545,CAKES,,Mini-roll,raspberry/vanilla,27g
+546,CAKES,,"Ostler, Lyons, any flavour",,30g
+547,CAKES,,"Pakiava, Greek pastry",,100g
+548,CAKES,,Rock cake,,45g
+549,CAKES,,Rum Baba,,198g
+550,CAKES,,Russian cake,"sliced, average slice",180g
+551,CAKES,,"Scones, drop scones",,31g
+552,CAKES,,"Scones, plain, fruit, cheese",,48g
+553,CAKES,,"Scones, potato",,57g
+554,CAKES,,"Scones, wholemeal",,50g
+555,CAKES,,"Scones, with cream and jam, purchased",,50g
+556,CAKES,,"Sponge cake, no fat, with cream, purchased, with fat, with buttercream filling",,58g
+557,CAKES,,"Sponge cake, with fat, with buttercream filling, average slice",,60g
+558,CAKES,,"Sponge cake, with fat, with jam filling",average slice,60g
+559,CAKES,,Sponge finger,each,4g
+560,CAKES,,"Sultana cake, purchased",average slice,50g
+561,CAKES,,Swiss bun,,50g
+562,CAKES,,Swiss roll,average slice,30g
+563,CAKES,,"Teacake, fresh",,60g
+564,CAKES,,"Teacake, toasted",,55g
+565,CAKES,,"Treacle tart, individual",,35g
+566,CAKES,,Trifle sponge,,24g
+567,CAKES,,Vanilla slice,,113g
+568,CAKES,,Viennese slice,average,34g
+569,CAKES,,Viennese split,each,16g
+570,CAKES,,Viennese whirl,each,27g
+571,CAKES,,Welsh cakes,,28g
+572,CHEESE AND CHEESE DISHES,,Camembert type cheese, 1/6  portion,40g
+573,CHEESE AND CHEESE DISHES,,Camembert type cheese,average portion,40g
+574,CHEESE AND CHEESE DISHES,,Cauliflower cheese,"average portion, main dish",200g
+575,CHEESE AND CHEESE DISHES,,Cauliflower cheese,"average portion, side dish",90g
+576,CHEESE AND CHEESE DISHES,,"Cauliflower cheese, frozen, purchased ready meal","average portion, for one",235g
+577,CHEESE AND CHEESE DISHES,,Cheddar type cheese,"chunk, small",20g
+578,CHEESE AND CHEESE DISHES,,Cheddar type cheese,medium,40g
+579,CHEESE AND CHEESE DISHES,,Cheddar type cheese,large,60g
+580,CHEESE AND CHEESE DISHES,,Cheddar type cheese,"grated, 1 tablespoon",10g
+581,CHEESE AND CHEESE DISHES,,Cheddar type cheese,matchbox size piece,30g
+582,CHEESE AND CHEESE DISHES,,Cheddar type cheese,"pick 'n' mix, each",20g
+583,CHEESE AND CHEESE DISHES,,Cheddar type cheese,"in ploughmans lunch, average",120g
+584,CHEESE AND CHEESE DISHES,,Cheddar type cheese,"in sandwich, average (cheese only)",45g
+585,CHEESE AND CHEESE DISHES,,Cheese and egg flan,1 slice,120g
+586,CHEESE AND CHEESE DISHES,,Cheese and onion,pastie,125g
+587,CHEESE AND CHEESE DISHES,,Cheese triangle ,"small, Dairylea",14g
+588,CHEESE AND CHEESE DISHES,,Cheese triangle ,Laughing Cow,17g
+589,CHEESE AND CHEESE DISHES,,Cheese triangle ,"large, Dairylea chunky",25g
+590,CHEESE AND CHEESE DISHES,,Cottage cheese ,1 small pot,112g
+591,CHEESE AND CHEESE DISHES,,Cottage cheese ,1 tablespoon,40g
+592,CHEESE AND CHEESE DISHES,,Cottage cheese ,in sandwich,50g
+593,CHEESE AND CHEESE DISHES,,Cream cheese,"pick 'n' mix, each",17g
+594,CHEESE AND CHEESE DISHES,,Cream cheese,"in sandwich, average",30g
+595,CHEESE AND CHEESE DISHES,,Crispy cheese pancake,"purchased frozen, fried",68g
+596,CHEESE AND CHEESE DISHES,,Danish blue,average portion,30g
+597,CHEESE AND CHEESE DISHES,,Edam/Gouda type ,average portion,40g
+598,CHEESE AND CHEESE DISHES,,"Fromage frais, see Yoghurt and fromage frais",,
+599,CHEESE AND CHEESE DISHES,,"Low fat soft cheese, Quark",I heaped tablespoon,55g
+600,CHEESE AND CHEESE DISHES,,Macaroni cheese,average portion,300g
+601,CHEESE AND CHEESE DISHES,,Macaroni cheese,"canned, large tin",430g
+602,CHEESE AND CHEESE DISHES,,Macaroni cheese,small tin,210g
+603,CHEESE AND CHEESE DISHES,,Mini baby bel,each,18g
+604,CHEESE AND CHEESE DISHES,,"Pizza, chilled/frozen",large,350-500g
+605,CHEESE AND CHEESE DISHES,,Pizza,medium,200g
+606,CHEESE AND CHEESE DISHES,,"Pizza, frozen",fun size,40g
+607,CHEESE AND CHEESE DISHES,,Pizza,individual slices,100g
+608,CHEESE AND CHEESE DISHES,,Pizza,small,100g
+609,CHEESE AND CHEESE DISHES,,"Pizza, homemade",average portion,300g
+610,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 5"" diameter, cheese & tomato",average,116g
+611,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 5"" diameter, meat/fish",average,160g
+612,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 5"" diameter, vegetarian",average,150g
+613,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 5"" diameter, 'special'",average,190g
+614,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 6"" diameter, children's, 'special'",average,220g
+615,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 7"" diameter, diameter (serves 1),  cheese & tomato",average,230g
+616,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 7"" diameter, diameter (serves 1), meat/fish",average,290g
+617,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 7"" diameter, diameter (serves 1), vegetarian",average,300g
+618,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 7"" diameter, diameter (serves 1), 'special'",average,360g
+619,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 9-10"" diameter (serves 1-2), cheese & tomato",average,410g
+620,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 9-10"" diameter (serves 1-2), meat/fish",average,500g
+621,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 9-10"" diameter (serves 1-2), vegetarian",average,500g
+622,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 9-10"" diameter (serves 1-2), 'special'",average,580g
+623,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 6"" diameter, 12"" diameter (serves 2-3), cheese & tomato",average,700g
+624,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 6"" diameter, 12"" diameter (serves 2-3), meat/fish",average,800g
+625,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 6"" diameter, 12"" diameter (serves 2-3), vegetarian",average,800g
+626,CHEESE AND CHEESE DISHES,,"Pizza, deep pan, 6"" diameter, 12"" diameter (serves 2-3), 'special'",average,890g
+627,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 7"" diameter (serves 1), cheese & tomato",average,116g
+628,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 7"" diameter (serves 1), cheese & tomato, meat/fish",average,150g
+629,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 7"" diameter (serves 1), cheese & tomato, vegetarian",average,150g
+630,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 7"" diameter (serves 1), cheese & tomato, 'special'",average,190g
+631,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 9-10"" diameter (serves 1-2), cheese & tomato",average,260g
+632,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 9-10"" diameter (serves 1-2), meat/fish",average,310g
+633,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 9-10"" diameter (serves 1-2), vegetarian",average,340g
+634,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 9-10"" diameter (serves 1-2), 'special'",average,350g
+635,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 12"" diameter (serves 2-3), cheese & tomato",average,560g
+636,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 12"" diameter (serves 2-3), meat/fish",average,660g
+637,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 12"" diameter (serves 2-3), 'special'",average,740g
+638,CHEESE AND CHEESE DISHES,,"Pizza, thin crust, 12"" diameter (serves 2-2), vegetarian",average,660g
+639,CHEESE AND CHEESE DISHES,,"Pizza (10"" thin crust, 7"" deep pan), anchovies",Medium,10g
+640,CHEESE AND CHEESE DISHES,,"Pizza (10"" thin crust, 7"" deep pan), cheese",Medium,30g
+641,CHEESE AND CHEESE DISHES,,"Pizza (10"" thin crust, 7"" deep pan),  ham, bacon, pepperoni, salami, sausage",Medium,30g
+642,CHEESE AND CHEESE DISHES,,"Pizza (10"" thin crust, 7"" deep pan), mushroom, pepper, onion, sweetcorn",Medium,30g
+643,CHEESE AND CHEESE DISHES,,"Pizza (10"" thin crust, 7"" deep pan), pineapple",Medium,60g
+644,CHEESE AND CHEESE DISHES,,"Pizza (10"" thin crust, 7"" deep pan), spicy beef, chicken",Medium,30g
+645,CHEESE AND CHEESE DISHES,,"Pizza (10"" thin crust, 7"" deep pan), tuna, olives",Medium,15g
+646,CHEESE AND CHEESE DISHES,,Processed cheese, I slice,20g
+647,CHEESE AND CHEESE DISHES,,Processed cheese,"I triangle, small",14g
+648,CHEESE AND CHEESE DISHES,,"Processed cheese, Dairylea, Laughing Cow",,17g
+649,CHEESE AND CHEESE DISHES,,"Processed cheese, Dairylea chunky","1 triangle, large, ",25g
+650,CHEESE AND CHEESE DISHES,,Stilton,,35g
+651,CHEESE AND CHEESE DISHES,,"Vol au vents, filled with cheese sauce",1 small,30g
+652,CHEESE AND CHEESE DISHES,,"Welsh rarebit, topping only",,40g
+653,CHEESE AND CHEESE DISHES,,"Welsh rarebit, with toast",1 slice,67g
+654,CONFECTIONERY,Nestle Rowntree,Aero milk chocolate,bar,48g
+655,CONFECTIONERY,Nestle Rowntree,Aero milk chocolate,chunky bar,37g
+656,CONFECTIONERY,Nestle Rowntree,Aero milk chocolate,snack size,28g
+657,CONFECTIONERY,Nestle Rowntree,Aero milk chocolate,mini,11g
+658,CONFECTIONERY,Nestle Rowntree,After Eight mints,each,8g
+659,CONFECTIONERY,Nestle Rowntree,American hard gums,tube,45g
+660,CONFECTIONERY,,American hard gums,each,4g
+661,CONFECTIONERY,,Aniseed balls,each,4g
+662,CONFECTIONERY,,"Applause, Mars",standard bar,50g
+663,CONFECTIONERY,,"Applause, Mars",fun size,24g
+664,CONFECTIONERY,,Barker and Dobson menthol BPC,each,8g
+665,CONFECTIONERY,,Barley sugar,piece,7g
+666,CONFECTIONERY,,Barratt's everlasting toffee strip,,22g
+667,CONFECTIONERY,,Barratt's French nougat,bar,114g
+668,CONFECTIONERY,,Barratt's fruit drops,box,115g
+669,CONFECTIONERY,,Barratt's fruit drops,small packet,56g
+670,CONFECTIONERY,,Barratt's fruit drops,each,16g
+671,CONFECTIONERY,,Bassett's jelly babies,box,115g
+672,CONFECTIONERY,,Bassett's jelly babies,small packet,56g
+673,CONFECTIONERY,,Bassett's liquorice Allsorts,box,115g
+674,CONFECTIONERY,,Bassett's liquorice Allsorts,small packet,56g
+675,CONFECTIONERY,,Bassett's liquorice Allsorts,each,5g
+676,CONFECTIONERY,,Bettabar,bar,30g
+677,CONFECTIONERY,Nestle Rowntree,Black Magic,"chocolate assortment, each",8g
+678,CONFECTIONERY,,Blackjacks,each,4g
+679,CONFECTIONERY,,Bonbons,packet,113g
+680,CONFECTIONERY,,"Boost bars, Cadbury's",Biscuit Boost,57g
+681,CONFECTIONERY,,"Boost bars, Cadbury's",snack size,36g
+682,CONFECTIONERY,,"Boost bars, Cadbury's",treat size,21g
+683,CONFECTIONERY,,"Boost bars, Coconut Boost",,53g
+684,CONFECTIONERY,,"Bounty bar, Mars, plain/milk",twin,57g
+685,CONFECTIONERY,,"Bounty bar, Mars",mini,29g
+686,CONFECTIONERY,,"Bournville chocolate, Cadbury's",small bar,50g
+687,CONFECTIONERY,,"Bournville Fruit & Nut bar, Cadbury's",,100g
+688,CONFECTIONERY,,Brazil nut chocolates,each,12g
+689,CONFECTIONERY,,Bubble gum,average each,4g
+690,CONFECTIONERY,,"Bubble gum, bubble hamburger",,6g
+691,CONFECTIONERY,,"Bubble gum, Bubblicious",,5g
+692,CONFECTIONERY,,"Bubble gum, High blow",,8g
+693,CONFECTIONERY,,"Bubble gum, Hubba bubba",,6g
+694,CONFECTIONERY,,"Bubble gum, Super bazooka",,8g
+695,CONFECTIONERY,,Buttermints,each,7g
+696,CONFECTIONERY,,Butterscotch,packet,133g
+697,CONFECTIONERY,,"Buttons, chocolate, Cadbury's",large packet,51g
+698,CONFECTIONERY,,"Buttons, chocolate, Cadbury's",standard packet,33g
+699,CONFECTIONERY,,"Buttons, chocolate, Cadbury's",4 buttons,5g
+700,CONFECTIONERY,,"Buttons, chocolate, Cadbury's",treat size,14g
+701,CONFECTIONERY,,"Buttons, chocolate, Cadbury's, creamy white buttons",packet,32g
+702,CONFECTIONERY,,Cadbury's Bar Six,,40g
+703,CONFECTIONERY,,Cadbury's Caramel,bar,50g
+704,CONFECTIONERY,,Cadbury's Caramel,treat size,17g
+705,CONFECTIONERY,,Cadbury's Caramel Egg,,40g
+706,CONFECTIONERY,,Cadbury's Chomp,,26g
+707,CONFECTIONERY,,Cadbury's Creme Egg,,39g
+708,CONFECTIONERY,,Cadbury's Creme Egg,mini,12g
+709,CONFECTIONERY,,Cadbury's Crunchie,,42g
+710,CONFECTIONERY,,Cadbury's Crunchie,treat size,17g
+711,CONFECTIONERY,,Cadbury's Curly Wurly,,29g
+712,CONFECTIONERY,,"Cadbury's Dairy Milk, chocolate",standard bar,54g
+713,CONFECTIONERY,,"Cadbury's Dairy Milk, chocolate",snack size,30g
+714,CONFECTIONERY,,"Cadbury's Dairy Milk, chocolate",vending,43g
+715,CONFECTIONERY,,"Cadbury's Dairy Milk, chocolate",miniatures,5g
+716,CONFECTIONERY,,"Cadbury's Dairy Milk, chocolate",square,7g
+717,CONFECTIONERY,,"Cadbury's Dairy Milk, chocolate",treat size,15g
+718,CONFECTIONERY,,Cadbury's Double Decker,standard bar,51g
+719,CONFECTIONERY,,Cadbury's Double Decker,treat size,19g
+720,CONFECTIONERY,,Cadbury's Flake,bar,34g
+721,CONFECTIONERY,,"Cadbury's Flake, finger","99, treat size",9g
+722,CONFECTIONERY,,Cadbury's Finger of Fudge,bar,30g
+723,CONFECTIONERY,,Cadbury's Finger of Fudge,treat size,15g
+724,CONFECTIONERY,,"Cadbury's Fruit & Nut milk, chocolate",standard,52g
+725,CONFECTIONERY,,"Cadbury's Fruit & Nut milk, chocolate",snack,30g
+726,CONFECTIONERY,,Cadbury's Golden Crisp,,100g
+727,CONFECTIONERY,,Cadbury's Mini Eggs,packet,85g
+728,CONFECTIONERY,,Cadbury's Mini Eggs,each,3g
+729,CONFECTIONERY,,Cadbury's Nut Crisp,bar,44g
+730,CONFECTIONERY,,Cadbury's Old Jamaica,,100g
+731,CONFECTIONERY,,Cadbury's Picnic,bar,49g
+732,CONFECTIONERY,,Cadbury's Picnic,snack,29g
+733,CONFECTIONERY,,Cadbury's Shoe People,,15g
+734,CONFECTIONERY,,Cadbury's Snack,6 shortbread,42g
+735,CONFECTIONERY,,Cadbury's Snack,1 shortbread,7g
+736,CONFECTIONERY,,Cadbury's Spira,finger,20g
+737,CONFECTIONERY,,Cadbury's Tasters,packet,45g
+738,CONFECTIONERY,,Cadbury's Tiffin,,100g
+739,CONFECTIONERY,,Cadbury's Time Out bar,bar,40g
+740,CONFECTIONERY,,Cadbury's Time Out bar,finger,20g
+741,CONFECTIONERY,,Cadbury's Time Out bar,treat size,20g
+742,CONFECTIONERY,,Cadbury's Top Deck,,100g
+743,CONFECTIONERY,,Cadbury's Twirl,bar,44g
+744,CONFECTIONERY,,Cadbury's Twirl,finger,22g
+745,CONFECTIONERY,,Cadbury's Twirl,treat size,22g
+746,CONFECTIONERY,,Cadbury's Strollers,packet,45g
+747,CONFECTIONERY,,Cadbury's Whole Nut,standard,51g
+748,CONFECTIONERY,,Cadbury's Whole Nut,snack size,30g
+749,CONFECTIONERY,,Cadbury's Wildlife,bar,22g
+750,CONFECTIONERY,,Cadbury's Wispa,standard,39g
+751,CONFECTIONERY,,Cadbury's Wispa,snack size,23g
+752,CONFECTIONERY,,Cadbury's Wispa,treat size,15g
+753,CONFECTIONERY,Nestle Rowntree,Caramac,bar,30g
+754,CONFECTIONERY,,Caramac,per square,3g
+755,CONFECTIONERY,,Chewetts,packet,18g
+756,CONFECTIONERY,,Chewetts,each,3g
+757,CONFECTIONERY,,Chewing gum,average packet,18g
+758,CONFECTIONERY,,Chewing gum,stick,2g
+759,CONFECTIONERY,,"Chews, fruit salad",each,4g
+760,CONFECTIONERY,,Chewy mints,tube,39g
+761,CONFECTIONERY,,Chewy mints,each,3g
+762,CONFECTIONERY,,Chocolate almonds,each,3g
+763,CONFECTIONERY,,"Chocolate assortments, Cadbury's",each,10g
+764,CONFECTIONERY,,Chocolate brazils,each,12g
+765,CONFECTIONERY,,Chocolate covered ginger,each,8g
+766,CONFECTIONERY,,Chocolate eclairs,tube,46g
+767,CONFECTIONERY,,Chocolate eclairs,each,9g
+768,CONFECTIONERY,,Chocolate mice,"large, each",6g
+769,CONFECTIONERY,,Chocolate mice,"small, each",3g
+770,CONFECTIONERY,,"Chocolate nuts, M & M's, Mars",packet,47g
+771,CONFECTIONERY,,Chocolate orange/mint crisp,each,10g
+772,CONFECTIONERY,,"Chocolate orange, Terry's",bar,49g
+773,CONFECTIONERY,,"Clear mints, glacier mints",tube,38g
+774,CONFECTIONERY,,Coconut Grove,,55g
+775,CONFECTIONERY,,Coconut ice,,125g
+776,CONFECTIONERY,,"Cola bottles, (jelly)",each,3g
+777,CONFECTIONERY,,Cola sweets,each,4g
+778,CONFECTIONERY,,Cote D'or chocolate,1 square,8g
+779,CONFECTIONERY,,Creamy fudge,1 inch square,11g
+780,CONFECTIONERY,Nestle Rowntree,Crunch,bar,31g
+781,CONFECTIONERY,Nestle Rowntree,"Crunch, Milk",bar,33g
+782,CONFECTIONERY,,"Dextrosol, glucose tablet",each,7g
+783,CONFECTIONERY,,Dime bar,,30g
+784,CONFECTIONERY,,Dime bar,snack size,13g
+785,CONFECTIONERY,,Dolly mixtures,box,115g
+786,CONFECTIONERY,,Dolly mixtures,bag,56g
+787,CONFECTIONERY,Nestle Rowntree,Drifter bar,standard size,56g
+788,CONFECTIONERY,,Drifter bar,per finger,28g
+789,CONFECTIONERY,,Edinburgh rock,average stick,100g
+790,CONFECTIONERY,,Cadbury's caramel egg,each,40g
+791,CONFECTIONERY,,Cadbury's mini creme egg,each,12g
+792,CONFECTIONERY,,Cadbury's mini eggs,each,3g
+793,CONFECTIONERY,,Creme eggs,each,39g
+794,CONFECTIONERY,,"Nutcracker, Terry's",per half shell,18g
+795,CONFECTIONERY,,"Truffle eggs, Galaxy ",per half shell,17g
+796,CONFECTIONERY,,Everton mints,each,6g
+797,CONFECTIONERY,,"Extra strong mints, Trebor",tube,51g
+798,CONFECTIONERY,,"Fisherman's Friend throat, lozenges",each,1g
+799,CONFECTIONERY,,Fizzers,packet,4g
+800,CONFECTIONERY,,"Flump, pink marshmallow shape",each,2g
+801,CONFECTIONERY,,Fruit hon bons,each,7g
+802,CONFECTIONERY,,Fruit drops,tube,16g
+803,CONFECTIONERY,Nestle Rowntree,Fruit gums,tube,40g
+804,CONFECTIONERY,,Fruit gums,each,2g
+805,CONFECTIONERY,Nestle Rowntree,Fruit pastilles,tube,42g
+806,CONFECTIONERY,,Fruit pastilles,mini,18g
+807,CONFECTIONERY,,Fruit pastilles,each,3g
+808,CONFECTIONERY,,Fruit salad chews,each,4g
+809,CONFECTIONERY,,Fruitellas,tube,34g
+810,CONFECTIONERY,,Fruitellas,each,4g
+811,CONFECTIONERY,,Fry's chocolate cream,bar,50g
+812,CONFECTIONERY,,Fry's turkish delight,bar,51g
+813,CONFECTIONERY,,"Fudge, no additions",1 inch square,11g
+814,CONFECTIONERY,,"Fudge finger, Cadbury's",,30g
+815,CONFECTIONERY,,"Fudge finger, Cadbury's",treat size,15g
+816,CONFECTIONERY,,Galaxy,bar,47g
+817,CONFECTIONERY,,Galaxy Gold,bar,43g
+818,CONFECTIONERY,,Galaxy truffle egg,,34g
+819,CONFECTIONERY,,"Ginger, chocolate covered",each,8g
+820,CONFECTIONERY,,Glacier fruits,tube,38g
+821,CONFECTIONERY,,"Glacier mints, clear mints",tube,38g
+822,CONFECTIONERY,,Glacier mints,each,3g
+823,CONFECTIONERY,,Gohstoppers,each,8g
+824,CONFECTIONERY,Nestle Rowntree,Golden cup bar,large,60g
+825,CONFECTIONERY,Nestle Rowntree,Golden cup bar,standard,37g
+826,CONFECTIONERY,Nestle Rowntree,Golden cup bar,small,22g
+827,CONFECTIONERY,,"Hacks, throat lozenges",each,3g
+828,CONFECTIONERY,,Hall mentholyptus,packet,32g
+829,CONFECTIONERY,,"Halo Chocolate, reduced calorie",bar,29g
+830,CONFECTIONERY,,Haribo Gummi bears,packet,125g
+831,CONFECTIONERY,,Hazel whirls,each,8g
+832,CONFECTIONERY,,Highland toffee bar,,15g
+833,CONFECTIONERY,,Humbugs,each,8g
+834,CONFECTIONERY,,Jelly animal,each,12g
+835,CONFECTIONERY,,"Jelly babies, Bassetts",box,113g
+836,CONFECTIONERY,,"Jelly babies, Bassetts",small bag,56g
+837,CONFECTIONERY,,"Jelly babies, Bassetts",each,6g
+838,CONFECTIONERY,,Jelly beans,each,3g
+839,CONFECTIONERY,,"Jelly bears, Gwnmi bears",packet,125g
+840,CONFECTIONERY,,Jelly bottles,each,3g
+841,CONFECTIONERY,,Jelly shapes,each,5g
+842,CONFECTIONERY,Nestle Rowntree,Jelly tots,packet,43g
+843,CONFECTIONERY,Nestle Rowntree,Jelly tots,mini pack,25g
+844,CONFECTIONERY,Nestle Rowntree,Jelly tots,each,1g
+845,CONFECTIONERY,Nestle Rowntree,Kit Kat,4 fingers,49g
+846,CONFECTIONERY,Nestle Rowntree,Kit Kat,2 fingers,22g
+847,CONFECTIONERY,,KP chocolate/toffee dips,,34g
+848,CONFECTIONERY,,KP chocolate/toffee dips,biscuits,17g
+849,CONFECTIONERY,,KP chocolate/toffee dips,dip,17g
+850,CONFECTIONERY,,Krunch,bar,31g
+851,CONFECTIONERY,Nestle Rowntree,Lion bar,standard size,53g
+852,CONFECTIONERY,Nestle Rowntree,Lion bar,snack size,34g
+853,CONFECTIONERY,Nestle Rowntree,Lion bar,mini,16g
+854,CONFECTIONERY,,Liqueur chocolates,each,8g
+855,CONFECTIONERY,,"Liquorice Allsorts, Bassetts",box,113g
+856,CONFECTIONERY,,"Liquorice Allsorts, Bassetts",small bag,56g
+857,CONFECTIONERY,,Liquorice shoelace,each,6g
+858,CONFECTIONERY,,Liquorice sticks,each,3g
+859,CONFECTIONERY,,Liquorice toffees,each,8g
+860,CONFECTIONERY,,Liquorice torpedoes,packet,76g
+861,CONFECTIONERY,,Liquorice torpedoes,6 torpedoes,10g
+862,CONFECTIONERY,,Lockets throat lozenges,packet,43g
+863,CONFECTIONERY,,"Logger fruit and nut chocolate, Terry's",bar,50g
+864,CONFECTIONERY,,"Logger milk chocolate, Terry's",bar,50g
+865,CONFECTIONERY,,Lollipops,each,5g
+866,CONFECTIONERY,,Lovehearts,packet,16g
+867,CONFECTIONERY,,Lucozade tablets,each,4g
+868,CONFECTIONERY,,"M & M's, Mars, plain",,45g
+869,CONFECTIONERY,,"M & M's, Mars, peanut",,47g
+870,CONFECTIONERY,,"M & M's, Mars, plain/peanut, family bag",,120g
+871,CONFECTIONERY,,Mac throat lozenges,each,3g
+872,CONFECTIONERY,,"Maltesers, Mars",family bag,80g
+873,CONFECTIONERY,,"Maltesers, Mars",standard bag,37g
+874,CONFECTIONERY,,"Maltesers, Mars",each,2g
+875,CONFECTIONERY,,"Maltesers, Mars",funsize,21g
+876,CONFECTIONERY,,Mars almond snack bar,,38g
+877,CONFECTIONERY,,Mars bar,kingsize,100g
+878,CONFECTIONERY,,Mars bar,standard,65g
+879,CONFECTIONERY,,Mars bar,snack,42g
+880,CONFECTIONERY,,Mars bar,funsize,19g
+881,CONFECTIONERY,,Marshmallows,each,5g
+882,CONFECTIONERY,,Marshmallows,bag,40g
+883,CONFECTIONERY,,Marzipan fruits,each,12g
+884,CONFECTIONERY,,Matchmakers,each,2g
+885,CONFECTIONERY,,Milk chew,each,4g
+886,CONFECTIONERY,,Milk chocolate assortment,each,10g
+887,CONFECTIONERY,,Milk chocolate bar,average,50g
+888,CONFECTIONERY,,Milk chocolate bar,1 square,7g
+889,CONFECTIONERY,,Milk chocolate raisins,packet,44g
+890,CONFECTIONERY,,Milk chocolate raisins,each,2g
+891,CONFECTIONERY,,Milk gums,each,2g
+892,CONFECTIONERY,,Milkybar,chunky,37g
+893,CONFECTIONERY,,Milkybar,large,33g
+894,CONFECTIONERY,,Milkybar,medium,20g
+895,CONFECTIONERY,,Milkybar,standard,13g
+896,CONFECTIONERY,Nestle Rowntree,Milkybar buttons,bag,30g
+897,CONFECTIONERY,,"Milky Way, Mars",standard,26g
+898,CONFECTIONERY,,"Milky Way, Mars",funsize,17g
+899,CONFECTIONERY,,"Minstrels, Galaxy",family bag,100g
+900,CONFECTIONERY,,"Minstrels, Galaxy",bag,42g
+901,CONFECTIONERY,,"Minstrels, Galaxy",each,3g
+902,CONFECTIONERY,,Mint imperials,each,2g
+903,CONFECTIONERY,Nestle Rowntree,Minties,tube,44g
+904,CONFECTIONERY,Nestle Rowntree,Minties,each,4g
+905,CONFECTIONERY,Nestle Rowntree,Mintolas,standard tube,62g
+906,CONFECTIONERY,,Mintolas,mini tube,21g
+907,CONFECTIONERY,,Mintolas,each,4g
+908,CONFECTIONERY,,"Mints, Trebor, extra strong",per tube,51g
+909,CONFECTIONERY,,"Mints, Trebor, extra strong",each,3g
+910,CONFECTIONERY,,"Moments, Terry's",bar,48g
+911,CONFECTIONERY,,"Murray fruits, Murray mints",tube,50g
+912,CONFECTIONERY,,"Murray fruits, Murray mints",each,5g
+913,CONFECTIONERY,Nestle Rowntree,Munchies,standard tube,55g
+914,CONFECTIONERY,,Munchies,mini tube,18g
+915,CONFECTIONERY,,Munchies,each,5g
+916,CONFECTIONERY,,"Munchies, hazlenut",tube,57g
+917,CONFECTIONERY,,"Munchies, hazlenut",each,5g
+918,CONFECTIONERY,,"Neapolitans, Terry's nap",each,8g
+919,CONFECTIONERY,,Newberry fruits,each,9g
+920,CONFECTIONERY,,Noisette cup,each,8g
+921,CONFECTIONERY,,Nougat,large bar,114g
+922,CONFECTIONERY,,Nougat,small bar,70g
+923,CONFECTIONERY,,Nougat,sweet,10g
+924,CONFECTIONERY,,Opal fruits,packet,114g
+925,CONFECTIONERY,,Opal fruits,tube,45g
+926,CONFECTIONERY,,Opal fruits,fun size,21g
+927,CONFECTIONERY,,Opal fruits,each,4g
+928,CONFECTIONERY,,Orange and lemon slices,each,5g
+929,CONFECTIONERY,,Orbit gum,stick,2g
+930,CONFECTIONERY,,Parma violets,packet,16g
+931,CONFECTIONERY,,Parma violets,each,1g
+932,CONFECTIONERY,Nestle Rowntree,"Pastilles, fruit",tube,40g
+933,CONFECTIONERY,,"Pastilles, fruit",each,3g
+934,CONFECTIONERY,,Peanut brittle,bar,58g
+935,CONFECTIONERY,,Pear drops,"large, each",6g
+936,CONFECTIONERY,,Pear drops,"small, each",2g
+937,CONFECTIONERY,,Penny chew,each,4g
+938,CONFECTIONERY,,"Peppermint creams, not chocolate covered",,6g
+939,CONFECTIONERY,,"Peppermint creams, chocolate covered",,7g
+940,CONFECTIONERY,,Pineapple chunks,each,5g
+941,CONFECTIONERY,Nestle Rowntree,Polo fruits,tube,30g
+942,CONFECTIONERY,Nestle Rowntree,Polo mints,tube,30g
+943,CONFECTIONERY,,Polo mints,mini tube,13g
+944,CONFECTIONERY,,Polo mints,each,2g
+945,CONFECTIONERY,,Pontefract cakes,each,4g
+946,CONFECTIONERY,,"Poppets, Paynes",box,45g
+947,CONFECTIONERY,,"Pyramint, Terry's",,30g
+948,CONFECTIONERY,Nestle Rowntree,"Quality Street, chocolate assortment",each,8g
+949,CONFECTIONERY,,Refreshers,tube,14g
+950,CONFECTIONERY,,Refreshers,each,1g
+951,CONFECTIONERY,,"Revels, Mars",family packet,105g
+952,CONFECTIONERY,,"Revels, Mars",packet,35g
+953,CONFECTIONERY,,"Revels, Mars",each,2g
+954,CONFECTIONERY,,"Ripple bar, Galaxy",,22g
+955,CONFECTIONERY,,Ritter chocolate bars,all types,100g
+956,CONFECTIONERY,,Rock,1 average stick,100g
+957,CONFECTIONERY,Nestle Rowntree,Rolo Egg,each,34g
+958,CONFECTIONERY,Nestle Rowntree,Rolos,tube,58g
+959,CONFECTIONERY,,Rolos,mini tube,27g
+960,CONFECTIONERY,,Rolos,each,5g
+961,CONFECTIONERY,,"Ruffle bar, Cadbury's",,28g
+962,CONFECTIONERY,,Rum and raisin fudge,1 square inch,11g
+963,CONFECTIONERY,,Rum and raisin toffee,each,8g
+964,CONFECTIONERY,Nestle Rowntree,Secret,bar,39g
+965,CONFECTIONERY,,Sesame snaps,packet,30g
+966,CONFECTIONERY,,Sherbet bon bons,each,7g
+967,CONFECTIONERY,,"Sherbet Dib Dab, Barratts, lolly",,5g
+968,CONFECTIONERY,,"Sherbet Dib Dab, Barratts, sherbet",,14g
+969,CONFECTIONERY,,"Sherbet Fountain, Swizzles, sherbet",,24g
+970,CONFECTIONERY,,"Sherbet Fountain, Swizzles, liquorice",,5g
+971,CONFECTIONERY,,Sherbet bolly,,5g
+972,CONFECTIONERY,,Sherbet pips,each,1g
+973,CONFECTIONERY,,Skittles,family bag,125g
+974,CONFECTIONERY,,Skittles,packet,60g
+975,CONFECTIONERY,,Skittles,fun size,23g
+976,CONFECTIONERY,Nestle Rowntree,Smarties,tube,37g
+977,CONFECTIONERY,Nestle Rowntree,Smarties,mini box,15g
+978,CONFECTIONERY,,"Snickers bar, Mars",king size,100g
+979,CONFECTIONERY,,"Snickers bar, Mars",standard,61g
+980,CONFECTIONERY,,"Snickers bar, Mars",snack bar,38g
+981,CONFECTIONERY,,"Snickers bar, Mars",fun size,19g
+982,CONFECTIONERY,,Soft mints,tube,45g
+983,CONFECTIONERY,,Strepsils throat lozenges,each,3g
+984,CONFECTIONERY,,Suchard chocolate bars,standard,100g
+985,CONFECTIONERY,,Suchard praline milk chocolate bar,,42g
+986,CONFECTIONERY,,Suchard Toblerone,very large,400g
+987,CONFECTIONERY,,Suchard Toblerone,large,200g
+988,CONFECTIONERY,,Suchard Toblerone,medium,100g
+989,CONFECTIONERY,,Suchard Toblerone,small,50g
+990,CONFECTIONERY,,Suchard Toblerone,mini,35g
+991,CONFECTIONERY,,Sugared almonds,each,6g
+992,CONFECTIONERY,,Sweet cigarette,each,7g
+993,CONFECTIONERY,,"Tasters, Cadbury's",bag,45g
+994,CONFECTIONERY,,Terry's Bitz,bar,50g
+995,CONFECTIONERY,,"Terry's Chocolate orange, milk/plain",bar,49g
+996,CONFECTIONERY,,Terry's Crispy Caramel,,45g
+997,CONFECTIONERY,,Terry's Logger,bar,50g
+998,CONFECTIONERY,,Terry's Moments,bar,48g
+999,CONFECTIONERY,,"Terry's Neapolitans, 'naps'",each,8g
+1000,CONFECTIONERY,,Terry's Orange chocolate,1 piece,9g
+1001,CONFECTIONERY,,Terry's plain chocolate bar,large,150g
+1002,CONFECTIONERY,,Terry's plain chocolate bar,medium,100g
+1003,CONFECTIONERY,,Terry's plain chocolate bar,small,50g
+1004,CONFECTIONERY,,Terry's plain chocolate bar with marzipan,,41g
+1005,CONFECTIONERY,,"Terry's Waifa bar, plain or milk chocolate",,35g
+1006,CONFECTIONERY,,Throat pastilles,each,2g
+1007,CONFECTIONERY,,Tic-Tacs,box,12g
+1008,CONFECTIONERY,,"Toblerone, Suchard",large,200g
+1009,CONFECTIONERY,,"Toblerone, Suchard",medium,100g
+1010,CONFECTIONERY,,"Toblerone, Suchard",small,50g
+1011,CONFECTIONERY,,"Toblerone, Suchard",mini,35g
+1012,CONFECTIONERY,,Toffee Cup,,23g
+1013,CONFECTIONERY,Nestle Rowntree,Toffee Crisp,standard,48g
+1014,CONFECTIONERY,,Toffee Crisp,snack size,33g
+1015,CONFECTIONERY,,Toffee Crisp,mini,18g
+1016,CONFECTIONERY,,Toffee egg,,20g
+1017,CONFECTIONERY,,"Toffees, not chocolate covered, no additions",each,8g
+1018,CONFECTIONERY,,"Toffos, plain/mint/assorted",tube,47g
+1019,CONFECTIONERY,,"Toffos, plain/mint/assorted",each,5g
+1020,CONFECTIONERY,,Tooty Frooties,bag,41g
+1021,CONFECTIONERY,,Topic,bar,47g
+1022,CONFECTIONERY,,Tracker,standard bar,37g
+1023,CONFECTIONERY,,Tracker,"grocer pack (6 pack), each",27g
+1024,CONFECTIONERY,,Tracker buttermunch,,18g
+1025,CONFECTIONERY,,Trebor mints,packet,28g
+1026,CONFECTIONERY,,Trebor soft fruits,packet,45g
+1027,CONFECTIONERY,,Tunes throat lozenges,packet,37g
+1028,CONFECTIONERY,,Tunes throat lozenges,each,3g
+1029,CONFECTIONERY,,"Turkish delight, Fry's",chocolate covered bar,51g
+1030,CONFECTIONERY,,Turkish delight,1 square,15g
+1031,CONFECTIONERY,,"Twix, Mars",standard,56g
+1032,CONFECTIONERY,,"Twix, Mars",single finger,28g
+1033,CONFECTIONERY,,"Twix, Mars",mini,21g
+1034,CONFECTIONERY,,"Twix, Tea breaks",,28g
+1035,CONFECTIONERY,,Victory V's,packet,50g
+1036,CONFECTIONERY,Nestle Rowntree,Vice Versa,packet,47g
+1037,CONFECTIONERY,Nestle Rowntree,Walnut Whip,each,32g
+1038,CONFECTIONERY,,Wine gums,each,3g
+1039,CONFECTIONERY,,Wrigley's chewing gum,stick,2g
+1040,CONFECTIONERY,,XXX Mints,tube,48g
+1041,CONFECTIONERY,,XXX Mints,each,3g
+1042,CONFECTIONERY,,Yes,packet,37g
+1043,CONFECTIONERY,,Yoghurt coated peanuts and raisins,each,1g
+1044,CONFECTIONERY,Nestle Rowntree,"Yorkie, almond",,60g
+1045,CONFECTIONERY,Nestle Rowntree,Yorkie milk chocolate bar,,66g
+1046,CONFECTIONERY,,Yorkie milk chocolate bar,1 chunk,10g
+1047,CONFECTIONERY,Nestle Rowntree,"Yorkie, raisin and biscuit",,61g
+1048,EGG AND EGG DISHES,,Egg custard average portion,,140g
+1049,EGG AND EGG DISHES,,"Egg, duck's boiled, no shell",average size,75g
+1050,EGG AND EGG DISHES,,Egg fried rice average portion,,270g
+1051,EGG AND EGG DISHES,,"Egg, hen's, boiled, no shell",average size,50g
+1052,EGG AND EGG DISHES,,"Egg, hen's, no shell",size 1,67g
+1053,EGG AND EGG DISHES,,"Egg, hen's, no shell",size 2,61g
+1054,EGG AND EGG DISHES,,"Egg, hen's, no shell",size 3,57g
+1055,EGG AND EGG DISHES,,"Egg, hen's, no shell",size 4,47g
+1056,EGG AND EGG DISHES,,"Egg, hen's, dried egg",1 tablespoon,5g
+1057,EGG AND EGG DISHES,,"Egg, hen's, white ",average size,32g
+1058,EGG AND EGG DISHES,,"Egg, hen's, yolk ",average size,18g
+1059,EGG AND EGG DISHES,,Egg mayonnaise,average portion,120g
+1060,EGG AND EGG DISHES,,Fried egg,average,60g
+1061,EGG AND EGG DISHES,,Omelette,2 eggs,120g
+1062,EGG AND EGG DISHES,,Poached egg,average size,50g
+1063,EGG AND EGG DISHES,,Quiche ,"average slice, small, (1/4 purchased quiche)",95g
+1064,EGG AND EGG DISHES,,Quiche ,medium,140g
+1065,EGG AND EGG DISHES,,Quiche ,large,180g
+1066,EGG AND EGG DISHES,,Quiche ,mini,40g
+1067,EGG AND EGG DISHES,,Scotch egg,average size,120g
+1068,EGG AND EGG DISHES,,Scotch egg,"mini, picnic egg",60g
+1069,EGG AND EGG DISHES,,Scrambled egg,2 eggs,120g
+1070,EGG AND EGG DISHES,,Souffle,average portion,110g
+1071,EGG AND EGG DISHES,,"Yorkshire pudding -  see Pasta, rice and grains",,
+1072,FATS,,Butter or hard margarine ,"average spread on slice of bread, thin",7g
+1073,FATS,,Butter or hard margarine ,medium,10g
+1074,FATS,,Butter or hard margarine ,thick,12g
+1075,FATS,,Butter or hard margarine ,"average spread on roll, thin",10g
+1076,FATS,,Butter or hard margarine ,medium,12g
+1077,FATS,,Butter or hard margarine ,thick,15g
+1078,FATS,,Butter or hard margarine ,average spread on toasted crumpet,15g
+1079,FATS,,Butter or hard margarine ,1 curl,8g
+1080,FATS,,Butter or hard margarine ,"1 portion, packed",10g
+1081,FATS,,Butter or hard margarine ,"1 restaurant portion, not packed",20g
+1082,FATS,,Butter or hard margarine ,1 teaspoon,5g
+1083,FATS,,Butter in 'boil in the bag',,15g
+1084,FATS,,Butter/margarine in baked potato,,20g
+1085,FATS,,Flora,1 portion pack,10g
+1086,FATS,,Oil,1 tablespoon,11g
+1087,FATS,,Oil,1 teaspoon,3g
+1088,FATS,,"Margarine, soft, low fat spread","average spread on slice of bread, thin",5g
+1089,FATS,,"Margarine, soft, low fat spread",medium,7g
+1090,FATS,,"Margarine, soft, low fat spread",thick,10g
+1091,FATS,,"Margarine, soft, low fat spread","average spread on roll, thin",7g
+1092,FATS,,"Margarine, soft, low fat spread",medium,10g
+1093,FATS,,"Margarine, soft, low fat spread",thick,12g
+1094,FATS,,"Margarine, soft, low fat spread",average spread on toasted crumpet,10g
+1095,FATS,,"Margarine, soft, low fat spread",thin scraping on crispbread,2g
+1096,FATS,,"Margarine, soft, low fat spread",1 teaspoon,5g
+1097,FISH AND FISH PRODUCTS,,Anchovy ,1 anchovy,3g
+1098,FISH AND FISH PRODUCTS,,Anchovy ,1 small tin,50g
+1099,FISH AND FISH PRODUCTS,,Anchovy ,average on pizza,10g
+1100,FISH AND FISH PRODUCTS,,Caviar ,1 tablespoon,19g
+1101,FISH AND FISH PRODUCTS,,Cockle ,1 cockle,4g
+1102,FISH AND FISH PRODUCTS,,Cockle ,small jar,142g
+1103,FISH AND FISH PRODUCTS,,Cockle ,average portion,25g
+1104,FISH AND FISH PRODUCTS,,Cod,"1 average fillet, small",50g
+1105,FISH AND FISH PRODUCTS,,Cod,medium,120g
+1106,FISH AND FISH PRODUCTS,,Cod,large,175g
+1107,FISH AND FISH PRODUCTS,,Cod,1 average steak,50g
+1108,FISH AND FISH PRODUCTS,,Cod,"in batter, small",120g
+1109,FISH AND FISH PRODUCTS,,Cod,medium,180g
+1110,FISH AND FISH PRODUCTS,,Cod,large,225g
+1111,FISH AND FISH PRODUCTS,,Cod,"in batter or crumb, oven crispy",100g
+1112,FISH AND FISH PRODUCTS,,Cod,"in sauce, purchased, frozen",170g
+1113,FISH AND FISH PRODUCTS,,Cod roe,average portion fried or grilled,116g
+1114,FISH AND FISH PRODUCTS,,Cod roe,"in batter, average portion",160g
+1115,FISH AND FISH PRODUCTS,,"Conger eel,  grilled with bones",average portion,225g
+1116,FISH AND FISH PRODUCTS,,"Conger eel, grilled without bones",average portion,115g
+1117,FISH AND FISH PRODUCTS,,Crab,1 tablespoon crab meat,40g
+1118,FISH AND FISH PRODUCTS,,Crab,1 small can,85g
+1119,FISH AND FISH PRODUCTS,,Crab,1 large can,170g
+1120,FISH AND FISH PRODUCTS,,Crab,"1 average dressed crab, no shell",130g
+1121,FISH AND FISH PRODUCTS,,Crabstick,1 stick,17g
+1122,FISH AND FISH PRODUCTS,,Dogfish - see rock salmon,,
+1123,FISH AND FISH PRODUCTS,,Dover sole," 1 whole, average, with bone",250g
+1124,FISH AND FISH PRODUCTS,,Eel,"1 slice, 5"" long",20g
+1125,FISH AND FISH PRODUCTS,,Eel,average portion,70g
+1126,FISH AND FISH PRODUCTS,McDonald's,Filet-o-fish,,156g
+1127,FISH AND FISH PRODUCTS,,"Fish and pasta bake, purchased ready meal",average,275g
+1128,FISH AND FISH PRODUCTS,,Fish cakes,I fried in batter,100g
+1129,FISH AND FISH PRODUCTS,,Fish cakes,"1 frozen, fried or grilled",50g
+1130,FISH AND FISH PRODUCTS,,Fish fingers,"1 fish finger, fried or grilled",28g
+1131,FISH AND FISH PRODUCTS,,Fish fingers,1 jumbo size fish finger,60g
+1132,FISH AND FISH PRODUCTS,,Fish in a bun,"BurgerKing, Ocean Catch (bun and fish)",175g
+1133,FISH AND FISH PRODUCTS,,Fish in a bun,"fried fish in a bun, fish only",75g
+1134,FISH AND FISH PRODUCTS,,Fish in batter,"fast food outlet, average",160g
+1135,FISH AND FISH PRODUCTS,,Fish in batter,"fish and chip shop, average",170g
+1136,FISH AND FISH PRODUCTS,,Fish in sauce,"frozen, purchased",170g
+1137,FISH AND FISH PRODUCTS,,Fish lasagne,"purchased ready meal for one, average",290g
+1138,FISH AND FISH PRODUCTS,,Fish paste,1 small jar,35g
+1139,FISH AND FISH PRODUCTS,,Fish paste,1 medium jar,53g
+1140,FISH AND FISH PRODUCTS,,Fish paste,1 large jar,75g
+1141,FISH AND FISH PRODUCTS,,Fish paste,average spread on slice of bread,10g
+1142,FISH AND FISH PRODUCTS,,Fish pate,"average portion, as starter",40g
+1143,FISH AND FISH PRODUCTS,,"Fish pie, (fish and pastry)",average serving,170g
+1144,FISH AND FISH PRODUCTS,,"Fish pie, (fish and potato, not pastry)",average serving,250g
+1145,FISH AND FISH PRODUCTS,,"Fish pie, (fish and potato, not pastry)",purchased frozen ready meal for one,320g
+1146,FISH AND FISH PRODUCTS,,Grey mullet,"I average whole, grilled",100g
+1147,FISH AND FISH PRODUCTS,,Haddock,"1 grilled fillet, small",50g
+1148,FISH AND FISH PRODUCTS,,Haddock,medium,120g
+1149,FISH AND FISH PRODUCTS,,Haddock,large,170g
+1150,FISH AND FISH PRODUCTS,,Haddock,"1 average fillet fried in batter, small",120g
+1151,FISH AND FISH PRODUCTS,,Haddock,medium,170g
+1152,FISH AND FISH PRODUCTS,,Haddock,large,220g
+1153,FISH AND FISH PRODUCTS,,"Haddock, oven baked",1 average fillet,100g
+1154,FISH AND FISH PRODUCTS,,"Haddock, , breadcrumbed, fried or grilled","1 average fillet, purchased",120g
+1155,FISH AND FISH PRODUCTS,,"Haddock, smoked, poached",1 average fillet,150g
+1156,FISH AND FISH PRODUCTS,,Hake,1 average steak,100g
+1157,FISH AND FISH PRODUCTS,,"Halibut, poached",average portion,110g
+1158,FISH AND FISH PRODUCTS,,"Halibut, grilled",1 average steak,145g
+1159,FISH AND FISH PRODUCTS,,Herring,"1 filleted, small",85g
+1160,FISH AND FISH PRODUCTS,,Herring,medium,119g
+1161,FISH AND FISH PRODUCTS,,"Herring, filleted in tomato sauce",1 can,200g
+1162,FISH AND FISH PRODUCTS,,"Herring, pickled",1 roll mop herring,90g
+1163,FISH AND FISH PRODUCTS,,"Herring roe, fried / grilled",average portion ,85g
+1164,FISH AND FISH PRODUCTS,,"Hoki, grilled",1 average fillet,190g
+1165,FISH AND FISH PRODUCTS,,Kedgeree,average portion,300g
+1166,FISH AND FISH PRODUCTS,,King prawn,"1, no shell",8g
+1167,FISH AND FISH PRODUCTS,,Kipper,"1 grilled fillet, small",85g
+1168,FISH AND FISH PRODUCTS,,Kipper,medium,130g
+1169,FISH AND FISH PRODUCTS,,Kipper,large,170g
+1170,FISH AND FISH PRODUCTS,,"Kipper, 'Boil-in-the-bag', with butter",1 boiled,170g
+1171,FISH AND FISH PRODUCTS,,"Kipper, fillets",1 can ,200g
+1172,FISH AND FISH PRODUCTS,,"Lemon sole, grilled, fried or steamed","1 average, small",100g
+1173,FISH AND FISH PRODUCTS,,"Lemon sole, grilled, fried or steamed","1 average, medium",170g
+1174,FISH AND FISH PRODUCTS,,"Lemon sole, grilled, fried or steamed","1 average, large",220g
+1175,FISH AND FISH PRODUCTS,,Lobster,"average portion, 2 tablespoons",85g
+1176,FISH AND FISH PRODUCTS,,Lobster,"half dressed lobster, with shell",250g
+1177,FISH AND FISH PRODUCTS,,"Mackerel, fried",1 whole fried mackerel,220g
+1178,FISH AND FISH PRODUCTS,,"Mackerel, grilled",average portion,160g
+1179,FISH AND FISH PRODUCTS,,"Mackerel, smoked","1 average, small",100g
+1180,FISH AND FISH PRODUCTS,,"Mackerel, smoked",medium,150g
+1181,FISH AND FISH PRODUCTS,,"Mackerel, smoked",large,200g
+1182,FISH AND FISH PRODUCTS,,"Mackerel, in oil",1 small can,200g
+1183,FISH AND FISH PRODUCTS,,"Mackerel, in oil",large can,425g
+1184,FISH AND FISH PRODUCTS,,"Mackerel in curry,tomato,mustard sauce",1 can ,125g
+1185,FISH AND FISH PRODUCTS,,"Monkfish, grilled",average portion,70g
+1186,FISH AND FISH PRODUCTS,,"Mussels, no shell",1 mussel,7g
+1187,FISH AND FISH PRODUCTS,,"Mussels, no shells",1 average portion,40g
+1188,FISH AND FISH PRODUCTS,,Mussels,1 jar mussels small,80g
+1189,FISH AND FISH PRODUCTS,,Mussels,large,198g
+1190,FISH AND FISH PRODUCTS,,"Mussels, smoked",1 small tin,105g
+1191,FISH AND FISH PRODUCTS,,Oysters,1 oyster with shell,42g
+1192,FISH AND FISH PRODUCTS,,Oysters,1 oyster without shell,10g
+1193,FISH AND FISH PRODUCTS,,Oysters,"1 dozen oysters, edible portion",120g
+1194,FISH AND FISH PRODUCTS,,Oysters,1 can smoked oysters,105g
+1195,FISH AND FISH PRODUCTS,,"Paella, frozen, purchased",,284g
+1196,FISH AND FISH PRODUCTS,,"Pilchards, in tomato sauce",1 canned pilchard,55g
+1197,FISH AND FISH PRODUCTS,,Pilchards,"1 can, small",215g
+1198,FISH AND FISH PRODUCTS,,Pilchards,large,425g
+1199,FISH AND FISH PRODUCTS,,"Plaice, steamed or grilled, small",1 average fillet plaice,75g
+1200,FISH AND FISH PRODUCTS,,"Plaice, steamed or grilled, small","1 average fillet plaice, medium",130g
+1201,FISH AND FISH PRODUCTS,,"Plaice, steamed or grilled, small","1 average fillet plaice, large",180g
+1202,FISH AND FISH PRODUCTS,,"Plaice, in breadcrumbs","1 average fillet plaice, fried, small",90g
+1203,FISH AND FISH PRODUCTS,,"Plaice, in breadcrumbs","1 average fillet plaice, medium",150g
+1204,FISH AND FISH PRODUCTS,,"Plaice, in breadcrumbs","1 average fillet plaice, large",200g
+1205,FISH AND FISH PRODUCTS,,"Plaice, in batter, fried","1 average fillet plaice,  small",150g
+1206,FISH AND FISH PRODUCTS,,"Plaice, in batter, fried","1 average fillet plaice, medium",200g
+1207,FISH AND FISH PRODUCTS,,"Plaice, in batter, fried","1 average fillet plaice,  large",250g
+1208,FISH AND FISH PRODUCTS,,"Plaice, in batter or crumb, oven ready",1 average whole plaice ,112g
+1209,FISH AND FISH PRODUCTS,,"Plaice, purchased frozen",1 average whole stuffed plaice,190g
+1210,FISH AND FISH PRODUCTS,,"Prawns, without shell",1 prawn,3g
+1211,FISH AND FISH PRODUCTS,,"Prawns, shelled",1 average portion,60g
+1212,FISH AND FISH PRODUCTS,,"King prawn, without shell",1 prawn,8g
+1213,FISH AND FISH PRODUCTS,,Prawns,"half a pint of prawns, shelled",142g
+1214,FISH AND FISH PRODUCTS,,"Prawns, cocktail",,88g
+1215,FISH AND FISH PRODUCTS,,Prawns,prawns,40g
+1216,FISH AND FISH PRODUCTS,,"Prawns, lettuce",,20g
+1217,FISH AND FISH PRODUCTS,,Prawns,cocktail sauce,28g
+1218,FISH AND FISH PRODUCTS,,Prawns,1 small jar prawns,100g
+1219,FISH AND FISH PRODUCTS,,"Rainbow trout, grilled, with bones and head",1 average,230g
+1220,FISH AND FISH PRODUCTS,,"Rainbow trout, grilled, without bones and head",1 average,155g
+1221,FISH AND FISH PRODUCTS,,Red mullet,"1 average whole, grilled",75g
+1222,FISH AND FISH PRODUCTS,,Red snapper,"1 average whole, fried",200g
+1223,FISH AND FISH PRODUCTS,,"Rock salmon (dogfish), in batter, fried","1 average portion, small",150g
+1224,FISH AND FISH PRODUCTS,,"Rock salmon (dogfish), in batter, fried","1 average portion, medium",200g
+1225,FISH AND FISH PRODUCTS,,"Rock salmon (dogfish), in batter, fried","1 average portion, large",250g
+1226,FISH AND FISH PRODUCTS,,"Cod's roe, grilled or fried",1 average portion,116g
+1227,FISH AND FISH PRODUCTS,,Cod's roe in batter,1 average portion,160g
+1228,FISH AND FISH PRODUCTS,,"Roe, fried or grilled",1 average portion herring roe,85g
+1229,FISH AND FISH PRODUCTS,,"Salmon, steamed or poached",1 average salmon steak,100g
+1230,FISH AND FISH PRODUCTS,,"Salmon, grilled",1 large salmon steak,170g
+1231,FISH AND FISH PRODUCTS,,"Salmon,canned",1 average portion,100g
+1232,FISH AND FISH PRODUCTS,,Salmon,1 average portion canned salmon in a sandwich,45g
+1233,FISH AND FISH PRODUCTS,,"Salmon, smoked",1 average portion,56g
+1234,FISH AND FISH PRODUCTS,,Sardines,"6 average, grilled",86g
+1235,FISH AND FISH PRODUCTS,,Sardines,1 average portion canned sardines,100g
+1236,FISH AND FISH PRODUCTS,,Sardines,1 average portion in sandwich,50g
+1237,FISH AND FISH PRODUCTS,,Sardines,1 canned sardine,25g
+1238,FISH AND FISH PRODUCTS,,"Scampi, fried in breadcrumbs",1 average portion of scampi,170g
+1239,FISH AND FISH PRODUCTS,,"Scampi, crumb coated",1 piece scampi,15g
+1240,FISH AND FISH PRODUCTS,,Seafood tagliatelle,purchased ready meal for one,235g
+1241,FISH AND FISH PRODUCTS,,Shrimps,"potted, average portion",50g
+1242,FISH AND FISH PRODUCTS,,Skate,"1 average large wing, grilled",290g
+1243,FISH AND FISH PRODUCTS,,"Skate, fried in batter",1 average portion skate,200g
+1244,FISH AND FISH PRODUCTS,,"Skate, cooked in butter",1 average portion skate,150g
+1245,FISH AND FISH PRODUCTS,,"Sprats, fried or grilled with bones",1 portion sprats,220g
+1246,FISH AND FISH PRODUCTS,,"Sprats, fried or grilled with bones",1 sprat ,55g
+1247,FISH AND FISH PRODUCTS,,Squid,1 average portion cooked squid,65g
+1248,FISH AND FISH PRODUCTS,,"Squid, fried in batter (calamari)",1 average ring of squid,20g
+1249,FISH AND FISH PRODUCTS,,"Squid, fried in batter",1 average portion,120g
+1250,FISH AND FISH PRODUCTS,,"Swordfish, grilled",1 average portion,140g
+1251,FISH AND FISH PRODUCTS,,Taramasalata,"average portion, 1 tablespoon",45g
+1252,FISH AND FISH PRODUCTS,,Taramasalata,"1 average tub, purchased",112g
+1253,FISH AND FISH PRODUCTS,,"Trout, fried or grilled, with bones and head",1 average trout,230g
+1254,FISH AND FISH PRODUCTS,,"Trout, fried or grilled, without bones and head",1 average trout,155g
+1255,FISH AND FISH PRODUCTS,,"Trout, stuffed",1 average trout,270g
+1256,FISH AND FISH PRODUCTS,,Tuna,1 average portion for sandwich filling,45g
+1257,FISH AND FISH PRODUCTS,,"Tuna, with salad",1 average portion,92g
+1258,FISH AND FISH PRODUCTS,,Tuna,1 small can,100g
+1259,FISH AND FISH PRODUCTS,,Turbot,"1 average whole, grilled",160g
+1260,FISH AND FISH PRODUCTS,,"Whelks, without shell",1 whelk,7g
+1261,FISH AND FISH PRODUCTS,,Whelks,I average portion,30g
+1262,FISH AND FISH PRODUCTS,,White fish,small fillet,100g
+1263,FISH AND FISH PRODUCTS,,White fish,medium fillet,150g
+1264,FISH AND FISH PRODUCTS,,White fish,large fillet,180g
+1265,FISH AND FISH PRODUCTS,,"Whitebait, fried in flour",1 whitebait,4g
+1266,FISH AND FISH PRODUCTS,,"Whitebait, fried",1 average portion,80g
+1267,FISH AND FISH PRODUCTS,,"Whiting, fried in batter","1 average portion, small",120g
+1268,FISH AND FISH PRODUCTS,,"Whiting, fried in batter","1 average portion, medium",180g
+1269,FISH AND FISH PRODUCTS,,"Whiting, fried in batter","1 average portion, large",240g
+1270,FISH AND FISH PRODUCTS,,"Whiting, steamed",1 average portion,85g
+1271,FRUIT,,"Apple, with core, raw",1 raw small eating (6 to lb) ,75g
+1272,FRUIT,,"Apple, without core, raw",1 raw small eating (6 to lb) ,67g
+1273,FRUIT,,"Apple, with core, raw",1 raw medium eating (4 to lb),112g
+1274,FRUIT,,"Apple, without core, raw",1 raw medium eating (4 to lb),100g
+1275,FRUIT,,"Apple, with core, raw",1 raw large eating (2-3 to lb),170g
+1276,FRUIT,,"Apple, without core, raw",1 raw large eating (2-3 to lb),153g
+1277,FRUIT,,"Apple, stewed with sugar",average portion,110g
+1278,FRUIT,,"Apple, without sugar",average portion,85g
+1279,FRUIT,,"Apple, baked",average portion,190g
+1280,FRUIT,,"Apricot, without stone, raw",1 raw,40g
+1281,FRUIT,,"Apricot, canned with syrup/juice",average portion,140g
+1282,FRUIT,,"Apricot, dried",I,8g
+1283,FRUIT,,"Avocado pear, without skin or stone, raw",1 raw small,100g
+1284,FRUIT,,"Avocado pear, without skin or stone, raw",1 raw medium,145g
+1285,FRUIT,,"Avocado pear, without skin or stone, raw",1 raw large,195g
+1286,FRUIT,,Avocado pear,average 1/2 pear,75g
+1287,FRUIT,,"Banana, without skin, raw",1 raw small,80g
+1288,FRUIT,,"Banana, without skin, raw",1 raw medium,100g
+1289,FRUIT,,"Banana, without skin, raw",1 raw large,120g
+1290,FRUIT,,"Banana, without skin, raw",1 raw slice,5g
+1291,FRUIT,,"Banana, dried",10 dried chips,13g
+1292,FRUIT,,"Bilberries, raw",1 raw,2g
+1293,FRUIT,,"Blackberries, raw",1 raw,5g
+1294,FRUIT,,"Blackberries, stewed with sugar",average portion,140g
+1295,FRUIT,,"Blackcurrants, raw",5 raw,2g
+1296,FRUIT,,"Blackcurrants, Stewed with sugar",average portion,140g
+1297,FRUIT,,"Cherries, eating without stone",1 raw,4g
+1298,FRUIT,,"Clementines, without skin, raw",I raw small,40g
+1299,FRUIT,,"Clementines, without skin, raw",I raw medium,60g
+1300,FRUIT,,"Clementines, without skin, raw",1 raw large,80g
+1301,FRUIT,,"Currants, dried",4 dried,1g
+1302,FRUIT,,"Currants, dried","1 heaped tablespoon, dried",25g
+1303,FRUIT,,"Damson, raw",1 raw without stone,15g
+1304,FRUIT,,"Date, raw",1 raw without stone,25g
+1305,FRUIT,,"Date, dried",1 dried without stone,15g
+1306,FRUIT,,"Fig, raw",I raw,55g
+1307,FRUIT,,"Fig, dried",1 dried,20g
+1308,FRUIT,,Fruit juices - see Beverages,,
+1309,FRUIT,,"Fruit salad, canned with syrup or juice",average portion,115g
+1310,FRUIT,,"Fruit salad, fresh with syrup or juice",average portion,140g
+1311,FRUIT,,"Gooseberries, stewed with sugar",average portion,140g
+1312,FRUIT,,"Grapes, raw",1 raw,5g
+1313,FRUIT,,"Grapes, seedless",1 seedless,2g
+1314,FRUIT,,Grapes,small bunch,100g
+1315,FRUIT,,"Grapefruit, with skin, raw",1 raw small,250g
+1316,FRUIT,,"Grapefruit, with skin, raw",1 raw medium,340g
+1317,FRUIT,,"Grapefruit, with skin, raw",1 raw large,425g
+1318,FRUIT,,"Grapefruit, flesh only","1/2, raw",80g
+1319,FRUIT,,"Grapefruit, canned with syrup or juice portion",average portion,120g
+1320,FRUIT,,Greengage,1 raw without stone,50g
+1321,FRUIT,,Kiwi fruit,1 raw medium without skin,60g
+1322,FRUIT,,Kumquat,1 raw medium,8g
+1323,FRUIT,,"Lemon, juice",juice from 1/2 lemon,10g
+1324,FRUIT,,"Lemon, slice",1 slice for drinks,20g
+1325,FRUIT,,Loquat,1 raw without stone,13g
+1326,FRUIT,,"Lychee, without stone or skin",1 raw,15g
+1327,FRUIT,,"Lychee, canned, without stone",,13g
+1328,FRUIT,,"Mandarin orange, no skin",small,60g
+1329,FRUIT,,"Mandarin orange, no skin",medium,100g
+1330,FRUIT,,"Mandarin orange, no skin",large,140g
+1331,FRUIT,,"Mango, without stone or peel",1 without stone or peel,150g
+1332,FRUIT,,"Mango, slice",1 slice,40g
+1333,FRUIT,,"Mango, canned in syrup ",average portion,105g
+1334,FRUIT,,"Medlar, without stone",1 raw,60g
+1335,FRUIT,,"Melon, canteloupe, without skin",1 slice,150g
+1336,FRUIT,,"Melon, honeydew, without skin",1 slice,200g
+1337,FRUIT,,"Melon, watermelon, without skin",1 slice,200g
+1338,FRUIT,,Mineola,average with skin,200g
+1339,FRUIT,,Mixed dried fruit,1 heaped tablespoon,25g
+1340,FRUIT,,"Nectarine, without skin",1 raw small,130g
+1341,FRUIT,,"Nectarine, without skin",1 raw medium,150g
+1342,FRUIT,,"Nectarine, without skin",1 raw large,190g
+1343,FRUIT,,Olive,"without stone, stuffed olive",3g
+1344,FRUIT,,"Orange, without skin",1 raw small,120g
+1345,FRUIT,,"Orange, without skin",1 raw medium,160g
+1346,FRUIT,,"Orange, without skin",1 raw large,210g
+1347,FRUIT,,"Orange, juice",juice from 1 orange,55g
+1348,FRUIT,,"Passion fruit, flesh and seeds only",1 average,15g
+1349,FRUIT,,"Paw paw (papaya), without skin or stone",1 average slice,140g
+1350,FRUIT,,"Peach,  without stone",1 raw small,70g
+1351,FRUIT,,"Peach, without stone",1 raw medium,110g
+1352,FRUIT,,"Peach, without stone",1 raw large,150g
+1353,FRUIT,,"Peach, canned with syrup or juice",average portion,120g
+1354,FRUIT,,"Pear,cornice",1 raw medium,150g
+1355,FRUIT,,"Pear,cornice",1 raw large,250g
+1356,FRUIT,,"Pear,conference",1 raw medium,170g
+1357,FRUIT,,"Pear, canned", 1/2 pear,60g
+1358,FRUIT,,"Pear, canned with syrup or juice",average portion,135g
+1359,FRUIT,,"Pineapple, raw, without skin",1 large slice,80g
+1360,FRUIT,,"Pineapple, canned","one ring, or 6 chunks",40g
+1361,FRUIT,,Pineapple,I fritter,60g
+1362,FRUIT,,"Plum, raw, without stone",small,30g
+1363,FRUIT,,"Plum, raw, without stone",medium,55g
+1364,FRUIT,,"Plum, raw, without stone",large,85g
+1365,FRUIT,,"Prunes, dried",1 dried,8g
+1366,FRUIT,,"Prunes, stewed, without stones",6 stewed,60g
+1367,FRUIT,,Raisins,1 tablespoon dried,30g
+1368,FRUIT,,Raspberries,1 raw,4g
+1369,FRUIT,,Raspberries,"raw, average portion (15 raspberries)",60g
+1370,FRUIT,,"Raspberries, canned with syrup or juice,",average portion,90g
+1371,FRUIT,,"Rhubarb, stewed, with sugar",average portion,140g
+1372,FRUIT,,Satsuma - see tangerine,,
+1373,FRUIT,,Sharon fruit,1 raw,110g
+1374,FRUIT,,Strawberry,1 raw,12g
+1375,FRUIT,,Strawberry,"raw, average portion",100g
+1376,FRUIT,,"Strawberry, canned with syrup",average portion,90g
+1377,FRUIT,,"Sultanas, dried",1 tablespoon,30g
+1378,FRUIT,,"Tangerine, without skin","1 raw, small ",50g
+1379,FRUIT,,"Tangerine, without skin","1 raw, medium",70g
+1380,FRUIT,,"Tangerine, without skin","1, raw large",90g
+1381,ICE-CREAMS AND ICE-LOLLIES,,Bombe chocolate covered,individual,60g
+1382,ICE-CREAMS AND ICE-LOLLIES,,"Bomboniera, Walls",,73g
+1383,ICE-CREAMS AND ICE-LOLLIES,,"Bounty, Mars ",twin,48g
+1384,ICE-CREAMS AND ICE-LOLLIES,,"Bounty, Mars ",single,24g
+1385,ICE-CREAMS AND ICE-LOLLIES,,"Calippo, Walls",,139g
+1386,ICE-CREAMS AND ICE-LOLLIES,,Catering Brickette strawberry; vanilla (Walls),,36g
+1387,ICE-CREAMS AND ICE-LOLLIES,Nestle,"Choc ice,  Cadbury's Dairy Milk",,56g
+1388,ICE-CREAMS AND ICE-LOLLIES,,"Choc ice, Chunky (Walls)",,50g
+1389,ICE-CREAMS AND ICE-LOLLIES,Nestle,"Choc ice, Classico ",,44g
+1390,ICE-CREAMS AND ICE-LOLLIES,,"Choc ice, Dark and golden (Walls)",,48g
+1391,ICE-CREAMS AND ICE-LOLLIES,,"Choc ice, Kick (Walls)",,58g
+1392,ICE-CREAMS AND ICE-LOLLIES,,Cones/comets (no ice cream),large,4g
+1393,ICE-CREAMS AND ICE-LOLLIES,,Cones/comets (no ice cream),medium,3g
+1394,ICE-CREAMS AND ICE-LOLLIES,,Cones/comets (no ice cream),square,4g
+1395,ICE-CREAMS AND ICE-LOLLIES,,Cones/comets (no ice cream),sugar,11g
+1396,ICE-CREAMS AND ICE-LOLLIES,,"Comnetto, Walls, choc 'n' nut",,73g
+1397,ICE-CREAMS AND ICE-LOLLIES,,"Comnetto, Walls, dairy cappuccino",,73g
+1398,ICE-CREAMS AND ICE-LOLLIES,,"Comnetto, Walls, mint choc chip",,75g
+1399,ICE-CREAMS AND ICE-LOLLIES,,"Comnetto, Walls, strawberry",,81g
+1400,ICE-CREAMS AND ICE-LOLLIES,,"Diddy Tub, Walls strawberry, vanilla",,41g
+1401,ICE-CREAMS AND ICE-LOLLIES,,"Elite Tub, Walls, chocolate, strawberry, vanilla",,140g
+1402,ICE-CREAMS AND ICE-LOLLIES,Nestle,Fab,,61g
+1403,ICE-CREAMS AND ICE-LOLLIES,,"Feast, Walls, chocolate, mint",,85g
+1404,ICE-CREAMS AND ICE-LOLLIES,,"Feast, Walls, nutty",,97g
+1405,ICE-CREAMS AND ICE-LOLLIES,,Frozen yoghurt, average portion,56g
+1406,ICE-CREAMS AND ICE-LOLLIES,,"Galaxy Dove, Mars",,104g
+1407,ICE-CREAMS AND ICE-LOLLIES,,"Hooded skull, Walls",,65g
+1408,ICE-CREAMS AND ICE-LOLLIES,,Ice-cream,average serving,75g
+1409,ICE-CREAMS AND ICE-LOLLIES,,Ice-cream,1 average scoop,60g
+1410,ICE-CREAMS AND ICE-LOLLIES,,Ice-cream,"block, 1 average slice",75g
+1411,ICE-CREAMS AND ICE-LOLLIES,,Ice-cream,tub,60g
+1412,ICE-CREAMS AND ICE-LOLLIES,,"Ice-cream, , vanilla",individual slices,36g
+1413,ICE-CREAMS AND ICE-LOLLIES,,"Ice-cream, , Golden vanilla (Walls)",bar,48g
+1414,ICE-CREAMS AND ICE-LOLLIES,Nestle,"King Cone, vanilla and strawberry",,81g
+1415,ICE-CREAMS AND ICE-LOLLIES,,"King Cone, vanilla, chocolate and nuts",,89g
+1416,ICE-CREAMS AND ICE-LOLLIES,,"King Cone, mint choc chip",,75g
+1417,ICE-CREAMS AND ICE-LOLLIES,,"Kulfi, Indian ice-cream",average,80g
+1418,ICE-CREAMS AND ICE-LOLLIES,,"Magnifico, Walls",,117g
+1419,ICE-CREAMS AND ICE-LOLLIES,,"Magnum, Walls, almond",,96g
+1420,ICE-CREAMS AND ICE-LOLLIES,,"Magnum, Walls, dark; white chocolate",,94g
+1421,ICE-CREAMS AND ICE-LOLLIES,,"Mars bar, Mars",,57g
+1422,ICE-CREAMS AND ICE-LOLLIES,,"Max, Walls, banana, caramel",,59g
+1423,ICE-CREAMS AND ICE-LOLLIES,,"Max, Walls, chocolate, toffee, vanilla",,70g
+1424,ICE-CREAMS AND ICE-LOLLIES,,"Milky Way, Mars",,19g
+1425,ICE-CREAMS AND ICE-LOLLIES,,"Mincemeat Bruiee, Walls",,108g
+1426,ICE-CREAMS AND ICE-LOLLIES,,"Mini Juice, Walls, apple, orange",,36g
+1427,ICE-CREAMS AND ICE-LOLLIES,,"Mini Milk, Walls, chocolate, strawberry, vanilla",,30g
+1428,ICE-CREAMS AND ICE-LOLLIES,,"Mini Yogice, Walls, banana, strawberry",,33g
+1429,ICE-CREAMS AND ICE-LOLLIES,Nestle,Mint crisp,,70g
+1430,ICE-CREAMS AND ICE-LOLLIES,Nestle,"Mivvi, pineapple and cream",,63g
+1431,ICE-CREAMS AND ICE-LOLLIES,,"Mivvi, raspberry and cream",,65g
+1432,ICE-CREAMS AND ICE-LOLLIES,Nestle,"Mr Men, all types except dairy",,45g
+1433,ICE-CREAMS AND ICE-LOLLIES,,"Mr Men, dairy",,40g
+1434,ICE-CREAMS AND ICE-LOLLIES,,"Opals Iced fruits, Mars",,99g
+1435,ICE-CREAMS AND ICE-LOLLIES,,"Orange Fruitie, Walls",,82g
+1436,ICE-CREAMS AND ICE-LOLLIES,,Orange Maid,,71g
+1437,ICE-CREAMS AND ICE-LOLLIES,,"Penguin ice-cream bar, Mars",,56g
+1438,ICE-CREAMS AND ICE-LOLLIES,,"Romantica, Walls",I average slice,60g
+1439,ICE-CREAMS AND ICE-LOLLIES,,"Screwball, Treats",,67g
+1440,ICE-CREAMS AND ICE-LOLLIES,,"Scribbler, Walls",,45g
+1441,ICE-CREAMS AND ICE-LOLLIES,,"Sky, Walls",,52g
+1442,ICE-CREAMS AND ICE-LOLLIES,,"Snickers, Mars",,57g
+1443,ICE-CREAMS AND ICE-LOLLIES,,"Sparkles, Walls, lemonade, orange",,57g
+1444,ICE-CREAMS AND ICE-LOLLIES,,"Strawberry Split, Walls",,77g
+1445,ICE-CREAMS AND ICE-LOLLIES,,"Tangle Twister, Walls",,80g
+1446,ICE-CREAMS AND ICE-LOLLIES,,"Toffee Crumble, NestlÃ©",,56g
+1447,ICE-CREAMS AND ICE-LOLLIES,,"Too Good To Be True, Walls",average scoop,62g
+1448,ICE-CREAMS AND ICE-LOLLIES,,"Tub, ice-cream",,61g
+1449,ICE-CREAMS AND ICE-LOLLIES,,"TWix, Mars",,57g
+1450,ICE-CREAMS AND ICE-LOLLIES,,Vanilla,bar,49g
+1451,ICE-CREAMS AND ICE-LOLLIES,,"Viennetta, Walls",1 average slice,56g
+1452,ICE-CREAMS AND ICE-LOLLIES,,"Viennetta, Walls",individual,55g
+1453,ICE-CREAMS AND ICE-LOLLIES,,Wafers,each,2g
+1454,ICE-CREAMS AND ICE-LOLLIES,,Wafers,cups,4g
+1455,ICE-CREAMS AND ICE-LOLLIES,,Wafers,fan,5g
+1456,ICE-CREAMS AND ICE-LOLLIES,,"Whippy ice-cream, Walls",in medium cone,53g
+1457,ICE-CREAMS AND ICE-LOLLIES,Nestle,Zoom,,63g
+1458,MEAT AND MEAT PRODUCTS,,"Bacon, fried or grilled","1 rasher back bacon, average",25g
+1459,MEAT AND MEAT PRODUCTS,,"Bacon, fried or grilled","1 rasher middle bacon, average",40g
+1460,MEAT AND MEAT PRODUCTS,,"Bacon, fried or grilled","1 rasher streaky bacon, average",20g
+1461,MEAT AND MEAT PRODUCTS,,Bacon,1 portion bacon average,46g
+1462,MEAT AND MEAT PRODUCTS,,Bacon,1 gammon steak average,170g
+1463,MEAT AND MEAT PRODUCTS,,"Bacon, in a bun",average,100g
+1464,MEAT AND MEAT PRODUCTS,,"Bacon, with egg in a bun",average,120g
+1465,MEAT AND MEAT PRODUCTS,,Bacon,"Burger King,",
+1466,MEAT AND MEAT PRODUCTS,,Bacon,bacon double cheeseburger,158g
+1467,MEAT AND MEAT PRODUCTS,,Bacon,BBQ bacon double cheeseburger,172g
+1468,MEAT AND MEAT PRODUCTS,,Bacon,"McDonald's, bacon and egg McMuffin",146g
+1469,MEAT AND MEAT PRODUCTS,,Bacon,"Wimpy, bacon in a bun",105g
+1470,MEAT AND MEAT PRODUCTS,,Bacon,"Wimpy, bacon and egg in a bun",165g
+1471,MEAT AND MEAT PRODUCTS,,"Beefburgers, no bun, , fried or grilled","80% beef, 56g raw",36g
+1472,MEAT AND MEAT PRODUCTS,,"Beefburgers, no bun, , fried or grilled","100% beef, 56g raw",34g
+1473,MEAT AND MEAT PRODUCTS,,"Beefburgers, economy, fried or grilled","60% beef, 56g raw",40g
+1474,MEAT AND MEAT PRODUCTS,,"Beefburgers, economy, fried or grilled","80% beef, quarterpounder",90g
+1475,MEAT AND MEAT PRODUCTS,,"Beefburgers, economy, fried or grilled","100% beef, quarterpounder,",78g
+1476,MEAT AND MEAT PRODUCTS,,"Beefburgers, in a bun",average,105g
+1477,MEAT AND MEAT PRODUCTS,,"Beefburgers, in a bun","with cheese, cheeseburger, average",115g
+1478,MEAT AND MEAT PRODUCTS,,"Beefburgers, in a bun","quarterpounder, average",180g
+1479,MEAT AND MEAT PRODUCTS,,"Beefburgers, in a bun","quarter pounder with cheese, average",200g
+1480,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, hamburger",,106g
+1481,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, cheeseburger",,118g
+1482,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, double cheeseburger",,166g
+1483,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, cheeseburger deluxe",,147g
+1484,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, whopper",,258g
+1485,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, double whopper",,334g
+1486,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, whopper with cheese",,283g
+1487,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, double whopper with cheese",,359g
+1488,MEAT AND MEAT PRODUCTS,,"Beefburgers, Burger King, mushroom double Swiss",,168g
+1489,MEAT AND MEAT PRODUCTS,,"Beefburgers, McDonalds, hamburger",,100g
+1490,MEAT AND MEAT PRODUCTS,,"Beefburgers, McDonalds, cheeseburger",,117g
+1491,MEAT AND MEAT PRODUCTS,,"Beefburgers, McDonalds, quarter pounder",,162g
+1492,MEAT AND MEAT PRODUCTS,,"Beefburgers, McDonalds, quarter pounder with cheese",,195g
+1493,MEAT AND MEAT PRODUCTS,,"Beefburgers, McDonalds, quarter pounder with cheese deluxe",,220g
+1494,MEAT AND MEAT PRODUCTS,,"Beefburgers, McDonalds, Big Mac",,204g
+1495,MEAT AND MEAT PRODUCTS,,"Beefburgers, Wimpy, hamburger",,105g
+1496,MEAT AND MEAT PRODUCTS,,"Beefburgers, Wimpy, cheeseburger",,120g
+1497,MEAT AND MEAT PRODUCTS,,"Beefburgers, Wimpy, quarter pounder",,210g
+1498,MEAT AND MEAT PRODUCTS,,"Beefburgers, Wimpy, quarter pounder with cheese",,225g
+1499,MEAT AND MEAT PRODUCTS,,"Beefburgers, Wimpy, half pounder",,305g
+1500,MEAT AND MEAT PRODUCTS,,"Beefburgers, Wimpy, kingsize",,200g
+1501,MEAT AND MEAT PRODUCTS,,"Beefburgers, Wimpy, leanburger",,235g
+1502,MEAT AND MEAT PRODUCTS,,"Beefburgers, in batter",average,130g
+1503,MEAT AND MEAT PRODUCTS,,Beef casserole or curry,"average portion, small",180g
+1504,MEAT AND MEAT PRODUCTS,,Beef casserole or curry,medium,260g
+1505,MEAT AND MEAT PRODUCTS,,Beef casserole or curry,large,360g
+1506,MEAT AND MEAT PRODUCTS,,"Beef, minced, stewed","small, average portion",100g
+1507,MEAT AND MEAT PRODUCTS,,"Beef, minced","medium, average portion",140g
+1508,MEAT AND MEAT PRODUCTS,,"Beef, minced","large, average portion",220g
+1509,MEAT AND MEAT PRODUCTS,,"Beef, minced, stewed with gravy and vegetables,",average portion,270g
+1510,MEAT AND MEAT PRODUCTS,,"Beef, minced, stewed, canned",small,200g
+1511,MEAT AND MEAT PRODUCTS,,"Beef, minced",large,392g
+1512,MEAT AND MEAT PRODUCTS,,"Beef pies, Beef and onion pastie",,160g
+1513,MEAT AND MEAT PRODUCTS,,"Beef pies, Beef and onion pie",,140g
+1514,MEAT AND MEAT PRODUCTS,,"Beef pies, Canned steak/steak and kidney pie,",small,213g
+1515,MEAT AND MEAT PRODUCTS,,"Beef pies, Canned steak/steak and kidney pie,",large,425g
+1516,MEAT AND MEAT PRODUCTS,,"Beef pies, Cornish pastie",mini,75g
+1517,MEAT AND MEAT PRODUCTS,,"Beef pies, Cornish pastie",medium,145g
+1518,MEAT AND MEAT PRODUCTS,,"Beef pies, Cornish pastie",large,227g
+1519,MEAT AND MEAT PRODUCTS,,"Beef pies, Scotch pie,",,112g
+1520,MEAT AND MEAT PRODUCTS,,"Beef pies, Shepherds pie/cottage pie",average portion,310g
+1521,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak and kidney pie ",individual,160g
+1522,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak and kidney pudding ",individual,141g
+1523,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak and kidney pudding ",small,230g
+1524,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak and kidney pudding ",large,450g
+1525,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak and potato pie ",individual,128g
+1526,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak pie",individual,150g
+1527,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak pie, deep filled",individual,210g
+1528,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak pie large",small slice,90g
+1529,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak pie large",medium slice,120g
+1530,MEAT AND MEAT PRODUCTS,,"Beef pies, Steak pie large",large slice,150g
+1531,MEAT AND MEAT PRODUCTS,,"Beef, roast","small, average portion",50g
+1532,MEAT AND MEAT PRODUCTS,,"Beef, roast","medium, average portion",90g
+1533,MEAT AND MEAT PRODUCTS,,"Beef, roast","large, average portion",150g
+1534,MEAT AND MEAT PRODUCTS,,"Beef, roast","thinly sliced beef, 1 slice",28g
+1535,MEAT AND MEAT PRODUCTS,,"Beef, roast","thickly sliced beef, 1 slice",45g
+1536,MEAT AND MEAT PRODUCTS,,"Beef, roast, purchased frozen","1 portion in gravy, beef",59g
+1537,MEAT AND MEAT PRODUCTS,,"Beef, roast, purchased frozen","1 portion in gravy, gravy",55g
+1538,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","small, average portion",110g
+1539,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","medium, average portion",144g
+1540,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","large, average portion",210g
+1541,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 fillet steak, 5oz, fried",108g
+1542,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 fillet steak, 5oz grilled",105g
+1543,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 fillet steak, 8oz fried",172g
+1544,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 fillet steak, 8oz  grilled",168g
+1545,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 minute steak, 5oz, fried",80g
+1546,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 minute steak, 5oz, grilled",78g
+1547,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 rump steak, 5oz, fried",103g
+1548,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 rump steak, 5oz, grilled",102g
+1549,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 rump steak, 8oz, fried",166g
+1550,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 rump steak, 8oz, grilled",163g
+1551,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 T-bone steak, 8oz, fried",169g
+1552,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 T-bone steak, 8oz, grilled",166g
+1553,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 T-bone steak, 12oz, fried",253g
+1554,MEAT AND MEAT PRODUCTS,,"Beef, steaks, fried or grilled","1 T-bone steak, 12oz, grilled",248g
+1555,MEAT AND MEAT PRODUCTS,,"Beef, stewed",small average portion,90g
+1556,MEAT AND MEAT PRODUCTS,,"Beef, stewed",medium average portion,140g
+1557,MEAT AND MEAT PRODUCTS,,"Beef, stewed",large average portion,210g
+1558,MEAT AND MEAT PRODUCTS,,"Beef, stewed with vegetables",small average portion,230g
+1559,MEAT AND MEAT PRODUCTS,,"Beef, stewed with vegetables, in gravy",medium average portion,270g
+1560,MEAT AND MEAT PRODUCTS,,"Beef, stewed with vegetables",large average portion,340g
+1561,MEAT AND MEAT PRODUCTS,,Black pudding,1 slice,30g
+1562,MEAT AND MEAT PRODUCTS,,Black pudding,1 portion,75g
+1563,MEAT AND MEAT PRODUCTS,,Bolognese sauce,average portion,240g
+1564,MEAT AND MEAT PRODUCTS,,"Braising steak - see beef, stewed",,
+1565,MEAT AND MEAT PRODUCTS,,"Burgerbites in baked beans, beans",small tin,170g
+1566,MEAT AND MEAT PRODUCTS,,"Burgerbites in baked beans, burgerbites",small tin,55g
+1567,MEAT AND MEAT PRODUCTS,,Cannelloni,average portion,340g
+1568,MEAT AND MEAT PRODUCTS,,"Cannelloni, frozen ready meal",serves one,260g
+1569,MEAT AND MEAT PRODUCTS,,"Chickbits, in baked beans, beans",small tin,170g
+1570,MEAT AND MEAT PRODUCTS,,"Chickbits, in baked beans, chickbits",small tin,55g
+1571,MEAT AND MEAT PRODUCTS,,"Chicken in a bun, fried chicken sandwich, chicken only",,70g
+1572,MEAT AND MEAT PRODUCTS,,Chicken in a bun,with bun,130g
+1573,MEAT AND MEAT PRODUCTS,,"Chicken in a bun, Burger King, BK Flamer",,167g
+1574,MEAT AND MEAT PRODUCTS,,"Chicken in a bun, Chicken Royale",,224g
+1575,MEAT AND MEAT PRODUCTS,,"Chicken in a bun, Kentucky Fried Chicken Sandwich",,174g
+1576,MEAT AND MEAT PRODUCTS,,"Chicken in a bun, McDonald's, McChicken Sandwich",,159g
+1577,MEAT AND MEAT PRODUCTS,,"Chicken in a bun, Wimpy, Chicken in a bun",,180g
+1578,MEAT AND MEAT PRODUCTS,,"Chicken breast steak, in breadcrumbs, fried",,100g
+1579,MEAT AND MEAT PRODUCTS,,Chicken casserole or curry,small average portion,180g
+1580,MEAT AND MEAT PRODUCTS,,Chicken casserole or curry,medium average portion,260g
+1581,MEAT AND MEAT PRODUCTS,,Chicken casserole or curry,large average portion,360g
+1582,MEAT AND MEAT PRODUCTS,,"Chicken cordon bleu, fried or grilled",,160g
+1583,MEAT AND MEAT PRODUCTS,,"Chicken fingers, fried, ",each,15g
+1584,MEAT AND MEAT PRODUCTS,,"Chicken Kiev, fried or grilled",,170g
+1585,MEAT AND MEAT PRODUCTS,,"Chicken nuggets, pieces, baked or fried",each,16g
+1586,MEAT AND MEAT PRODUCTS,,Chicken nuggets,6 nuggets average portion,100g
+1587,MEAT AND MEAT PRODUCTS,McDonald's,Chicken nuggets,6 McNuggets,105g
+1588,MEAT AND MEAT PRODUCTS,Burger King ,"Chicken nuggets, chicken pick 'em ups",for 6,111g
+1589,MEAT AND MEAT PRODUCTS,,Chicken pie,individual,130g
+1590,MEAT AND MEAT PRODUCTS,,Chicken pie,large,480g
+1591,MEAT AND MEAT PRODUCTS,,Chicken pie,"1 slice of large pie, small",90g
+1592,MEAT AND MEAT PRODUCTS,,Chicken pie,medium,120g
+1593,MEAT AND MEAT PRODUCTS,,Chicken pie,large,150g
+1594,MEAT AND MEAT PRODUCTS,,Chicken pie,"individual, with mushroom or vegetables",140g
+1595,MEAT AND MEAT PRODUCTS,,"Chicken portions, breast, no bone","1, small",100g
+1596,MEAT AND MEAT PRODUCTS,,"Chicken portions, breast, no bone",medium,130g
+1597,MEAT AND MEAT PRODUCTS,,"Chicken portions, breast, no bone",large,150g
+1598,MEAT AND MEAT PRODUCTS,,"Chicken portions, drumstick, with bone",1 drumstick,90g
+1599,MEAT AND MEAT PRODUCTS,,"Chicken portions, drumstick",edible portion,47g
+1600,MEAT AND MEAT PRODUCTS,,Chicken portions,"1 half, edible portion",350g
+1601,MEAT AND MEAT PRODUCTS,,"Chicken portions, leg, with bone","1 leg, with bone",165g
+1602,MEAT AND MEAT PRODUCTS,,"Chicken portions, leg",edible portion,90g
+1603,MEAT AND MEAT PRODUCTS,,Chicken portions,"1 quarter, edible portion",190g
+1604,MEAT AND MEAT PRODUCTS,,"Chicken portions, thigh, with bone",1 thigh,75g
+1605,MEAT AND MEAT PRODUCTS,,"Chicken portions, thigh ",edible portion,45g
+1606,MEAT AND MEAT PRODUCTS,,"Chicken portions, wing, with bone",1 wing,55g
+1607,MEAT AND MEAT PRODUCTS,,Chicken portions,edible portion,25g
+1608,MEAT AND MEAT PRODUCTS,,"Chicken portions, fried, breast portion, with bone",1 breast portion,70g
+1609,MEAT AND MEAT PRODUCTS,,"Chicken portions, fried, drumstick, with bone",1 drumstick,131g
+1610,MEAT AND MEAT PRODUCTS,,"Chicken portions, fried, rib with bone",1 rib,110g
+1611,MEAT AND MEAT PRODUCTS,,"Chicken portions, fried, thigh with bone",1 thigh,107g
+1612,MEAT AND MEAT PRODUCTS,,"Chicken portions, fried, wing with bone",1 wing,73g
+1613,MEAT AND MEAT PRODUCTS,,"Chicken portions, fried e.g. Kentucky","Hot wings, with bones, 5 pieces",161g
+1614,MEAT AND MEAT PRODUCTS,,"Chicken, roast",small average portion,70g
+1615,MEAT AND MEAT PRODUCTS,,"Chicken, roast",medium average portion,100g
+1616,MEAT AND MEAT PRODUCTS,,"Chicken, roast",large average portion,170g
+1617,MEAT AND MEAT PRODUCTS,,"Chicken, roast, in gravy, purchased frozen, chicken",,59g
+1618,MEAT AND MEAT PRODUCTS,,"Chicken, roast, gravy",,55g
+1619,MEAT AND MEAT PRODUCTS,,"Chicken, roast","1 slice roast, breast",40g
+1620,MEAT AND MEAT PRODUCTS,,Chicken roll,1 slice (diameter 8cm),12g
+1621,MEAT AND MEAT PRODUCTS,,Chicken sticks,1 fried,25g
+1622,MEAT AND MEAT PRODUCTS,,Chicken tikka and tandoori chicken - see Indian dishes,,
+1623,MEAT AND MEAT PRODUCTS,,"Chilli con came, no rice",,220g
+1624,MEAT AND MEAT PRODUCTS,,"Chilli con came, purchased frozen ready",meal for one,290g
+1625,MEAT AND MEAT PRODUCTS,,"Chilli con came, sauce",,155g
+1626,MEAT AND MEAT PRODUCTS,,"Chilli con came, rice",,135g
+1627,MEAT AND MEAT PRODUCTS,,"Chinese dishes, beef dishes, e.g. beef in oyster sauce",,360g
+1628,MEAT AND MEAT PRODUCTS,,"Chinese dishes, char-sui buns, steamed, ",small,60g
+1629,MEAT AND MEAT PRODUCTS,,"Chinese dishes, char-sui buns, steamed, ",large,112g
+1630,MEAT AND MEAT PRODUCTS,,"Chinese dishes, chicken dishes, e.g. chicken with mushrooms",,400g
+1631,MEAT AND MEAT PRODUCTS,,"Chinese dishes, chop suey dishes, e.g. chicken chop suey",,450g
+1632,MEAT AND MEAT PRODUCTS,,"Chinese dishes, chow mein dishes, e.g. beef chow mein",,350g
+1633,MEAT AND MEAT PRODUCTS,,"Chinese dishes, fu yung dishes, e.g. chicken fu yung",,310g
+1634,MEAT AND MEAT PRODUCTS,,"Chinese dishes, pancake roll",small,90g
+1635,MEAT AND MEAT PRODUCTS,,"Chinese dishes, pancake roll",large,140g
+1636,MEAT AND MEAT PRODUCTS,,"Chinese dishes, spare ribs in sauce",,340g
+1637,MEAT AND MEAT PRODUCTS,,"Chinese dishes, spring roll, meat, average",,55g
+1638,MEAT AND MEAT PRODUCTS,,"Chinese dishes, sweet and sour dishes, e.g. sweet and sour pork",,300g
+1639,MEAT AND MEAT PRODUCTS,,"Chinese dishes, pork balls only",,150g
+1640,MEAT AND MEAT PRODUCTS,,"Chinese dishes, vegetable dishes, fried, from takeaway",,340g
+1641,MEAT AND MEAT PRODUCTS,,Chopped ham and pork,"thinly sliced, 1 slice",14g
+1642,MEAT AND MEAT PRODUCTS,,Corned beef,"1 slice, thin",38g
+1643,MEAT AND MEAT PRODUCTS,,Corned beef,"1 slice, thick",50g
+1644,MEAT AND MEAT PRODUCTS,,Corned beef,1 small can,198g
+1645,MEAT AND MEAT PRODUCTS,,Cornish pastie,medium,155g
+1646,MEAT AND MEAT PRODUCTS,,Cornish pastie,large,260g
+1647,MEAT AND MEAT PRODUCTS,,Cottage pie/Shepherds pie,average portion,310g
+1648,MEAT AND MEAT PRODUCTS,,"Curries, Kashmir, Korma, Madras, Malaya, Patia, Rogan Josh, Vindaloo - (see also Indian dishes)",average,350g
+1649,MEAT AND MEAT PRODUCTS,,"Curries, frozen purchased ready meal with rice",,290g
+1650,MEAT AND MEAT PRODUCTS,,"Duck, breast and wing, roast, meat and skin only",,185g
+1651,MEAT AND MEAT PRODUCTS,,"Duck, crispy duck, average takeaway portion",,125g
+1652,MEAT AND MEAT PRODUCTS,,"Faggots, in gravy",two,150g
+1653,MEAT AND MEAT PRODUCTS,,"Fillet steak, fried","average, 5oz",108g
+1654,MEAT AND MEAT PRODUCTS,,"Fillet steak, grilled","average, 5oz",105g
+1655,MEAT AND MEAT PRODUCTS,,"Game, grouse","1 grouse, with bone",350g
+1656,MEAT AND MEAT PRODUCTS,,"Game, grouse","1 grouse, meat only",160g
+1657,MEAT AND MEAT PRODUCTS,,"Game, partridge","1 partridge, with bone",550g
+1658,MEAT AND MEAT PRODUCTS,,"Game, partridge","1 partridge, meat only",260g
+1659,MEAT AND MEAT PRODUCTS,,"Game, pheasant","1 pheasant, with bone",800g
+1660,MEAT AND MEAT PRODUCTS,,"Game, pheasant","1 pheasant, meat only",430g
+1661,MEAT AND MEAT PRODUCTS,,"Game, pigeon","1 pigeon, with bone",240g
+1662,MEAT AND MEAT PRODUCTS,,"Game, pigeon","1 pigeon, meat only",115g
+1663,MEAT AND MEAT PRODUCTS,,"Game,  rabbit","1 rabbit, with bone",850g
+1664,MEAT AND MEAT PRODUCTS,,"Game,  rabbit","1 rabbit, meat only",510g
+1665,MEAT AND MEAT PRODUCTS,,"Game, venison",average portion,120g
+1666,MEAT AND MEAT PRODUCTS,,Game pie,average slice,175g
+1667,MEAT AND MEAT PRODUCTS,,Garlic sausage,1 small average slice (diameter 5cm),5g
+1668,MEAT AND MEAT PRODUCTS,,Garlic sausage,1 large average slice (diameter 11cm),12g
+1669,MEAT AND MEAT PRODUCTS,,Ham,average slice,23g
+1670,MEAT AND MEAT PRODUCTS,,Ham,"very thinly sliced ham, 1 slice",11g
+1671,MEAT AND MEAT PRODUCTS,,"Ham, canned ham","average slice, thin",35g
+1672,MEAT AND MEAT PRODUCTS,,"Ham, canned ham","average slice, thick",45g
+1673,MEAT AND MEAT PRODUCTS,,"Ham, honey glazed ham",average slice,28g
+1674,MEAT AND MEAT PRODUCTS,,"Ham, honey glazed ham",thin slice,17g
+1675,MEAT AND MEAT PRODUCTS,,"Ham, parma ham",average slice,17g
+1676,MEAT AND MEAT PRODUCTS,,"Ham, parma ham",average portion,47g
+1677,MEAT AND MEAT PRODUCTS,,Hamburgers - see beefburgers,,
+1678,MEAT AND MEAT PRODUCTS,McDonald's,Hashbrown,,51g
+1679,MEAT AND MEAT PRODUCTS,,Haslet,average slice,14g
+1680,MEAT AND MEAT PRODUCTS,,"Heart, lambs",1 whole cooked,200g
+1681,MEAT AND MEAT PRODUCTS,,"Indian dishes, Biriani, rice and meat",,400g
+1682,MEAT AND MEAT PRODUCTS,,"Indian dishes, biriani sauce",,200g
+1683,MEAT AND MEAT PRODUCTS,,"Indian dishes, Chicken tikka",as starter,120g
+1684,MEAT AND MEAT PRODUCTS,,"Indian dishes, Chicken tikka",as main course,200g
+1685,MEAT AND MEAT PRODUCTS,,"Indian dishes, Chicken tikka mossala",,300g
+1686,MEAT AND MEAT PRODUCTS,,"Indian dishes, curry, e.g. Bhuna, Dhansak, Dupiaza, Kashmir, Korma, Madras, Malaya, Patia, Rogan Josh, Vindaloo",,350g
+1687,MEAT AND MEAT PRODUCTS,,"Indian dishes, Kebab, rashmi, seesh, shami",as starter,140g
+1688,MEAT AND MEAT PRODUCTS,,"Indian dishes, Meat tikka",main course,200g
+1689,MEAT AND MEAT PRODUCTS,,"Indian dishes, Samosa, meat",small,40g
+1690,MEAT AND MEAT PRODUCTS,,"Indian dishes, Samosa, meat",medium,70g
+1691,MEAT AND MEAT PRODUCTS,,"Indian dishes, Samosa, meat",large,120g
+1692,MEAT AND MEAT PRODUCTS,,"Indian dishes, Tandoori chicken",as starter,100g
+1693,MEAT AND MEAT PRODUCTS,,"Indian dishes, Tandoori chicken","main course, half chicken",700g
+1694,MEAT AND MEAT PRODUCTS,,"Indian dishes, Tandoori chicken","main course, edible portion",350g
+1695,MEAT AND MEAT PRODUCTS,,"Indian dishes, Tandoori chicken","main course, whole chicken",1400g
+1696,MEAT AND MEAT PRODUCTS,,"Indian dishes, Tandoori chicken","main course, edible portion",700g
+1697,MEAT AND MEAT PRODUCTS,,Irish stew,average portion,330g
+1698,MEAT AND MEAT PRODUCTS,,"Irish stew, canned",1 large can,425g
+1699,MEAT AND MEAT PRODUCTS,,"Kebab, meat on skewer",average portion,90g
+1700,MEAT AND MEAT PRODUCTS,,"Kebab, Doner kebab, meat",small,85g
+1701,MEAT AND MEAT PRODUCTS,,"Kebab, Doner kebab, pitta bread",small,75g
+1702,MEAT AND MEAT PRODUCTS,,"Kebab, Doner kebab, salad",small,70g
+1703,MEAT AND MEAT PRODUCTS,,"Kebab, Doner kebab, meat",large,130g
+1704,MEAT AND MEAT PRODUCTS,,"Kebab, Doner kebab, pitta bread",large,95g
+1705,MEAT AND MEAT PRODUCTS,,"Kebab, Doner kebab, salad",large,90g
+1706,MEAT AND MEAT PRODUCTS,,"Kebab, Kofte kebab, meat only",,90g
+1707,MEAT AND MEAT PRODUCTS,,"Kebab, Rashmi, Seesh, Shami kebab, Indian",starter,140g
+1708,MEAT AND MEAT PRODUCTS,,"Kebab, Shish kebab, meat on skewer, meat only",,85g
+1709,MEAT AND MEAT PRODUCTS,,"Kidney, in gravy",average portion,112g
+1710,MEAT AND MEAT PRODUCTS,,"Kidney, in individual steak and kidney pie",,15g
+1711,MEAT AND MEAT PRODUCTS,,"Kidney, cooked",1 tablespoon,40g
+1712,MEAT AND MEAT PRODUCTS,,"Kidney, lamb's kidney, fried ",1 whole lamb's kidney,35g
+1713,MEAT AND MEAT PRODUCTS,,"Kidney, pig's kidney",1 whole pig's kidney,140g
+1714,MEAT AND MEAT PRODUCTS,,Lamb casserole or curry,small average portion,180g
+1715,MEAT AND MEAT PRODUCTS,,Lamb casserole or curry,medium average portion,260g
+1716,MEAT AND MEAT PRODUCTS,,Lamb casserole or curry,large average portion,360g
+1717,MEAT AND MEAT PRODUCTS,,"Lamb chop, braising chop, with bone",average,120g
+1718,MEAT AND MEAT PRODUCTS,,Lamb chop,edible portion only,70g
+1719,MEAT AND MEAT PRODUCTS,,"Lamb chop,  chump chop, with bone, fried or grilled",average ,120g
+1720,MEAT AND MEAT PRODUCTS,,Lamb chop,edible portion only,70g
+1721,MEAT AND MEAT PRODUCTS,,"Lamb chop, cutlet, with bone, fried or grilled","average cutlet, with bone, fried or grilled",98g
+1722,MEAT AND MEAT PRODUCTS,,Lamb chop,edible portion only,50g
+1723,MEAT AND MEAT PRODUCTS,,"Lamb, roast",small average portion,50g
+1724,MEAT AND MEAT PRODUCTS,,"Lamb, roast",medium average portion,90g
+1725,MEAT AND MEAT PRODUCTS,,"Lamb, roast",large average portion,150g
+1726,MEAT AND MEAT PRODUCTS,,"Lamb, roast",average slice,30g
+1727,MEAT AND MEAT PRODUCTS,,Lasagne,average portion,420g
+1728,MEAT AND MEAT PRODUCTS,,"Lasagne, purchased, frozen",ready meal for one,290g
+1729,MEAT AND MEAT PRODUCTS,,"Liver,  lamb's/calf's, fried or grilled",1 slice,40g
+1730,MEAT AND MEAT PRODUCTS,,"Liver, pig's/ox, fried or grilled",1 slice,50g
+1731,MEAT AND MEAT PRODUCTS,,"Liver, fried or grilled",1 portion,100g
+1732,MEAT AND MEAT PRODUCTS,,"Liver, in gravy, liver only",1 portion,70g
+1733,MEAT AND MEAT PRODUCTS,,"Liver, with onions in gravy, purchased frozen",1 portion,142g
+1734,MEAT AND MEAT PRODUCTS,,Luncheon meat,average slice,14g
+1735,MEAT AND MEAT PRODUCTS,,Luncheon meat,thick slice,20g
+1736,MEAT AND MEAT PRODUCTS,,"Meat dishes, Cannelloni",average portions,340g
+1737,MEAT AND MEAT PRODUCTS,,"Meat dishes, Chicken chow mein",average portions,300g
+1738,MEAT AND MEAT PRODUCTS,,"Meat dishes, Chilli con came, no rice",average portions,220g
+1739,MEAT AND MEAT PRODUCTS,,"Meat dishes, Hot-pots",average portions,260g
+1740,MEAT AND MEAT PRODUCTS,,"Meat dishes, Irish stew",average portions,260g
+1741,MEAT AND MEAT PRODUCTS,,"Meat dishes, Lasagne",average portions,420g
+1742,MEAT AND MEAT PRODUCTS,,"Meat dishes, Meatballs, canned",6 meat balls,80g
+1743,MEAT AND MEAT PRODUCTS,,"Meat dishes, Moussaka",average portions,330g
+1744,MEAT AND MEAT PRODUCTS,,"Meat dishes, Shepherds pie, Cottage pie",average portions,310g
+1745,MEAT AND MEAT PRODUCTS,,"Meat dishes, Spaghetti bolognese, sauce only",average portions,240g
+1746,MEAT AND MEAT PRODUCTS,,"Meat dishes, stews, casseroles",average,260g
+1747,MEAT AND MEAT PRODUCTS,,"Meat dishes, Tacos, meat only",1 filled shell,65g
+1748,MEAT AND MEAT PRODUCTS,,"Meat dishes, taco shell",2 filled shell,14g
+1749,MEAT AND MEAT PRODUCTS,,"Minute steak, average fried",,80g
+1750,MEAT AND MEAT PRODUCTS,,"Minute steak, grilled",,78g
+1751,MEAT AND MEAT PRODUCTS,,Partridge - see game,,
+1752,MEAT AND MEAT PRODUCTS,,"Pastie - see cornish pastie, beef pies",,
+1753,MEAT AND MEAT PRODUCTS,,Pate,average portion as starter,80g
+1754,MEAT AND MEAT PRODUCTS,,Pate,average on slice of bread,40g
+1755,MEAT AND MEAT PRODUCTS,,Pheasant - see game,,
+1756,MEAT AND MEAT PRODUCTS,,"Pies - see beef pies, chicken pies, pork pies, sausage rolls",,
+1757,MEAT AND MEAT PRODUCTS,,Pigeon - see game,,
+1758,MEAT AND MEAT PRODUCTS,,Pork casserole or curry,"average portion, small",180g
+1759,MEAT AND MEAT PRODUCTS,,Pork casserole or curry,"average portion, medium",260g
+1760,MEAT AND MEAT PRODUCTS,,Pork casserole or curry,"average portion, large",360g
+1761,MEAT AND MEAT PRODUCTS,,"Pork chops, chump chops, no bone fried or grilled",,170g
+1762,MEAT AND MEAT PRODUCTS,,"Pork chops, lean pork escalope, fried or grilled",,75g
+1763,MEAT AND MEAT PRODUCTS,,"Pork chops, loin steaks, no bone, fried or grilled",,120g
+1764,MEAT AND MEAT PRODUCTS,,"Pork chops, rib end chops, with bone, fried or grilled",,165g
+1765,MEAT AND MEAT PRODUCTS,,"Pork chops, edible portion",,85g
+1766,MEAT AND MEAT PRODUCTS,,"Pork chops, shoulder steak, no bone, fried or grilled",,135g
+1767,MEAT AND MEAT PRODUCTS,,"Pork chops, spare rib chops, with bone, fried or grilled",,220g
+1768,MEAT AND MEAT PRODUCTS,,"Pork chops, edible portion",,140g
+1769,MEAT AND MEAT PRODUCTS,,"Pork chops, streaky slices, with bone, fried or grilled",,170g
+1770,MEAT AND MEAT PRODUCTS,,"Pork chops, edible portion",,110g
+1771,MEAT AND MEAT PRODUCTS,,"Pork chops, other pork chops, average, with bone, fried or grilled",,150g
+1772,MEAT AND MEAT PRODUCTS,,"Pork chops, edible portion",,75g
+1773,MEAT AND MEAT PRODUCTS,,Pork luncheon meat,"thinly sliced, 1 slice",14g
+1774,MEAT AND MEAT PRODUCTS,,Pork pies,buffet pie,75g
+1775,MEAT AND MEAT PRODUCTS,,Pork pies,individual pie,140g
+1776,MEAT AND MEAT PRODUCTS,,Pork pies,large/family pie,450g
+1777,MEAT AND MEAT PRODUCTS,,Pork pies,mini pie,50g
+1778,MEAT AND MEAT PRODUCTS,,Pork pies,slice pie,60g
+1779,MEAT AND MEAT PRODUCTS,,"Pork pies, Grosvenor pork pie",slice,113g
+1780,MEAT AND MEAT PRODUCTS,,"Pork pies, veal and ham pie",1 slice,140g
+1781,MEAT AND MEAT PRODUCTS,,"Pork, roast",small average portion,50g
+1782,MEAT AND MEAT PRODUCTS,,"Pork, roast",medium average portion,90g
+1783,MEAT AND MEAT PRODUCTS,,"Pork, roast",large average portion,150g
+1784,MEAT AND MEAT PRODUCTS,,"Pork, roast",average slice,40g
+1785,MEAT AND MEAT PRODUCTS,,"Pork, roast","thinly sliced pork, 1 slice",28g
+1786,MEAT AND MEAT PRODUCTS,,Rabbit - see game,,
+1787,MEAT AND MEAT PRODUCTS,,"Ravioli - see Pasta, rice and grains",,
+1788,MEAT AND MEAT PRODUCTS,,"Rump steak, fried","average, 5oz",103g
+1789,MEAT AND MEAT PRODUCTS,,"Rump steak, grilled","average, 5oz",102g
+1790,MEAT AND MEAT PRODUCTS,,Salami,I small average slice (diameter 5cm),5g
+1791,MEAT AND MEAT PRODUCTS,,Salami,1 large average slice (diameter 11cm),12g
+1792,MEAT AND MEAT PRODUCTS,,Salami,1 snack salami (peperami),25g
+1793,MEAT AND MEAT PRODUCTS,,Sausage rolls,"1 sausage roll, small",32g
+1794,MEAT AND MEAT PRODUCTS,,Sausage rolls,"1 sausage roll, medium",60g
+1795,MEAT AND MEAT PRODUCTS,,Sausage rolls,"1 sausage roll,  large/jumbo",145g
+1796,MEAT AND MEAT PRODUCTS,,Sausage rolls,1 'mini cocktail' sausage roll,14g
+1797,MEAT AND MEAT PRODUCTS,,"Sausages, chipolata, fried or grilled",1 chipolata,20g
+1798,MEAT AND MEAT PRODUCTS,,"Sausages, Chorizos snack sausage",1 Chorizos,30g
+1799,MEAT AND MEAT PRODUCTS,,"Sausages, cocktail sausage fried or grilled",1 cocktail sausage fried or grilled,10g
+1800,MEAT AND MEAT PRODUCTS,,"Sausages, German sausage, bratwurst",1 German sausage,75g
+1801,MEAT AND MEAT PRODUCTS,,"Sausages, hot dog sausage/frankfurter","1 hot dog sausage/frankfurter, small",23g
+1802,MEAT AND MEAT PRODUCTS,,"Sausages, hot dog sausage/frankfurter","1 hot dog sausage/frankfurter, large",47g
+1803,MEAT AND MEAT PRODUCTS,,"Sausages, kabanos sausage, snack",1 kabanos sausage,30g
+1804,MEAT AND MEAT PRODUCTS,McDonald's ,Sausages,McDonald's Sausage and Egg McMuffin,171g
+1805,MEAT AND MEAT PRODUCTS,,Sausages,1 Peperami,25g
+1806,MEAT AND MEAT PRODUCTS,,"Sausages, pork/beef, buffet, fried or grilled","1 pork/beef, buffet, fried or grilled",12g
+1807,MEAT AND MEAT PRODUCTS,,"Sausages, pork/beef, large, fried or grilled","1 pork/beef, large fried or grilled",40g
+1808,MEAT AND MEAT PRODUCTS,,"Sausages, pork/beef, thin, fried or grilled","1 pork/beef, thin, fried or grilled",20g
+1809,MEAT AND MEAT PRODUCTS,,Sausages,1 saveloy,65g
+1810,MEAT AND MEAT PRODUCTS,,"Sausage, in batter",,115g
+1811,MEAT AND MEAT PRODUCTS,,Sausages,Wimpy Bender (frankfurter) in a bun,140g
+1812,MEAT AND MEAT PRODUCTS,,Scotch eggs - see Egg and egg dishes,,
+1813,MEAT AND MEAT PRODUCTS,,Scotch pie,individual,112g
+1814,MEAT AND MEAT PRODUCTS,,Shepherds pie - cottage pie,average portion,310g
+1815,MEAT AND MEAT PRODUCTS,,"Shepherds pie, purchased, frozen",ready meal for one,210g
+1816,MEAT AND MEAT PRODUCTS,,Spam,1 average slice,14g
+1817,MEAT AND MEAT PRODUCTS,,Spam,fritter,30g
+1818,MEAT AND MEAT PRODUCTS,,"Spare rib chops, with bone, fried or grilled",,220g
+1819,MEAT AND MEAT PRODUCTS,,Spare rib chops,edible portion,140g
+1820,MEAT AND MEAT PRODUCTS,,"Spare ribs, , with bone","1 rack, 4 ribs",120g
+1821,MEAT AND MEAT PRODUCTS,,Spare ribs,edible portion,60g
+1822,MEAT AND MEAT PRODUCTS,,"Spare ribs, no bone",average portion,120g
+1823,MEAT AND MEAT PRODUCTS,,"Spare ribs, Chinese, spare ribs in sauce",,340g
+1824,MEAT AND MEAT PRODUCTS,,"Spare ribs, Kentucky, spare ribs with bone",,224g
+1825,MEAT AND MEAT PRODUCTS,,"Spare ribs, in full house, with bone",,112g
+1826,MEAT AND MEAT PRODUCTS,,Spare ribs,1 Ungers King Rib,60g
+1827,MEAT AND MEAT PRODUCTS,,Spring roll - see Meat and Vegetable sections,,
+1828,MEAT AND MEAT PRODUCTS,,Steak - see beef,,
+1829,MEAT AND MEAT PRODUCTS,,Steak and kidney pies - see beef pies,,
+1830,MEAT AND MEAT PRODUCTS,,Steak and kidney puddings - see beef pies ,,
+1831,MEAT AND MEAT PRODUCTS,,Stewing steak - see beef stewed,,
+1832,MEAT AND MEAT PRODUCTS,,Tandoori chicken- see Indian dishes,,
+1833,MEAT AND MEAT PRODUCTS,,"T-bone steak, fried","average, 8oz",169g
+1834,MEAT AND MEAT PRODUCTS,,"T-bone steak, grilled","average, 8oz",166g
+1835,MEAT AND MEAT PRODUCTS,,Tongue,1 average slice,25g
+1836,MEAT AND MEAT PRODUCTS,,Tripe,"1 average portion, stewed",150g
+1837,MEAT AND MEAT PRODUCTS,,Turkey breast roll,"thinly sliced, 1 slice",11g
+1838,MEAT AND MEAT PRODUCTS,,Turkey burger,I breaded and fried,90g
+1839,MEAT AND MEAT PRODUCTS,,"Turkey, roast",small average portion,70g
+1840,MEAT AND MEAT PRODUCTS,,"Turkey, roast",medium average portion,90g
+1841,MEAT AND MEAT PRODUCTS,,"Turkey, roast",large average portion,140g
+1842,MEAT AND MEAT PRODUCTS,,"Turkey, roast","thinly sliced, 1 slice",23g
+1843,MEAT AND MEAT PRODUCTS,,"Turkey, roast",1 average steak,100g
+1844,MEAT AND MEAT PRODUCTS,,Turkey roll,1 slice,19g
+1845,MEAT AND MEAT PRODUCTS,,Veal and ham pie,1 slice,140g
+1846,MEAT AND MEAT PRODUCTS,,"Veal, cutlet/escalope, in breadcrumbs, fried",,150g
+1847,MEAT AND MEAT PRODUCTS,,Venison,1 average portion,120g
+1848,MILK AND CREAM,,Milk,1 pint,585g
+1849,MILK AND CREAM,,Milk,1/2 pint,293g
+1850,MILK AND CREAM,,Milk,1/3 pint,195g
+1851,MILK AND CREAM,,Milk,1/4 pint,146g
+1852,MILK AND CREAM,,Milk,1/8 pint,73g
+1853,MILK AND CREAM,,Milk,1 tablespoon,15g
+1854,MILK AND CREAM,,Milk,1 dessertspoon,10g
+1855,MILK AND CREAM,,Milk,1 teaspoon,5g
+1856,MILK AND CREAM,,"Milk, whole",in 1 cup tea/coffee,25g
+1857,MILK AND CREAM,,"Milk, whole",in 1 mug tea/coffee,30g
+1858,MILK AND CREAM,,"Milk, semi-skimmed",in 1 cup tea/coffee,30g
+1859,MILK AND CREAM,,"Milk, semi-skimmed",in 1 mug tea/coffee,40g
+1860,MILK AND CREAM,,"Milk, skimmed",in 1 cup tea/coffee,35g
+1861,MILK AND CREAM,,"Milk, skimmed",in 1 mug tea/coffee,50g
+1862,MILK AND CREAM,,Milk,average glass,200g
+1863,MILK AND CREAM,,Milk,"with cereals, average portion",100g
+1864,MILK AND CREAM,,"Milk, canned, semi-skimmed, ready to drink",,300g
+1865,MILK AND CREAM,,"Milk, dried milk",1 teaspoon,3g
+1866,MILK AND CREAM,,"Milk, evaporated",1 small can,170g
+1867,MILK AND CREAM,,Milk,individual portion pack for tea,15g
+1868,MILK AND CREAM,,Coffee whitener powder,1 teaspoon,3g
+1869,MILK AND CREAM,,Coffee whitener powder,1 heaped teaspoon,4.5g
+1870,MILK AND CREAM,,Coffee whitener powder,"1 sachet, Coffee-mate",3g
+1871,MILK AND CREAM,,Coffee whitener powder,"1 heaped teaspoon, Coffee-mate Lite",4.5g
+1872,MILK AND CREAM,,Cream,1 small carton (5 fi. oz),150g
+1873,MILK AND CREAM,,Cream,I large carton (10 ii. oz),300g
+1874,MILK AND CREAM,,"Cream, single",1 tablespoon,15g
+1875,MILK AND CREAM,,"Cream, double, whipped",1 tablespoon,30g
+1876,MILK AND CREAM,,"Cream, aerosol cream",1 tablespoon,10g
+1877,MILK AND CREAM,,Cream,individual portion pack for coffee,15g
+1878,MILK AND CREAM,,"Cream, fresh, whipped on fruit or cake",,45g
+1879,MILK AND CREAM,,"Cream, aerosol cream on fruit or cake",,17g
+1880,MILK AND CREAM,,"Dream Topping, on fruit or cake",,15g
+1881,MILK AND CREAM,,Dried milk,1 teaspoon,3g
+1882,MILK AND CREAM,Aero ,"Flavoured milk, chocolate drinks",,192g
+1883,MILK AND CREAM,,Flavoured milk,"Crazy Milk, individual carton",214g
+1884,MILK AND CREAM,,Flavoured milk,bottle (500 mIs),544g
+1885,MILK AND CREAM,,"Flavoured milk, Mars bar milk", 200 ml,227g
+1886,MILK AND CREAM,Nesquik,"Flavoured milk,  semi-skimmed",,190g
+1887,MILK AND CREAM,McDonald's,Milkshake,,300g
+1888,MILK AND CREAM,,Super whip,average portion,38g
+1889,MILK AND CREAM,,Tip Top dessert topping,3 dessertspoons,50g
+1890,MILK AND CREAM,,Yoghurt drinks - see Yoghurt section,,
+1891,MISCELLANEOUS,,Baking powder,1 level teaspoon,4g
+1892,MISCELLANEOUS,,Bovril - see Marmite,,
+1893,MISCELLANEOUS,,Cherry,"glace or maraschino, 1",5g
+1894,MISCELLANEOUS,,Complan,1 sachet,57g
+1895,MISCELLANEOUS,,Curry powder,1 level teaspoon,3g
+1896,MISCELLANEOUS,,Glace cherry,1 Glace cherry,5g
+1897,MISCELLANEOUS,,Gravy browning,1 teaspoon,5g
+1898,MISCELLANEOUS,,"Herbs, dried",1 teaspoon,1g
+1899,MISCELLANEOUS,,Hundreds and thousands,1 teaspoon,4g
+1900,MISCELLANEOUS,,Maraschino cherry,1 Maraschino cherry,5g
+1901,MISCELLANEOUS,,"Marmite, Bovril",thin scraping on bread,1g
+1902,MISCELLANEOUS,,"Marmite, Bovril",thick scraping on bread,4g
+1903,MISCELLANEOUS,,"Marmite, Bovril",I heaped teaspoon,18g
+1904,MISCELLANEOUS,,"Marmite, Bovril",1 level teaspoon,9g
+1905,MISCELLANEOUS,,Mustard,1 level teaspoon,8g
+1906,MISCELLANEOUS,,"Mustard, powder",1 level teaspoon,3g
+1907,MISCELLANEOUS,,"Oxo, stock cube","stock cube, 1",7g
+1908,MISCELLANEOUS,,"Parsley, dried",1 level teaspoon,1g
+1909,MISCELLANEOUS,,"Parsley, fresh",1 large sprig,1g
+1910,MISCELLANEOUS,,Pepper,1 level teaspoon,2g
+1911,MISCELLANEOUS,,Salt,1 level teaspoon,5g
+1912,MISCELLANEOUS,,Salt,1 heaped teaspoon,8g
+1913,MISCELLANEOUS,,"Spices, dried",1 teaspoon,3g
+1914,MISCELLANEOUS,,Stock cube,"Knort, 1",9g
+1915,MISCELLANEOUS,,Stock cube,"Oxo, 1",6g
+1916,MISCELLANEOUS,,Stuffing,1 portion,50g
+1917,MISCELLANEOUS,,Vinegar,1 teaspoon,5g
+1918,MISCELLANEOUS,,Vinegar,1 tablespoon,15g
+1919,MISCELLANEOUS,,Yeast extract - see Marmite,,
+1920,NUTS AND SEEDS,,Almonds,6 whole,13g
+1921,NUTS AND SEEDS,,Brazil nuts,3 whole,10g
+1922,NUTS AND SEEDS,,Cashew nuts,10 whole,10g
+1923,NUTS AND SEEDS,,"Cashew nuts, roasted, salted, per bag",,25g/50g/100g
+1924,NUTS AND SEEDS,,"Chestnuts, peeled",5 whole,50g
+1925,NUTS AND SEEDS,,"Cob nuts, hazelnuts",10 whole,10g
+1926,NUTS AND SEEDS,,Macademia nuts,"6, no shell",10g
+1927,NUTS AND SEEDS,,"Mixed nuts and raisins, Golden Wonder",per bag,40g
+1928,NUTS AND SEEDS,,"Mixed nuts and raisins, Big D, KP, Percy Dalton",per bag,50g
+1929,NUTS AND SEEDS,,Monkey nuts,1 with shell,2g
+1930,NUTS AND SEEDS,,Peanuts,10 whole,13g
+1931,NUTS AND SEEDS,,"Peanuts, roasted, salted","small, per bag",25g
+1932,NUTS AND SEEDS,,"Peanuts, roasted, salted","medium, per bag",50g
+1933,NUTS AND SEEDS,,"Peanuts, roasted, salted","large, per bag",100g
+1934,NUTS AND SEEDS,,"Peanuts, dry roasted",per bag,50g/100g
+1935,NUTS AND SEEDS,,"Peanuts, steam nuts",per bag,45g
+1936,NUTS AND SEEDS,,Peanut butter,thickly spread on one slice,20g
+1937,NUTS AND SEEDS,,Peanut butter,thinly spread on one slice,12g
+1938,NUTS AND SEEDS,,Peanut butter,1 portion pack,25g
+1939,NUTS AND SEEDS,,Peanuts and raisins,1 handful,40g
+1940,NUTS AND SEEDS,,Pecan nut,"1, no shell",6g
+1941,NUTS AND SEEDS,,Pistachio nuts,"10, kernels only",10g
+1942,NUTS AND SEEDS,,Popcorn,caramel coated,25g/75g
+1943,NUTS AND SEEDS,,Sesame seeds,1 tablespoon,12g
+1944,NUTS AND SEEDS,,"Sesame seed spread, Tahini",1 heaped teaspoon,19g
+1945,NUTS AND SEEDS,,Sunflower seeds,1 tablespoon,16g
+1946,NUTS AND SEEDS,,Tahim,1 heaped teaspoon,19g
+1947,NUTS AND SEEDS,,Walnuts,6 halves,20g
+1948,"PASTA, RICE AND GRAINS",,"Barley, pearl, boiled",1 tablespoon,20g
+1949,"PASTA, RICE AND GRAINS",,"Barley, pearl, dried","1 tablespoon, after boiling",60g
+1950,"PASTA, RICE AND GRAINS",,Bran ,1 tablespoon,7g
+1951,"PASTA, RICE AND GRAINS",,Cornflour,1 heaped tablespoon,30g
+1952,"PASTA, RICE AND GRAINS",,"Cous-cous, cracked wheat",average portion,150g
+1953,"PASTA, RICE AND GRAINS",,Cous-cous,1 tablespoon,33g
+1954,"PASTA, RICE AND GRAINS",,Custard powder ,1 heaped tablespoon,30g
+1955,"PASTA, RICE AND GRAINS",,"Dumpling, suet ",1 average,70g
+1956,"PASTA, RICE AND GRAINS",,"Flour, any",1 level tablespoon,20g
+1957,"PASTA, RICE AND GRAINS",,"Flour, any",1 heaped tablespoon,30g
+1958,"PASTA, RICE AND GRAINS",,Lasagne - see Meat,,
+1959,"PASTA, RICE AND GRAINS",,"Macaroni, boiled",small average portion,150g
+1960,"PASTA, RICE AND GRAINS",,"Macaroni, boiled",medium,230g
+1961,"PASTA, RICE AND GRAINS",,"Macaroni, boiled",large,350g
+1962,"PASTA, RICE AND GRAINS",,"Macaroni, boiled",1 tablespoon,30g
+1963,"PASTA, RICE AND GRAINS",,Macaroni cheese ,average portion,220g
+1964,"PASTA, RICE AND GRAINS",,"Macaroni cheese, canned ",average portion,210g
+1965,"PASTA, RICE AND GRAINS",,"Macaroni cheese, canned ",large can,430g
+1966,"PASTA, RICE AND GRAINS",,"Macaroni cheese, canned ",small can,210g
+1967,"PASTA, RICE AND GRAINS",,"Macaroni cheese, purchased, frozen ",ready meal for one,280g
+1968,"PASTA, RICE AND GRAINS",,"Noodles, instant","1 packet, made up",280g
+1969,"PASTA, RICE AND GRAINS",,Oats ,1 tablespoon,15g
+1970,"PASTA, RICE AND GRAINS",,Oats ,"1 tablespoon, jumbo oats",10g
+1971,"PASTA, RICE AND GRAINS",,"Pasta, cooked",small average portion,150g
+1972,"PASTA, RICE AND GRAINS",,"Pasta, cooked",medium average portion,230g
+1973,"PASTA, RICE AND GRAINS",,"Pasta, cooked",large average portion,350g
+1974,"PASTA, RICE AND GRAINS",,"Pasta, canned in tomato sauce, side dish",average portion,125g
+1975,"PASTA, RICE AND GRAINS",,"Pasta, canned",large can,425g
+1976,"PASTA, RICE AND GRAINS",,"Pasta, canned",small can,215g
+1977,"PASTA, RICE AND GRAINS",,Pasta,1 tablespoon,30g
+1978,"PASTA, RICE AND GRAINS",,"Pasta, purchased ","ready meal, for one",235g
+1979,"PASTA, RICE AND GRAINS",,"Pasta, salad, canned",,210g
+1980,"PASTA, RICE AND GRAINS",,Pot-noodles,as served,300g
+1981,"PASTA, RICE AND GRAINS",,Ravioli,average portion,250g
+1982,"PASTA, RICE AND GRAINS",,"Ravioli, canned",average portion,220g
+1983,"PASTA, RICE AND GRAINS",,"Ravioli, canned",large can,440g
+1984,"PASTA, RICE AND GRAINS",,"Ravioli, canned",small can,215g
+1985,"PASTA, RICE AND GRAINS",,Ravioli,1 tablespoon,45g
+1986,"PASTA, RICE AND GRAINS",,"Rice, boiled","average portion, small",100g
+1987,"PASTA, RICE AND GRAINS",,"Rice, boiled","average portion, medium",180g
+1988,"PASTA, RICE AND GRAINS",,"Rice, boiled","average portion, large",290g
+1989,"PASTA, RICE AND GRAINS",,Rice,1 heaped tablespoon,40g
+1990,"PASTA, RICE AND GRAINS",,"Rice, boiled,fried, take-away portion",,300g
+1991,"PASTA, RICE AND GRAINS",,"Rice, pilau (fried) rice",average portion,180g
+1992,"PASTA, RICE AND GRAINS",,"Rice, salad",1 tablespoon,45g
+1993,"PASTA, RICE AND GRAINS",,"Rice, savoury",average portion,180g
+1994,"PASTA, RICE AND GRAINS",,Rice,1 packet made up,300g
+1995,"PASTA, RICE AND GRAINS",,"Sago, semolina, tapioca pudding",average portion,200g
+1996,"PASTA, RICE AND GRAINS",,"Sago, semolina, tapioca pudding, canned",small can,210g
+1997,"PASTA, RICE AND GRAINS",,"Sago, semolina, tapioca pudding, canned",large can,430g
+1998,"PASTA, RICE AND GRAINS",,"Spaghetti, boiled",small average portion,150g
+1999,"PASTA, RICE AND GRAINS",,"Spaghetti, boiled",medium average portion,220g
+2000,"PASTA, RICE AND GRAINS",,"Spaghetti, boiled",large average portion,270g
+2001,"PASTA, RICE AND GRAINS",,Spaghetti Bolognaise,average portion,470g
+2002,"PASTA, RICE AND GRAINS",,Spaghetti Bolognaise,restaurant portion,400g
+2003,"PASTA, RICE AND GRAINS",,"Spaghetti Bolognaise, pasta",,230g
+2004,"PASTA, RICE AND GRAINS",,"Spaghetti Bolognaise, sauce",,170g
+2005,"PASTA, RICE AND GRAINS",,"Spaghetti Bolognaise, canned",large can,430g
+2006,"PASTA, RICE AND GRAINS",,"Spaghetti Bolognaise, canned",small can,210g
+2007,"PASTA, RICE AND GRAINS",,"Spaghetti Bolognaise, purchased, frozen ",ready meal for one,320g
+2008,"PASTA, RICE AND GRAINS",,"Spaghetti Bolognaise, pasta",,100g
+2009,"PASTA, RICE AND GRAINS",,"Spaghetti Bolognaise, sauce",,220g
+2010,"PASTA, RICE AND GRAINS",,Tortellini,average portion,320g
+2011,"PASTA, RICE AND GRAINS",,"Tortellini, canned",1 tablespoon,50g
+2012,"PASTA, RICE AND GRAINS",,Wheatgerm,1 tablespoon,5g
+2013,"PASTA, RICE AND GRAINS",,Yorkshire pudding,average portion,80g
+2014,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Apple charlotte,average portion,170g
+2015,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Apple crumble (or any fruit),average portion,170g
+2016,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",Burger King,Apple Danish ,,100g
+2017,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Apple pie - see Fruit pie,,
+2018,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",Burger King,"Apple pie, deep fried",,115g
+2019,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",Kentucky,"Apple pie, deep fried",,78g
+2020,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",McDonald's,"Apple pie, deep fried",,81g
+2021,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Arctic roll,"average slice, one fifth",50g
+2022,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",Nestle,"Bavarois, purchased",,100g
+2023,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Blancmange ,average portion,150g
+2024,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Bread and butter pudding,average portion,170g
+2025,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Bread pudding ,average slice,190g
+2026,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Caramel surprise, St Ivel",,128g
+2027,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Cheesecake,average slice,120g
+2028,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Cheesecake,individual,90g
+2029,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Cadbury's Bournville dessert",,80g
+2030,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Cadbury's Dairy milk",,80g
+2031,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Chocoholics",,110g
+2032,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Chocolate Surprise, St Ivel",,128g
+2033,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Hippo Mud",,125g
+2034,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Milky Bar (white chocolate)",,90g
+2035,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Nesquik",,80g
+2036,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Rolo",,70g
+2037,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Chocolate desserts, Yopi, Yoplait",,100g
+2038,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Christmas pudding ,average portion,100g
+2039,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Creme caramel,,90g
+2040,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Creme caramel, purchased, La Laitiere",,100g
+2041,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Creme caramel, purchased, St Ivel",,128g
+2042,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Crumble, any fruit",average portion,170g
+2043,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Custard,average portion,120g
+2044,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Custard, canned",half a can,210g
+2045,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Custard,"cartoned, half a carton",265g
+2046,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Custard, ready to serve",per individual pot,150g
+2047,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Egg custard,average portion,110g
+2048,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Fruit fool,average portion,120g
+2049,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Fruit fool, purchased",individual,115g
+2050,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Fruit pie,average portion,110g
+2051,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Fruit pie, deep fried",average portion,80g
+2052,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Fruit pie, individual",small,54g
+2053,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Fruit pie, individual",large,100g
+2054,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Fruit pie,half large purchased pie,150g
+2055,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Fruit sponge,average portion,110g
+2056,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Fruit sundae,"ice cream, fruit, sauce and cream",180g
+2057,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Fruit tartiflan,average portion,95g
+2058,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Instant whip/Angel Delight,average portion,120g
+2059,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Instant whip/Angel Delight, purchased, ready to eat,",per pot,100g
+2060,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Jelly,average portion,115g
+2061,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Jelly, purchased, ready to eat",per pot,125g
+2062,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Lemon meringue pie,average portion,95g
+2063,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Milk jelly,Chambourcy Disney,125g
+2064,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Milk puddings,average portion,200g
+2065,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Milk puddings, canned",large,425g
+2066,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Milk puddings, canned",small,213g
+2067,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Milk puddings, Ambrosia",per pot,150g
+2068,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Milk puddings, Mullerrice ",per pot,200g
+2069,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Mousse, purchased frozen,","individual, average",74g
+2070,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Mousse, purchased","individual, average",60g
+2071,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Mousse, Aero milk chocolate",,62g
+2072,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Mousse, Chambourcy Disney, Chocolate",,62g
+2073,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Mousse, Delight reduced fat chocolate",,70g
+2074,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Mousse, Hippo Pota Mousse",,62g
+2075,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Mousse, Real Chocolate",,63g
+2076,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Mousse, St Ivel, Cadbury's Dairy Milk",,62g
+2077,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Pancakes (crepes),small,60g
+2078,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Pancakes (crepes),medium,110g
+2079,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Pancakes (crepes),large,150g
+2080,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Pancakes (crepes), filled with fruit",average portion,145g
+2081,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Pavlova,average portion,100g
+2082,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Profiteroles, with chocolate sauce and cream",,155g
+2083,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Rice pudding - see Milk puddings,,
+2084,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Sorbet,average portion,95g
+2085,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Souffle,average portion,113g
+2086,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Sponge pudding,average portion,110g
+2087,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Sponge pudding, canned",whole,300g
+2088,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Sponge pudding, purchased",individual,100g
+2089,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Suet pudding,average pudding,90g
+2090,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Tiramisu, purchased",individual,90g
+2091,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Trifle, Cadbury's Dairy Milk Chocolate",,105g
+2092,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Trifle, homemade",,170g
+2093,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Trifle,  purchased",individual,113g
+2094,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,Viennetta,average slice,56g
+2095,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,"Waffle, sweet",,65g
+2096,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,General puddings,small,120g
+2097,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,General puddings,medium,150g
+2098,"PUDDINGS, CHILLED DESSERTS AND FRUIT PIES",,General puddings,large,180g
+2099,SANDWICHES,,"Beef, roast & salad, retail, purchased",,165g
+2100,SANDWICHES,,"Cheese & pickle, retail, purchased",,185g
+2101,SANDWICHES,,"Chicken, roast & salad, retail, purchased",,205g
+2102,SANDWICHES,,"Egg mayonnaise & cress, retail, purchased",,145g
+2103,SANDWICHES,,"Ham, cheese & pickle, retail, purchased",,180g
+2104,SANDWICHES,,"Tuna mayonnaise, retail, purchased",,165g
+2105,BAPS,,"Cheese & pickle retail, purchased",,195g
+2106,BAPS,,"Chicken salad, retail, purchased",,190g
+2107,"SAUCES, PICKLES AND SOUPS",,Apple sauce,average portion,20g
+2108,"SAUCES, PICKLES AND SOUPS",,Blue cheese dressing,1 tablespoon,25g
+2109,"SAUCES, PICKLES AND SOUPS",,Bread sauce,average portion,45g
+2110,"SAUCES, PICKLES AND SOUPS",,Brown sauce,1 sachet,12g
+2111,"SAUCES, PICKLES AND SOUPS",,Brown sauce,1 portion pack,20g
+2112,"SAUCES, PICKLES AND SOUPS",,"Cheese sauce, with meat/fish/vegetables",small portion,30g
+2113,"SAUCES, PICKLES AND SOUPS",,"Cheese sauce, with meat/fish/vegetables",medium portion,62g
+2114,"SAUCES, PICKLES AND SOUPS",,"Cheese sauce, with meat/fish/vegetables",large portion,90g
+2115,"SAUCES, PICKLES AND SOUPS",,"Chutney, mango",1 teaspoon,10g
+2116,"SAUCES, PICKLES AND SOUPS",,"Chutney, mango",1 tablespoon,33g
+2117,"SAUCES, PICKLES AND SOUPS",,Cranberry sauce,average portion,30g
+2118,"SAUCES, PICKLES AND SOUPS",,Curry sauce,average portion,150g
+2119,"SAUCES, PICKLES AND SOUPS",,French dressing ,"1 salad, average portion",15g
+2120,"SAUCES, PICKLES AND SOUPS",,French dressing ,1 tablespoon,15g
+2121,"SAUCES, PICKLES AND SOUPS",,Gravy ,"small, average portion",45g
+2122,"SAUCES, PICKLES AND SOUPS",,Gravy ,"medium, average portion",50g
+2123,"SAUCES, PICKLES AND SOUPS",,Gravy ,"large, average portion",120g
+2124,"SAUCES, PICKLES AND SOUPS",,Horseradish sauce,1 sachet,12g
+2125,"SAUCES, PICKLES AND SOUPS",,Horseradish sauce,1 portion pack,20g
+2126,"SAUCES, PICKLES AND SOUPS",,Mayonnaise with salad,average portion,30g
+2127,"SAUCES, PICKLES AND SOUPS",,Mayonnaise with salad,1 heaped tablespoon,33g
+2128,"SAUCES, PICKLES AND SOUPS",,Mayonnaise with salad,1 level tablespoon,15g
+2129,"SAUCES, PICKLES AND SOUPS",,Mayonnaise with salad,I portion pack,12g
+2130,"SAUCES, PICKLES AND SOUPS",,Mint jelly,average portion,20g
+2131,"SAUCES, PICKLES AND SOUPS",,Mint sauce,average portion,10g
+2132,"SAUCES, PICKLES AND SOUPS",,Mint sauce,1 teaspoon,7g
+2133,"SAUCES, PICKLES AND SOUPS",,"Mustard, smooth type",average portion,2g
+2134,"SAUCES, PICKLES AND SOUPS",,Mustard,I sachet,5g
+2135,"SAUCES, PICKLES AND SOUPS",,"Mustard, whole grain type",average portion,14g
+2136,"SAUCES, PICKLES AND SOUPS",,Onion sauce,average portion,62g
+2137,"SAUCES, PICKLES AND SOUPS",,Parsley sauce,average portion,62g
+2138,"SAUCES, PICKLES AND SOUPS",,Pesto,1 tablespoon,26g
+2139,"SAUCES, PICKLES AND SOUPS",,"Pickle, with ploughman's",average portion,40g
+2140,"SAUCES, PICKLES AND SOUPS",,Pickle,I heaped teaspoon,15g
+2141,"SAUCES, PICKLES AND SOUPS",,Pickle,1 tablespoon,40g
+2142,"SAUCES, PICKLES AND SOUPS",,Pickle,1 portion pack,20g
+2143,"SAUCES, PICKLES AND SOUPS",,Pickled beetroot,1 average,35g
+2144,"SAUCES, PICKLES AND SOUPS",,Pickled cabbage,1 tablespoon,45g
+2145,"SAUCES, PICKLES AND SOUPS",,Pickled gherkin,1 small,8g
+2146,"SAUCES, PICKLES AND SOUPS",,Pickled gherkin,1 medium,25g
+2147,"SAUCES, PICKLES AND SOUPS",,"Pickled gherkin, pickled cucumber",1 large,60g
+2148,"SAUCES, PICKLES AND SOUPS",,Pickled onion,1 average,15g
+2149,"SAUCES, PICKLES AND SOUPS",,Pickled onion,1 large,25g
+2150,"SAUCES, PICKLES AND SOUPS",,Pickled onion,1 silverskin onion,2g
+2151,"SAUCES, PICKLES AND SOUPS",,Prawn cocktail sauce,average,40g
+2152,"SAUCES, PICKLES AND SOUPS",,Redcurrant jelly,1 teaspoon,9g
+2153,"SAUCES, PICKLES AND SOUPS",,Relish,in burger,15g
+2154,"SAUCES, PICKLES AND SOUPS",,Relish,1 heaped teaspoon,15g
+2155,"SAUCES, PICKLES AND SOUPS",,Salad cream,average with salad,20g
+2156,"SAUCES, PICKLES AND SOUPS",,Salad cream,1 sachet,12g
+2157,"SAUCES, PICKLES AND SOUPS",,Savoury sauces - see white sauce,,
+2158,"SAUCES, PICKLES AND SOUPS",,Soup,small average portion,150g
+2159,"SAUCES, PICKLES AND SOUPS",,Soup,medium average portion,220g
+2160,"SAUCES, PICKLES AND SOUPS",,Soup,large average portion,300g
+2161,"SAUCES, PICKLES AND SOUPS",,Soup,main course soup,260g
+2162,"SAUCES, PICKLES AND SOUPS",,Soup,starter soup,190g
+2163,"SAUCES, PICKLES AND SOUPS",,"Soup, cup-a-soup","cup-a-soup, made up",215g
+2164,"SAUCES, PICKLES AND SOUPS",,Soup,large can,405g
+2165,"SAUCES, PICKLES AND SOUPS",,Soup,small can,300g
+2166,"SAUCES, PICKLES AND SOUPS",,Soup,vending machine soup,170g
+2167,"SAUCES, PICKLES AND SOUPS",,Soy sauce,1 teaspoon,5g
+2168,"SAUCES, PICKLES AND SOUPS",,Sweet 'n' sour sauce,average portion,150g
+2169,"SAUCES, PICKLES AND SOUPS",Burger King,Sweet 'n' sour sauce,,25g
+2170,"SAUCES, PICKLES AND SOUPS",McDonalds,Sweet 'n' sour sauce,,32g
+2171,"SAUCES, PICKLES AND SOUPS",,Tartare sauce,average serving,30g
+2172,"SAUCES, PICKLES AND SOUPS",,Tartare sauce,1 sachet,12g
+2173,"SAUCES, PICKLES AND SOUPS",,Thousand island dressing,1 tablespoon,30g
+2174,"SAUCES, PICKLES AND SOUPS",,Tomato ketchup,I sachet,12g
+2175,"SAUCES, PICKLES AND SOUPS",,Tomato ketchup,1 portion pack,20g
+2176,"SAUCES, PICKLES AND SOUPS",,Tomato sauce,"average, with meatifishlpasta",90g
+2177,"SAUCES, PICKLES AND SOUPS",,"White sauce, with meat/fish/vegetables",small,30g
+2178,"SAUCES, PICKLES AND SOUPS",,"White sauce, with meat/fish/vegetables",medium,62g
+2179,"SAUCES, PICKLES AND SOUPS",,"White sauce, with meat/fish/vegetables",large,90g
+2180,SAVOURY SNACKS,,Apple Crackles,per bag,20g
+2181,SAVOURY SNACKS,,Bacon Fries,per bag,25g/50g
+2182,SAVOURY SNACKS,,Bensons Crinkle Cut,per bag,33g
+2183,SAVOURY SNACKS,Sharwoods,Bombay mix,per bag,100g
+2184,SAVOURY SNACKS,Golden Glow,Bombay mix,per bag,28g
+2185,SAVOURY SNACKS,Percy Dalton,Bombay mix,per bag,30g
+2186,SAVOURY SNACKS,,Brannigans,per bag,37g
+2187,SAVOURY SNACKS,,Californian corn chips,per bag,100g
+2188,SAVOURY SNACKS,,Cheeky Chicken,per bag,18g
+2189,SAVOURY SNACKS,,Cheese Quavers,per bag,20g
+2190,SAVOURY SNACKS,,Cheese Savouries,per bag,33g
+2191,SAVOURY SNACKS,,Cheese Snips,per bag,30g
+2192,SAVOURY SNACKS,,Cheeselets,per bag,25g
+2193,SAVOURY SNACKS,,Crinkles,per bag,40g
+2194,SAVOURY SNACKS,,Crisps,small,25/27/28/30g
+2195,SAVOURY SNACKS,,Crisps,mediumlmaxi,40g
+2196,SAVOURY SNACKS,,Crisps,large,75g
+2197,SAVOURY SNACKS,,Crisps,family pack,100g
+2198,SAVOURY SNACKS,,Crisps,1 large crisp,2g
+2199,SAVOURY SNACKS,,Dinobites,per bag,18g
+2200,SAVOURY SNACKS,,Discos,per bag,18g/29g
+2201,SAVOURY SNACKS,,Farmhouse jackets,per bag,40g
+2202,SAVOURY SNACKS,,Frazzles,per bag,27g
+2203,SAVOURY SNACKS,,Frisps,per bag,28g
+2204,SAVOURY SNACKS,,Garlic mini breads,per bag,28g
+2205,SAVOURY SNACKS,,Golden lights,per bag,25g
+2206,SAVOURY SNACKS,,Good 'n' Crunchy Crisps,per bag,35g
+2207,SAVOURY SNACKS,,Groovers,per bag,30g
+2208,SAVOURY SNACKS,,Horizons,per bag,50g
+2209,SAVOURY SNACKS,,Hula Hoops,per bag,30g
+2210,SAVOURY SNACKS,,Jack Spratt's lower fat snacks,per bag,35g
+2211,SAVOURY SNACKS,,Jackets,per bag,28g
+2212,SAVOURY SNACKS,,Japanese Rice Crackers,per bag,56g
+2213,SAVOURY SNACKS,,Jumbo Jaws,per bag,26g
+2214,SAVOURY SNACKS,,Kettle Chips,per bag,50g/100g
+2215,SAVOURY SNACKS,,"Krunchie Puffs, cheese",per bag,9g
+2216,SAVOURY SNACKS,,"Krunchie Puffs, salt & vinegar",per bag,10g
+2217,SAVOURY SNACKS,,"Krunchie Onion Rings, salt & vinegar",per bag,9g
+2218,SAVOURY SNACKS,,Krunchie Sticks,per bag,19g
+2219,SAVOURY SNACKS,,McCoys Cracker Snacks,per bag,40g
+2220,SAVOURY SNACKS,,Mean Beans,per bag,21g
+2221,SAVOURY SNACKS,,Mexican Chips,per bag,30g
+2222,SAVOURY SNACKS,,Mignons Morceau,per bag,125g
+2223,SAVOURY SNACKS,,Monster Munch,per bag,27g
+2224,SAVOURY SNACKS,,Nik Naks,per bag,35g
+2225,SAVOURY SNACKS,,Oatsters,per bag,28g/50g
+2226,SAVOURY SNACKS,,Odduns,per bag,26g
+2227,SAVOURY SNACKS,,"On Yums, pickled onion",per bag,18g
+2228,SAVOURY SNACKS,,Onion Rings,per bag,50g
+2229,SAVOURY SNACKS,,Petrified Prawn,per bag,18g
+2230,SAVOURY SNACKS,,Pork Crackles,per bag,24g
+2231,SAVOURY SNACKS,,Pork Scratchings,per bag,22g
+2232,SAVOURY SNACKS,,Prawn Crackers,per bag,30g/40g
+2233,SAVOURY SNACKS,,"Prawn Crackers, Chinese take-away",per bag,70g
+2234,SAVOURY SNACKS,,"Pringles, Original",per tube,200g
+2235,SAVOURY SNACKS,,"Quarterbacks, cheese burger, burger pickle",per bag,20g
+2236,SAVOURY SNACKS,,Quavers,per bag,20g
+2237,SAVOURY SNACKS,,Real McCoys,per bag,40g
+2238,SAVOURY SNACKS,,Ringos,per bag,24g
+2239,SAVOURY SNACKS,,Ritz Sandwich,pack of 4,33g
+2240,SAVOURY SNACKS,,Roysters,per bag,28g
+2241,SAVOURY SNACKS,,Ruffles,per bag,28g
+2242,SAVOURY SNACKS,,Savoury Huggy Bears,per bag,25g
+2243,SAVOURY SNACKS,,Savoury Moments,per bag,28g/50g
+2244,SAVOURY SNACKS,,Scampi Fries,per bag,27g
+2245,SAVOURY SNACKS,,Skips,per bag,18g
+2246,SAVOURY SNACKS,,Space Raiders,per bag,19g
+2247,SAVOURY SNACKS,,Spicy Popadums,per bag,30g
+2248,SAVOURY SNACKS,,Solos,per bag,25g
+2249,SAVOURY SNACKS,,Square Crisps,per bag,25g
+2250,SAVOURY SNACKS,,Stackers,per bag,100g
+2251,SAVOURY SNACKS,,"Supa Krunchie, Onion Rings, fried onion",per bag,18g
+2252,SAVOURY SNACKS,,Supa Krunchies,per bag,22g
+2253,SAVOURY SNACKS,,"Supa Krunchies, cheese & tomato",per bag,18g
+2254,SAVOURY SNACKS,,"Supa Krunchies, salt & vinegar",per bag,19g
+2255,SAVOURY SNACKS,,Taco,1 shell,10g
+2256,SAVOURY SNACKS,,Tangy Toms,per bag,9g/18g
+2257,SAVOURY SNACKS,,Thunder Cats,per bag,18g
+2258,SAVOURY SNACKS,,Tortilla Chips,per bag,50g/l00g
+2259,SAVOURY SNACKS,,Transform-A-snack,per bag,20g
+2260,SAVOURY SNACKS,,Ttibaloops,per bag,20g
+2261,SAVOURY SNACKS,,Twiglets,per bag,25g/50g/l00g
+2262,SAVOURY SNACKS,,Wheatcrunchies,per bag,35g
+2263,SAVOURY SNACKS,,Whickettes,per bag,50g
+2264,SAVOURY SNACKS,,Wotsits,per bag,25g
+2265,SAVOURY SNACKS,,Yankee Stars,per bag,9g/20g
+2266,"SUGARS, PRESERVES AND SWEET SAUCES",,Brandy butter ,average portion,30g
+2267,"SUGARS, PRESERVES AND SWEET SAUCES",,"Brandy sauce, rum sauce",average portion,60g
+2268,"SUGARS, PRESERVES AND SWEET SAUCES",,"Cherry, glace or maraschino","Cherry glace or maraschino, 1",5g
+2269,"SUGARS, PRESERVES AND SWEET SAUCES",,Chocolate sauce ,average portion,60g
+2270,"SUGARS, PRESERVES AND SWEET SAUCES",,Chocolate spread,1 average spreading on 1 slice of bread,20g
+2271,"SUGARS, PRESERVES AND SWEET SAUCES",,Chocolate spread,1 heaped teaspoon,16g
+2272,"SUGARS, PRESERVES AND SWEET SAUCES",,Chocolate spread,1 level teaspoon,8g
+2273,"SUGARS, PRESERVES AND SWEET SAUCES",,"Custard - see Puddings, chilled desserts and fruit pies",,
+2274,"SUGARS, PRESERVES AND SWEET SAUCES",,Honey ,1 average spreading on 1 slice of bread,20g
+2275,"SUGARS, PRESERVES AND SWEET SAUCES",,Honey ,1 heaped teaspoon,17g
+2276,"SUGARS, PRESERVES AND SWEET SAUCES",,Honey ,1 level teaspoon,8g
+2277,"SUGARS, PRESERVES AND SWEET SAUCES",,Honey ,1 portion pack,28g
+2278,"SUGARS, PRESERVES AND SWEET SAUCES",,Ice-cream topping sauce,average topping,28g
+2279,"SUGARS, PRESERVES AND SWEET SAUCES",,"Jam, marmalade, lemon curd ",1 average spreading on 1 slice of bread,15g
+2280,"SUGARS, PRESERVES AND SWEET SAUCES",,"Jam, marmalade, lemon curd ",1 heaped teaspoon,18g
+2281,"SUGARS, PRESERVES AND SWEET SAUCES",,"Jam, marmalade, lemon curd ",1 level teaspoon,8g
+2282,"SUGARS, PRESERVES AND SWEET SAUCES",,"Jam, marmalade, lemon curd ",1 individual carton,20g
+2283,"SUGARS, PRESERVES AND SWEET SAUCES",,"Jam, marmalade, lemon curd ",1 mini glass jar,28g/43g
+2284,"SUGARS, PRESERVES AND SWEET SAUCES",,Maple syrup ,serving on waffles,55g
+2285,"SUGARS, PRESERVES AND SWEET SAUCES",,Marmalade - see jam,,
+2286,"SUGARS, PRESERVES AND SWEET SAUCES",,Sugar ,1 cube,5g
+2287,"SUGARS, PRESERVES AND SWEET SAUCES",,Sugar ,1 heaped teaspoon,6g
+2288,"SUGARS, PRESERVES AND SWEET SAUCES",,Sugar ,1 level teaspoon,4g
+2289,"SUGARS, PRESERVES AND SWEET SAUCES",,Sugar ,1 'packet' sugar,6g
+2290,"SUGARS, PRESERVES AND SWEET SAUCES",,Sugar ,1 tablespoon,20g
+2291,VEGETABLES,,Artichoke,"one globe heart, edible portion",50g
+2292,VEGETABLES,,Asparagus,5 spears,125g
+2293,VEGETABLES,,"Aubergine, cooked",half including skin,130g
+2294,VEGETABLES,,"Baked beans, in tomato sauce",small portion,80g
+2295,VEGETABLES,,"Baked beans, in tomato sauce",medium portion,135g
+2296,VEGETABLES,,"Baked beans, in tomato sauce",large portion,190g
+2297,VEGETABLES,,Baked beans,1 small can,150g/205g
+2298,VEGETABLES,,Baked beans,1 large can,420g
+2299,VEGETABLES,,Baked beans,1 tablespoon,40g
+2300,VEGETABLES,,"Baked beans, with sausage, beans",small can,170g
+2301,VEGETABLES,,"Baked beans, with sausage, sausage",small can,55g
+2302,VEGETABLES,,"Baked beans, with sausage, beans",large can,305g
+2303,VEGETABLES,,"Baked beans, with sausage, sausage",large can,145g
+2304,VEGETABLES,,"Baked beans, with burgerbites, chickbits beans",small can,170g
+2305,VEGETABLES,,"Baked beans, with burgerbites, burgerbites/chickbits",small can,55g
+2306,VEGETABLES,Burger King,"Beanburger, with bun",,240g
+2307,VEGETABLES,Wimpy,"Beanburger, with bun",,235g
+2308,VEGETABLES,,"Beans, broad",2 tablespoons,120g
+2309,VEGETABLES,,"Beans, french",small portion,60g
+2310,VEGETABLES,,"Beans, french",medium portion,90g
+2311,VEGETABLES,,"Beans, french",large portion,120g
+2312,VEGETABLES,,"Beans, dried, boiled",2 tablespoons,60g
+2313,VEGETABLES,,"Beans, red kidney, cooked",1 heaped tablespoon,35g
+2314,VEGETABLES,,"Beans, runner",small portion,60g
+2315,VEGETABLES,,"Beans, runner",medium portion,90g
+2316,VEGETABLES,,"Beans, runner",large portion,120g
+2317,VEGETABLES,,Beansprouts,1 tablespoon,20g
+2318,VEGETABLES,,Beetroot,1 small whole,35g
+2319,VEGETABLES,,Beetroot,per slice,10g
+2320,VEGETABLES,,Beetroot,average portion,40g
+2321,VEGETABLES,,Bhindi - see okra,,
+2322,VEGETABLES,,"Broccoli spears/calabrese, boiled",1 spear,45g
+2323,VEGETABLES,,"Broccoli spears/calabrese, boiled",small portion,60g
+2324,VEGETABLES,,Broccoli spears/calabrese,medium portion,85g
+2325,VEGETABLES,,Broccoli spears/calabrese,large portion,110g
+2326,VEGETABLES,,Brussels sprouts,"average serving, 9 sprouts",90g
+2327,VEGETABLES,,Brussels sprouts,small portion,60g
+2328,VEGETABLES,,Brussels sprouts,medium portion,90g
+2329,VEGETABLES,,Brussels sprouts,large portion,120g
+2330,VEGETABLES,,Bubble and squeak,"fried, average portion",200g
+2331,VEGETABLES,,"Cabbage, boiled","any, small portion",60g
+2332,VEGETABLES,,"Cabbage, boiled",medium portion,95g
+2333,VEGETABLES,,"Cabbage, boiled",large portion,120g
+2334,VEGETABLES,,"Cabbage, boiled, red/white, raw, ",1/6 small cabbage,90g
+2335,VEGETABLES,,"Calabrese, boiled",1 spear,45g
+2336,VEGETABLES,,"Carrots, boiled",small portion,40g
+2337,VEGETABLES,,"Carrots, boiled",medium portion,60g
+2338,VEGETABLES,,"Carrots, boiled",large portion,85g
+2339,VEGETABLES,,"Carrots, canned",1 medium carrot,12g
+2340,VEGETABLES,,"Carrots, boiled",1 small,30g
+2341,VEGETABLES,,"Carrots, boiled",1 medium,80g
+2342,VEGETABLES,,"Carrots, boiled",1 large,140g
+2343,VEGETABLES,,Carrots,a few slices,20g
+2344,VEGETABLES,,Carrots,1 tablespoon,40g
+2345,VEGETABLES,,Cauliflower,I floret,10g
+2346,VEGETABLES,,"Cauliflower, boiled",small portion,60g
+2347,VEGETABLES,,"Cauliflower, boiled",medium portion,90g
+2348,VEGETABLES,,"Cauliflower, boiled",large portion,120g
+2349,VEGETABLES,,Cauliflower,Bhaji,140g
+2350,VEGETABLES,,Cauliflower cheese - see Cheese dishes,,
+2351,VEGETABLES,,Celery,1 stick,30g
+2352,VEGETABLES,,"Celery, boiled",small portion,30g
+2353,VEGETABLES,,"Celery, boiled",medium portion,50g
+2354,VEGETABLES,,"Celery, boiled",large portion,80g
+2355,VEGETABLES,,"Chick peas, cooked",1 heaped tablespoon,35g
+2356,VEGETABLES,,"Chick peas, cooked",2-3 tablespoons,90g
+2357,VEGETABLES,,"Chick peas, paste, hummous",1 tablespoon,30g
+2358,VEGETABLES,,Chick peas,average portion,60g
+2359,VEGETABLES,,"Chick peas, chick pea curry, from takeaway",,210g
+2360,VEGETABLES,,Chinese leaves,1 large leaf,40g
+2361,VEGETABLES,,Chips - see potato chips,,
+2362,VEGETABLES,,Coleslaw,1 tablespoon,45g
+2363,VEGETABLES,,Coleslaw,1 small tub,120g
+2364,VEGETABLES,,Coleslaw,1 large tub,250g
+2365,VEGETABLES,,Coleslaw,"take-away portion, Kentucky",100g
+2366,VEGETABLES,,"Coleslaw, canned",1 can,210g
+2367,VEGETABLES,,Corn-on-the-cob -see sweetcorn,,
+2368,VEGETABLES,,"Courgettes, cooked",1 medium,100g
+2369,VEGETABLES,,"Courgettes, cooked",1 large,150g
+2370,VEGETABLES,,Courgettes,small portion,60g
+2371,VEGETABLES,,Courgettes,medium portion,90g
+2372,VEGETABLES,,Courgettes,large portion,120g
+2373,VEGETABLES,,Cress - see mustard and cress,,
+2374,VEGETABLES,,Cucumber,1 slice,6g
+2375,VEGETABLES,,Cucumber,"1"" piece",60g
+2376,VEGETABLES,,Cucumber,average in salad,23g
+2377,VEGETABLES,,French fries - see potato chips,,
+2378,VEGETABLES,,"Green banana,  boiled",1 whole,140g
+2379,VEGETABLES,,"Leeks, boiled",1 medium,160g
+2380,VEGETABLES,,"Leeks, stem",white portion only,80g
+2381,VEGETABLES,,Leeks,average serving,75g
+2382,VEGETABLES,,"Lentils, boiled",1 tablespoon,40g
+2383,VEGETABLES,,"Lentils, raw",(20z raw),120g
+2384,VEGETABLES,,Lettuce,4 small leaves,20g
+2385,VEGETABLES,,Lettuce,"round, average serving in salad",30g
+2386,VEGETABLES,,Lettuce,"iceberg, average serving in salad",80g
+2387,VEGETABLES,,Marrow,average serving,65g
+2388,VEGETABLES,,"Mixed bean salad, canned",small can,210g
+2389,VEGETABLES,,Mixed bean salad,1 tablespoon,30g
+2390,VEGETABLES,,Mixed vegetables,average serving,90g
+2391,VEGETABLES,,"Mushrooms, button, raw",1 small,5g
+2392,VEGETABLES,,"Mushrooms, button, raw",1 medium,10g
+2393,VEGETABLES,,"Mushrooms, button, raw",1 large,20g
+2394,VEGETABLES,,"Mushrooms, breaded",average serving,110g
+2395,VEGETABLES,,"Mushrooms, fried",average serving,44g
+2396,VEGETABLES,,"Mushrooms, stewed",average serving,56g
+2397,VEGETABLES,,Mustard and cress,1 tablespoon,5g
+2398,VEGETABLES,,Mustard and cress,in sandwich,2g
+2399,VEGETABLES,,Mustard and cress,quarter of a punnet,10g
+2400,VEGETABLES,,"Okra, ladies fingers, bhindi, bhindi bhaji, okra",1 medium,5g
+2401,VEGETABLES,,"Okra, curry",,250g
+2402,VEGETABLES,,"Onion, raw",1 small,60g
+2403,VEGETABLES,,"Onion, raw",1 medium,150g
+2404,VEGETABLES,,"Onion, raw",1 large,240g
+2405,VEGETABLES,,"Onion, raw",1 slice,20g
+2406,VEGETABLES,,"Onion, bhaji, fried",1 average,35g
+2407,VEGETABLES,,"Onion, boiled",average serving,60g
+2408,VEGETABLES,,"Onion, fried",average serving,40g
+2409,VEGETABLES,,"Onion, pickled",1 average,15g
+2410,VEGETABLES,,"Onion, pickled",1 large,25g
+2411,VEGETABLES,,"Onion, rings, battered",average portion,100g
+2412,VEGETABLES,,"Onion, spring","spring, 1",10g
+2413,VEGETABLES,,Parsnips,"average portion, small",40g
+2414,VEGETABLES,,Parsnips,medium,65g
+2415,VEGETABLES,,Parsnips,large,85g
+2416,VEGETABLES,,Parsnips,1 tablespoon,50g
+2417,VEGETABLES,,"Parsnips, baked",1 medium baked,90g
+2418,VEGETABLES,,Peas,"average portion, small",40g
+2419,VEGETABLES,,Peas,medium,70g
+2420,VEGETABLES,,Peas,large,100g
+2421,VEGETABLES,,Peas,1 tablespoon,30g
+2422,VEGETABLES,,"Peas, mushy",average portion,80g
+2423,VEGETABLES,,"Peas, mushy, fish and chip shop", average portion,125g
+2424,VEGETABLES,,"Peas, canned",1 tablespoon,30g
+2425,VEGETABLES,,"Pepper, green or red",1 medium,160g
+2426,VEGETABLES,,"Pepper, sliced",1 ring,10g
+2427,VEGETABLES,,"Pepper, half a stuffed pepper",,175g
+2428,VEGETABLES,,"Plantain, boiled",1 whole,200g
+2429,VEGETABLES,,"Potatoes, baked, jacket, with skin",small,100g
+2430,VEGETABLES,,"Potatoes, baked, jacket, without skin",small,88g
+2431,VEGETABLES,,"Potatoes, baked, jacket, with skin",medium,180g
+2432,VEGETABLES,,"Potatoes, baked, jacket, without skin",medium,160g
+2433,VEGETABLES,,"Potatoes, baked, jacket, , with skin",large,220g
+2434,VEGETABLES,,"Potatoes, baked, jacket, without skin",large,195g
+2435,VEGETABLES,,"Potatoes, old, boiled",1 average,60g
+2436,VEGETABLES,,"Potatoes, new, boiled",1 average,40g
+2437,VEGETABLES,,Potatoes,"1 average portion, small",120g
+2438,VEGETABLES,,Potatoes,medium,175g
+2439,VEGETABLES,,Potatoes,large,220g
+2440,VEGETABLES,,"Potatoes, cakes, fried",each,80g
+2441,VEGETABLES,,"Potatoes, chips",1 chip,10g
+2442,VEGETABLES,,"Potatoes, chips","average portion, small",100g
+2443,VEGETABLES,,"Potatoes, chips","average portion, medium",165g
+2444,VEGETABLES,,"Potatoes, chips","average portion, large",240g
+2445,VEGETABLES,,"Potatoes, fish and chip","average portion, shop chips",210g
+2446,VEGETABLES,,"Potatoes,  'french fries'",average portion,110g
+2447,VEGETABLES,"Burger King, ",Potatoes,small,75g
+2448,VEGETABLES,"Burger King, ",Potatoes,regular,116g
+2449,VEGETABLES,"Burger King, ",Potatoes,large,142g
+2450,VEGETABLES,Kentucky,"Potatoes,  'french fries'",regular,130g
+2451,VEGETABLES,Kentucky,"Potatoes,  'french fries'",large,165g
+2452,VEGETABLES,McDonald's,"Potatoes,  'french fries'",regular,77g
+2453,VEGETABLES,McDonald's,"Potatoes,  'french fries'",medium,110g
+2454,VEGETABLES,McDonald's,"Potatoes,  'french fries'",large,155g
+2455,VEGETABLES,Wimpy,"Potatoes,  'french fries'",,110g
+2456,VEGETABLES,,"Potatoes, crisps - see Savoury snacks",,
+2457,VEGETABLES,,"Potatoes, croquette, fried",1 average,90g
+2458,VEGETABLES,,"Potatoes,  croquette, grilled",1 average,80g
+2459,VEGETABLES,,"Potatoes, crunchies, fried","crunchies, fried, 1",9g
+2460,VEGETABLES,,"Potatoes, crunchies, grilled","grilled, 1",6g
+2461,VEGETABLES,,"Potatoes, crunchies",average portion,90g
+2462,VEGETABLES,,"Potatoes, duchesse","duchesse, 1",30g
+2463,VEGETABLES,,"Potatoes, fritter","fritter, 1",120g
+2464,VEGETABLES,Burger King ,"Potatoes, hashbrowns",Burger King (6),58g
+2465,VEGETABLES,,"Potatoes, mashed, portions as boiled",1 tablespoon,45g
+2466,VEGETABLES,,"Potatoes, mashed, portions as boiled",1 scoop,60g
+2467,VEGETABLES,,"Potatoes, mashed, portions as boiled",1 forkful,30g
+2468,VEGETABLES,,"Potatoes, pancakes, baked/grilled",,50g
+2469,VEGETABLES,,"Potatoes, pancakes, fried",,56g
+2470,VEGETABLES,,"Potatoes, roast",1 small potato,50g
+2471,VEGETABLES,,"Potatoes, roast",1 medium potato,85g
+2472,VEGETABLES,,"Potatoes, roast",1 large potato,130g
+2473,VEGETABLES,,"Potatoes, roast",average portion,200g
+2474,VEGETABLES,,"Potatoes, salad",1 tablespoon,45g
+2475,VEGETABLES,,"Potatoes, salad",1 average portion,85g
+2476,VEGETABLES,,"Potatoes, salad",1 tub,250g
+2477,VEGETABLES,,"Potatoes, salad, canned",1 can,210g/440g
+2478,VEGETABLES,,"Potatoes, saute",average portion,100g
+2479,VEGETABLES,,"Potatoes, scallops",average portion,150g
+2480,VEGETABLES,,"Potatoes, waffles",1 grilled,45g
+2481,VEGETABLES,,Radish,1 average,8g
+2482,VEGETABLES,,Ratatouille,1 tablespoon,30g
+2483,VEGETABLES,,Ratatouille,average serving,180g
+2484,VEGETABLES,,"Salads, various",1 tub,200g/250g
+2485,VEGETABLES,,Sauerkraut,1 tablespoon,30g
+2486,VEGETABLES,,Spinach,average serving,90g
+2487,VEGETABLES,,Spinach,1 tablespoon,40g
+2488,VEGETABLES,,Spring onion,1 average,10g
+2489,VEGETABLES,,"Spring roll, fried",average,60g
+2490,VEGETABLES,,"Swede, boiled",small portion,40g
+2491,VEGETABLES,,"Swede, boiled",medium portion,60g
+2492,VEGETABLES,,"Swede, boiled",large portion,85g
+2493,VEGETABLES,,"Sweet potatoes, boiled",2 medium,130g
+2494,VEGETABLES,,"Sweetcorn, kernels only",1 tablespoon,30g
+2495,VEGETABLES,,Sweetcorn,average portion,85g
+2496,VEGETABLES,,"Sweetcorn, 1 corn-on-the-cob, kernels only",1 corn-on-the-cob,125g
+2497,VEGETABLES,,"Sweetcorn, fritter","fritter, 1",85g
+2498,VEGETABLES,,Tomato,1 small,65g
+2499,VEGETABLES,,Tomato,I medium,85g
+2500,VEGETABLES,,Tomato,"I large, e.g. beefsteak tomato",150g
+2501,VEGETABLES,,Tomato,1 slice,17g
+2502,VEGETABLES,,Tomato,1 cherry tomato,15g
+2503,VEGETABLES,,"Tomato, in salad",average,34g
+2504,VEGETABLES,,"Tomato, peeled, canned",large can,400g
+2505,VEGETABLES,,Turnip - see swede,,
+2506,VEGETABLES,,"Turnip, boiled",1 whole,110g
+2507,VEGETABLES,,Vegeburger,"average, fried",56g
+2508,VEGETABLES,,Vegetable casserole/stew,small average portion,180g
+2509,VEGETABLES,,Vegetable casserole/stew,medium average portion,260g
+2510,VEGETABLES,,Vegetable casserole/stew,large average portion,360g
+2511,VEGETABLES,,Vegetable curry,"1 serving, 3-4 tablespoons",200g
+2512,VEGETABLES,,Vegetable pastie,,155g
+2513,VEGETABLES,,"Vegetable salad, in mayonnaise",1 tablespoon,45g
+2514,VEGETABLES,,"Vegetable salad, canned",can,210g/440g
+2515,VEGETABLES,,"Vegetable samosa, purchased",1 average,75g
+2516,VEGETABLES,,Vegetable samosa,average portion (2),100g
+2517,VEGETABLES,,Vegetable spring roll,average,60g
+2518,VEGETABLES,,Watercress,quarter of a bunch,20g
+2519,VEGETABLES,,"Yam, boiled",size of a medium potato,130g
+2520,YOGHURTS AND FROMAGE FRAIS,,Yoghurt ,1 tablespoon low fat,40g
+2521,YOGHURTS AND FROMAGE FRAIS,,"Yoghurt, Greek",1 tablespoon thick,45g
+2522,YOGHURTS AND FROMAGE FRAIS,,"Boots Shapers, fruit",pots,125g 
+2523,YOGHURTS AND FROMAGE FRAIS,,"Chambourcy Disney, fruit",pots,125g 
+2524,YOGHURTS AND FROMAGE FRAIS,,"Chambourcy Disney, set",pots,125g 
+2525,YOGHURTS AND FROMAGE FRAIS,,"Country Love, thick & creamy fruit",pots,125g 
+2526,YOGHURTS AND FROMAGE FRAIS,,Danone Bio,pots,125g 
+2527,YOGHURTS AND FROMAGE FRAIS,,Danone Bioâ€”fruit on the bottom,pots,125g 
+2528,YOGHURTS AND FROMAGE FRAIS,,Danone Bio Lite,pots,125g 
+2529,YOGHURTS AND FROMAGE FRAIS,,"Eden Vale, French style",pots,125g 
+2530,YOGHURTS AND FROMAGE FRAIS,,"Kool live, real fruit set",pots,125g 
+2531,YOGHURTS AND FROMAGE FRAIS,,Marks & Spencer Bio,pots,125g 
+2532,YOGHURTS AND FROMAGE FRAIS,,"Munch Bunch, real fruit",pots,125g 
+2533,YOGHURTS AND FROMAGE FRAIS,,"Munch Bunch, set",pots,125g 
+2534,YOGHURTS AND FROMAGE FRAIS,,"Own brand, diet, very low fat, fruit",pots,125g 
+2535,YOGHURTS AND FROMAGE FRAIS,,"Own brand, low fat, French set",pots,125g 
+2536,YOGHURTS AND FROMAGE FRAIS,,"St Ivel Shape, French Style set",pots,125g 
+2537,YOGHURTS AND FROMAGE FRAIS,,"St Ivel, low fat",pots,125g 
+2538,YOGHURTS AND FROMAGE FRAIS,,"St Ivel, Fiendish Faces",pots,125g 
+2539,YOGHURTS AND FROMAGE FRAIS,,"St Ivel, Shape, low fat fruit",pots,125g 
+2540,YOGHURTS AND FROMAGE FRAIS,,St Ivel Real,pots,125g 
+2541,YOGHURTS AND FROMAGE FRAIS,,"Safeway Bio layer, low fat",pots,125g 
+2542,YOGHURTS AND FROMAGE FRAIS,,"Sainsburys Bio, wholegrain fruit",pots,125g 
+2543,YOGHURTS AND FROMAGE FRAIS,,Sainsburys Diet Bio natural,pots,125g 
+2544,YOGHURTS AND FROMAGE FRAIS,,"Sainsburys Mr Men, 'no bits'",pots,125g 
+2545,YOGHURTS AND FROMAGE FRAIS,,"Sainsburys wholemilk, organic",pots,125g 
+2546,YOGHURTS AND FROMAGE FRAIS,,Ski Bio,pots,125g 
+2547,YOGHURTS AND FROMAGE FRAIS,,Ski Diet,pots,125g 
+2548,YOGHURTS AND FROMAGE FRAIS,,"Thunderbirds, low fat",pots,125g 
+2549,YOGHURTS AND FROMAGE FRAIS,,"Eden Vale, natural",pots,150g
+2550,YOGHURTS AND FROMAGE FRAIS,,"La Laitibre, whole milk, fruit (bottles)",pots,150g
+2551,YOGHURTS AND FROMAGE FRAIS,,"Marks & Spencer Lite, very low fat",pots,150g
+2552,YOGHURTS AND FROMAGE FRAIS,,"Marks & Spencer, mild & thick, low fat,",pots,150g
+2553,YOGHURTS AND FROMAGE FRAIS,,high fruit,pots,150g
+2554,YOGHURTS AND FROMAGE FRAIS,,"Own brand, Bio",pots,150g
+2555,YOGHURTS AND FROMAGE FRAIS,,"Own brand, Bio, diet",pots,150g
+2556,YOGHURTS AND FROMAGE FRAIS,,"Own brand, low fat, fruit",pots,150g
+2557,YOGHURTS AND FROMAGE FRAIS,,"Own brand, thick & creamy, fruit",pots,150g
+2558,YOGHURTS AND FROMAGE FRAIS,,"Safeway, rich & creamy",pots,150g
+2559,YOGHURTS AND FROMAGE FRAIS,,"Ski, extra fruit",pots,150g
+2560,YOGHURTS AND FROMAGE FRAIS,,"Ski, fruit",pots,150g
+2561,YOGHURTS AND FROMAGE FRAIS,,"Other fruit yoghurts, Boots, low fat",,170g
+2562,YOGHURTS AND FROMAGE FRAIS,,"Other fruit yoghurts, Cuisine light",,175g
+2563,YOGHURTS AND FROMAGE FRAIS,,"Other fruit yoghurts, Dairy Fresh, real fruit, low fat",,115g
+2564,YOGHURTS AND FROMAGE FRAIS,,"Other fruit yoghurts, Loseley",,140g
+2565,YOGHURTS AND FROMAGE FRAIS,,"Other fruit yoghurts, Muller light",,200g
+2566,YOGHURTS AND FROMAGE FRAIS,Cow & Gate ,Baby yoghurts,Jar,150g
+2567,YOGHURTS AND FROMAGE FRAIS,,"Baby yoghurts, St Ivel Baby & Toddler",,90g
+2568,YOGHURTS AND FROMAGE FRAIS,Boots,Custard style yoghurts,,150g
+2569,YOGHURTS AND FROMAGE FRAIS,Boots,"Custard style yoghurts, low fat",,170g
+2570,YOGHURTS AND FROMAGE FRAIS,Safeway,Custard style yoghurts,,125g
+2571,YOGHURTS AND FROMAGE FRAIS,Sainsburys,Custard style yoghurts,,125g
+2572,YOGHURTS AND FROMAGE FRAIS,Somerfield,Custard style yoghurts,,150g
+2573,YOGHURTS AND FROMAGE FRAIS,Tesco,Custard style yoghurts,,125g
+2574,YOGHURTS AND FROMAGE FRAIS,Waitrose,Custard style yoghurts,,150g
+2575,YOGHURTS AND FROMAGE FRAIS,,Frozen yoghurt,Average portion,56g
+2576,YOGHURTS AND FROMAGE FRAIS,,Frozen yoghurt,tubs,100g
+2577,YOGHURTS AND FROMAGE FRAIS,Marks & Spencer,"Greek yoghurt, Own brand, Greek style, diet fruit/fruit/",,125g
+2578,YOGHURTS AND FROMAGE FRAIS,,"Greek yoghurt, natural",,150g
+2579,YOGHURTS AND FROMAGE FRAIS,,"Greek yoghurt, Total Greek",,200g/500g
+2580,YOGHURTS AND FROMAGE FRAIS,,"Pasteurised fruit yoghurts, Dairy Crest",,125g
+2581,YOGHURTS AND FROMAGE FRAIS,,"Pasteurised fruit yoghurts, Fruit Basket",,250g
+2582,YOGHURTS AND FROMAGE FRAIS,,"Pasteurised fruit yoghurts, Fruittis",,125g
+2583,YOGHURTS AND FROMAGE FRAIS,,"Pasteurised fruit yoghurts, St Ivel Prize",,125g
+2584,YOGHURTS AND FROMAGE FRAIS,,"Sheeps milk yoghurt, Woodlands Park, fruit",,142g
+2585,YOGHURTS AND FROMAGE FRAIS,,"Sheeps milk yoghurt, Woodlands Park, natural",,227g 
+2586,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Boots Bio Split - yoghurt",,140g
+2587,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Boots Bio Split - fruit",,35g
+2588,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Cuisine Chocolate Crunch - yoghurt",,130g
+2589,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Cuisine Chocolate Crunch - biscuit",,20g
+2590,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Marks & Spencer Lite, yoghurt and fruit",,150g
+2591,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Marks & Spencer Swiss style, yoghurt and fruit",,175g
+2592,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Marks & Spencer Swiss style yoghurt and muesli",,150g
+2593,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Crunch Corner - banana yoghurt",,135g
+2594,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Crunch Corner - chocoflakes",,15g
+2595,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Crunch Corner- wholemilk yoghurt",,150g
+2596,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Crunch Corner- cereal, nuts and raisins",,25g
+2597,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Crunch Corner - wholemilk yoghurt",,150g
+2598,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Crunch Corner - muesli",,25g
+2599,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Fruit Corner - yoghurt",,135g
+2600,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Fruit Corner - fruit",,40g
+2601,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Honey Corner - yoghurt",,135g
+2602,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Muller Honey Corner - honey",,40g
+2603,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, St Ivel Shape twin pot - yoghurt",,135g
+2604,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, St Ivel Shape twin pot - fruit",,35g
+2605,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Safeway Double Treat",,175g
+2606,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Sainsburys Duet - yoghurt",,135g
+2607,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Sainsburys Duet - fruit",,40g
+2608,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Sainsburys Duet Diet - yoghurt",,115g
+2609,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Sainsburys Duet Diet - fruit",,25g
+2610,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Ski Bio Split - yoghurt",,135g
+2611,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Ski Bio Split - fruit",,40g
+2612,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Tesco Fruit Plus Split",,175g
+2613,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Tesco Healthy Eating Fruit Plus",,140g
+2614,YOGHURTS AND FROMAGE FRAIS,,"Split yoghurts, Tesco Thick & Creamy",,175g
+2615,YOGHURTS AND FROMAGE FRAIS,,"Soya yoghurt, Granose",,120g
+2616,YOGHURTS AND FROMAGE FRAIS,Boots,Whipped yoghurt/Yoghurt mousse,,100g
+2617,YOGHURTS AND FROMAGE FRAIS,,"Whipped yoghurt/Yoghurt mousse, Boots Shapers",,100g
+2618,YOGHURTS AND FROMAGE FRAIS,,"Whipped yoghurt/Yoghurt mousse, Marks & Spencer Whisp (lightly whipped)",,125g
+2619,YOGHURTS AND FROMAGE FRAIS,,"Whipped yoghurt/Yoghurt mousse, St Ivel Prize (lightly whipped)","pack of 4, each",90g
+2620,YOGHURTS AND FROMAGE FRAIS,,"Whipped yoghurt/Yoghurt mouss, St Ivel Prize (lightly whipped) ",singles,112g
+2621,YOGHURTS AND FROMAGE FRAIS,,"Yoghurt and cream desserts, Boots Delights",,130g
+2622,YOGHURTS AND FROMAGE FRAIS,,"Yoghurt and cream desserts, Heinz yoghurt dessert for babies", Jar,150g
+2623,YOGHURTS AND FROMAGE FRAIS,,"Yoghurt drinks, Boots drinking yoghurt",,200g
+2624,YOGHURTS AND FROMAGE FRAIS,,Yoghurt drinks Ski Cool,Ski Cool (750 ml),795g
+2625,YOGHURTS AND FROMAGE FRAIS,,Yoghurt drinks Ski Cool,Ski Cool (200 ml),212g
+2626,YOGHURTS AND FROMAGE FRAIS,,"Yoghurt drinks, Yop",large,700g
+2627,YOGHURTS AND FROMAGE FRAIS,,"Yoghurt drinks, Yop",standard,200g
+2628,YOGHURTS AND FROMAGE FRAIS,,Fromage Frais,1 tablespoon,45g
+2629,YOGHURTS AND FROMAGE FRAIS,,"Chambourcy, with fruit puree",pots,60g 
+2630,YOGHURTS AND FROMAGE FRAIS,,Danone Petit Gervais chocolate,pots,60g 
+2631,YOGHURTS AND FROMAGE FRAIS,,"Marks & Spencer, creamy with fruit pieces",pots,60g 
+2632,YOGHURTS AND FROMAGE FRAIS,,Petits Filous,"pots, small",60g 
+2633,YOGHURTS AND FROMAGE FRAIS,,Safeway,"pots, small",60g 
+2634,YOGHURTS AND FROMAGE FRAIS,,"Safeway, very low fat",pots,60g 
+2635,YOGHURTS AND FROMAGE FRAIS,,"Sainsburys, petit with fruit pieces",pots,60g 
+2636,YOGHURTS AND FROMAGE FRAIS,,"Somerfield, low fat",pots,60g 
+2637,YOGHURTS AND FROMAGE FRAIS,,Thunderbirds,pots,60g 
+2638,YOGHURTS AND FROMAGE FRAIS,,"Marks & Spencer, creamy with fruit puree",pots,100g 
+2639,YOGHURTS AND FROMAGE FRAIS,,Petit Danone,"pots, large",100g 
+2640,YOGHURTS AND FROMAGE FRAIS,,Petits Filous,"pots, large",100g 
+2641,YOGHURTS AND FROMAGE FRAIS,,"St Ivel Shape, virtually fat free",pots,100g 
+2642,YOGHURTS AND FROMAGE FRAIS,,Safeway,"pots, large",100g 
+2643,YOGHURTS AND FROMAGE FRAIS,,"Sainsburys, creamy with fruit",pots,100g 
+2644,YOGHURTS AND FROMAGE FRAIS,,"Sainsburys, very low fat, diet",pots,100g 
+2645,YOGHURTS AND FROMAGE FRAIS,,"Sainsburys, virtually fat free with fruit pieces",pots,100g 
+2646,YOGHURTS AND FROMAGE FRAIS,,"Tesco, Yoplait, fruit on the bottom",pots,100g 
+2647,YOGHURTS AND FROMAGE FRAIS,,"Tesco, Yoplait light fruit",pots,100g 
+2648,YOGHURTS AND FROMAGE FRAIS,,"Country Love, fruit",,150g
+2649,YOGHURTS AND FROMAGE FRAIS,,Hippo Tots,,50g
+2650,YOGHURTS AND FROMAGE FRAIS,,Marks & Spencer Coco the Clown,,42g
+2651,YOGHURTS AND FROMAGE FRAIS,,Munch Bunch Pot Shots,,42g
+2652,YOGHURTS AND FROMAGE FRAIS,,Onken,,200g
+2653,YOGHURTS AND FROMAGE FRAIS,,Petit Danoneâ,small,50g
+2654,YOGHURTS AND FROMAGE FRAIS,,St Ivel Fiendish Faces,,50g
+2655,YOGHURTS AND FROMAGE FRAIS,,Baby fromage frais,Baby Danone,60g
+2656,YOGHURTS AND FROMAGE FRAIS,Heinz ,Baby fromage frais,Jar,163g
