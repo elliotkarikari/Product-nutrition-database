@@ -142,7 +142,9 @@ class TestApi(unittest.TestCase):
         with urllib.request.urlopen(
             f"http://127.0.0.1:{self.port}/health", timeout=5
         ) as response:
-            self.assertEqual(json.loads(response.read())["status"], "ok")
+            health = json.loads(response.read())
+        self.assertEqual(health["status"], "ok")
+        self.assertEqual(health["models"], {OLD: "in force", NEW: "shadow model, not in force"})
         status, body = self._post("/v1/assess/bulk", {"products": [BEANS, SWEET_DRINK]})
         self.assertEqual(status, 200)
         self.assertEqual(body["summary"]["assessed"], 2)

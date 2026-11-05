@@ -1,7 +1,8 @@
 """ShelfScale assessment API (prototype, standard library only).
 
 Endpoints:
-    GET  /health          -> {"status": "ok", "model": "uk-npm-2004/05"}
+    GET  /health          -> {"status": "ok", "models": {"uk-npm-2004/05": "in force",
+                                                  "uk-npm-2018": "shadow model, not in force"}}
     POST /v1/assess       -> one product  (see service.assess_product)
     POST /v1/assess/bulk  -> many products (see service.assess_bulk)
     POST /v1/lookup       -> one CoFID food by code or exact name (see cofid_assess)
@@ -22,6 +23,7 @@ import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 from .cofid_assess import lookup_and_assess, lookup_bulk
+from .npm2018 import MODEL_ID as NPM2018_ID, STATUS as NPM2018_STATUS
 from .service import MODEL_ID, assess_bulk, assess_product
 
 ROUTES = {
@@ -47,7 +49,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:  # noqa: N802 (http.server naming)
         if self.path == "/health":
-            self._send_json(200, {"status": "ok", "model": MODEL_ID})
+            self._send_json(200, {"status": "ok",
+                                  "models": {MODEL_ID: "in force", NPM2018_ID: NPM2018_STATUS}})
         else:
             self._send_json(404, {"error": "Not found."})
 
@@ -75,7 +78,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def run(host: str = "127.0.0.1", port: int = 8765) -> None:
     server = ThreadingHTTPServer((host, port), Handler)
-    print(f"ShelfScale API listening on http://{host}:{port} (model {MODEL_ID})")
+    print(f"ShelfScale API listening on http://{host}:{port} (models {MODEL_ID}; {NPM2018_ID}, {NPM2018_STATUS})")
     server.serve_forever()
 
 

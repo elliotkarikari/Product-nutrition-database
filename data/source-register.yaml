@@ -141,7 +141,7 @@ sources:
       method: guidance-and-consultation-outcome
       cadence: monthly
     status: implemented-as-shadow-model
-    note: "Published 27 January 2026. Shadow model, NOT in force: the consultation on applying it to the advertising and promotion restrictions closed in June 2026 and the outcome is pending. Implemented in src/shelfscale/npm2018.py; every output is labelled as the 2018 shadow model. Retrieved 2026-11-05; HTML sha256 at retrieval: technical guidance 753bfe5c98e85f6186d9ecb2f962557e62e0d504c0495945b1d0b1f7f62dd191, worked examples 498e2560bf8e744e4210f90089d7883903b9bae21473660bd5f840dfe02790c1, FVNS definitions a6c3db4792005828de27062b5284738c0f66e332a305f95185d82b226d4a89f7."
+    note: "Published 27 January 2026. Shadow model, NOT in force: the consultation on applying it to the advertising and promotion restrictions closed in June 2026 and the outcome is pending. Implemented in src/shelfscale/npm2018.py and validated against all 17 worked examples (tests/test_npm2018.py); served beside NPM 2004/05 in every assessment and lookup result; every output is labelled as the 2018 shadow model. Free sugars come only from the caller, never from total sugars. Retrieved 2026-11-05; HTML sha256 at retrieval: technical guidance 753bfe5c98e85f6186d9ecb2f962557e62e0d504c0495945b1d0b1f7f62dd191, worked examples 498e2560bf8e744e4210f90089d7883903b9bae21473660bd5f840dfe02790c1, FVNS definitions a6c3db4792005828de27062b5284738c0f66e332a305f95185d82b226d4a89f7."
 
   - id: uk-devolved-hfss-guidance
     name: Food (Promotion and Placement) (Scotland) Regulations 2025 implementation guidance; Wales and Northern Ireland equivalents

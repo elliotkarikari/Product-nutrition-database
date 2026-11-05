@@ -22,7 +22,7 @@ Food nutrition data is scattered across spreadsheets, PDF reports, product label
 ## First build slice
 
 - UK canonical import for CoFID.
-- A faithful UK Nutrient Profiling Model 2004/05 scorer, tested against published worked examples and boundary fixtures.
+- A faithful UK Nutrient Profiling Model 2004/05 scorer, tested against published worked examples and boundary fixtures, with NPM 2018 beside it as a shadow model.
 - UK traffic lights.
 - Portion and per-item views built from portion-size and unit-weight evidence.
 - A source register and watcher process for official updates, including category reports published between CoFID editions.
@@ -40,4 +40,4 @@ The code in this repository is MIT licensed. Data is different: every dataset ke
 
 ## Status
 
-Specification stage, November 2026. The governing document is `SPEC.md`. Built and tested: the UK NPM scorer (validated against the guidance's six worked examples), front-of-pack traffic lights from the 2016 FoP guidance, an assessment API with supplied and CoFID lookup modes (`docs/API.md`), the CoFID 2021 importer, and unit weights from the 2011 and 2015 fruit and vegetable sampling reports. The remaining components are specified, not built. Two activities run outside this code, a monthly source watch over the registered data sources and daily research on data sources and product forms: they run in Rocky's agent environment, outside this repository, and their schedules and logs are held there. Nothing in this repository can show whether they are running. Both report for human review and change no data by themselves.
+Specification stage, November 2026. The governing document is `SPEC.md`. Built and tested: the UK NPM 2004/05 scorer (validated against the guidance's six worked examples), the NPM 2018 scorer as a shadow model, not in force (validated against DHSC's 17 worked examples; 2018 scores need the caller's free sugars figure), dual scoring of both models in every API result, front-of-pack traffic lights from the 2016 FoP guidance, an assessment API with supplied and CoFID lookup modes (`docs/API.md`), the CoFID 2021 importer, unit weights from the 2011 and 2015 fruit and vegetable sampling reports, and 2,606 typical portions from Food Portion Sizes (2002), published on Elliot's decision; Crown copyright, NOT covered by the Open Government Licence. The remaining components are specified, not built. Two activities run outside this code, a monthly source watch over the registered data sources and daily research on data sources and product forms: they run in Rocky's agent environment, outside this repository, and their schedules and logs are held there. Nothing in this repository can show whether they are running. Both report for human review and change no data by themselves.
