@@ -151,7 +151,7 @@ Elliot directed that the product be usable through an API, that assessment work 
 
 Elliot raised this on November 5, 2026: code Rocky changed in an earlier project did not appear when he opened GitHub on another machine, because the work only existed in Rocky's own workspace. This section is the standing fix.
 
-**Current status, stated plainly:** as of November 5, 2026, the ShelfScale code (this spec package, the NPM scorer, the API prototype) exists ONLY in Rocky's workspace, as a local git repository with local commits. It is not on GitHub, and Elliot cannot see it from another machine until the repo home in section 12 is decided and the code is pushed. Any report that describes ShelfScale code as available, shared or published before that push has happened is wrong.
+**Current status, stated plainly:** as of November 5, 2026, the ShelfScale code (this spec package, the NPM scorer, the API prototype) exists ONLY in Rocky's workspace, as a local git repository with local commits. It is not on GitHub. Elliot authorised the upload on November 5, 2026 and Rocky attempted it the same day; both routes failed with GitHub's "Resource not accessible by personal access token" because Rocky's stored GitHub token is scoped to the agent-vault repository only. It cannot create a repo or write to any other repo. The unblock is one short GitHub-side step by Elliot: create the empty `shelfscale-open` repo and add it to that token's repository access (Contents: Read and write), after which Rocky pushes and verifies by read-back. Until that push is verified, any report that describes ShelfScale code as available, shared or published is wrong.
 
 **The rule for this project (and the general rule now recorded in the agent vault's Build Rules):**
 
