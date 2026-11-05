@@ -6,8 +6,9 @@ Placement) (England) Regulations 2021.
 
 All nutrient inputs are per 100 g, for food and drink alike, as sold, or as
 reconstituted where the guidance requires that basis. Values labelled per
-100 ml must be converted to per 100 g by the product's specific gravity
-before scoring (guidance worked examples 2 and 6).
+100 ml must be converted to per 100 g before scoring. The guidance's worked
+examples 2 and 6 do this with a specific gravity; ShelfScale does not yet
+convert (see docs/API.md, "Scoring basis").
 
 Fibre is scored on the NSP (Englyst) scale when the NSP value is known and on
 the AOAC scale otherwise (guidance FAQ a). The caller supplies exactly one.

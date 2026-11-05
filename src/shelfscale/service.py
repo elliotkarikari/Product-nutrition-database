@@ -15,6 +15,9 @@ from .npm import calculate_npm
 
 MODEL_ID = "uk-npm-2004/05"
 MAX_BULK_ITEMS = 1000
+# The guidance scores food and drink alike on 100 g. ShelfScale scores only
+# values already on that basis and never relabels per-100 ml values.
+SCORING_BASIS = "per_100g"
 
 _REQUIRED_NUTRIENTS = (
     "energy_kj",
@@ -36,12 +39,13 @@ def _require_number(nutrients: dict, name: str) -> float:
 
 
 def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
-    """Assess one product from its per-100 g/ml nutrient values.
+    """Assess one product from its per-100 g nutrient values (food and drink).
 
     Payload shape:
         {
           "id": "sku-123",                  # or "name"
           "is_drink": false,
+          "basis": "per_100g",              # optional; the only accepted value
           "portion_g": 30,                  # optional, for per-portion view
           "nutrients": {
             "energy_kj": 1800, "saturated_fat_g": 4.0, "total_sugars_g": 20,
@@ -55,6 +59,13 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
     product_id = payload.get("id") or payload.get("name")
     if not product_id:
         raise ValueError("Product needs an 'id' or a 'name'.")
+    basis = payload.get("basis", SCORING_BASIS)
+    if basis != SCORING_BASIS:
+        raise ValueError(
+            "basis must be 'per_100g'. NPM scores food and drink per 100 g; "
+            "convert per-100 ml values to per 100 g using the product's "
+            "density before submitting."
+        )
     nutrients = payload.get("nutrients")
     if not isinstance(nutrients, dict):
         raise ValueError("Product needs a 'nutrients' object.")
@@ -73,7 +84,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
     response: dict[str, Any] = {
         "id": product_id,
         "model": MODEL_ID,
-        "basis": "per_100ml" if is_drink else "per_100g",
+        "basis": SCORING_BASIS,
         "score": result.score,
         "less_healthy": result.less_healthy,
         "a_points": result.a_points,

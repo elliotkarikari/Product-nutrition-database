@@ -26,7 +26,7 @@ PYTHONPATH=src python3 -m shelfscale.api --port 8765
 Returns `{"status": "ok", "model": "uk-npm-2004/05"}`.
 
 ### POST /v1/assess
-Assess one product from caller-supplied per-100 g (or per-100 ml for drinks) nutrient values.
+Assess one product from caller-supplied per-100 g nutrient values. Food and drink alike are scored per 100 g, as the NPM guidance requires.
 
 Request:
 ```json
@@ -43,7 +43,9 @@ Request:
 ```
 `sodium_mg` and `salt_g` are alternatives; supplying both or neither is an error.
 
-Response: the NPM score, A and C point breakdowns, `less_healthy` against the food (4+) or drink (1+) threshold, the model id, the basis, an optional `per_portion` view when `portion_g` is given, and an evidence note stating the values were caller-supplied and not verified by ShelfScale.
+**Scoring basis.** `basis` is optional and the only accepted value is `per_100g`. A request with `basis: "per_100ml"` (or any other value) is rejected with a 400 that asks the caller to convert first. ShelfScale never relabels per-100 ml values as per-100 g. Converting per 100 ml to per 100 g needs the product's density; this is not built yet because the guidance's worked examples 2 and 6 multiply per-100 ml values by specific gravity, whereas dividing is the physically correct conversion. That conflict is for Elliot to resolve before any conversion ships.
+
+Response: the NPM score, A and C point breakdowns, `less_healthy` against the food (4+) or drink (1+) threshold, the model id, the basis (always `per_100g`), an optional `per_portion` view when `portion_g` is given, and an evidence note stating the values were caller-supplied and not verified by ShelfScale.
 
 ### POST /v1/assess/bulk
 Assess a range in one call: `{"products": [ ... ]}` with the single-product shape per item.

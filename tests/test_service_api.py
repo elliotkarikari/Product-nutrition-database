@@ -62,6 +62,17 @@ class TestService(unittest.TestCase):
         self.assertEqual(result["summary"]["less_healthy"], 1)
         self.assertEqual(result["errors"][0]["id"], "broken")
 
+    def test_basis_is_per_100g_for_drinks_too(self):
+        result = assess_product(SWEET_DRINK)
+        self.assertEqual(result["basis"], "per_100g")
+
+    def test_per_100ml_basis_is_rejected_not_relabelled(self):
+        with self.assertRaisesRegex(ValueError, "per_100g"):
+            assess_product({**SWEET_DRINK, "basis": "per_100ml"})
+        with self.assertRaises(ValueError):
+            assess_product({**BEANS, "basis": "per_portion"})
+        self.assertEqual(assess_product({**BEANS, "basis": "per_100g"})["score"], -2)
+
     def test_bulk_requires_products(self):
         with self.assertRaises(ValueError):
             assess_bulk({"products": []})
