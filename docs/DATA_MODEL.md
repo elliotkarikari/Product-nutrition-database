@@ -81,3 +81,14 @@ Found while importing the 2011 (DH) and 2015 (PHE) sampling reports (November 5,
 | `PortionObservation` needs a period; the reports give purchase dates per sub-sample, not a period. | Period is the earliest to latest purchase date of the composite's sub-samples, as printed. Two dates (sweet potato, papaya) fall in early 2015, before the 2015-16 fieldwork; they look like year typos in the report and are kept as printed. |
 | The composite names are the reports' own and are not CoFID food codes. | Not linked to CoFID yet. Matching is its own step (SPEC section 8); no link is guessed here. |
 | The legacy processed CSVs that pointed to these reports are damaged by PDF extraction. | Not used as evidence. Values come from the original reports; the manifests record the legacy route and the damage. |
+
+## Food Portion Sizes: a typical portion is not a sample
+
+Found while importing Food Portion Sizes (November 5, 2026).
+
+| Conflict | Resolution |
+|---|---|
+| `PortionObservation` here is shaped for weighed samples (composite, sub-samples, spread). FPS gives one typical weight per portion, with no sample behind it in the data. | A separate record, `TypicalPortion` (basis `typical_portion`), holds the food name as printed, group, brand, portion description, the weight text exactly as transcribed, and how it was read. Two shapes for two kinds of evidence; neither carries fields it cannot fill. |
+| Some FPS weights are not one number of grams: volumes in ml, alternatives ("250/300g"), a range, and four unreadable values with a letter l for the digit 1. | `value_kind` says which; only a single gram value sets `grams`. Volumes are not converted (no density); alternatives and ranges keep every number without choosing; unreadable values are reported and not imported. |
+| FPS names products and brands as the book prints them, not as CoFID foods. | Matched to CoFID by exact name only (69 rows); the rest stay FPS-only rather than forcing a match. |
+

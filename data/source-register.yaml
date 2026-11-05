@@ -195,8 +195,8 @@ sources:
     watch:
       method: static-reverify
       cadence: yearly
-    status: import-pending-source-confirmation
-    note: "Import source is the legacy file that is Elliot's hand transcription from his own copy; awaiting his confirmation of which file that is (docs/LEGACY_INVENTORY.md). The PDF-extracted FPS file is used only where it reconciles with the transcription; disagreements are reported, not averaged."
+    status: imported
+    note: "Imported from Elliot's hand transcription (confirmed by him, November 5, 2026): data/raw/uk-food-portion-sizes-2002, importer src/shelfscale/fps.py, report docs/FPS_IMPORT_REPORT.md. The file shares OCR artefacts with the tabula extraction on main, recorded in its manifest. The extraction is a check only."
 
   - id: open-food-facts
     name: Open Food Facts
