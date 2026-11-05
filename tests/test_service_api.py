@@ -73,6 +73,20 @@ class TestService(unittest.TestCase):
             assess_product({**BEANS, "basis": "per_portion"})
         self.assertEqual(assess_product({**BEANS, "basis": "per_100g"})["score"], -2)
 
+    def test_fibre_nsp_or_aoac_exactly_one(self):
+        nsp = assess_product({**BEANS, "nutrients": {
+            **{k: v for k, v in BEANS["nutrients"].items() if k != "fibre_aoac_g"},
+            "fibre_nsp_g": 3.0}, "portion_g": 100})
+        self.assertEqual((nsp["c_points"]["fibre"], nsp["fibre_method"]), (4, "nsp"))
+        self.assertEqual(nsp["per_portion"]["fibre_nsp_g"], 3.0)
+        aoac = assess_product(BEANS)
+        self.assertEqual(aoac["fibre_method"], "aoac")
+        with self.assertRaisesRegex(ValueError, "exactly one"):
+            assess_product({**BEANS, "nutrients": {**BEANS["nutrients"], "fibre_nsp_g": 3.0}})
+        neither = {k: v for k, v in BEANS["nutrients"].items() if k != "fibre_aoac_g"}
+        with self.assertRaisesRegex(ValueError, "exactly one"):
+            assess_product({**BEANS, "nutrients": neither})
+
     def test_bulk_requires_products(self):
         with self.assertRaises(ValueError):
             assess_bulk({"products": []})

@@ -24,9 +24,9 @@ _REQUIRED_NUTRIENTS = (
     "saturated_fat_g",
     "total_sugars_g",
     "fruit_veg_nuts_percent",
-    "fibre_aoac_g",
     "protein_g",
 )
+_FIBRE_FIELDS = ("fibre_nsp_g", "fibre_aoac_g")
 
 
 def _require_number(nutrients: dict, name: str) -> float:
@@ -50,7 +50,8 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
           "nutrients": {
             "energy_kj": 1800, "saturated_fat_g": 4.0, "total_sugars_g": 20,
             "sodium_mg": 300,               # or "salt_g": 0.75
-            "fruit_veg_nuts_percent": 0, "fibre_aoac_g": 2.0, "protein_g": 6.0
+            "fruit_veg_nuts_percent": 0, "protein_g": 6.0,
+            "fibre_nsp_g": 1.6              # or "fibre_aoac_g": 2.0
           }
         }
     """
@@ -77,6 +78,14 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         values["sodium_mg"] = _require_number(nutrients, "sodium_mg")
     if salt_g is not None:
         values["salt_g"] = _require_number(nutrients, "salt_g")
+    fibre_given = [name for name in _FIBRE_FIELDS if nutrients.get(name) is not None]
+    if len(fibre_given) != 1:
+        raise ValueError(
+            "Supply exactly one of nutrients.fibre_nsp_g or nutrients.fibre_aoac_g "
+            "(NSP is preferred where known)."
+        )
+    fibre_field = fibre_given[0]
+    values[fibre_field] = _require_number(nutrients, fibre_field)
 
     is_drink = bool(payload.get("is_drink", False))
     result = calculate_npm(is_drink=is_drink, **values)
@@ -92,6 +101,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         "total_a": result.total_a,
         "total_c": result.total_c,
         "protein_counted": result.protein_counted,
+        "fibre_method": result.fibre_method,
         "evidence_note": (
             "Score computed from caller-supplied nutrient values. "
             "ShelfScale has not verified these values."
@@ -113,7 +123,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
             "saturated_fat_g": round(values["saturated_fat_g"] * factor, 2),
             "total_sugars_g": round(values["total_sugars_g"] * factor, 2),
             "salt_g": round(sodium_for_portion / 400.0 * factor, 3),
-            "fibre_aoac_g": round(values["fibre_aoac_g"] * factor, 2),
+            fibre_field: round(values[fibre_field] * factor, 2),
             "protein_g": round(values["protein_g"] * factor, 2),
         }
     return response
