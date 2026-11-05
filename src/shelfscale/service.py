@@ -87,7 +87,9 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
     fibre_field = fibre_given[0]
     values[fibre_field] = _require_number(nutrients, fibre_field)
 
-    is_drink = bool(payload.get("is_drink", False))
+    is_drink = payload.get("is_drink", False)
+    if not isinstance(is_drink, bool):
+        raise ValueError("is_drink must be true or false (a JSON boolean).")
     result = calculate_npm(is_drink=is_drink, **values)
 
     response: dict[str, Any] = {

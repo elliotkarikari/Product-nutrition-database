@@ -1,6 +1,7 @@
 import json
 import threading
 import unittest
+import urllib.error
 import urllib.request
 from http.server import ThreadingHTTPServer
 
@@ -87,6 +88,13 @@ class TestService(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "exactly one"):
             assess_product({**BEANS, "nutrients": neither})
 
+    def test_is_drink_must_be_boolean(self):
+        for bad in ("false", "true", 0, 1, None):
+            with self.subTest(value=bad):
+                with self.assertRaisesRegex(ValueError, "is_drink"):
+                    assess_product({**BEANS, "is_drink": bad})
+        self.assertFalse(assess_product({**BEANS, "is_drink": False})["less_healthy"])
+
     def test_bulk_requires_products(self):
         with self.assertRaises(ValueError):
             assess_bulk({"products": []})
@@ -125,6 +133,12 @@ class TestApi(unittest.TestCase):
         status, body = self._post("/v1/assess", BEANS)
         self.assertEqual(status, 200)
         self.assertEqual(body["id"], "beans-400g")
+
+    def test_non_boolean_is_drink_is_400(self):
+        with self.assertRaises(urllib.error.HTTPError) as caught:
+            self._post("/v1/assess", {**BEANS, "is_drink": "false"})
+        self.assertEqual(caught.exception.code, 400)
+        self.assertIn("is_drink", json.loads(caught.exception.read())["error"])
 
 
 if __name__ == "__main__":
