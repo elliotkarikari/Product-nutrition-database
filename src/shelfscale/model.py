@@ -117,3 +117,27 @@ class PortionObservation:
     period_start: str               # earliest purchase date, ISO 8601
     period_end: str                 # latest purchase date, ISO 8601
     release: DatasetRelease
+
+
+@dataclass(frozen=True, slots=True)
+class TypicalPortion:
+    """A typical portion or pack weight from a reference book, as printed.
+
+    One value per portion, not a sample: no spread exists to keep. The
+    weight text is kept exactly as the source has it; value_kind says how
+    it was read, and only a single gram value sets ``grams``.
+    """
+    source_row: str                 # the source file's own row index
+    group: str
+    brand: str | None
+    food_name: str                  # as printed (whitespace kept)
+    portion_description: str | None
+    weight_text: str                # exactly as in the source
+    value_kind: str                 # single | alternatives | range | volume_ml | unreadable
+    amounts: tuple[float, ...]      # the number(s) read; empty when unreadable
+    unit: str | None                # g | ml
+    grams: float | None             # set only for a single gram value
+    basis: str                      # typical_portion
+    cofid_food_id: str | None       # exact-name match to CoFID 2021, if any
+    cofid_match: str                # exact_name | none
+    release: DatasetRelease

@@ -1,5 +1,5 @@
 {
- "about": "sha256 fingerprints of content from the three _VJ files on main (whole files, and distinctive cells not also in Elliot's transcription) and of the reviewer comment cells in main's MW_DataReduction lists. Hashes only: no content. Cells are normalised by lower-casing, trimming and collapsing whitespace; only cells of 8+ characters that are not purely numeric are kept.",
+ "about": "sha256 fingerprints of content from the three _VJ files on main (whole files, and distinctive cells found in neither Elliot's transcription nor the tabula extraction of the book, so book text is not flagged) and of the reviewer comment cells in main's MW_DataReduction lists. Hashes only: no content. Cells are normalised by lower-casing, trimming and collapsing whitespace; only cells of 8+ characters that are not purely numeric are kept.",
  "source_commit": "cfadc8a3f5eff7cae890ea8031d8de3ae600165f",
  "file_sha256": [
   "3f844b176f85be8179984841da8143b02391274b258f6af366e2308b285ff117",
@@ -39,14 +39,12 @@
   "6f3c30f585a3c4a42176f8a39f3dc063437fb836e54ce7ab720ca49237ee1656",
   "7bdec30aab43292c810de6ad793e65381a6fd71125a97c7f287349478e8ddfb6",
   "80ded200952045a09a9ee79fc81111f7d21ff65f3307e65ddf2651724a972907",
-  "84ad21181054e003f5e0e9738ee7e5e039860475fea2cc36a658e3a36536bf69",
   "8b0856db0b28f5c8cd7ecc9f6dd085a358e84f7588384f1469018659d5f9c835",
   "8e60c52fd804951d8c40967b3849762f2204e896ab87e8066cd1590f7a61107e",
   "9d7cd144f93ea42827c005a8ca24ced0eacad801b8f0b0bd05c57046af554661",
   "9e43fa2f2b9ac202daa216c28f53cf8d794b2821d6c9caa7515afe886bdb813c",
   "a1c34c82b39a1410a858a9f40d1dcb5d257b668f44ce7db2e3b08c8fc5600701",
   "a2956575a3c07a5b1614d4462f638472f7a8375780a6ae95500a355f74401f3e",
-  "b11bc28501d02d48fbab61ff0cdffa6c5c302ed7fe8840ca518f802276e45aea",
   "b3ac348160d314c9a9124b2e4bf7ec962c4bc18d4ff0e105a8b3d53520f94dba",
   "b4f552137b2df4b54223aae14c3e07069f0f9b2ce4c472ae1a0bc1f255cd479f",
   "b802f9139e096e7160182b2579e2ae2a2ed6716d2cba2d5956ae445b179b2470",
@@ -70,7 +68,6 @@
   "f2a550aa8b97406fe67b31d88211c8f0517e990ef6ae7ff6e8211b9f61af8bae",
   "f968b20efcf029622e2e5992ce93b6bb46c0e50a55f61904710eaf1f1d8bb90f",
   "fa182f48df1a30281622a7af75f44131168de687a401ad2811012440dbd7da37",
-  "fd99d3019fd570af65682a9b922838534f577f5de0d80f43fea1aa4279b7c965",
-  "ff4df7709dede26b811da383161d4729999d2ac272f51a632b862ba8fa3d1522"
+  "fd99d3019fd570af65682a9b922838534f577f5de0d80f43fea1aa4279b7c965"
  ]
 }
