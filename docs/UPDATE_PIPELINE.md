@@ -35,4 +35,4 @@ ShelfScale's promise is not that its data never ages. It is that ageing is visib
 - Licensed feeds: per contract; terms reviewed quarterly.
 - Legacy sample and portion datasets: static, re-verified yearly.
 
-Until the watcher code exists, the monthly source check is run as a scheduled review against the register, and its findings are recorded in the project notes.
+Until the watcher code exists, the monthly source check is run as a scheduled review against the register in Rocky's agent environment, outside this repository. Its findings are recorded there, not here.

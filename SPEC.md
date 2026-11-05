@@ -8,7 +8,7 @@ updated: 2026-11-05
 
 # ShelfScale Open: Specification v0.1
 
-Status: **specification first, with two tested prototypes.** Elliot directed on November 5, 2026 that the product does not need to be fully built yet. This document is the build-ready spec. Two components exist as tested prototypes: the NPM scorer (section 7) and the single/bulk assessment API (section 13). Everything else is specified, not built. Live activities: the monthly source watch (section 9) and daily research on data sources and product forms (added November 5, 2026).
+Status: **specification first, with two tested prototypes.** Elliot directed on November 5, 2026 that the product does not need to be fully built yet. This document is the build-ready spec. Two components exist as tested prototypes: the NPM scorer (section 7) and the single/bulk assessment API (section 13). Everything else is specified, not built. Two activities run outside the code: a monthly source watch (section 9) and daily research on data sources and product forms (added November 5, 2026); they run in Rocky's agent environment, outside this repository, and their schedules and logs are held there. Nothing in this repository can show whether they are running.
 
 ## 1. Purpose
 
@@ -112,7 +112,7 @@ Hard gates:
 
 Update flow (detail in `docs/UPDATE_PIPELINE.md`): watch, snapshot, diff, validate, human review, versioned release. Automation never promotes data. A licence downgrade blocks release.
 
-A monthly source watch is live now (job: shelfscale-source-watch-monthly, first run December 1, 2026). It checks the registered monthly sources for new editions, new official analysis reports, rule changes and licence changes, logs findings in `docs/SOURCE_WATCH_LOG.md`, and reports a short decision brief. It changes no data by itself.
+A monthly source watch is scheduled in Rocky's agent environment (job name there: shelfscale-source-watch-monthly, first run planned for December 1, 2026). It is not part of this repository: its schedule, run history and log live in that environment, and this repository cannot verify that it is running. It is meant to check the registered monthly sources for new editions, new official analysis reports, rule changes and licence changes, and report a short decision brief for human review. It changes no data by itself. Watcher code inside this repository is a later build step (section 11, step 3).
 
 ## 10. Validation gates before any release
 
