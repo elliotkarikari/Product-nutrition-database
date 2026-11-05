@@ -124,22 +124,59 @@ sources:
       cadence: monthly
     status: registered
 
-  - id: legacy-shelfscale-portions-samples
-    name: Legacy ShelfScale portion and sample datasets (Food Portion Sizes; fruit and vegetable samples 2011, 2015)
-    publisher: Department of Health / Public Health England surveys, held in Elliot's research repo
-    url: https://github.com/elliotkarikari/Product-nutrition-database
+  - id: uk-dh-fv-sampling-2011
+    name: "Nutrient analysis of fruit and vegetables: Sampling Report (DH, 2013; sampling 2011-12)"
+    publisher: Department of Health; prepared by the Institute of Food Research
+    url: https://assets.publishing.service.gov.uk/media/5a7b6288e5274a34770eb559/Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf
     kind: portion-and-weight-evidence
     jurisdictions: [UK]
     authority: primary-survey-for-weights
     licence:
-      name: To verify before redistribution
+      name: Open Government Licence v3.0 (GOV.UK site terms; the PDF states only Crown copyright 2013)
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    watch:
+      method: static-reverify
+      cadence: yearly
+    status: imported
+    note: Snapshot in data/raw/uk-fv-sampling-2011; importer src/shelfscale/fv_samples.py. Traced via the legacy project's processed CSVs, which are not used (see the manifest).
+
+  - id: uk-phe-fv-sampling-2015
+    name: "Nutrient analysis survey of fresh and processed fruit and vegetables with respect to fibre: sampling report (PHE, 2017; sampling 2015-16)"
+    publisher: Public Health England; author Hannah Pinchen (Institute of Food Research)
+    url: https://assets.publishing.service.gov.uk/media/5a8223a240f0b6230269b0c5/fruit_and_vegetable_survey_2015_sampling_report.pdf
+    kind: portion-and-weight-evidence
+    jurisdictions: [UK]
+    authority: primary-survey-for-weights
+    licence:
+      name: Open Government Licence v3.0 (stated in the report)
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    watch:
+      method: static-reverify
+      cadence: yearly
+    status: imported
+    note: Snapshot in data/raw/uk-fv-sampling-2015; importer src/shelfscale/fv_samples.py. Traced via the legacy project's processed CSVs, which are not used (see the manifest).
+
+  - id: uk-food-portion-sizes-2002
+    name: Food Portion Sizes, 3rd edition (Food Standards Agency, 2002)
+    publisher: Food Standards Agency; published by TSO (ISBN 9780112429616)
+    url: https://www.tsoshop.co.uk/product/9780112429616/Food-portion-sizes
+    kind: portion-and-weight-evidence
+    jurisdictions: [UK]
+    authority: primary-reference-for-portions
+    licence:
+      name: Crown copyright, sold by TSO; no open licence found
       commercial_use: unknown
       redistribution: unknown
       attribution_required: true
     watch:
       method: static-reverify
       cadence: yearly
-    status: import-planned
+    status: reference-only
+    note: "Not imported and not snapshotted into this public repository: terms unclear (SPEC section 6). Elliot stated on 2026-11-05 that he transcribed the legacy table on main by hand from his own copy of the book; FoodPortionSizes_PDF.csv on main looks like a PDF extraction instead (unconfirmed). Awaiting Elliot's decision: seek a licence via The National Archives, keep reference-only, or publish as his own documented decision."
 
   - id: open-food-facts
     name: Open Food Facts

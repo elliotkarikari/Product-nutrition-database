@@ -68,3 +68,16 @@ Found while building the importer (November 5, 2026). Each is resolved in the co
 | The user guide says alcohol (ALCO) values are g per 100 ml without saying whether that applies only to alcoholic beverages. | Followed the dataset's general note: per 100 ml for group Q only. Flagged for review. |
 | NSP (Englyst) and AOAC fibre are different nutrients by different methods. | Separate observations, `method` `nsp_englyst` and `aoac`; never merged or converted. |
 
+
+## Fruit and vegetable sampling reports: where the reports and this model differ
+
+Found while importing the 2011 (DH) and 2015 (PHE) sampling reports (November 5, 2026). Each is resolved in `src/shelfscale/fv_samples.py` and tested.
+
+| Conflict | Resolution |
+|---|---|
+| The reports do not publish individual item weights. Each sub-sample's weight is already the average of several items (for bananas, 6 per sub-sample). | `PortionObservation.sample_size` counts sub-samples, and the spread (min, max, mean, sd) is between sub-sample averages. The report's own wording of how many items each sub-sample holds is kept in `SampleComposite.preparation_note`. |
+| Tables differ from food to food (different columns, `N/A` cells, wrapped text, sub-groups, stated averages that cover only part of the table). Column meanings cannot be read reliably from the headers. | A food is imported only when the mean of its table's first weight column reproduces the report's own stated average within 0.1 g. Edible portions are imported only when they reproduce the stated average edible portion within 0.01. 44 of 69 tables pass; the other 25 are listed with the reason and nothing is imported from them. |
+| The model puts an edible-portion factor on `Food`. The reports give it per sub-sample. | Kept per sub-sample (`SubSample.edible_portion`) and summarised on the observation, only when it reconciled. |
+| `PortionObservation` needs a period; the reports give purchase dates per sub-sample, not a period. | Period is the earliest to latest purchase date of the composite's sub-samples, as printed. Two dates (sweet potato, papaya) fall in early 2015, before the 2015-16 fieldwork; they look like year typos in the report and are kept as printed. |
+| The composite names are the reports' own and are not CoFID food codes. | Not linked to CoFID yet. Matching is its own step (SPEC section 8); no link is guessed here. |
+| The legacy processed CSVs that pointed to these reports are damaged by PDF extraction. | Not used as evidence. Values come from the original reports; the manifests record the legacy route and the damage. |
