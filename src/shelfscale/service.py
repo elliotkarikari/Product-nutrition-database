@@ -15,9 +15,16 @@ from .npm import calculate_npm
 
 MODEL_ID = "uk-npm-2004/05"
 MAX_BULK_ITEMS = 1000
-# The guidance scores food and drink alike on 100 g. ShelfScale scores only
-# values already on that basis and never relabels per-100 ml values.
+# The guidance scores food and drink alike on 100 g. Per-100 ml inputs are
+# converted, never relabelled: value per 100 g = value per 100 ml / specific
+# gravity (g/ml). See docs/API.md, "Scoring basis", for why this divides
+# where the guidance's worked examples 2 and 6 multiply.
 SCORING_BASIS = "per_100g"
+INPUT_BASES = ("per_100g", "per_100ml")
+_PER_AMOUNT_FIELDS = (
+    "energy_kj", "saturated_fat_g", "total_sugars_g", "protein_g",
+    "sodium_mg", "salt_g", "fibre_nsp_g", "fibre_aoac_g",
+)
 
 _REQUIRED_NUTRIENTS = (
     "energy_kj",
@@ -45,7 +52,8 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         {
           "id": "sku-123",                  # or "name"
           "is_drink": false,
-          "basis": "per_100g",              # optional; the only accepted value
+          "basis": "per_100g",              # optional; or "per_100ml" with
+          "specific_gravity": 1.04,         #   a specific gravity (g/ml)
           "portion_g": 30,                  # optional, for per-portion view
           "nutrients": {
             "energy_kj": 1800, "saturated_fat_g": 4.0, "total_sugars_g": 20,
@@ -61,12 +69,21 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
     if not product_id:
         raise ValueError("Product needs an 'id' or a 'name'.")
     basis = payload.get("basis", SCORING_BASIS)
-    if basis != SCORING_BASIS:
-        raise ValueError(
-            "basis must be 'per_100g'. NPM scores food and drink per 100 g; "
-            "convert per-100 ml values to per 100 g using the product's "
-            "density before submitting."
-        )
+    if basis not in INPUT_BASES:
+        raise ValueError("basis must be 'per_100g' or 'per_100ml'.")
+    gravity = None
+    if basis == "per_100ml":
+        gravity = payload.get("specific_gravity")
+        if gravity is None:
+            raise ValueError(
+                "basis 'per_100ml' needs specific_gravity (g/ml). NPM scores per "
+                "100 g, and per-100 ml values cannot be converted without it."
+            )
+        if isinstance(gravity, bool) or not isinstance(gravity, (int, float)) or gravity <= 0:
+            raise ValueError("specific_gravity must be a positive number (g/ml).")
+        gravity = float(gravity)
+    elif payload.get("specific_gravity") is not None:
+        raise ValueError("specific_gravity only applies with basis 'per_100ml'.")
     nutrients = payload.get("nutrients")
     if not isinstance(nutrients, dict):
         raise ValueError("Product needs a 'nutrients' object.")
@@ -87,6 +104,24 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
     fibre_field = fibre_given[0]
     values[fibre_field] = _require_number(nutrients, fibre_field)
 
+    conversion = None
+    if gravity is not None:
+        supplied = dict(values)
+        for name in _PER_AMOUNT_FIELDS:
+            if name in values:
+                values[name] = values[name] / gravity
+        conversion = {
+            "from_basis": "per_100ml",
+            "to_basis": SCORING_BASIS,
+            "specific_gravity": gravity,
+            "rule": "value_per_100g = value_per_100ml / specific_gravity",
+            "unchanged": ["fruit_veg_nuts_percent"],
+            "values": {
+                name: {"per_100ml": supplied[name], "per_100g": values[name]}
+                for name in _PER_AMOUNT_FIELDS if name in values
+            },
+        }
+
     is_drink = payload.get("is_drink", False)
     if not isinstance(is_drink, bool):
         raise ValueError("is_drink must be true or false (a JSON boolean).")
@@ -104,6 +139,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         "total_c": result.total_c,
         "protein_counted": result.protein_counted,
         "fibre_method": result.fibre_method,
+        "input_conversion": conversion,
         "evidence_note": (
             "Score computed from caller-supplied nutrient values. "
             "ShelfScale has not verified these values."

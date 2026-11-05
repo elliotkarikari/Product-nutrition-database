@@ -90,7 +90,7 @@ Hard gates:
 
 ## 7. Scoring: NPM 2004/05
 
-- Scoring basis: per 100 g for food and drink alike, as the guidance requires. Per-100 ml values are converted to per 100 g before scoring, never relabelled; the conversion itself is not yet built (see `docs/API.md`, "Scoring basis").
+- Scoring basis: per 100 g for food and drink alike, as the guidance requires. Per-100 ml values are converted to per 100 g before scoring, never relabelled: value per 100 g = value per 100 ml ÷ specific gravity, applied only when the caller supplies a gravity (otherwise a 400). The guidance's worked examples 2 and 6 multiply instead; example 3 agrees with division. Reasoning and tests: `docs/API.md`, "Scoring basis".
 - Implement the model exactly as specified in the Department of Health technical guidance (January 2011): A points for energy, saturated fat, total sugar and sodium per 100 g; C points for fruit, vegetables and nuts, fibre (NSP where known, otherwise AOAC, each on its own band table) and protein; the protein rule (no protein points at 11+ A points unless fruit, veg and nuts score 5); score = A minus C; food is less healthy at 4+, drink at 1+.
 - The implementation must reproduce the guidance's published worked examples before it is used on real products, and boundary fixtures must cover every points band edge.
 - NPM 2018 is a shadow requirement from day one, not a roadmap item. DHSC published the NPM 2018 technical guidance on 27 January 2026 (free sugars replacing total sugar, updated bands) and consulted from 25 March to 17 June 2026 on applying it to the advertising and promotions restrictions, with a proposed 12-month implementation period. The outcome was still pending in November 2026. The pack therefore computes both models: 2004/05 as the law in force, 2018 as a shadow score, so a whole range can be rescored the day the outcome lands. Dual scoring ("your range under today's law vs under NPM 2018") is a headline feature.
@@ -139,13 +139,14 @@ Roadmap detail: `docs/ROADMAP.md`.
 - Whether the open-source project lives in a new public repo or inside the existing Product-nutrition-database repo.
 - Whether a hosted or supported version is ever offered commercially. Not assumed in this spec.
 - Which licensed data partnerships (Brandbank, productDNA, Nutritics) are worth approaching, and when.
+- Rounding before NPM banding. The guidance's worked example 3 reaches its score (0) only by rounding per-100 g values to one decimal before banding; unrounded, the same drink scores 1 and is "less healthy". The guidance states no rounding rule. ShelfScale scores unrounded until this is decided (`tests/test_density.py`).
 
 ## 13. API, bulk assessment and image intake (added November 5, 2026)
 
 Elliot directed that the product be usable through an API, that assessment work in bulk rather than one product at a time, and that universities and retailers be designed for from the start. Full contract: `docs/API.md`.
 
 - **Endpoints (prototype live and tested):** `GET /health`, `POST /v1/assess` (one product), `POST /v1/assess/bulk` (a range in one call). Bulk rules: partial success with a per-row error list, a summary block, a 1,000-product synchronous limit, and asynchronous bulk jobs with webhook completion for larger ranges.
-- **Scoring basis:** every score is computed per 100 g, food and drink alike. A per-100 ml submission is rejected with a request to convert, not relabelled.
+- **Scoring basis:** every score is computed per 100 g, food and drink alike. A per-100 ml submission is converted by dividing by the caller's specific gravity and labelled as converted; without a gravity it is a 400.
 - **Two modes:** supplied mode (the caller provides the nutrient values; the response states they were not verified by ShelfScale) and lookup mode (ShelfScale resolves values from its own provenance-carrying data; follows the CoFID importer). Every response names the model version and, in lookup mode, the data release.
 - **Image intake (specified, staged; full assessment in `docs/IMAGE_ASSESSMENT.md`):** a photograph is an intake method, never evidence. Stage A reads the barcode and resolves the GTIN through the normal evidence order. Stage B OCRs the back-of-pack table into candidate values that a user confirms before they count as a label transcription. Stage C assists loose-item identification only; it cannot settle variety or weight from an image, so it hands over to the section 8 method and its estimate labelling. Each stage ships only after passing a photographed gold-set test.
 

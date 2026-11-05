@@ -67,12 +67,21 @@ class TestService(unittest.TestCase):
         result = assess_product(SWEET_DRINK)
         self.assertEqual(result["basis"], "per_100g")
 
-    def test_per_100ml_basis_is_rejected_not_relabelled(self):
-        with self.assertRaisesRegex(ValueError, "per_100g"):
+    def test_per_100ml_needs_specific_gravity(self):
+        with self.assertRaisesRegex(ValueError, "specific_gravity"):
             assess_product({**SWEET_DRINK, "basis": "per_100ml"})
         with self.assertRaises(ValueError):
             assess_product({**BEANS, "basis": "per_portion"})
-        self.assertEqual(assess_product({**BEANS, "basis": "per_100g"})["score"], -2)
+        with self.assertRaisesRegex(ValueError, "only applies"):
+            assess_product({**BEANS, "specific_gravity": 1.0})
+        for bad in (0, -1, "1.04", True):
+            with self.subTest(gravity=bad):
+                with self.assertRaisesRegex(ValueError, "specific_gravity"):
+                    assess_product({**SWEET_DRINK, "basis": "per_100ml",
+                                    "specific_gravity": bad})
+        unconverted = assess_product({**BEANS, "basis": "per_100g"})
+        self.assertEqual(unconverted["score"], -2)
+        self.assertIsNone(unconverted["input_conversion"])
 
     def test_fibre_nsp_or_aoac_exactly_one(self):
         nsp = assess_product({**BEANS, "nutrients": {
