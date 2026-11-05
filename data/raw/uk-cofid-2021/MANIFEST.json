@@ -1,0 +1,31 @@
+{
+  "source_id": "uk-cofid-2021",
+  "dataset": "McCance and Widdowson's The Composition of Foods Integrated Dataset (CoFID)",
+  "edition": "CoFID 2021",
+  "publisher": "Public Health England (now OHID), published on GOV.UK",
+  "page_url": "https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid",
+  "page_last_updated": "2021-03-19",
+  "retrieved": "2026-11-05T17:07:21Z",
+  "licence": "Open Government Licence v3.0",
+  "licence_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Public Health England (2021). McCance and Widdowson's The Composition of Foods Integrated Dataset 2021. © Crown copyright.",
+  "files": [
+    {
+      "role": "dataset",
+      "name": "McCance_Widdowsons_Composition_of_Foods_Integrated_Dataset_2021..xlsx",
+      "url": "https://assets.publishing.service.gov.uk/media/60538b91e90e07527df82ae4/McCance_Widdowsons_Composition_of_Foods_Integrated_Dataset_2021..xlsx",
+      "bytes": 4629542,
+      "server_last_modified": "Thu, 18 Mar 2021 17:19:13 GMT",
+      "sha256": "436e9445ef2adb2a75f3d7edd51302de3adad25385f9795fc94ba58bd030e97d"
+    },
+    {
+      "role": "user_guide",
+      "name": "McCance_and_Widdowsons_Composition_of_Foods_integrated_dataset_2021.pdf",
+      "url": "https://assets.publishing.service.gov.uk/media/60538e66d3bf7f03249bac58/McCance_and_Widdowsons_Composition_of_Foods_integrated_dataset_2021.pdf",
+      "bytes": 777103,
+      "server_last_modified": "Thu, 18 Mar 2021 17:31:18 GMT",
+      "sha256": "cbac83af403531f1db260a15de058ceca1c1bae6707a8748ee3788fee7f945ec"
+    }
+  ],
+  "notes": "Files are stored exactly as downloaded. The old-foods file on the same page is a separate register entry (uk-cofid-old-foods) and is not part of this snapshot."
+}
