@@ -37,6 +37,24 @@ sources:
     status: deferred
     note: "Deferred deliberately (2026-11-05): not snapshotted or imported. The CoFID 2021 user guide says these foods were not reviewed or validated in the 2015, 2019 or 2021 updates and their values may not represent the foods as currently consumed. Nothing in the build needs them yet, and importing them would place unreviewed values beside current ones. Revisit when a reported gap needs one; if imported, every observation is marked unreviewed."
 
+  - id: uk-fop-guidance-2016
+    name: Guide to creating a front of pack (FoP) nutrition label for pre-packed products sold through retail outlets
+    publisher: Department of Health, Food Standards Agency and devolved administrations
+    url: https://assets.publishing.service.gov.uk/media/5a80cd03ed915d74e33fc7c5/FoP_Nutrition_labelling_UK_guidance.pdf
+    kind: rules
+    jurisdictions: [UK]
+    authority: official-voluntary-scheme
+    licence:
+      name: Open Government Licence v3.0 (stated in the guide)
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    watch:
+      method: guidance-change
+      cadence: monthly
+    status: implemented
+    note: "Updated November 2016. sha256 e31e2d94b9eaa42254be46a1aa828a0ea19f2282cbf300230300478d6f607321, retrieved 2026-11-05. The FSA copy republished on GOV.UK on 2026-06-25 (fop-guidance_0.pdf) has the same text. Implemented in src/shelfscale/traffic_lights.py."
+
   - id: uk-fsa-labelling-ppds-guidance
     name: FSA labelling and PPDS (Natasha's Law) guidance
     publisher: Food Standards Agency
