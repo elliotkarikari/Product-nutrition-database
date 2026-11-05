@@ -76,7 +76,8 @@ class TestExample3Reconciliation(unittest.TestCase):
         # Scored unrounded, saturated fat is 2.3 / 221.8 x 100 = 1.037 g, over the
         # 1 g band edge: A 2, score 1, and as a drink that is "less healthy".
         # The guidance never states a rounding rule; its result depends on one.
-        # ShelfScale scores values as supplied until Elliot decides (SPEC s.7).
+        # Standing rule (Elliot, November 5, 2026; SPEC s.12): never round
+        # before banding. This test is the recorded reason.
         exact = calculate_npm(**mixed, fruit_veg_nuts_percent=0, fibre_aoac_g=0.5,
                               is_drink=True)
         self.assertAlmostEqual(mixed["saturated_fat_g"], 1.037, places=3)

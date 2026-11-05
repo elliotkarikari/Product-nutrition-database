@@ -52,7 +52,7 @@ Request:
 
 The code follows physics, and example 3, because a method that moves values in the wrong direction will eventually move a product across a band edge. This is a recorded decision; if Elliot rules the other way, the change is one line in `service.py` plus these tests.
 
-**Rounding before banding (open, SPEC section 12).** Worked example 3 only scores 0 because its mixed per-100 g values are rounded to one decimal before banding: unrounded, saturated fat is 1.037 g (over the 1 g edge) and the drink scores 1, "less healthy". The guidance never states a rounding rule. ShelfScale scores values exactly as supplied or converted, unrounded, until Elliot decides.
+**Never round before banding (standing rule, Elliot, November 5, 2026).** NPM points are banded on values exactly as supplied, looked up or converted. The recorded reason: worked example 3 only scores 0 because its mixed per-100 g values are rounded to one decimal before banding; unrounded, saturated fat is 1.037 g (over the 1 g edge) and the drink scores 1, "less healthy". The guidance never states a rounding rule, so none is applied.
 
 Response: the NPM score, A and C point breakdowns, `less_healthy` against the food (4+) or drink (1+) threshold, the model id, the basis (always `per_100g`), an optional `per_portion` view when `portion_g` is given, and an evidence note stating the values were caller-supplied and not verified by ShelfScale.
 

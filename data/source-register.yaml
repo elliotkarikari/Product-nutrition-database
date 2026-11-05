@@ -194,7 +194,7 @@ sources:
       method: static-reverify
       cadence: yearly
     status: reference-only
-    note: "Not imported and not snapshotted into this public repository: terms unclear (SPEC section 6). Elliot stated on 2026-11-05 that he transcribed the legacy table on main by hand from his own copy of the book; FoodPortionSizes_PDF.csv on main looks like a PDF extraction instead (unconfirmed). Awaiting Elliot's decision: seek a licence via The National Archives, keep reference-only, or publish as his own documented decision."
+    note: "Reference only (Elliot, 2026-11-05): no FPS values in this branch, its data or any output. Reason: Crown copyright, published and sold by TSO in 2002, not under the Open Government Licence. Elliot is seeking permission from The National Archives. The legacy FPS tables on main, including Elliot's hand transcription from his own copy, are listed with their locations in docs/LEGACY_INVENTORY.md and stay out of this branch."
 
   - id: open-food-facts
     name: Open Food Facts
