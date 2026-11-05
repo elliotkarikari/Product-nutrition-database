@@ -1,0 +1,49 @@
+{
+  "source_id": "uk-dh-fv-sampling-2011",
+  "dataset": "Nutrient analysis of fruit and vegetables: Sampling Report",
+  "edition": "First published March 2013 (sampling 2011-2012)",
+  "publisher": "Department of Health; prepared by the Institute of Food Research (Roe, Pinchen, Church, Finglas)",
+  "page_url": "https://www.gov.uk/government/publications/nutrient-analysis-of-fruit-and-vegetables",
+  "licence": "Open Government Licence v3.0 (GOV.UK site terms). The PDF itself states only '© Crown copyright 2013' and names no licence.",
+  "licence_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Department of Health (2013), Nutrient analysis of fruit and vegetables: Sampling Report, prepared by the Institute of Food Research. © Crown copyright 2013.",
+  "publisher_route": "GOV.UK",
+  "retrieved": "2026-11-05T17:26:49Z",
+  "text_extraction": {
+    "tool": "pdftotext (poppler) 24.02.0",
+    "command": "pdftotext -layout <pdf> <txt>",
+    "deterministic": "Re-running the command on the PDF reproduces the .txt byte for byte (checked 2026-11-05).",
+    "why": "The importer reads the text with the Python standard library only; the PDF is kept unchanged as the evidence."
+  },
+  "files": [
+    {
+      "role": "report",
+      "name": "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7b6288e5274a34770eb559/Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf",
+      "bytes": 26145521,
+      "server_last_modified": "Mon, 25 Mar 2013 13:12:34 GMT",
+      "pages": 2194,
+      "sha256": "4c5bc46ea7d05f58f767edf96c3857c4df47f6fb1842c5e760b77503fc73069e"
+    },
+    {
+      "role": "text",
+      "name": "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.txt",
+      "derived_from": "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf",
+      "sha256": "913866637d0c5a9ea1eff4dcd8e2bb27557bd53be4e479e590fe64a7ccf89d8e"
+    }
+  ],
+  "legacy": {
+    "via_legacy_project": true,
+    "how": "The legacy project (elliotkarikari/Product-nutrition-database, branch main, commit cfadc8a) holds processed CSVs extracted from this report. Their Source_PDF column names this report, which is how it was traced. ShelfScale imports from the original report, not from those CSVs.",
+    "legacy_files_not_used": [
+      {
+        "path": "Data/Processed/Sample Reports/DOH2011.csv",
+        "sha256": "e2fbce0bdeec25ca3e7fce96ae025936e31d67bd98bdc9bf121d1a0380e94c74"
+      },
+      {
+        "path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/*.csv"
+      }
+    ],
+    "why_not_used": "PDF-extraction damage: 696 of 958 rows in DOH2011.csv have a non-numeric 'Sample Weight' (other fields shifted into it), 67 rows have no composite number, and words are split. For bananas it lists 9 sub-samples, one with a wrong number (39.8 recorded as 39.1) and one with no weight; the report has 11. The legacy files do not record which tool or settings produced them."
+  }
+}

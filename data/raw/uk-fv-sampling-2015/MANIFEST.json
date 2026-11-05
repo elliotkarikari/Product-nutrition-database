@@ -1,0 +1,49 @@
+{
+  "source_id": "uk-phe-fv-sampling-2015",
+  "dataset": "Nutrient analysis survey of fresh and processed fruit and vegetables with respect to fibre: sampling report",
+  "edition": "Published March 2017 (sampling 2015-2016)",
+  "publisher": "Public Health England; author Hannah Pinchen (Institute of Food Research)",
+  "page_url": "https://www.gov.uk/government/publications/nutrient-analysis-of-fruits-and-vegetables",
+  "licence": "Open Government Licence v3.0 (stated in the report)",
+  "licence_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Public Health England (2017), Nutrient analysis survey of fresh and processed fruit and vegetables with respect to fibre: sampling report. © Crown copyright 2017.",
+  "publisher_route": "GOV.UK",
+  "retrieved": "2026-11-05T17:26:49Z",
+  "text_extraction": {
+    "tool": "pdftotext (poppler) 24.02.0",
+    "command": "pdftotext -layout <pdf> <txt>",
+    "deterministic": "Re-running the command on the PDF reproduces the .txt byte for byte (checked 2026-11-05).",
+    "why": "The importer reads the text with the Python standard library only; the PDF is kept unchanged as the evidence."
+  },
+  "files": [
+    {
+      "role": "report",
+      "name": "fruit_and_vegetable_survey_2015_sampling_report.pdf",
+      "url": "https://assets.publishing.service.gov.uk/media/5a8223a240f0b6230269b0c5/fruit_and_vegetable_survey_2015_sampling_report.pdf",
+      "bytes": 3515222,
+      "server_last_modified": "Wed, 29 Mar 2017 12:35:08 GMT",
+      "pages": 1332,
+      "sha256": "8235bd7296178fe91737b9a15b390480f0dcce7226b461c3991b2c429f962a14"
+    },
+    {
+      "role": "text",
+      "name": "fruit_and_vegetable_survey_2015_sampling_report.txt",
+      "derived_from": "fruit_and_vegetable_survey_2015_sampling_report.pdf",
+      "sha256": "bfebc4a41c7efa5e64ef7cfe99dba3850dc354f1dde30b6470b293c97a294c20"
+    }
+  ],
+  "legacy": {
+    "via_legacy_project": true,
+    "how": "The legacy project (elliotkarikari/Product-nutrition-database, branch main, commit cfadc8a) holds processed CSVs extracted from this report. Their Source_PDF column names this report, which is how it was traced. ShelfScale imports from the original report, not from those CSVs.",
+    "legacy_files_not_used": [
+      {
+        "path": "Data/Processed/Sample Reports/PH2015.csv",
+        "sha256": "1002e4785d68d39cde9f897669bf8b474d1dcb7c02ed7746b901893a64830625"
+      },
+      {
+        "path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/*.csv"
+      }
+    ],
+    "why_not_used": "PDF-extraction damage: 44 of 437 rows in PH2015.csv have a non-numeric or empty 'Sample Weight' (pack sizes such as '425g' in that column) and 17 rows have no composite number. The legacy files do not record which tool or settings produced them."
+  }
+}
