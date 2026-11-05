@@ -22,7 +22,7 @@ sources:
   - id: uk-cofid-old-foods
     name: CoFID old foods file (legacy and superseded entries)
     publisher: GOV.UK / OHID (originally PHE)
-    url: https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid
+    url: https://assets.publishing.service.gov.uk/media/60538ba4e90e07527f645f88/CoFID_oldFoods.xlsx
     kind: composition-dataset-legacy
     jurisdictions: [GB, UK]
     authority: reference-history
@@ -34,7 +34,8 @@ sources:
     watch:
       method: file-hash-and-page-change
       cadence: monthly
-    status: reference
+    status: deferred
+    note: "Deferred deliberately (2026-11-05): not snapshotted or imported. The CoFID 2021 user guide says these foods were not reviewed or validated in the 2015, 2019 or 2021 updates and their values may not represent the foods as currently consumed. Nothing in the build needs them yet, and importing them would place unreviewed values beside current ones. Revisit when a reported gap needs one; if imported, every observation is marked unreviewed."
 
   - id: uk-fsa-labelling-ppds-guidance
     name: FSA labelling and PPDS (Natasha's Law) guidance
