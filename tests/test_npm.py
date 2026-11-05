@@ -5,9 +5,9 @@ from shelfscale.npm import calculate_npm, sodium_mg_from_salt_g
 
 class TestNPM(unittest.TestCase):
     def test_baked_beans_fixture(self):
-        # Published worked illustration: roughly 340 kJ, 0.1 g saturated fat,
-        # 5 g sugars, 250 mg sodium, 3.7 g fibre, 4.8 g protein, beans over
-        # 40% fruit/veg/nut content. Expected A = 4, C = 6, score = -2.
+        # Synthetic fixture with baked-bean-like values. It is NOT one of the
+        # guidance's worked examples (those are in test_npm_worked_examples).
+        # Expected A = 4, C = 6, score = -2.
         result = calculate_npm(
             energy_kj=340,
             saturated_fat_g=0.1,

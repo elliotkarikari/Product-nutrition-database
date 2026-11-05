@@ -4,8 +4,13 @@ Implements the points model in the Department of Health technical guidance
 published in January 2011, the version cited by the Food (Promotion and
 Placement) (England) Regulations 2021.
 
-All nutrient inputs are per 100 g (food) or per 100 ml (drink), as sold, or
-as reconstituted where the guidance requires that basis.
+All nutrient inputs are per 100 g, for food and drink alike, as sold, or as
+reconstituted where the guidance requires that basis. Values labelled per
+100 ml must be converted to per 100 g by the product's specific gravity
+before scoring (guidance worked examples 2 and 6).
+
+Fibre is scored on the NSP (Englyst) scale when the NSP value is known and on
+the AOAC scale otherwise (guidance FAQ a). The caller supplies exactly one.
 
 This module is a calculation aid. It is not legal advice, and a score is only
 as good as the nutrient values supplied to it.
@@ -36,6 +41,7 @@ class NPMResult:
     a_points: dict[str, int]
     c_points: dict[str, int]
     protein_counted: bool
+    fibre_method: str
     score: int
     is_drink: bool
     less_healthy: bool
@@ -53,7 +59,10 @@ _ENERGY_THRESHOLDS = [335, 670, 1005, 1340, 1675, 2010, 2345, 2680, 3015, 3350]
 _SATURATED_FAT_THRESHOLDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 _TOTAL_SUGAR_THRESHOLDS = [4.5, 9, 13.5, 18, 22.5, 27, 31, 36, 40, 45]
 _SODIUM_THRESHOLDS = [90, 180, 270, 360, 450, 540, 630, 720, 810, 900]
-_FIBRE_THRESHOLDS = [0.9, 1.9, 2.8, 3.7, 4.7]
+_FIBRE_THRESHOLDS = {
+    "nsp": [0.7, 1.4, 2.1, 2.8, 3.5],
+    "aoac": [0.9, 1.9, 2.8, 3.7, 4.7],
+}
 _PROTEIN_THRESHOLDS = [1.6, 3.2, 4.8, 6.4, 8.0]
 
 
@@ -68,28 +77,34 @@ def calculate_npm(
     saturated_fat_g: float,
     total_sugars_g: float,
     fruit_veg_nuts_percent: float,
-    fibre_aoac_g: float,
     protein_g: float,
+    fibre_nsp_g: float | None = None,
+    fibre_aoac_g: float | None = None,
     sodium_mg: float | None = None,
     salt_g: float | None = None,
     is_drink: bool = False,
 ) -> NPMResult:
-    """Calculate an NPM 2004/05 score from per-100 g/ml nutrient values.
+    """Calculate an NPM 2004/05 score from per-100 g nutrient values.
 
     Exactly one of ``sodium_mg`` and ``salt_g`` must be supplied.
-    Fibre must be on the AOAC basis the guidance specifies.
+    Exactly one of ``fibre_nsp_g`` and ``fibre_aoac_g`` must be supplied;
+    the guidance prefers NSP where it is known.
     """
     if (sodium_mg is None) == (salt_g is None):
         raise ValueError("Supply exactly one of sodium_mg or salt_g.")
     if sodium_mg is None:
         sodium_mg = sodium_mg_from_salt_g(float(salt_g))
+    if (fibre_nsp_g is None) == (fibre_aoac_g is None):
+        raise ValueError("Supply exactly one of fibre_nsp_g or fibre_aoac_g.")
+    fibre_method = "nsp" if fibre_nsp_g is not None else "aoac"
+    fibre_g = fibre_nsp_g if fibre_nsp_g is not None else fibre_aoac_g
 
     inputs = {
         "energy_kj": energy_kj,
         "saturated_fat_g": saturated_fat_g,
         "total_sugars_g": total_sugars_g,
         "fruit_veg_nuts_percent": fruit_veg_nuts_percent,
-        "fibre_aoac_g": fibre_aoac_g,
+        "fibre_g": fibre_g,
         "protein_g": protein_g,
         "sodium_mg": sodium_mg,
     }
@@ -117,7 +132,7 @@ def calculate_npm(
 
     c_points = {
         "fruit_veg_nuts": fvn_points,
-        "fibre": _band_points(fibre_aoac_g, _FIBRE_THRESHOLDS),
+        "fibre": _band_points(fibre_g, _FIBRE_THRESHOLDS[fibre_method]),
         "protein": protein_points,
     }
     score = total_a - sum(c_points.values())
@@ -127,6 +142,7 @@ def calculate_npm(
         a_points=a_points,
         c_points=c_points,
         protein_counted=protein_counted,
+        fibre_method=fibre_method,
         score=score,
         is_drink=is_drink,
         less_healthy=score >= threshold,
