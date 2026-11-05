@@ -9,6 +9,10 @@ Aubergine, flesh and skin, roasted in rapeseed oil (13-669, row 55):
 Milk, whole, pasteurised, average (12-596), caller-supplied FVN 0:
   KJ 265 -> 0; SATFOD 2.29 -> 2; TOTSUG 4.6 -> 1; NA 42 -> 0.  A = 3.
   FVN 0 -> 0; ENGFIB 0.0 -> 0; PROT 3.4 -> 2 (> 3.2).  C = 2.  Score 1, food, not less healthy.
+Potato chips, fine cut, from fast food outlets (13-486), group DAP:
+  KJ 1219 -> 3; SATFOD 2.5 -> 2; TOTSUG 0.3 -> 0; NA 193 -> 2.  A = 7.
+  FVN 0 (potatoes, excluded_by_guidance) -> 0; ENGFIB 3.2 -> 4; PROT 3.5 -> 2.  C = 6.
+  Score +1 (was -4 when the group rule gave potatoes 100%).
 """
 
 import json
@@ -95,6 +99,37 @@ class TestLookupApi(unittest.TestCase):
                          {"value": 0.0, "source": "caller_supplied"})
         self.assertEqual((a["total_a"], a["total_c"], a["score"]), (3, 2, 1))
         self.assertFalse(a["less_healthy"])
+
+    def test_potatoes_score_with_fvn_zero_excluded_by_guidance(self):
+        status, body = self._post("/v1/lookup", {"code": "13-486"})
+        a = body["matches"][0]["assessment"]
+        self.assertTrue(a["scorable"])
+        fvn = a["inputs"]["fruit_veg_nuts_percent"]
+        self.assertEqual((fvn["value"], fvn["source"]), (0.0, "excluded_by_guidance"))
+        self.assertEqual((a["total_a"], a["total_c"], a["score"]), (7, 6, 1))
+        self.assertFalse(a["less_healthy"])
+
+    def test_potato_fvn_can_be_overridden_by_the_caller(self):
+        status, body = self._post("/v1/lookup", {"code": "13-486", "fvn_percent": 100})
+        a = body["matches"][0]["assessment"]
+        self.assertEqual(a["inputs"]["fruit_veg_nuts_percent"]["source"], "caller_supplied")
+        self.assertEqual(a["score"], -4)
+
+    def test_protein_rule_applies_once_potato_fvn_is_zero(self):
+        # Chips fried in dripping: A = 15, so with FVN below 5 protein cannot count.
+        status, body = self._post("/v1/lookup", {"code": "50-686"})
+        a = body["matches"][0]["assessment"]
+        self.assertEqual((a["total_a"], a["protein_counted"], a["score"]), (15, False, 12))
+        self.assertTrue(a["less_healthy"])
+
+    def test_vegetable_dishes_need_caller_fvn(self):
+        status, body = self._post("/v1/lookup", {"name": "Aubergine, stuffed with rice"})
+        a = body["matches"][0]["assessment"]
+        self.assertFalse(a["scorable"])
+        self.assertIn("vegetable dishes", a["missing_inputs"][0])
+        status, body = self._post("/v1/lookup", {"name": "Aubergine, stuffed with rice",
+                                                 "fvn_percent": 60})
+        self.assertTrue(body["matches"][0]["assessment"]["scorable"])
 
     def test_alcoholic_drink_without_gravity_names_it(self):
         status, body = self._post("/v1/lookup", {"code": "17-506", "fvn_percent": 0})

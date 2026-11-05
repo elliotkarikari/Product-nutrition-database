@@ -10,11 +10,14 @@ the response says which. An input that cannot be sourced makes the food
 Decisions encoded here (each is one table or constant):
 
 - Drink status comes from the CoFID food group (DRINK_GROUP_PREFIXES).
-- Fruit, vegetable and nut content: CoFID has no FVN percentage. A food
-  whose CoFID group is fruit (F), vegetables (D) or nuts and seeds (G)
-  carries 100%, labelled derived_from_group (Elliot, November 5, 2026).
-  Any other food needs a caller-supplied fvn_percent. FVN is never
-  zero-filled and never estimated from the food's name.
+- Fruit, vegetable and nut content (Elliot, November 5, 2026): CoFID has
+  no FVN percentage. A caller-supplied fvn_percent always wins
+  (caller_supplied). Otherwise: potatoes (groups DA*) carry 0%, labelled
+  excluded_by_guidance, because the NPM guidance says potatoes do not
+  count; vegetable dishes (DR) are composite and not yet scorable; any
+  other food in fruit (F), vegetables (D) or nuts and seeds (G) carries
+  100%, labelled derived_from_group; anything else is not yet scorable.
+  FVN is never estimated from the food's name.
 - Fibre: NSP (ENGFIB) where CoFID gives a number, otherwise AOAC (AOACFIB).
 - A trace ("Tr") counts as 0 g for banding and is labelled so. A value
   CoFID marks "N" (present, amount unknown) or does not give is missing.
@@ -33,6 +36,8 @@ from .lookup import lookup_cofid
 from .service import assess_values, run_bulk
 
 FVN_GROUP_PREFIXES = ("D", "F", "G")
+FVN_EXCLUDED_BY_GUIDANCE = ("DA",)      # potatoes: "do not count" (NPM guidance, section 2)
+FVN_NOT_DERIVED = ("DR",)               # vegetable dishes: composite, needs fvn_percent
 DRINK_GROUP_PREFIXES = ("P", "Q", "BH", "FC")
 ALCOHOLIC_GROUP_PREFIX = "Q"
 SPECIFIC_GRAVITY = "FACTOR:Specific gravity"
@@ -98,10 +103,24 @@ def assess_cofid_food(food: dict[str, Any], *, fvn_percent: float | None,
                            "source": f"NSP {nsp_how}; AOAC {aoac_how}"}
         missing.append(f"fibre (ENGFIB: {nsp_how}; AOACFIB: {aoac_how})")
 
+    starts = lambda prefixes: any((group or "").startswith(p) for p in prefixes)  # noqa: E731
     if fvn_percent is not None:
         values["fruit_veg_nuts_percent"] = fvn_percent
         inputs["fruit_veg_nuts_percent"] = {"value": fvn_percent, "source": "caller_supplied"}
-    elif any((group or "").startswith(p) for p in FVN_GROUP_PREFIXES):
+    elif starts(FVN_EXCLUDED_BY_GUIDANCE):
+        values["fruit_veg_nuts_percent"] = 0.0
+        inputs["fruit_veg_nuts_percent"] = {
+            "value": 0.0, "source": "excluded_by_guidance",
+            "rule": f"CoFID group {group} is potatoes, which the NPM guidance says do not count "
+                    "as fruit or vegetables. Override with fvn_percent.",
+        }
+    elif starts(FVN_NOT_DERIVED):
+        inputs["fruit_veg_nuts_percent"] = {"value": None, "source": "not available"}
+        missing.append(
+            f"fruit_veg_nuts_percent (CoFID group {group} is vegetable dishes, which are "
+            "composite; supply fvn_percent)"
+        )
+    elif starts(FVN_GROUP_PREFIXES):
         values["fruit_veg_nuts_percent"] = 100.0
         inputs["fruit_veg_nuts_percent"] = {
             "value": 100.0, "source": "derived_from_group",
