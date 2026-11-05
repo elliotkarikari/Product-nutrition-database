@@ -17,7 +17,7 @@ sources:
     watch:
       method: file-hash-and-page-change
       cadence: monthly
-    status: importer-planned
+    status: imported
 
   - id: uk-cofid-old-foods
     name: CoFID old foods file (legacy and superseded entries)

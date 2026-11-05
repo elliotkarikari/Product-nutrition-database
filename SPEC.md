@@ -8,7 +8,7 @@ updated: 2026-11-05
 
 # ShelfScale Open: Specification v0.1
 
-Status: **specification first, with two tested prototypes.** Elliot directed on November 5, 2026 that the product does not need to be fully built yet. This document is the build-ready spec. Two components exist as tested prototypes: the NPM scorer (section 7) and the single/bulk assessment API (section 13). Everything else is specified, not built. Two activities run outside the code: a monthly source watch (section 9) and daily research on data sources and product forms (added November 5, 2026); they run in Rocky's agent environment, outside this repository, and their schedules and logs are held there. Nothing in this repository can show whether they are running.
+Status: **specification first, with two tested prototypes.** Elliot directed on November 5, 2026 that the product does not need to be fully built yet. This document is the build-ready spec. Three components exist and are tested: the NPM scorer (section 7), the single/bulk assessment API (section 13), and the CoFID 2021 importer with a service-level lookup (section 11, step 1). Everything else is specified, not built. Two activities run outside the code: a monthly source watch (section 9) and daily research on data sources and product forms (added November 5, 2026); they run in Rocky's agent environment, outside this repository, and their schedules and logs are held there. Nothing in this repository can show whether they are running.
 
 ## 1. Purpose
 
@@ -124,7 +124,7 @@ A monthly source watch is scheduled in Rocky's agent environment (job name there
 
 ## 11. Build order (when Elliot gives the go)
 
-1. CoFID importer into canonical observations.
+1. CoFID importer into canonical observations. (Done November 5, 2026: `src/shelfscale/cofid.py`, lookup in `src/shelfscale/lookup.py`, not yet wired into the HTTP API. Conflicts between the data model and the real files are recorded in `docs/DATA_MODEL.md`.)
 2. Portion and sample imports; port of the legacy traffic lights module, verified against FSA guidance. (NPM worked-example validation: done November 5, 2026.)
 3. Watcher code and overlay imports (milk, beef, successors).
 4. Bulk "score my range" tool and the public API on the dual-model engine (the first user surface the needs research recommends, subject to Elliot's decision in section 12). The API prototype for caller-supplied values already exists; database-backed lookup follows the CoFID importer.
