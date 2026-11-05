@@ -1,6 +1,7 @@
 # ShelfScale source register. Licence status is enforced at ingestion and export.
-# commercial_use: allowed | licence-required | reference-only | unknown
-# redistribution: allowed | licence-required | forbidden | unknown
+# commercial_use: allowed | licence-required | reference-only | owner-decision | unknown
+# redistribution: allowed | licence-required | forbidden | owner-decision | unknown
+# owner-decision: not licensed; included on Elliot's recorded decision (see the entry's decision field)
 sources:
   - id: uk-cofid-2021
     name: "McCance and Widdowson's Composition of Foods Integrated Dataset (CoFID)"
@@ -186,15 +187,16 @@ sources:
     jurisdictions: [UK]
     authority: primary-reference-for-portions
     licence:
-      name: Crown copyright, sold by TSO; no open licence found
-      commercial_use: unknown
-      redistribution: unknown
+      name: Crown copyright; NOT covered by the Open Government Licence
+      commercial_use: owner-decision
+      redistribution: owner-decision
       attribution_required: true
+      decision: "Food Portion Sizes (3rd edition, Food Standards Agency, published by TSO, 2002). Crown copyright. NOT covered by the Open Government Licence. Included in this public repository on Elliot Karikari's decision of November 5, 2026, with his reasoning: the weights are individual facts; the data was transcribed by hand from his own copy of the book; he accepts the compilation-rights question as his call. This is not a licence: FPS is never described as OGL or as licensed. The decision record travels with the data, and every FPS-derived value carries the book citation as its provenance."
     watch:
       method: static-reverify
       cadence: yearly
-    status: reference-only
-    note: "Reference only (Elliot, 2026-11-05): no FPS values in this branch, its data or any output. Reason: Crown copyright, published and sold by TSO in 2002, not under the Open Government Licence. Elliot is seeking permission from The National Archives. The legacy FPS tables on main, including Elliot's hand transcription from his own copy, are listed with their locations in docs/LEGACY_INVENTORY.md and stay out of this branch."
+    status: import-pending-source-confirmation
+    note: "Import source is the legacy file that is Elliot's hand transcription from his own copy; awaiting his confirmation of which file that is (docs/LEGACY_INVENTORY.md). The PDF-extracted FPS file is used only where it reconciles with the transcription; disagreements are reported, not averaged."
 
   - id: open-food-facts
     name: Open Food Facts
