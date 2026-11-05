@@ -1,0 +1,438 @@
+,Composite Sample Number,Composite Sample Name,Sub_sampleNumber,Sub-sample Name,Sample Weight,Purchase Date,Place of Purchase,Packaging,Pack size
+0,47.0,"apricots, ready to eat, semi -dried  ",47.1,Tesco Whole Foods ready to eat apricots  ,8.9,28.01.16  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+1,47.0,"apricots, ready to eat, semi -dried  ",47.2,Tesco ready to eat apricots  ,6.3,30.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+2,47.0,"apricots, ready to eat, semi -dried  ",47.3,Asda Good & Balanced apricots  ,4.8,09.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,250g  
+3,47.0,"apricots, ready to eat, semi -dried  ",47.4,Sainsbury’s apricots  ,9.1,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+4,47.0,"apricots, ready to eat, semi -dried  ",47.5,Morrisons Wholefoods soft apricots  ,5.4,30.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+5,47.0,"apricots, ready to eat, semi -dried  ",47.6,Marks & Spencer soft apricots  ,425g  ,03.02.16  ,"Marks & Spencer, Longwater Retail Park, Norwich  ",Plastic  ,425g  
+6,47.0,"apricots, ready to eat, semi -dried  ",47.7,Neal’s Yard Wholefoods ready to eat apricots  ,9.0,18.01.16  ,Holland and Barrett delivery  ,Plastic  ,250g  
+7,47.0,"apricots, ready to eat, semi -dried  ",47.8,Whitworths soft apricots  ,7.5,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,140g  
+8,47.0,"apricots, ready to eat, semi -dried  ",47.9,Whitworths snack on golden Malatya apricots  ,8.8,30.11.15  ,Sainsbury’s online delivery  ,Plastic  ,140g  
+9,47.0,"apricots, ready to eat, semi -dried  ",47.1,Whitworths snack on golden Malatya apricots  ,8.9,05.01.16  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+10,23.0,"asparagus, fresh, steamed  ",23.1,Tesco asparagus bundle  ,254.0,26.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,250g  
+11,23.0,"asparagus, fresh, steamed  ",23.2,Tesco asparagus tips  ,,26.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,125g  
+12,23.0,"asparagus, fresh, steamed  ",23.3,Asda Grower’s Selection asparagus  ,272.0,26.08.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,250g  
+13,23.0,"asparagus, fresh, steamed  ",23.4,Sainsbury’s fine asparagus  ,121.5,05.07.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,100g  
+14,23.0,"asparagus, fresh, steamed  ",23.5,Morrisons asparagus  ,283.0,26.08.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,250g  
+15,23.0,"asparagus, fresh, steamed  ",23.7,M&S extra fine asparagus  ,107.2,04.07.15  ,"Marks & Spencer, Rampant Horse Street, Norwich  ",Plastic  ,110g  
+16,23.0,"asparagus, fresh, steamed  ",23.8,Aldi Specially Selected asparagus tips  ,,26.08.15  ,"Aldi, Larkman Lane, Norwich  ",Plastic  ,100g  
+17,23.0,"asparagus, fresh, steamed  ",23.9,Tesco asparagus tips  ,,28.08.15  ,"Tesco Express, Westlegate, Norwich  ",Plastic  ,100g  
+18,23.0,"asparagus, fresh, steamed  ",23.1,Farm Shop asparagus  ,254.0,05.07.15  ,"Independent Farm Shop, Mulbarton , Norfolk  ",Loose  ,250g  
+19,23.0,"asparagus, fresh, steamed  ",23.11,Bidvest Foodservice asparagus  ,363.6,24.08.15  ,Bidvest Foodservice delivery  ,Loose  ,Purchase Date:  
+20,36.0,"aubergine, boiled, flesh an d skin  ",36.1,Tesco aubergine  ,265.0,28.09.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+21,36.0,"aubergine, boiled, flesh and skin  ",36.2,Tesco aubergine  ,364.1,16.11.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Loose  ,Purchase Date:  
+22,36.0,"aubergine, boiled, flesh and skin  ",36.3,Asda aubergine  ,324.3,10.12.15  ,"Asda, Boundary Road, Norwich  ",Loose  ,Purchase Date:  
+23,36.0,"aubergine, boiled, flesh and skin  ",36.4,Sainsbury’s aubergine  ,297.0,05.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase Date:  
+24,36.0,"aubergine, boiled, flesh and skin  ",36.5,Morrisons aubergine  ,295.2,17.11.15  ,"Morrisons, Albion Way, Norwich  ",Loose  ,Purchase Date:  
+25,36.0,"aubergine, boiled, flesh and skin ",36.6,Waitrose aubergine  ,291.1,18.11.15  ,"Waitrose, Wymondham , Norfolk  ",Loose  ,Purchase Date:  
+26,36.0,"aubergine, boiled, flesh and skin  ",36.7,Lidl aubergine  ,340.4,28.09.15  ,"Lidl, Drayton Road, Norwich  ",Loose  ,Purchase Date:  
+27,36.0,"aubergine, boiled, flesh and skin  ",36.8,Sainsbury’s Basics aubergine  ,218.7,28.09.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+28,36.0,"aubergine, boiled, flesh and skin  ",36.9,The Co -operative Loved by Us aubergine  ,290.2,16.11.15  ,"The Co-operative, Long Stratton , Norfolk  ",Plastic  ,Purchase Date:  
+29,36.0,"aubergine, flesh and skin, boiled  ",36.1,Greengrocer’s aubergine  ,265.0,30.09.15  ,"Independent greengrocer, Gloucester Street, Norwich  ",Loose  ,Purchase Date:  
+30,36.0,"aubergine, boiled, flesh and skin  ",36.11,Farm Fresh aubergine  ,342.2,28.09.15  ,"Booker, Norwich  ",Plastic  ,"300-400g, count x 2  "
+31,30.0,"avocado pear, raw, flesh only  ",30.2,Tesco large avocado  ,209.0,07.12.15  ,"Tesco, Harford Bridges, Norwich  ",Sample Condition As Purchased:  ,Purchase Date:  
+32,30.0,"avocado pear, raw, flesh only  ",30.3,Asda Grower’s Selection ripe and ready avocado  ,172.9,,"Asda, Boundary Road, Norwich  ",Plastic  ,2 fruit  
+33,30.0,"avocado pear, raw, flesh only  ",30.4,Sainsbury’s extra large avocado  ,283.5,05.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase Date:  
+34,30.0,"avocado pear, raw, flesh only  ",30.5,Morrisons avocados  ,286.4,07.12.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,600g  
+35,30.0,"avocado pear, raw, flesh only  ",30.6,M&S Hass avocado  ,185.5,05.10.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic; paper tray  ,Purchase Date:  
+36,30.0,"avocado pear, raw, flesh only  ",30.7,Lidl avocado  ,264.3,,"Lidl, Drayton Road, Norwich  ",Loose  ,Purchase  Date:  
+37,30.0,"avocado pear, raw, flesh only  ",30.8,Morrisons ready to eat avocados  ,169.1,07.12.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,Count 2  
+38,30.0,"avocado pear, raw, flesh only  ",30.9,The Co -operative Loved by Us 2 Avocados  ,179.6,07.12.15  ,"The Co -operative, Long Stratton , Norfolk  ",Plastic  ,Purchase Date:  
+39,18.0,"beetroot, cooked  ",18.1,Tesco cooked British beetroot  ,181.8,28.09.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,300g  
+40,18.0,"beetroot, cooked  ",18.2,Tesco cooked British beetroot  ,300g  ,05.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,300g  
+41,18.0,"beetroot, cooked  ",18.3,Asda Grower’s Selection bunched beetroot  ,116.8,28.09.15  ,"Asda, Boundary Road, Norwich  ",Loose; tag: mixed material  ,500g  
+42,18.0,"beetroot, cooked  ",18.4,Sainsbury’s bunched beetroot  ,133.2,28.09.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,500g  
+43,42.0,"blackberries, raw  ",42.1,Tesco British blackberries  ,9.3,26.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,350g  
+44,42.0,"blackberries, raw  ",42.2,Tesco British supersweet blackberries  ,6.0,26.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,225g  
+45,42.0,"blackberries, raw  ",42.3,Asda Grower’s Selection blackberries  ,5.3,16.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,150g  
+46,42.0,"blackberries, raw  ",42.4,Sainsbury’s blackberries  ,6.0,02.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,150g  
+47,42.0,"blackberries, raw  ",42.5,Morrisons blackberries  ,150g  ,02.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,150g  
+48,42.0,"blackberries, raw  ",42.6,M&S blackberries  ,9.1,09.11.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,150g  
+49,42.0,"blackberries, raw  ",42.7,Driscoll’s blackberries  ,10.1,26.08.15  ,"Lidl, Drayton Road, Norwich  ",Plastic  ,125g  
+50,42.0,"blackberries, raw  ",42.8,Sainsbury’s blackberries  ,5.7,02.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,150g  
+51,42.0,"blackberries, raw  ",42.9,Tesco British blackberries  ,7.0,28.08.15  ,"Tesco Express, Westlegate, Norwich  ",Plastic  ,150g  
+52,42.0,"blackberries, raw  ",42.1,Market blackberries  ,9.3,28.08.15  ,"Independent  Market Stall, Norwich Market  ",Plastic  ,350g  
+53,42.0,"blackberries, raw  ",42.11,Bidvest Foodservice blackberries  ,5.9,24.08.15  ,Bidvest Foodservice delivery  ,Plastic  ,Purchase Date:  
+54,33.0,"broad beans, fresh, boiled  ",33.1,Tesco British broad beans  ,39.2,11.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+55,33.0,"broad beans, fresh, boiled  ",33.2,Tesco British broad beans  ,47.6,17.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+56,33.0,"broad beans, fresh, boiled  ",33.3,Tesco broad beans  ,74.7,22.09.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+57,33.0,"broad beans, fresh, boiled  ",33.4,Asda Grower’s Selection broad beans  ,32.0,11.08.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+58,33.0,"broad beans, fresh, boiled  ",33.5,Sainsbury’s broad beans  ,32.0,11.08.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+59,33.0,"broad beans, fresh, boiled  ",33.6,Morrisons broad beans  ,29.3,11.08.15  ,"Morrisons, Albion way, Norwich  ",Plastic  ,500g  
+60,33.0,"broad beans, fresh, boiled  ",33.7,Essential Waitrose broad beans  ,45.1,11.08.15  ,"Waitrose, Eaton , Norwich  ",Plastic  ,500g  
+61,33.0,"broad beans, fresh, boiled  ",33.8,Asda Grower’s Selection British broad beans  ,42.0,19.10.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+62,33.0,"broad beans, fresh, boiled  ",33.9,M&S British broad beans  ,42.3,19.10.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,450g  
+63,33.0,"broad beans, fresh, boiled  ",33.1,Tesco broad beans  ,39.2,16.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,500g  
+64,33.0,"broad beans, fresh, boiled  ",33.11,Market broad beans  ,36.1,12.08.15  ,"Independent market stall, Norwich Market  ",Loose  ,Purchase Date:  
+65,15.0,"brussels sprouts, boiled  ",15.1,Tesco Brussels sprouts  ,29.4,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Loose  ,Purchase Date:  
+66,15.0,"brussels sprouts, boiled  ",15.2,Tesco British peeled Brussels sprouts  ,14.7,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,250g  
+67,15.0,"brussels sprouts, boiled  ",15.3,Asda Grower’s Selection British sprouts  ,15.6,23.10.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+68,15.0,"brussels sprouts, boiled  ",15.4,Sainsbury’s Brussels sprouts  ,16.0,19.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase Date:  
+69,15.0,"brussels sprouts, boiled  ",15.5,Morrisons Brussels sprouts  ,22.7,19.10.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+70,15.0,"brussels sprouts, boiled  ",15.6,M&S British baby sprouts  ,6.1,19.10.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,200g  
+71,15.0,"brussels sprouts, boiled  ",15.7,Wood Farm Brussels sprouts  ,10.1,19.10.15  ,"Aldi, Larkman Lane, Norwich  ",Plastic  ,500g  
+72,15.0,"brussels sprouts, boiled  ",15.8,Tesco British Brussels sprouts  ,20.9,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+73,15.0,"brussels sprouts, boiled  ",15.9,The Co -operative Loved by Us British Brussels sprouts  ,9.4,26.10.15  ,"The Co -operative, Long Stratton , Norfolk  ",Plastic  ,500g  
+74,,"brussels sprouts, boiled  ",15.1,Farm Shop Brussels sprouts  ,29.4,13.10.15  ,"Independent Farm Shop, Mulbarton , Norfolk   ",Loose  ,Purchase Date:  
+75,15.0,"brussels sprouts, boiled  ",15.11,Farm Fresh Brussels sprouts  ,20.5,19.10.15  ,"Booker, Norwich  ",Plastic  ,5kg 
+76,28.0,"butternut squash, boiled flesh only  ",28.1,Tesco roasting butternut squash  ,1387.2,05.10.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+77,28.0,"butternut squash, boiled flesh only  ",28.2,Tesco butternut squash  ,1014.1,27.01.16  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+78,28.0,"butternut squash, boiled flesh only  ",28.3,Asda Grower’s Selection butternut squash  ,1101.1,05.10.15  ,"Asda, Boundary Road, Norwich  ",Loose  ,Purchase Date:  
+79,28.0,"butternut squash, boiled flesh only  ",28.4,Sainsbury’s butternut squash  ,1017.8,13.01.16  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase Date:  
+80,28.0,"butternut squash, boiled flesh only  ",28.5,Morrisons butternut squash  ,588.9,19.10.15  ,"Morrisons, Albion Way, Norwich  ",Loose  ,Purchase Date:  
+81,28.0,"butternut squash, boiled flesh only  ",28.6,Essential Waitrose butternut squash  ,1439.9,16.01.16  ,"Waitrose, Wymondham , Norfolk  ",Loose  ,Purchase Date:  
+82,28.0,"butternut squash, boiled flesh only  ",28.7,Lidl butternut squash  ,967.9,05.10.15  ,"Lidl, Drayton Road, Norwich  ",Loose  ,Purchase Date:  
+83,28.0,"butternut squash, boiled flesh only  ",28.8,Sainsbury’s ready prepared butternut squash  ,,26.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,320g  
+84,28.0,"butternut squash, boiled flesh only  ",28.9,The Co -operative butternut squash  ,660.2,05.01.16  ,"The Co -operative, Wymondham , Norfolk  ",Loose  ,Purchase Date:  
+85,28.0,"butternut squash, boiled flesh only  ",28.1,Market butternut squash  ,1387.2,08.10.15  ,,Loose  ,Purchase Date:  
+86,28.0,"butternut squash, boiled flesh only  ",28.11,Farm Fresh butternut squash  ,767.8,05.10.15  ,"Booker, Norwich  ",Plastic  ,x2 
+87,60.0,"cannellini beans, canned, reheated  ",60.1,Tesco cannellini beans in water  ,508.7,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Metal  ,Net weight: 400g; drained weight: 246g  
+88,60.0,"cannellini beans, canned, reheated  ",60.2,Tesco cannellini beans in water  ,523.3,16.11.15  ,"Tesco, Blue Boar Road, Norwich  ",Metal  ,Net weight: 400g; drained weight: 246g  
+89,60.0,"cannellini beans, canned, reheated  ",60.3,Asda Good & Balanced cannellini beans  ,406.2,09.11.15  ,"Asda, Boundary Road, Norwich  ",Metal  ,300g; net drained weight: 175g  
+90,60.0,"cannellini beans, canned, reheated  ",60.4,Sainsbury’s cannellini beans in water  ,505.2,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Metal  ,400g; drained weight: 235g  
+91,60.0,"cannellini beans, canned, reheated  ",60.5,Morrisons cannellini beans  ,337.9,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Metal  ,300g; drained weight: 175g  
+92,60.0,"cannellini beans, canned, reheated  ",60.6,Waitrose essential cannellini beans in water  ,475.0,05.01.16  ,"Waitrose, Eaton , Norwich  ",Metal  ,400g; net drained weight: 235g  
+93,60.0,"cannellini beans, canned, reheated  ",60.7,Simply M&S cannellini beans in water  ,521.6,16.11.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Metal  ,Net weight: 400g; drained weight: 235g  
+94,60.0,"cannellini beans, canned, reheated  ",60.8,Napolina cannellini beans in water  ,534.9,16.11.15  ,"Booker, Norwich  ",Metal  ,Net weight: 800g; drained weight: 480g  
+95,60.0,"cannellini beans, canned, reheated  ",60.9,Napolina cannellini beans in water  ,383.8,09.11.15  ,"Asda, Boundary Road, Norwich  ",Metal  ,Net weight: 220g; drained weight: 110g  
+96,60.0,"cannellini beans, canned, reheated  ",60.1,Napolina cannellini beans in water  ,508.7,16.11.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Metal  ,Net weight: 400g; drained weight: 246g  
+97,21.0,"celery, raw  ",21.1,Tesco British celery sticks  ,,26.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,350g  
+98,21.0,"celery, raw  ",21.2,Tesco celery sticks  ,,16.11.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,350g  
+99,21.0,"celery, raw  ",21.3,Asda Grower’s Selection British celery hearts  ,216.7,26.08.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,Purchase Date:  
+100,21.0,"celery, raw  ",21.4,Sainsbury’s celery  ,611.6,09.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,Purchase Date:  
+101,21.0,"celery, raw  ",21.5,Morrisons celery  ,679.7,26.08.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,Purchase Date:  
+102,21.0,"celery, raw  ",21.6,Simply M& S British celery  ,506.4,26.08.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,Purchase Date:  
+103,21.0,"celery, raw  ",21.7,Oaklands British celery  ,528.2,26.08.15  ,"Lidl, Drayton Road, Norwich  ",Plastic  ,Purchase Date:  
+104,21.0,"celery, raw  ",21.8,Tesco celery sticks  ,,16.11.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,350g  
+105,21.0,"celery, raw  ",21.9,The Co -operative Love by Us British celery  ,598.9,26.08.15  ,"The Co -operative, Earlham Green Lane, Norwich  ",Plastic  ,Purchase Date:  
+106,21.0,"celery, raw  ",21.1,G’s celery  ,,28.08.15  ,"Independent market stall, Norwich Market  ",Plastic  ,350g  
+107,21.0,"celery, raw  ",21.11,G’s celery  ,448.0,24.08.15  ,Bidvest Foodservice delivery  ,Plastic  ,Purchase Date:  
+108,7.0,"cherries, raw  ",7.1,Tesco cherries  ,10.7,11.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,Purchase Date:  
+109,7.0,"cherries, raw  ",7.2,Tesco British cherries  ,14.9,11.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,250g  
+110,7.0,"cherries, raw  ",7.3,Asda Grower’s Selection sweet & fragrant cherries  ,8.8,11.08.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,425g  
+111,7.0,"cherries, raw  ",7.4,Sainsbury’s British cherries  ,8.7,11.08.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,250g  
+112,7.0,"cherries, raw  ",7.5,Morrisons cherries  ,9.6,11.08.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,225g  
+113,7.0,"cherries, raw  ",7.6,Waitrose  lusciously sweet & juicy cherries  ,7.6,18.11.15  ,"Waitrose, Wymondham  ",Plastic  ,180g  
+114,7.0,"cherries, raw  ",7.7,Lidl cherries  ,13.0,18.11.15  ,"Lidl, Drayton Road, Norwich  ",Loose  ,Purchase Date:  
+115,7.0,"cherries, raw  ",7.8,The Co -operative Loved by Us cherries  ,7.6,12.08.15  ,"The Co -operative, Unthank Road, Norwich  ",Plastic  ,200g  
+116,7.0,"cherries, raw  ",7.9,Sainsbury’s cherries  ,9.0,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,200g  
+117,7.0,"cherries, raw ",7.1,Market cherries  ,10.7,12.08.15  ,"Independent market stall, Norwich M arket  ",Loose  ,Purchase Date:  
+118,7.0,"cherries, raw  ",7.11,Morrisons cherries  ,8.4,09.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,200g  
+119,55.0,"chickpeas, canned, reheated  ",55.1,Tesco chickpeas in water  ,266.3,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Metal  ,Net weight: 400g; drained weight: 240g  
+120,55.0,"chickpeas, canned, reheated  ",55.2,Tesco chickpeas in water  ,136.2,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Metal  ,Net weight: 210g; drained weight: 130g  
+121,55.0,"chickpeas, canned, reheated  ",55.3,Asda Good & Balanced chickpeas in water  ,258.6,09.11.15  ,"Asda, Boundary Road, Norwich  ",Metal  ,400g; net drained weight: 240g  
+122,55.0,"chickpeas, canned, reheated  ",55.4,Sainsbury’s chickpeas in water  ,272.5,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Metal  ,400g; drained weight: 240g  
+123,55.0,"chickpeas, canned, reheated  ",55.5,Morrisons chickpeas  ,174.5,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Metal  ,300g; drained weight: 180g  
+124,55.0,"chickpeas, canned, reheated  ",55.6,Aldi Sweet Harvest chick peas  ,220.4,16.11.15  ,"Aldi, Sprowston Road, Norwich  ",Metal  ,400g; drained weight: 240g  
+125,55.0,"chickpeas, canned, reheated  ",55.7,Essential Waitrose chick peas in water  ,247.6,18.11.15  ,"Waitrose, Wymondham , Norfolk  ",Metal  ,400g; net drained weight: 240g  
+126,55.0,"chickpeas, canned, reheated  ",55.8,Napolina classic chick peas in  water  ,537.8,16.11.15  ,"Booker, Norwich  ",Metal  ,Net weight: 800g; drained weight: 480g  
+127,55.0,"chickpeas, canned, reheated  ",55.9,Napolina chick peas in water  ,265.1,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Metal  ,Net weight: 400g; drained weight: 240g  
+128,55.0,"chickpeas, canned, reheated  ",55.1,Napolina chick peas in water  ,266.3,09.11.15  ,"Asda, Boundary Road, Norwich  ",Metal  ,Net weight: 400g; drained weight: 240g  
+129,12.0,"courgettes, fresh, raw  ",12.1,Tesco courgettes  ,179.4,16.11.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+130,12.0,"courgettes, fresh, raw  ",12.2,Tesco courgettes  ,500g  ,16.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+131,12.0,"courgettes, fresh, raw  ",12.3,Asda Grower’s Selection British courgettes  ,214.4,17.08.15  ,"Asda, Boundary  Road, Norwich  ",Plastic  ,3 pack  
+132,12.0,"courgettes, fresh, raw  ",12.4,Sainsbury’s courgettes  ,234.1,17.08.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase Date:  
+133,12.0,"courgettes, fresh, raw  ",12.5,Morrisons courgettes  ,320.9,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Loose  ,Purchase Date:  
+134,12.0,"courgettes, fresh, raw  ",12.6,M&S courgettes  ,177.9,16.11.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,325g  
+135,12.0,"courgettes, fresh, raw  ",12.7,Wood Farm  courgettes  ,168.3,17.08.15  ,"Aldi, Larkman Lane, Norwich  ",Plastic  ,500g  
+136,12.0,"courgettes, fresh, raw  ",nan,Sainsbury’s Basics courgettes  ,1kg ,17.08.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic netting  ,Purchase Date:  
+137,12.0,"courgettes, fresh, raw  ",12.9,Tesco British courgettes  ,185.4,19.08.15  ,"Tesco Express, Westlegate, Norwich  ",Plastic  ,300g  
+138,12.0,"courgettes, fresh, raw  ",12.1,Greengrocers courgettes  ,179.4,26.11.15  ,"Independent greengrocers, Norwich  ",Loose  ,Purchase Date:  
+139,12.0,"courgettes, fresh, raw  ",12.11,Farm Fresh courgettes  ,193.3,17.11.15  ,"Booker, Norwich  ",Plastic  ,1kg 
+140,34.0,"curly kale, fresh, boiled  ",34.1,Tesco British curly kale  ,46.2,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,206g  
+141,61.0,"edamame, frozen, boiled  ",61.1,Tesco edamame beans  ,462.9,30.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+142,61.0,"edamame, frozen, boiled  ",61.2,Tesco edamame beans  ,482.8,30.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+143,61.0,"edamame, frozen, boiled  ",61.3,Tesco soya beans  ,390.9,30.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,600g  
+144,61.0,"edamame, frozen, boiled  ",61.4,Yutaka edamame soybeans with pods  ,418.2,30.11.15  ,"Waitrose, Eaton , Norwich  ",Plastic  ,500g  
+145,61.0,"edamame, frozen, boiled  ",61.5,Yutaka edamame shelled soybeans  ,497.7,30.11.15  ,"Waitrose, Eaton , Norwich  ",Plastic  ,500g  
+146,61.0,"edamame, frozen, boiled  ",61.6,Birds Eye soya beans  ,407.6,30.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,480g  
+147,61.0,"edamame, frozen, boiled  ",61.7,Birds Eye soya beans  ,401.3,30.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,480g  
+148,62.0,"figs, ready to eat, semi -dried  ",62.1,Tesco ready to eat figs  ,14.3,27.01.16  ,"Tesco, Harford Bridges, Norwich   ",Mixed material  ,250g  
+149,62.0,"figs, ready to eat, semi -dried  ",62.2,Tesco Whole Foods ready to eat figs  ,14.0,27.01.16  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,440g  
+150,62.0,"figs, ready to eat, semi -dried  ",62.3,Asda Good & Balanced figs  ,16.3,27.01.16  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+151,62.0,"figs, ready to eat, semi -dried  ",62.4,Sainsbury’s figs  ,20.8,13.01.16  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+152,62.0,"figs, ready to eat, semi -dried  ",62.5,Waitrose Love Life soft smyrna figs  ,21.4,16.01.16  ,"Waitrose, Wymondham , Norfolk  ",Mixed material  ,250g  
+153,62.0,"figs, ready to eat, semi -dried  ",62.6,Morrisons Wholefoods soft figs  ,17.3,04.02.16  ,"Morrisons, Wymondham , Norfolk   ",Plastic  ,500g  
+154,62.0,"figs, ready to eat, semi -dried  ",62.7,The Co -operative Loved by Us dried figs  ,13.8,18.01.16  ,"The Co -operative, Wymondham  ",Plastic  ,250g  
+155,62.0,"figs, ready to eat, semi -dried  ",62.8,Neal’s Yard Wholefoods ready to eat figs  ,16.0,18.01.16  ,Holland & Barrett delivery  ,Plastic  ,250g  
+156,62.0,"figs, ready to eat, semi -dried  ",62.9,Whitworths snack on soft Smyrna figs  ,17.8,13.01.16  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,175g  
+157,62.0,"figs, ready to eat, semi -dried  ",62.1,Whitworths snack on soft Smyrna figs  ,14.3,13.01.16  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,250g  
+158,8.0,"grapefruit, raw, flesh only  ",8.1,Tesco pink grapefruit  ,357.0,05.10.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+159,8.0,"grapefruit, raw, flesh only  ",8.2,Tesco red grapefruit  ,330.3,30.11.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+160,8.0,"grapefruit, raw, flesh only  ",8.3,Asda Grower’s Selection red grapefruit  ,324.9,30.11.15  ,"Asda, Boundary Road, Norwich  ",Netting  ,3 fruit  
+161,8.0,"grapefruit, raw, flesh only  ",8.4,Sainsbury’s red grapefruit  ,326.7,30.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic and netting  ,4 fruit  
+162,8.0,"grapefruit, raw, flesh only  ",8.5,Morrisons pink grapefruit  ,291.6,30.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic and netting  ,Count 4  
+163,8.0,"grapefruit, raw, flesh only ",8.6,Waitrose red grapefruit  ,318.5,30.11.15  ,"Waitrose, Wymondham  ",Loose  ,Purchase Date:  
+164,8.0,"grapefruit, raw, flesh only  ",8.7,Aldi red grapefruit  ,331.9,05.10.15  ,"Aldi, Larkman Lane, Norwich  ",Loose  ,Purchase Date:  
+165,8.0,"grapefruit, raw, flesh only  ",8.8,Asda Grower’s Selection red grapefruit  ,338.9,05.10.15  ,"Asda, Boundary Road, Norwich  ",Plastic and netting  ,3 fruit  
+166,8.0,"grapefruit, raw, flesh only  ",8.9,The Shop SU white grapefruit  ,329.3,22.09.15  ,"The Shop SU, University of East Anglia, Norwich  ",Loose  ,Purchase Date:  
+167,8.0,"grapefruit, raw, flesh only  ",8.1,Farm  shop white grapefruit  ,357.0,13.10.15  ,"Independent farm shop, Mulbarton , Norfolk  ",Loose  ,Purchase Date:  
+168,8.0,"grapefruit, raw, flesh only  ",8.11,Swithenbank red grapefruit  ,385.7,12.10.15  ,Bidvest Foodservice delivery  ,Plastic  ,4 fruit  
+169,59.0,"haricot beans, canned, reheated  ",59.1,Tesco haricot beans in water  ,,,"Tesco, Harford Bridges, Norwich  ",Metal  ,Net weight: 400g; drained weight: 235g  
+170,59.0,"haricot beans, canned, reheated  ",59.2,Tesco haricot beans in water  ,,16.11.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Metal  ,Net weight: 400g; drained weight: 235g  
+171,59.0,"haricot beans, canned, reheated  ",59.3,Asda Good & Balanced haricot beans in water  ,,09.11.15  ,"Asda, Boundary Road, Norwich  ",Metal  ,300g; drained weight: 195g  
+172,59.0,"haricot beans, canned, reheated  ",59.4,Asda Good & Balanced haricot beans in water  ,,09.11.15  ,"Asda, Boundary Road, Norwich  ",Metal  ,300g; drained weight: 195g  
+173,,"haricot beans, canned, reheated  ",59.5,Sainsbury’s haricot beans in water  ,,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Metal  ,400g; drained weight: 265g  
+174,59.0,"haricot beans, canned, reheated  ",59.6,Morrisons haricot beans  ,,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Metal  ,300g; drained weight: 195g  
+175,1.0,"kiwi fruit, raw, flesh only  ",1.2,Tesco kiwi  ,95.8,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Loose  ,Purchase Date:  
+176,1.0,"kiwi fruit, raw, flesh only  ",1.3,Asda Grower’s Selection ripen at home kiwi fruit  ,85.1,28.09.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,6 fruits  
+177,1.0,"kiwi fruit, raw, flesh only  ",1.4,Sainsbury’s New Zealand kiwi fruit  ,6 fruit  ,28.09.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic netting  ,6 fruit  
+178,1.0,"kiwi fruit, raw, flesh only  ",1.5,Morrisons kiwi fruit  ,72.6,28.09.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,Purchase Date:  
+179,1.0,"kiwi fruit, raw, flesh only  ",1.6,M&S perfectly ripe kiwi fruit  ,110.7,28.09.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,Purchase Date:  
+180,1.0,"kiwi fruit, raw, flesh only  ",1.7,Lidl kiwi fruit  ,97.1,28.09.15  ,"Lidl, Drayton Road, Norwich  ",Loose  ,Purchase Date:  
+181,1.0,"kiwi fruit, raw, flesh only  ",1.8,Tesco Everyday Value kiwi  ,69.3,28.09.15  ,"Tesco, Harford Bridges, Norwich  ",Mixed material  ,6 fruits  
+182,1.0,"kiwi fruit, raw, flesh only  ",1.9,The Co -operative Loved by Us kiwi fruit  ,83.4,26.10.15  ,"The Co -operative, Long Stratton  ",Plastic  ,6 fruit  
+183,1.0,"kiwi fruit, raw, flesh only  ",1.1,Greengrocer kiwi  ,77.3,30.09.15  ,"Independent greengrocer, Norwich  ",Loose  ,Purchase Date:  
+184,1.0,"kiwi fruit, raw, flesh only  ",1.11,Bidvest Foodservice kiwi  ,68.5,13.10.15  ,Bidvest Foodservice delivery  ,Plastic  ,x6 
+185,9.0,"leeks, fresh, raw  ",9.1,Tesco leeks  ,271.7,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Loose  ,Purchase Date:  
+186,9.0,"leeks, fresh, raw  ",9.2,Tesco leeks  ,254.7,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,500g  
+187,,"leeks, fresh, raw  ",9.3,Asda Grower’s Selection British extra trimmed leeks  ,172.2,16.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+188,9.0,"leeks, fresh, raw  ",9.4,Sainsbury’s British trimmed leeks  ,353.0,19.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+189,9.0,"leeks, fresh, raw  ",9.5,Morrisons trimmed leeks  ,295.7,19.10.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+190,9.0,"leeks, fresh, raw  ",9.6,Sainsbury’s leeks  ,145.3,19.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase Date:  
+191,9.0,"leeks, fresh, raw  ",9.7,M&S British leeks  ,189.3,19.10.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,600g  
+192,9.0,"leeks, fresh, raw  ",9.8,Oaklands British leeks  ,111.4,19.10.15  ,,Plastic  ,750g  
+193,9.0,"leeks, fresh, raw  ",9.9,The Co -operative leeks  ,146.2,16.11.15  ,"The Co -operative, Long Stratton , Norfolk  ",Loose  ,Purchase Date:  
+194,9.0,"leeks, fresh, raw  ",9.1,Farm shop Leeks  ,271.7,13.10.15  ,"Independent farm shop, Mulbarton , Norfolk  ",Loose  ,Purchase Date:  
+195,9.0,"leeks, fresh, raw  ",9.11,Bidvest Foodservice Leeks  ,478.7,12.10.15  ,Bidvest Foodservice delivery  ,Plastic netting  ,5kg 
+196,49.0,"lentils, split, dried, raw  ",49.1,Tesco Whole Foods red split lentils  ,500g  ,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Mixed material  ,500g  
+197,49.0,"lentils, split, dried, raw  ",49.2,Tesco Aasani red split lentils  ,2kg ,16.11.15  ,"Tesco, Blue Boar Road, Norwich  ",Plastic  ,2kg 
+198,49.0,"lentils, split, dried, raw  ",49.3,Asda Good & Balanced red lentils  ,500g  ,09.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+199,49.0,"lentils, split, dried, raw ",49.4,Sainsbury’s red lentils  ,500g  ,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+200,49.0,"lentils, split, dried, raw  ",49.5,Morrisons Wholefoods red split lentils  ,500g  ,30.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+201,49.0,"lentils, split, dried, raw  ",49.6,Simply M&S red split lentils  ,500g  ,30.11.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,500g  
+202,49.0,"lentils, split, dried, raw  ",49.7,Natco red lentils  ,1kg ,27.11.15  ,Tesco online delivery  ,Plastic  ,1kg 
+203,49.0,"lentils, split, dried, raw  ",49.8,KTC red lentils  ,2kg ,16.11.15  ,"Booker, Norwich  ",Plastic  ,2kg 
+204,49.0,"lentils, split, dried, raw ",49.9,Great Scot red split lentils  ,500g  ,16.11.15  ,"Tesco Extra, Blue Boar Lane, Norwich  ",Plastic  ,500g  
+205,49.0,"lentils, split, dried, raw  ",49.1,East End red split lentils  ,500g  ,27.11.15  ,Tesco online delivery  ,Plastic  ,500g  
+206,,"lentils, split, dried, boiled  ",50.1,Tesco Whole Foods red split lentils  ,200.0,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Mixed material  ,500g  
+207,50.0,"lentils, split, dried, boiled  ",50.2,Tesco Aasani red split lentils  ,200.0,16.11.15  ,"Tesco, Blue Boar Road, Norwich  ",Plastic  ,2kg 
+208,50.0,"lentils, split, dried, boiled  ",50.3,Asda Good & Balanced red lentils  ,500g  ,09.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+209,50.0,"lentils, split, dried, boiled  ",50.4,Sainsbury’s red lentils  ,100.0,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+210,50.0,"lentils, split, dried, boiled  ",50.5,Morrisons Wholefoods red split lentils  ,200.0,30.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+211,50.0,"lentils, split, dried, boiled  ",50.6,Simply M&S red split lentils  ,100.0,30.11.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,500g  
+212,50.0,"lentils, split, dried, boiled  ",50.7,Natco red lentils  ,100.0,27.11.15  ,Tesco online delivery  ,Plastic  ,1kg 
+213,50.0,"lentils, split, dried, boiled  ",50.8,KTC red lentils  ,100.0,16.11.15  ,"Booker, Norwich  ",Plastic  ,2kg 
+214,50.0,"lentils, split, dried, boiled  ",50.9,Great Scot red split lentils  ,100.0,16.11.15  ,"Tesco Extra, Blue Boar Lane, Norwich  ",Plastic  ,500g  
+215,26.0,"mange tout, fresh, boiled  ",26.1,Tesco mangetout  ,390.0,05.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,215g  
+216,26.0,"mange tout, fresh, boiled  ",26.2,Sainsbury’s mange tout ,319.1,07.12.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,200g  
+217,26.0,"mange tout, fresh, boiled  ",26.3,Asda Grower’s Selection mangetout  ,402.0,05.10.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,155g  
+218,26.0,"mange tout, fresh, boiled  ",26.4,Sainsbury’s mange tout ,417.0,05.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,200g  
+219,26.0,"mange tout, fresh, boiled  ",26.5,Morrisons trimmed mangetout  ,441.0,19.10.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,155g  
+220,26.0,"mange tout, fresh, boiled  ",26.6,Waitrose trimmed mange tout peas  ,360.8,18.11.15  ,"Waitrose, Wymondham , Norfolk  ",Plastic  ,200g  
+221,26.0,"mange tout, fresh, boiled  ",26.7,Oaklands fresh mangetout  ,402.0,05.10.15  ,"Lidl, Drayton Road, Norwich  ",Plastic  ,150g  
+222,26.0,"mange tout, fresh, boiled  ",26.8,Asda Grower’s Selection mangetout  ,341.4,16.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,155g  
+223,26.0,"mange tout, fresh, boiled  ",26.9,The Co -operative Loved by Us trimmed mangetout  ,306.9,30.11.15  ,"The Co -operative, Long Stratton , Norfolk  ",Plastic  ,120g  
+224,26.0,"mange tout, fresh, boiled  ",26.1,Morrisons trimmed mangetout  ,390.0,16.12.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,215g  
+225,26.0,"mange tout, fresh, boiled  ",26.11,Farm Fresh mangetout  ,405.0,05.10.15  ,"Booker, Norwich  ",Plastic  ,300g  
+226,5.0,"mangoes , ripe, raw, flesh only  ",5.1,Tesco mango  ,321.7,07.12.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,3 fruits  
+227,5.0,"mangoes, ripe, raw, flesh only  ",5.2,Tesco mango chunks  ,,07.12.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,275g  
+228,5.0,"mangoes, ripe, raw, flesh only  ",5.3,Asda Grower’s Selection giant mango  ,280.9,28.09.15  ,"Asda, Boundary Road, Norwich  ",Loose  ,Purchase Date:  
+229,5.0,"mangoes, ripe, raw, flesh only  ",5.4,Sainsbury’s ripe & ready mangoes  ,308.2,28.09.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,2 fruit  
+230,5.0,"mangoes, ripe, raw, flesh only  ",5.5,Morrisons mango  ,285.0,07.12.15  ,"Morrisons, Albion Way, Norwich  ",Loose  ,Purchase Date:  
+231,5.0,"mangoes, ripe, raw, flesh only  ",5.6,M&S large mango  ,528.5,28.09.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Loose  ,Purchase Date:  
+232,5.0,"mangoes, ripe, raw, flesh only  ",5.8,Asda Smart Price mangos  ,385.5,28.09.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,4 fruit  
+233,5.0,"mangoes, ripe, raw, flesh only  ",5.9,The Co -operative Loved by Us mango chunks  ,,07.12.15  ,"The Co -operative, Long Stratton  ",Plastic  ,250g  
+234,5.0,"mangoes, ripe, raw, flesh only  ",5.1,Andalor Mango  ,321.7,13.10.15  ,"Independent farm shop, Mulbarton , Norfolk  ",Loose  ,3 fruits  
+235,5.0,"mangoes, ripe, raw, flesh only  ",5.11,Farm Fresh mango  ,456.9,28.09.15  ,"Booker, Norwich  ",Plastic  ,2 fruit  
+236,6.0,"nectarines, yellow flesh, raw, flesh and skin  ",6.1,Tesco yellow flesh nectarines  ,118.4,14.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic with netting  ,Purchase Date:  
+237,6.0,"nectarines, yellow flesh, raw, flesh and skin  ",6.2,Tesco yellow flesh nectarines  ,92.0,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic with netting  ,5 fruit s 
+238,6.0,"nectarines, yellow flesh, raw, flesh and skin  ",6.3,Asda Grower’s Selection nectarines  ,227.1,17.08.15  ,"Asda, Boundary Road, Norwich  ",Plastic with netting  ,1kg 
+239,6.0,"nectarines, yellow flesh,  raw, flesh and skin  ",6.4,Sainsbury’s nectarines  ,130.8,14.08.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic with netting  ,4 fruit  
+240,6.0,"nectarines, yellow flesh, raw, flesh and skin ",6.5,Morrisons nectarines  ,144.0,17.08.15  ,"Morrisons, Albion Way, Norwich  ",Plastic with netting  ,Min 4 fruit  
+241,6.0,"nectarines, yellow flesh, raw, flesh and skin  ",6.6,M&S yellow flesh nectarines  ,118.7,26.10.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic with paper tray  ,Purchase Date:  
+242,6.0,"nectarines, yellow flesh, raw, flesh and skin  ",6.7,Nature’s Fruit nectarines  ,153.4,17.08.15  ,"Aldi, Larkman Lane, Norwich  ",Plastic with card tray  ,4 fruit  
+243,6.0,"nectarines, yellow flesh, raw, flesh and  skin ",6.8,The Co -operative Loved by Us nectarines  ,119.5,17.08.15  ,"The Co -operative, Earlham Green Lane, Norwich  ",Plastic with netting  ,4 fruit s 
+244,6.0,"nectarines, yellow flesh, raw, flesh and skin  ",6.9,Gog de Magog nectarines  ,156.7,19.08.15  ,"Independent market stall, Norwich M arket  ",Loose  ,Purchase Date:  
+245,6.0,"nectarines, yellow flesh, raw, flesh and skin  ",6.1,Morrisons nectarines  ,118.4,19.10.15  ,"Morrisons, Albion Way, Norwich  ",Plastic with netting  ,Purchase Date:  
+246,6.0,"nectarines, yellow flesh, raw, flesh and skin  ",6.11,Tesco yellow flesh nectarines  ,90.0,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic with netting  ,5 fruits  
+247,38.0,"okra, boiled  ",38.1,Tesco okra  ,9.5,28.09.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,175g  
+248,38.0,"okra, boiled  ",38.2,Tesco okra  ,11.3,05.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,175g  
+249,38.0,"okra, boiled  ",38.3,Asda okra  ,9.1,28.09.15  ,"Asda, Boundary Road, Norwich  ",Loose  ,Purchase Date:  
+250,38.0,"okra, boiled  ",38.4,Sainsbury’s okra  ,Purchase  Date:  ,,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase  Date:  
+251,38.0,"okra, boiled  ",38.5,Morrisons okra  ,8.0,05.10.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,200g  
+252,38.0,"okra, boiled  ",38.6,Waitrose okra  ,10.0,28.09.15  ,"Waitrose, Eaton, Norwich  ",Plastic  ,175g  
+253,38.0,"okra, boiled  ",38.7,Tesco okra  ,9.6,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,175g  
+254,38.0,"okra, boiled  ",38.8,Sainsbury’s okra  ,10.3,19.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,175g  
+255,38.0,"okra, boiled  ",38.9,Sainsbury’s okra  ,11.0,19.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,175g  
+256,38.0,"okra, boiled  ",38.1,Asda okra  ,9.5,19.10.15  ,"Asda, Boundary Road, Norwich  ",Loose  ,175g  
+257,38.0,"okra, boiled  ",38.11,Zenith okra  ,14.3,19.10.15  ,Bidvest Foodservice delivery  ,Loose in cardboard  ,1-1.8kg  
+258,44.0,"papaya, ripe, raw , flesh only  ",44.1,Tesco perfectly ripe papaya  ,463.0,05.10.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+259,44.0,"papaya, ripe, raw, flesh only  ",44.2,Tesco papaya  ,293.8,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,Purchase Date:  
+260,44.0,"papaya, ripe, raw, flesh only  ",44.3,Asda Grower’s Selection papaya  ,329.5,07.12.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,2 fruits  
+261,44.0,"papaya, ripe, raw, flesh only  ",44.4,Sainsbury’s ripe and ready papaya  ,329.0,05.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,Purchase Date:  
+262,44.0,"papaya, ripe, raw, flesh only  ",44.5,Morrisons papaya  ,1089.9,05.10.15  ,"Morrisons, Albion Way, Norwich  ",Loose  ,Purchase Date:  
+263,44.0,"papaya, ripe, raw, flesh only  ",44.6,Waitrose papaya  ,369.0,19.10.15  ,"Waitrose, Eaton , Norwich  ",Loose  ,Purchase Date:  
+264,44.0,"papaya, ripe, raw, flesh only  ",44.7,Tesco perfectly ripe papaya  ,383.8,07.12.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+265,44.0,"papaya, ripe, raw, flesh only  ",44.8,Tesco perfectly ripe papaya  ,351.1,07.12.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+266,44.0,"papaya, ripe, raw, flesh only  ",44.9,Papaya Coribe papaya  ,1084.3,19.10.15  ,"Asian Store, Magdalen Street, Norwich  ",Loose  ,Purchase Date:  
+267,44.0,"papaya, ripe, raw, flesh only  ",44.1,Tesco perfectly ripe papaya  ,463.0,05.01.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+268,44.0,"papaya, ripe, raw, flesh only  ",44.11,Sainsbury’s giant papaya  ,971.4,07.12.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase Date:  
+269,16.0,"parsnips, boiled  ",16.1,Tesco parsnips  ,148.7,02.11.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+270,16.0,"parsnips, boiled  ",16.2,Tesco British parsnips  ,116.8,02.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+271,16.0,"parsnips, boiled  ",16.3,Asda Grower’s Selection British parsnips  ,85.8,02.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+272,16.0,"parsnips, boiled  ",16.4,Sainsbury’s parsnips  ,132.1,02.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose  ,Purchase Date:  
+273,16.0,"parsnips, boiled  ",16.5,Morrisons parsnips  ,136.6,02.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+274,16.0,"parsnips, boiled  ",16.6,M&S parsnips  ,144.3,02.11.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Loose  ,Purchase Date:  
+275,16.0,"parsnips, boiled  ",16.7,Oaklands British parsnips  ,102.8,09.11.15  ,"Lidl, Drayton Road, Norwich  ",Plastic  ,500g  
+276,16.0,"parsnips, boiled  ",16.8,Sainsbury’s Basics parsnips  ,147.3,02.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,750g  
+277,16.0,"parsnips, boiled  ",16.9,The Co -operative parsnips  ,225.5,03.11.15  ,"The Co -operative, Wymondham  ",Loose  ,Purchase Date:  
+278,16.0,"parsnips, boiled  ",16.1,Greengrocer parsnips  ,148.7,03.11.15  ,"Independent greengrocer, Norwich  ",Loose  ,Purchase Date:  
+279,16.0,"parsnips, boiled  ",16.11,Farm Fresh parsnips  ,194.9,02.11.15  ,"Booker, Norwich  ",Plastic  ,1.5kg  
+280,4.0,"pineapple, fresh, raw, flesh only  ",4.1,Tesco pineapple chunks  ,,28.09.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,400g  
+281,4.0,"pineapple, fresh, raw, flesh only  ",4.2,Tesco pineapple  ,1265.6,28.09.15  ,"Tesco, Harford Bridges, Norwich  ",Loose  ,Purchase Date:  
+282,4.0,"pineapple, fresh, raw, flesh only  ",4.3,Asda Grower’s Selection pineapple chunks  ,,28.09.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,400g  
+283,4.0,"pineapple, fresh, raw, flesh only  ",4.4,Sainsbury’s pineapple slices  ,,28.09.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,350g  
+284,4.0,"pineapple, fresh, raw, flesh only  ",4.5,Morrisons pineapple  ,,28.09.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,180g  
+285,4.0,"pineapple, fresh, raw, flesh only  ",4.6,M&S perfectly ripe large golden pineapple  ,1537.0,28.09.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Loose  ,Purchase Date:  
+286,4.0,"pineapple, fresh, raw, flesh only  ",4.7,Natura Farms gold pineapple  ,1182.6,28.09.15  ,"Lidl, Drayton Road, Norwich  ",Loose  ,Purchase Date:  
+287,4.0,"pineapple, fresh, raw, flesh  only ",4.8,Sainsbury’s basics pineapple  ,885.1,05.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Loose; tag - mixed material  ,Purchase Date:  
+288,4.0,"pineapple, fresh, raw, flesh only  ",4.9,The Co -operative Loved by Us pineapple  ,1130.8,06.10.15  ,"Co-op, Wymondham  ",Loose; tag - cardboard  ,Purchase Date:  
+289,4.0,"pineapple, fresh, raw, flesh only  ",4.1,Del Monte Gold extra sweet pineapple  ,,28.09.15  ,"Independent greengrocer, Norwich  ",Loose; tag - cardboard  ,400g  
+290,4.0,"pineapple, fresh, raw, flesh only  ",4.11,Del Monte Gold extra sweet pineapple  ,1229.9,24.08.15  ,Bidvest Foodservice delivery  ,Loose; tag - cardboard  ,Purchase Date:  
+291,,nan,nan,,129.0,,,,Purchase Date:  
+292,,nan,nan,,76.7,,,,Purchase Date:  
+293,,nan,nan,,70.7,,,,Purchase Date:  
+294,,nan,nan,,77.5,,,,Purchase Date:  
+295,,nan,nan,,83.0,,,,Purchase Date:  
+296,,nan,nan,,77.7,,,,Purchase Date:  
+297,,nan,nan,,77.0,,,,Purchase Date:  
+298,,nan,nan,,54.6,,,,Purchase Date:  
+299,,nan,nan,,69.1,,,,Purchase Date:  
+300,,nan,nan,,39.3,,,,Purchase Date:  
+301,,nan,nan,,90.7,,,,Purchase Date:  
+302,46.0,"prunes, ready to eat, semi -dried  ",46.1,Tesco ready to eat pitted prunes  ,7.5,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,500g  
+303,46.0,"prunes, ready to eat, semi -dried  ",46.2,Tesco Whole Foods soft prunes  ,4.9,27.11.15  ,"Tesco, online delivery  ",Plastic  ,250g  
+304,46.0,"prunes, ready to eat, semi -dried  ",46.3,Asda good & balanced prunes  ,8.8,09.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,250g  
+305,46.0,"prunes, ready to eat, semi -dried  ",46.4,Sainsbury’s prunes  ,7.6,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+306,46.0,"prunes, ready to eat, semi -dried  ",46.5,"Morrisons, dried pitted prunes  ",6.1,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+307,46.0,"prunes, ready to eat, semi -dried  ",46.6,Cook with M&S A gen prunes  ,7.3,09.11.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,250g  
+308,46.0,"prunes, ready to eat, semi -dried  ",46.7,The Co -operative Loved by Us dried prunes  ,4.9,09.11.15  ,"The Co -operative, Long Stratton , Norfolk  ",Plastic  ,250g  
+309,46.0,"prunes, ready to eat, semi -dried  ",46.8,Whitworths juicy prunes  ,9.0,30.11.15  ,Sainsbury’s online delivery  ,Plastic  ,200g  
+310,46.0,"prunes, ready to eat, semi -dried  ",46.9,Whitworths snack on Chilean orchard prunes  ,7.9,05.01.16  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,200g  
+311,46.0,"prunes, ready to eat, semi -dried  ",46.1,Whitworths snack on Chilean orchard prunes  ,7.5,13.01.16  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+312,45.0,"radish, raw  ",45.1,Tesco British radish  ,16.0,19.10.15  ,"Tesco, Blue Boar Road, Norwich  ",Plastic  ,240g  
+313,45.0,"radish, raw  ",45.2,Tesco radish  ,240g  ,07.12.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,240g  
+314,45.0,"radish, raw  ",45.3,Asda Grower’s Selection British radishes  ,22.2,19.10.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,200g  
+315,45.0,"radish, raw  ",45.4,Sainsbury’s British radishes  ,8.4,19.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,200g  
+316,45.0,"radish, raw  ",45.5,Morrisons radishes  ,15.8,07.12.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,200g  
+317,45.0,"radish, raw  ",45.6,Simply M&S British radishes  ,16.2,19.10.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,200g  
+318,45.0,"radish, raw  ",45.7,Oaklands British radish  ,9.6,19.10.15  ,"Lidl, Drayton Road, Norwich  ",Plastic  ,250g  
+319,45.0,"radish, raw  ",45.8,Asda Grower’s Selection radishes  ,11.2,07.12.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,200g  
+320,45.0,"radish, raw  ",45.9,The Co -operative Loved by Us radish  ,11.4,09.11.15  ,"The Co -operative, Long Stratton , Norfolk  ",Plastic  ,200g  
+321,45.0,"radish, raw  ",45.1,Farm Shop radishes  ,16.0,13.10.15  ,"Independent Farm Shop, Mulbarton , Norfolk  ",Loose/bunch  ,240g  
+322,48.0,"raisins, dried  ",48.1,Tesco Californian seedless raisins  ,0.7,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Mixed material  ,500g  
+323,48.0,"raisins, dried  ",48.2,Tesco Whole Foods thompson raisins  ,1.3,27.11.15  ,Tesco online delivery  ,Plastic  ,150g  
+324,48.0,"raisins, dried  ",48.3,Asda Chosen  by Kids 12 mini raisin snack boxes  ,0.5,30.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,168g (12x14g)  
+325,48.0,"raisins, dried  ",48.4,Sainsbury’s jumbo raisin mix  ,1.0,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,250g  
+326,48.0,"raisins, dried  ",48.5,Morrisons raisins  ,0.4,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+327,48.0,"raisins, dried  ",48.6,Belbake Californian seedless raisins  ,0.4,09.11.15  ,"Lidl, Drayton Road, Norwich  ",Plastic  ,500g  
+328,48.0,"raisins, dried  ",48.7,Holland & Barrett genius seedless raisins  ,0.5,19.12.15  ,"Holland & Barrett, Camberwell Green, London  ",Plastic  ,250g  
+329,48.0,"raisins, dried  ",48.8,Curtis raisins  ,0.5,16.11.15  ,"Booker, Norwich  ",Plastic  ,2kg 
+330,48.0,"raisins, dried  ",48.9,Whitworths sunny raisin  ,0.3,16.11.15  ,"Tesco, Blue Boar Road, Norwich  ",Plastic  ,112g (8x14g)  
+331,48.0,"raisins, dried  ",48.1,Sun Maid natural California raisins  ,0.7,16.11.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,500g  
+332,3.0,"raspberries, raw  ",3.1,Tesco British raspberries  ,3.9,11.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,150g  
+333,3.0,"raspberries, raw  ",3.2,Tesco raspberries  ,4.9,02.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,150g  
+334,3.0,"raspberries, raw  ",3.3,Asda Grower’s Selection raspberries  ,150g  ,02.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,150g  
+335,3.0,"raspberries, raw  ",3.4,Sainsbury’s Taste the Difference British raspberries  ,7.3,11.08.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,150g  
+336,3.0,"raspberries, raw  ",3.5,Morrisons raspberries  ,3.7,11.08.15  ,"Morrisons, Norwich  ",Plastic  ,150g  
+337,3.0,"raspberries, raw  ",3.6,Essential Waitrose raspberries  ,3.8,05.11.15  ,"Waitrose, Wymondham  ",Plastic  ,160g  
+338,3.0,"raspberries, raw  ",3.7,Nature’s Fruit raspberries  ,5.7,11.08.15  ,"Aldi, Larkman Lane, Norwich  ",Plastic  ,150g  
+339,3.0,"raspberries, raw  ",3.8,Asda Grower’s Selection raspberries  ,5.7,02.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,150g  
+340,3.0,"raspberries, raw  ",3.9,The Co -operative Loved by Us Scottish raspberries  ,5.4,11.08.15  ,"The Co -operative, Unthank Road, Norwich  ",Plastic  ,150g  
+341,3.0,"raspberries, raw  ",nan,Greengrocer raspberries  ,Purchase Date:  ,11.08.15  ,"Independent greengrocer, Norwich  ",Plastic  ,Purchase Date:  
+342,3.0,"raspberries, raw  ",3.11,Berries R Us Portuguese raspberries  ,3.8,24.08.15  ,Bidvest Foodservice delivery  ,Plastic  ,125g  
+343,51.0,"red kidney beans, dried, boiled  ",51.1,Tesco Whole Foods kidney beans  ,100.0,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Mixed material  ,500g  
+344,51.0,"red kidney beans, dried, boiled  ",51.2,Tesco Whole Foods kidney beans  ,100.0,16.11.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Mixed material  ,500g  
+345,51.0,"red kidney beans, dried, boiled  ",51.3,Asda Good & Balanced kidney beans  ,99.7,09.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+346,51.0,"red kidney beans, dried, boiled  ",51.4,Sainsbury’s red kidney beans  ,100.0,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,500g  
+347,51.0,"red kidney beans, dried, boiled  ",51.5,Morrisons Wholefoods red kidney beans  ,100.0,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,500g  
+348,51.0,"red kidney beans, dried, boiled  ",51.6,Waitrose Love Life red kidney beans  ,100.0,18.11.15  ,"Waitrose, Eaton , Norwich  ",Plastic  ,500g  
+349,,"red kidney beans, dried, boiled  ",51.7,TRS red kidney beans  ,100.3,30.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+350,51.0,"red kidney beans, dried, boiled  ",51.8,KTC red kidney beans  ,100.2,16.11.15  ,"Booker, Norwich  ",Plastic  ,2kg 
+351,51.0,"red kidney beans, dried, boiled  ",51.9,East End dark red kidney beans  ,99.9,02.12.15  ,East End online order  ,Plastic  ,500g  
+352,51.0,"red kidney beans, dried, boiled  ",51.1,Island Sun red kidney beans  ,100.0,27.11.15  ,Tesco online delivery  ,Plastic  ,500g  
+353,52.0,"red kidney beans, canned, reheated  ",52.1,,256.4,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Metal  ,Net weight: 400g; drained weight: 240g  
+354,52.0,"red kidney beans, canned, reheated  ",52.2,Tesco Everyday Value red kidney beans in water  ,253.6,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Metal  ,Net weight: 400g; drained weight: 240g  
+355,52.0,"red kidney beans, canned, reheated  ",52.3,Asda Good & Balanced red kidney beans in water  ,265.3,16.11.15  ,"Asda, Boundary Road, Norwich  ",Metal  ,400g; drained weight: 240g  
+356,52.0,"red kidney beans, canned, reheated  ",52.4,Sainsbury’s red kidney beans in water  ,269.0,16.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Metal  ,400g; drained weight: 240g  
+357,52.0,"red kidney beans, canned, reheated  ",52.5,Morrisons red kidney beans  ,251.4,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Metal  ,400g; drained weight: 240g  
+358,52.0,"red kidney beans, canned, reheated  ",52.6,Campo Largo red kidney beans in water  ,248.1,09.11.15  ,"Lidl, Drayton Road, Norwich  ",Metal  ,Net weight: 420g; drained weight: 240g  
+359,52.0,"red kidney beans, canned, reheated  ",52.7,Essential Waitrose red kidney beans in water  ,239.2,18.11.15  ,"Waitrose, Wymondham , Norfolk  ",Metal  ,400g; net drained weight: 240g  
+360,52.0,"red kidney beans, canned, reheated  ",52.8,Chef’s Larder red kidney beans in water  ,497.1,16.11.15  ,"Booker, Norwich  ",Steel  ,Net weight: 800g; drained weight: 480g  
+361,52.0,"red kidney beans, canned, reheated  ",52.9,Napolina red kidney beans in water  ,556.4,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Metal  ,Net weight: 400g; drained weight: 240g  
+362,52.0,"red kidney beans, canned, reheated  ",52.1,Napolina red kidney beans in water  ,256.4,16.11.15  ,"Booker, Norwich  ",Metal  ,Net weight: 400g; drained weight: 240g  
+363,43.0,"rhubarb, stewed without sugar  ",43.1,Tesco British rhubarb  ,205.2,17.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,400g  
+364,43.0,"rhubarb, stewed without sugar  ",43.2,Tesco British rhubarb  ,109.6,16.10.15  ,,Plastic  ,400g  
+365,43.0,"rhubarb, stewed without sugar  ",43.3,Asda Grower’s Selection British rhubarb  ,130.5,17.08.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,400g  
+366,43.0,"rhubarb, stewed without sugar  ",43.4,Sainsbury’s British rhubarb  ,97.6,17.08.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,400g  
+367,43.0,"rhubarb, stewed without sugar  ",43.5,Sainsbury’s British rhubarb  ,117.6,13.01.16  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,400g  
+368,43.0,"rhubarb, stewed without sugar  ",43.6,Morrisons Yorkshire rhubarb  ,63.4,17.08.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,450g  
+369,43.0,"rhubarb, stewed without sugar  ",43.7,Waitrose Cooks’ Ingredients particularly pink forced ,63.4,05.01.16  ,"Waitrose, Eaton , Norwich  ",Plastic  ,400g  
+370,43.0,"rhubarb, stewed without sugar  ",43.8,Swithenbank rhubarb  ,120.1,24.08.15  ,Bidvest Foodservice delivery  ,Loose in paper  ,1kg 
+371,43.0,"rhubarb, stewed without sugar  ",43.9,,55.7,05.01.16  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,400g  
+372,43.0,"rhubarb, stewed without sugar  ",43.1,Tesco rhubarb  ,205.2,05.01.16  ,,Plastic  ,400g  
+373,43.0,"rhubarb, stewed without sugar  ",43.11,Morrisons Yorkshire rhubarb  ,120.1,02.02.16  ,"Morrisons, Wymondham , Norfolk  ",Plastic  ,400g  
+374,40.0,"runner beans, fresh, boiled  ",40.1,Tesco British runner beans  ,30.4,11.08.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,255g  
+375,40.0,"runner beans, fresh, boiled  ",40.2,Tesco runner beans  ,24.6,09.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,255g  
+376,40.0,"runner beans, fresh, boiled  ",40.3,Asda Grower’s Selection runner beans  ,22.5,09.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,190g  
+377,40.0,"runner beans, fresh, boiled  ",40.4,Sainsbury’s runner beans  ,26.3,09.11.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,225g  
+378,40.0,"runner beans, fresh, boiled  ",40.5,Morrisons runner beans  ,24.2,30.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,180g  
+379,40.0,"runner beans, fresh, boiled  ",40.6,Simply M&S runner beans  ,22.8,09.11.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,300g  
+380,40.0,"runner beans, fresh, boiled  ",40.7,Wood Farm runner beans  ,21.7,11.08.15  ,"Aldi, Larkman Lane, Norwich  ",Plastic  ,250g  
+381,40.0,"runner beans, fresh, boiled  ",40.8,Asda Grower’s Selection runner beans  ,22.3,16.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,190g  
+382,40.0,"runner beans, fresh, boiled  ",40.9,The Co -operative Loved by Us runner beans  ,21.4,09.11.15  ,"The Co -operative, Long Stratton , Norfolk  ",Plastic  ,180g  
+383,40.0,"runner beans, fresh, boiled  ",40.1,Greengrocer runner beans  ,30.4,11.08.15  ,"Independent greengrocer, Gloucester Street, Norwich  ",Loose  ,255g  
+384,40.0,"runner beans, fresh, boiled  ",40.11,Morrisons runner beans  ,24.3,09.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,180g  
+385,,"swede, fresh, boiled  ",35.1,Tesco British small swede  ,528.6,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,Min. 400g  
+386,35.0,"swede, fresh, boiled  ",35.2,Tesco British large swede  ,836.4,26.10.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,Min. 700g  
+387,35.0,"swede, fresh, boiled  ",35.3,Asda Grower’s Selection diced swede  ,500g  ,26.10.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+388,35.0,"swede, fresh, boiled  ",35.4,Sainsbury’s swede  ,846.5,26.10.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,Min. 525g  
+389,35.0,"swede, fresh, boiled  ",35.5,Morrisons swede  ,787.7,02.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,Min. 500g  
+390,35.0,"swede, fresh, boiled  ",35.6,Simply M&S British swede  ,724.0,26.10.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,500g  
+391,35.0,"swede, fresh, boiled  ",35.7,Lidl swede  ,878.5,26.10.15  ,"Lidl, Drayton Road, Norwich  ",Loose  ,Purchase Date:  
+392,35.0,"swede, fresh, boiled  ",35.8,Asda Grower’s Selection diced swede  ,500g  ,02.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,500g  
+393,35.0,"swede, fresh, boiled  ",35.9,The Co -operative Loved by Us British swede  ,644.0,26.10.15  ,"The Co -operative, Long Stratton , Norwich  ",Plastic  ,500g  
+394,35.0,"swede, fresh, boiled  ",35.1,Farm Shop swede  ,528.6,13.10.15  ,"Independent Farm Shop, Mulbarton , Norfolk  ",Loose  ,Min. 400g  
+395,35.0,"swede, fresh, boiled  ",35.11,Bidvest Foodservice swede  ,1147.4,12.10.15  ,Bidvest Foodservice delivery  ,Loose  ,Purchase Date:  
+396,19.0,"sweetcorn, baby, fresh, boiled  ",19.1,Tesco baby corn  ,401.7,09.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,190g  
+397,19.0,"sweetcorn, baby, fresh, boiled  ",19.2,Tesco baby corn  ,414.9,09.11.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,190g  
+398,19.0,"sweetcorn, baby, fresh, boiled  ",19.3,Asda Grower’s Selection baby corn  ,379.5,09.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,130g  
+399,19.0,"sweetcorn, baby, fresh, boiled  ",19.4,Sainsbury’s babycorn  ,340.8,30.11.15  ,"Sainsbury’s, Longwater Retail Park,  Norwich  ",Plastic  ,175g  
+400,19.0,"sweetcorn, baby, fresh, boiled  ",19.5,Morrisons baby corn  ,405.5,09.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,125g  
+401,19.0,"sweetcorn, baby, fresh, boiled  ",19.6,Waitrose baby corn  ,374.8,18.11.15  ,"Waitrose, Wymondham , Norfolk   ",Plastic  ,175g  
+402,19.0,"sweetcorn, baby, fresh, boiled  ",19.7,Wood Farm baby corn  ,360.0,16.11.15  ,"Aldi, Sprowston Road, Norwich  ",Plastic  ,135g  
+403,19.0,"sweetcorn, baby, fresh, boiled  ",19.8,Asda Grower’s Selection baby corn  ,375.0,30.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,130g  
+404,19.0,"sweetcorn, baby, fresh, boiled  ",19.9,The Co -operative Loved by Us babycorn  ,415.9,09.11.15  ,"The Co -operative, Long Stratton , Norfolk  ",Plastic  ,125g  
+405,19.0,"sweetcorn, baby, fresh, boiled  ",19.1,Morrisons baby corn  ,401.7,16.12.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,190g  
+406,19.0,"sweetcorn, baby, fresh, boiled  ",19.11,Exotica baby corn  ,410.0,12.10.15  ,Bidvest Foodservice delivery  ,Plastic  ,80g 
+407,31.0,"sweet potato, boiled, flesh only  ",31.1,Tesco sweet potatoes  ,142.0,07.12.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,1kg 
+408,31.0,"sweet potato, boiled, flesh only  ",31.2,Tesco sweet potatoes  ,187.0,05.01.16  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,1kg 
+409,31.0,"sweet potato, boiled, flesh only  ",31.3,Asda Grower’s Selection sweet potatoes  ,261.7,07.12.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,1kg 
+410,31.0,"sweet potato, boiled, flesh only  ",31.4,Sainsbury’s sweet potato  ,186.0,07.12.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic netting  ,1.25kg  
+411,31.0,"sweet potato, boiled, flesh only  ",31.5,Morrisons sweet potato  ,129.3,07.12.15  ,"Morrisons, Albion Way, Norwich  ",Loose  ,Purchase Date:  
+412,31.0,"sweet potato, boiled, flesh only  ",31.6,M&S sweet potatoes  ,188.7,07.12.15  ,"Marks & Spencer, Sweet Briar Retail Park, Norwich  ",Plastic  ,1kg 
+413,31.0,"sweet potato, boiled, flesh only  ",31.7,Lidl sweet potatoes  ,403.7,07.12.15  ,"Lidl, Drayton Road, Norwich  ",Loose  ,Purchase Date:  
+414,31.0,"sweet potato, boiled, flesh only  ",31.8,Morrisons sweet potatoes  ,316.7,07.12.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,Min. 5  
+415,31.0,"sweet potato, boiled, flesh only  ",31.9,The Co -operative sweet potatoes  ,233.7,07.12.15  ,"The Co -operative, Long Stratton , Norfolk  ",Loose  ,Purchase Date:  
+416,31.0,"sweet potato, boiled, flesh only  ",31.1,Greengrocer sweet potatoes  ,142.0,09.12.15  ,"Independent greengrocer, Gloucester Road, Norwich  ",Loose  ,1kg 
+417,31.0,"sweet potato, boiled, flesh  only ",31.11,Bidvest Foodservice sweet potatoes  ,267.4,12.01.15  ,Bidvest Foodservice delivery  ,Loose in cardboard  ,6kg net  
+418,39.0,"watercress, raw  ",39.1,Tesco Wessex watercress  ,0.8,28.09.15  ,"Tesco, Harford Bridges, Norwich  ",Plastic  ,85g 
+419,39.0,"watercress, raw  ",39.2,Tesco watercress  ,0.6,16.11.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,85g 
+420,39.0,"watercress, raw  ",39.3,Asda Grower’s Selection watercress  ,0.9,16.11.15  ,"Asda, Boundary Road, Norwich  ",Plastic  ,85g 
+421,39.0,"watercress, raw  ",39.4,Sainsbury’s baby leaf watercress  ,1.7,28.09.15  ,"Sainsbury’s, Longwater Retail Park, Norwich  ",Plastic  ,80g 
+422,39.0,"watercress, raw  ",39.5,Morrisons watercress  ,1.3,28.09.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,85g 
+423,39.0,"watercress, raw  ",39.6,Waitrose hot & peppery watercress  ,0.6,06.10.15  ,"Waitrose, Eaton , Norwich  ",Plastic  ,100g  
+424,39.0,"watercress, raw  ",39.7,Tesco watercress  ,0.8,19.10.15  ,"Tesco Extra, Blue Boar Road, Norwich  ",Plastic  ,85g 
+425,39.0,"watercress, raw  ",39.8,Morrisons watercress  ,0.7,16.11.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,85g 
+426,39.0,"watercress, raw  ",39.9,Morrisons watercress  ,1.2,19.10.15  ,"Morrisons, Albion Way, Norwich  ",Plastic  ,85g 
+427,39.0,"watercress, raw  ",39.1,Hairspring watercress  ,0.8,30.10.15  ,,Loose/bunch  ,85g 
+428,39.0,"watercress, raw  ",39.11,Fresha water cress  ,1.0,16.10.15  ,Bidvest Foodservice delivery  ,Plastic  ,100g  
+429,41.0,"yam, fresh, boiled  ",41.1,Tesco yam  ,1470.5,30.10.15  ,"Tesco Superstore, Lewisham, London  ",Loose  ,Purchase Date:  
+430,41.0,"yam, fresh, boiled  ",41.2,Tesco yam  ,1719.9,19.11.15  ,"Tesco, South Tottenham, London  ",Loose  ,Purchase Date:  
+431,41.0,"yam, fresh, boiled  ",41.3,Tesco yam  ,1595.0,19.11.15  ,"Tesco South Tottenham, London  ",Loose  ,Purchase Date:  
+432,41.0,"yam, fresh, boiled  ",41.4,Spiceland yam  ,1279.5,19.10.15  ,"Spiceland, Magdelen Street, Norwich  ",Loose  ,Purchase Date:  
+433,41.0,"yam, fresh, boiled  ",41.5,Foodland yam  ,1115.0,30.10.15  ,"Foodland, Brixton Market, London  ",Loose  ,Purchase Date:  
+434,41.0,"yam, fresh, boiled  ",41.6,Aziz Cash & Carry yam  ,1679.0,30.10.15  ,"Aziz Cash &  Carry, Electric Avenue, Brixton  ",Loose  ,Purchase Date:  
+435,41.0,"yam, fresh, boiled  ",41.7,Asian Bazaar yam  ,1938.3,26.01.16  ,"Asian Bazaar, Magdalen Street, Norwich  ",Loose  ,Purchase Date:  
+436,41.0,"yam, fresh, boiled  ",41.8,Spice Land yam  ,2284.0,26.01.16  ,"Spice Land, Dereham Road, Norwich  ",Loose  ,Purchase Date:  

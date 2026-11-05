@@ -1,0 +1,81 @@
+Page,Sample_Number,Food_Name,Pack_Size,Source_PDF,Food_Category,Super_Category,Normalized_Weight
+666,31,"Sweet potato, boiled, flesh only",1kg  ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Vegetables,Produce,1.0
+676,31,"Sweet potato, boiled, flesh  only",6kg   net,fruit_and_vegetable_survey_2015_sampling_report.pdf,Vegetables,Produce,6.0
+677,31,Bidvest Foodservice sweet potatoes,L2,fruit_and_vegetable_survey_2015_sampling_report.pdf,Vegetables,Produce,2.0
+678,32,"Sweet potato, wedges, baked  in rapeseed oil , flesh and",1kg  ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Vegetables,Produce,1.0
+680,32,"Sweet potato, wedges, baked in rapeseed oil , flesh and",1kg  ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Vegetables,Produce,1.0
+700,33,"Broad beans, fresh, boiled",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+722,34,"Curly kale, fresh, boiled",206g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,206.0
+744,35,"Swede, fresh, boiled",Min. 400g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,400.0
+766,36,"Aubergine, boiled, flesh an d skin",Purchase Date:,fruit_and_vegetable_survey_2015_sampling_report.pdf,Alcoholic Beverages,Drinks,
+768,36,"Aubergine, boiled, flesh and skin",Purchase Date:,fruit_and_vegetable_survey_2015_sampling_report.pdf,Alcoholic Beverages,Drinks,
+784,36,"Aubergine, flesh and skin, boiled",Purchase Date:,fruit_and_vegetable_survey_2015_sampling_report.pdf,Alcoholic Beverages,Drinks,
+788,37,"Aubergine, roasted  in rapeseed oil , flesh and skin",Purchase Date:,fruit_and_vegetable_survey_2015_sampling_report.pdf,Alcoholic Beverages,Drinks,
+790,37,"Aubergine, roasted in rapeseed oil , flesh and skin",Purchase Date:,fruit_and_vegetable_survey_2015_sampling_report.pdf,Alcoholic Beverages,Drinks,
+810,38,"Okra, boiled",175g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,175.0
+832,39,"Watercress, raw",85g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Beverages,Drinks,85.0
+854,40,"Runner beans, fresh, boiled",255g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,255.0
+876,41,"Yam, fresh, boiled",Purchase Date:,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,
+892,42,"Blackberries, raw",350g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,350.0
+914,43,"Rhubarb, stewed without sugar",400g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Prepared Foods,Processed Foods,400.0
+936,44,"Papaya, ripe, raw , flesh only",Purchase Date:,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,
+938,44,"Papaya, ripe, raw, flesh only",Purchase Date:,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,
+958,45,"Radish, raw",240g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,240.0
+978,46,"Prunes, ready to eat, semi -dried",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+998,47,"Apricots, ready to eat, semi -dried",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1018,48,"Raisins, dried",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1038,49,"Lentils, split, dried, raw",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1058,50,"Lentils, split, dried, boiled",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1078,51,"Red kidney beans, dried, boiled",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1098,52,"Red kidney beans, canned, reheated",Net weig ht: 400g ; drained weig ht: 240g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,400.0
+1118,53,"Lentils, brown/green, dried, boiled",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1140,54,"Chickpeas, dried, boiled",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1160,55,"Chickpeas, canned, reheated",Net weig ht: 400g ; drained weig ht: 240g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,400.0
+1180,56,"Butter beans, dried, boiled",375g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Dairy,Animal Products,375.0
+1194,57,"Dates, dried, flesh only",450g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,450.0
+1214,58,"Mung beans, dried, boiled",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1226,59,"Haricot beans, canned, reheated",Net weig ht: 400g ; drained weig ht: 235g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,400.0
+1238,60,"Cannellini beans, canned, reheated",Net weig ht: 400g ; drained weig ht: 246g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,400.0
+1258,61,"Edamame, frozen, boiled",500g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,500.0
+1272,62,"Figs, ready to eat, semi -dried",250g ,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,250.0
+1292,1,guidelines. Details of all sub -samples were recorded prior to,chang es on cooking  and,fruit_and_vegetable_survey_2015_sampling_report.pdf,Other,Miscellaneous,
+666,31,"Sweet potato, boiled, flesh only",1kg  ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Vegetables,Produce,1.0
+676,31,"Sweet potato, boiled, flesh  only",6kg   net,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Vegetables,Produce,6.0
+677,31,Bidvest Foodservice sweet potatoes,L2,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Vegetables,Produce,2.0
+678,32,"Sweet potato, wedges, baked  in rapeseed oil , flesh and",1kg  ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Vegetables,Produce,1.0
+680,32,"Sweet potato, wedges, baked in rapeseed oil , flesh and",1kg  ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Vegetables,Produce,1.0
+700,33,"Broad beans, fresh, boiled",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+722,34,"Curly kale, fresh, boiled",206g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,206.0
+744,35,"Swede, fresh, boiled",Min. 400g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,400.0
+766,36,"Aubergine, boiled, flesh an d skin",Purchase Date:,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Alcoholic Beverages,Drinks,
+768,36,"Aubergine, boiled, flesh and skin",Purchase Date:,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Alcoholic Beverages,Drinks,
+784,36,"Aubergine, flesh and skin, boiled",Purchase Date:,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Alcoholic Beverages,Drinks,
+788,37,"Aubergine, roasted  in rapeseed oil , flesh and skin",Purchase Date:,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Alcoholic Beverages,Drinks,
+790,37,"Aubergine, roasted in rapeseed oil , flesh and skin",Purchase Date:,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Alcoholic Beverages,Drinks,
+810,38,"Okra, boiled",175g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,175.0
+832,39,"Watercress, raw",85g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Beverages,Drinks,85.0
+854,40,"Runner beans, fresh, boiled",255g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,255.0
+876,41,"Yam, fresh, boiled",Purchase Date:,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,
+892,42,"Blackberries, raw",350g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,350.0
+914,43,"Rhubarb, stewed without sugar",400g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Prepared Foods,Processed Foods,400.0
+936,44,"Papaya, ripe, raw , flesh only",Purchase Date:,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,
+938,44,"Papaya, ripe, raw, flesh only",Purchase Date:,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,
+958,45,"Radish, raw",240g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,240.0
+978,46,"Prunes, ready to eat, semi -dried",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+998,47,"Apricots, ready to eat, semi -dried",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1018,48,"Raisins, dried",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1038,49,"Lentils, split, dried, raw",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1058,50,"Lentils, split, dried, boiled",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1078,51,"Red kidney beans, dried, boiled",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1098,52,"Red kidney beans, canned, reheated",Net weig ht: 400g ; drained weig ht: 240g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,400.0
+1118,53,"Lentils, brown/green, dried, boiled",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1140,54,"Chickpeas, dried, boiled",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1160,55,"Chickpeas, canned, reheated",Net weig ht: 400g ; drained weig ht: 240g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,400.0
+1180,56,"Butter beans, dried, boiled",375g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Dairy,Animal Products,375.0
+1194,57,"Dates, dried, flesh only",450g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,450.0
+1214,58,"Mung beans, dried, boiled",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1226,59,"Haricot beans, canned, reheated",Net weig ht: 400g ; drained weig ht: 235g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,400.0
+1238,60,"Cannellini beans, canned, reheated",Net weig ht: 400g ; drained weig ht: 246g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,400.0
+1258,61,"Edamame, frozen, boiled",500g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,500.0
+1272,62,"Figs, ready to eat, semi -dried",250g ,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,250.0
+1292,1,guidelines. Details of all sub -samples were recorded prior to,chang es on cooking  and,Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf,Other,Miscellaneous,

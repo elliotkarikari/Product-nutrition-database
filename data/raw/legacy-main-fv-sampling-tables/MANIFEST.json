@@ -1,0 +1,927 @@
+{
+  "source": "Legacy project tables derived from the 2011 (DH) and 2015 (PHE) fruit and vegetable sampling reports",
+  "repository": "elliotkarikari/Product-nutrition-database",
+  "branch": "main",
+  "commit": "cfadc8a3f5eff7cae890ea8031d8de3ae600165f",
+  "snapshot_taken": "2026-11-05",
+  "how": "Each file copied byte for byte from main at the commit above (git show), with its git blob id and sha256.",
+  "status": "Raw evidence of the legacy work, kept usable. NOT an evidence source for ShelfScale values: values come from the original reports in data/raw/uk-fv-sampling-2011 and -2015. These tables were produced by PDF extraction in the legacy notebooks (2023-2025) and carry extraction damage; see each file's notes.",
+  "licence": "Derived from the two reports: 2011 report OGL v3.0 via GOV.UK site terms (the PDF states only Crown copyright 2013); 2015 report OGL v3.0 as stated in it. Attribution as in data/raw/uk-fv-sampling-2011/ATTRIBUTION.md and data/raw/uk-fv-sampling-2015/ATTRIBUTION.md.",
+  "files": [
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Banana.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Banana.csv",
+      "git_blob": "a055bb9c19753a5f53c5d71cfc3bb3181f7eac3d",
+      "sha256": "16ce04e093c6f7579bcda6ea0633b748e5885969abdd954381a2ecd91ed14822",
+      "bytes": 1693,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "7 rows; the report has 11 sub-samples; one row is numbered 39.1 that the report numbers 39.8."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Broccoli.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Broccoli.csv",
+      "git_blob": "cab5c65112107b6b4db7d3daa9be562d82486017",
+      "sha256": "4255c792b7f69226c3d22cdcae1eb48540dfb6e9efdf7f4d070399261bcb847b",
+      "bytes": 2142,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Cabbage.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Cabbage.csv",
+      "git_blob": "7b7a4c9a524d907368a6562daa24c59db4a18880",
+      "sha256": "f61b3588bb66c37545b070818959889bd21f9d37949ee5f2e1a65e96738add4b",
+      "bytes": 1395,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Cannedtomatoes.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Cannedtomatoes.csv",
+      "git_blob": "91a924525d092db3c50979ebcbfbe657f2e25a03",
+      "sha256": "94548cea551a2b0bf87f8fa1933f320b2914b90a3a38f66a2684d909b62c109e",
+      "bytes": 2161,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Carrot1.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Carrot1.csv",
+      "git_blob": "1d1c06e4ce9ca1396b2bde79c60d2b97646d92bc",
+      "sha256": "f2a53130aea90e8c94695261392c6b94bc19d311009f6c3a867b90d5cb6ba780",
+      "bytes": 1974,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Carrot2.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Carrot2.csv",
+      "git_blob": "6c9dba45758959bcb42c3024c67fa2b124facdd9",
+      "sha256": "2272980bdea5ba42840e5763daa988abb682cb8167e85fcc7cb2d1921f32ef63",
+      "bytes": 1866,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Cauliflower.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Cauliflower.csv",
+      "git_blob": "720fb6584a222f5f86ca9854864210eaf6ef94f6",
+      "sha256": "fc164b66ebf0970caf33b7176f807d8d7ca68dc9175c74f51156b8c68fccdd75",
+      "bytes": 1825,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Cucumber.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Cucumber.csv",
+      "git_blob": "934e18790cf7d68b72a661ee26c75f2f5e09720d",
+      "sha256": "d9b163b0d488988fba07c9d9b5ba3e14cde7423d3e48291e89db13a67925ae12",
+      "bytes": 1649,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/GreenBeans.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/GreenBeans.csv",
+      "git_blob": "9c7d88f14abbd8e1a8ef03472409bdab8b6ee612",
+      "sha256": "d48f48b3fd12029c068ed6cf9501a3373cc7f45e39514a12ad524e90ab23fe7a",
+      "bytes": 1534,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Lettuce.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Lettuce.csv",
+      "git_blob": "0434a8b916f1828ef94e719ead2ccddab3b1b903",
+      "sha256": "b80002c492bf20ed9aaf33977e8140d61734b8d3fe4a28a7017c7a0ba8286f7f",
+      "bytes": 1822,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Melon.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Melon.csv",
+      "git_blob": "c0af7e7ecd14720c774491e0c8f343e08560247f",
+      "sha256": "f8d94475a79c8f12917a136b2d8daa5e5236c3bb61750de1384023d4da247e4d",
+      "bytes": 2386,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Mushroom.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Mushroom.csv",
+      "git_blob": "c2539339701e223416b51e35080daecb02f3b60e",
+      "sha256": "7f9c1f679da0621ad99ff8f609255a89ff6d902b016b34846d4bd5717e394637",
+      "bytes": 2004,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Oldcarrot.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Oldcarrot.csv",
+      "git_blob": "06f72a689130c261b10499257f422f0bde91fa10",
+      "sha256": "8346fcfb067e1fa20b7ac8a22b4cb499be9d9bc84061944f9d9109659c699fb4",
+      "bytes": 1478,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Onion.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Onion.csv",
+      "git_blob": "152448bafc65cb3641def13bf23886d44e9de767",
+      "sha256": "990c30b88f63c9240e515fbc12c9162f6e5664b1abfdc50f071d9443a70fb69e",
+      "bytes": 1631,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Oranges.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Oranges.csv",
+      "git_blob": "8e762a07e0a14340e50ccbefef3d437313fee534",
+      "sha256": "20662b5f6a2be5cf99d8afde0ea2cb1f15cec692830257e3af1afc7b667acba4",
+      "bytes": 1711,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Pakchoi.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Pakchoi.csv",
+      "git_blob": "bc38f0d7cc402206066803d4dab7279b9213f3d9",
+      "sha256": "93864cf4eae1b7c5976452160ce7bc672b2cab3447e55999c9a0aee82ec4e049",
+      "bytes": 1228,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Pear.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Pear.csv",
+      "git_blob": "3d71600c688b77f3563e9ec320a0a754fd5acf51",
+      "sha256": "71bc83956a057e97009461cc57a0f06d560dbc25da809928d6bd6215f79e6073",
+      "bytes": 2185,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Potatoes1.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Potatoes1.csv",
+      "git_blob": "6ba3707e397fd67cac9c1892adfe18a8824a6497",
+      "sha256": "8b80f06f6f39666063536fc9bbb5133e5738186f663fb66fa64bfea000b40704",
+      "bytes": 2132,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Potatoes2.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Potatoes2.csv",
+      "git_blob": "6869914d27c32f4c3e76cd595d57834a783e1aaf",
+      "sha256": "49cd2d816aa73f3923913b1881999be627ba1ae867dae33c302b75bd0453e8f7",
+      "bytes": 1864,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Strawberry.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Strawberry.csv",
+      "git_blob": "9b572f36164b7d6cc0511c0af7392264b5dcb5d2",
+      "sha256": "606ba9069c65777e92106d2a6181790bfc4632f1eb859d20c0660a4152954458",
+      "bytes": 1910,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Tomatoesraw.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/Tomatoesraw.csv",
+      "git_blob": "2e32cea5d53a066c7f678f40a0592ed5882bbed6",
+      "sha256": "0c4023ba6e6e72842ca0ceaef190a608f4067b42b4192ce88bdffece6e1387d0",
+      "bytes": 1700,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/apple.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/apple.csv",
+      "git_blob": "e6e762772c41cf66634f16fdaec8652d83b3c225",
+      "sha256": "6fd6fe87293807af6dc7da2c3cd1833e8b3d002684ae5dac25a7e4a65088e467",
+      "bytes": 2240,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/peasf.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/peasf.csv",
+      "git_blob": "24823f6cec06ca5a37406f3fa4b0f215a4372847",
+      "sha256": "bc9d678f3a283a632f685241cdb5da9dbb63abf8584196c880ba05d625afb214",
+      "bytes": 2213,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/redpeppers.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/redpeppers.csv",
+      "git_blob": "d7101778b4b3e66a98953c10e0a0e629ad511d64",
+      "sha256": "dc2b490e9f20a68224a78145d9d1893d307702c7d47892796b042ee66e564904",
+      "bytes": 2028,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/sweetcorn.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/sweetcorn.csv",
+      "git_blob": "4cf100c22fb1f44f500187b0d151d5b9d91b5c21",
+      "sha256": "5a1c7b4833fc86c0d631ef61debf7c2385e653e4bba490ec09f287ab0c68f3cf",
+      "bytes": 2274,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2011/yellowpepper.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2011/yellowpepper.csv",
+      "git_blob": "32aa067dafd45413daf960ae32d90b47ec81122e",
+      "sha256": "708c98a5adfb3cc63393abe1f1e00a75162d99a24cf50c72e16ec90535fff2aa",
+      "bytes": 1801,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Apricots.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Apricots.csv",
+      "git_blob": "51406f44971f46bb2a237c68bb6c0bf63489b65c",
+      "sha256": "d8fa0c15e46d5a2c5691e0a83f5785b71359baae3b3540ca62472ed43fdc933d",
+      "bytes": 2611,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Asparagus.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Asparagus.csv",
+      "git_blob": "de1c3b11d2b6b3aa4d2253604243ac433cc31138",
+      "sha256": "ba2f8b9a88391d4572ace79896da4bd842096af3c46f6a75d9459d2d14b6395d",
+      "bytes": 2375,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Aubergine.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Aubergine.csv",
+      "git_blob": "85764ea1987f30066d44224dec4ad3fac77ddbfa",
+      "sha256": "b2beda5ef7ef9f1eeb0b9951e8257b9b2dc91146b64ec664d83a2080c3711da6",
+      "bytes": 2584,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Avocadopear.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Avocadopear.csv",
+      "git_blob": "6eabb01e29dad192ebd5b5749e4430e4f7851541",
+      "sha256": "df5de756cd98d44bc77a3cc2363cdb2385978286d928f76ced54a25e5ea9461c",
+      "bytes": 2089,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Beetroot.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Beetroot.csv",
+      "git_blob": "085988564eb4a1f647c6ad9926337f9054f90a46",
+      "sha256": "080515c35c973420a1e7db00bb93dcc0d01c025334c6e756a529f4063962e046",
+      "bytes": 1106,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Blackberries.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Blackberries.csv",
+      "git_blob": "a59ca1fa17987270cccc47f248f285869bb7d7bd",
+      "sha256": "180bc6f3056f419eb4531ce8f527ebe3b99db66319f68a0a7beb89c19172af54",
+      "bytes": 2482,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Broadbeans.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Broadbeans.csv",
+      "git_blob": "1aa478c6df51246f7c91863df9473a69b4446dd7",
+      "sha256": "621a655d59482a18670edb1593f2b5aca812b02e34144cf3f55fc68f8a142ed6",
+      "bytes": 2602,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Brusselsprout.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Brusselsprout.csv",
+      "git_blob": "2a185ef2f2badd6c4bd0b36cb9a33fdd0648776f",
+      "sha256": "0cbd11ad13be14c68b8892a23a9e46dbbfa02a3963139e179d3ceb289be9977f",
+      "bytes": 2647,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/ButternutSquash.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/ButternutSquash.csv",
+      "git_blob": "4658ad4ec78f3243048ffee78b77a88fc875a5da",
+      "sha256": "bbc7c57ebb44630ad22dc5fdb2d72a993975203558768f504fe0b64728123287",
+      "bytes": 2939,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Cannellini.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Cannellini.csv",
+      "git_blob": "0b39676651bec1ab97f6b18c1d8692872c41e198",
+      "sha256": "20f7a273de5574e7c655d01198a0cd3375aac4430a40d8e7e7cf9ba2f22fdcff",
+      "bytes": 2565,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Celery.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Celery.csv",
+      "git_blob": "57dce3c45676763324898ec8c657ab126eac4d74",
+      "sha256": "ee3d4910d09a6e94504c258171fad87c214e88caf5a2229673964be8c950163d",
+      "bytes": 2416,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Chickpeacanned.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Chickpeacanned.csv",
+      "git_blob": "6ab750b2be8ba21bff3140e55d40f116f2b07cb3",
+      "sha256": "a22339be5eb790fd18d53533f2c3db4319488b719df84a6a0b07c2f3095e2f91",
+      "bytes": 2501,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Courgettes.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Courgettes.csv",
+      "git_blob": "e52fbd23dd8d3a378285dc5b92dcc189b599ac36",
+      "sha256": "a1eed756a1e2ad0859588727f9354d8f102bc368dbd85f586295f5ba2c56b93c",
+      "bytes": 2528,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Curlykale.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Curlykale.csv",
+      "git_blob": "6265c927a4dbabc2bd74d9143ae56f8141e69d1a",
+      "sha256": "e5e22aeb29704b9ce8a95111f234e0a9c461e2379df1b6bbdeb8c2cc5e971521",
+      "bytes": 451,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Edamame.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Edamame.csv",
+      "git_blob": "1516a538ba8fb241d356bff063a7d54bd5d08373",
+      "sha256": "1db5bac2de14813d2946361532ef64c009ff8ae136a15b2561e7356aa2cfcd81",
+      "bytes": 1691,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Fig.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Fig.csv",
+      "git_blob": "528d4455895ecd74247f193866238bfe8acbf3d9",
+      "sha256": "6e14edab0f848c23eac22bd78bbe7e61d78f308fcdd4c439da7f88711fbb54a5",
+      "bytes": 2607,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Grapefruit.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Grapefruit.csv",
+      "git_blob": "81c3d45c4036e9915866f8369a0e9c8dc1d4c9f1",
+      "sha256": "6e1f8d8ce512fde18fc0293f63cda141f9603bd30fec45b41e59293609feda2b",
+      "bytes": 2924,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Haricot.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Haricot.csv",
+      "git_blob": "53155ffb1fb79bcbf280a13e4e478bd878eb6e41",
+      "sha256": "78b13c0dc70163bfd23e22ca104274399eaa1270a2b373bea7eb4f95226296fd",
+      "bytes": 1849,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Kiwi1.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Kiwi1.csv",
+      "git_blob": "6a305be8634241790c6ef62aaec6ea9648c1fa2f",
+      "sha256": "2c3dd65429ba3b872f67054f0fdcb38fe2c66db2a062aa5fe93bd3baffdde84a",
+      "bytes": 2608,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Leek.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Leek.csv",
+      "git_blob": "6c0dae583a761299203ad30ec01deb793c207fd4",
+      "sha256": "5f388f783c262b236287b555fcc880dc43d41ad176e3908a025fe29d8cb7d325",
+      "bytes": 2472,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Mangetout.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Mangetout.csv",
+      "git_blob": "cdcc9fc56af9aa9631c53826daeaf5027de89957",
+      "sha256": "8d70d3cc2c33435adac50f862f7844f57d898da3f5e14af945cb4cee9f2666e2",
+      "bytes": 2640,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Okra.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Okra.csv",
+      "git_blob": "e790b08c5fa2314e0da0ecb2d60d64197b3f4b8e",
+      "sha256": "dddf0ec386b8dfc5851793d9c74e865ab5265d1b73ab38b74b3a2e8f211a134c",
+      "bytes": 2298,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Papaya.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Papaya.csv",
+      "git_blob": "b6ca6c5a73eab536a6a46d5f9bdc42329f47763d",
+      "sha256": "6f42e3d9abd8043564d51aee3b4c33a31ce60c097cd987088f9f8dc869e74bea",
+      "bytes": 2554,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Prunes.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Prunes.csv",
+      "git_blob": "5a0aa715d423c1b038656e3dacfb25d3f70e8b6b",
+      "sha256": "bbdc114a7d2ec0a4cd73d195c2ca20ff02becb172cdf246af429c930a5d53e24",
+      "bytes": 2585,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Radish.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Radish.csv",
+      "git_blob": "09e16fd933a09c6b475b935bd923aa1fd35ff8db",
+      "sha256": "cd31cbf93a7373de9b6deec0efb0222d1f027a3e5afd4800678d619052ec755c",
+      "bytes": 2294,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Raisins.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Raisins.csv",
+      "git_blob": "26ca02526519b7fbafc1bc2dbfe4ffba4222df50",
+      "sha256": "60014755f83c1abea002b59070be6f79ba9dd8f6c758b6be8ef44badb6ebfde8",
+      "bytes": 2309,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Red kidneyboil.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Red kidneyboil.csv",
+      "git_blob": "889d9368708d05e6d5cf795766a1670ea29d727d",
+      "sha256": "f8e19113d1291cd426bc5abe0726634ae7d895af06c44b8645017a45e9a89eba",
+      "bytes": 2451,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Red kidneycanned.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Red kidneycanned.csv",
+      "git_blob": "0865861599ee71be5cb013ab06647b29b9317a55",
+      "sha256": "29ece9411a50622fe0e9055f60933fb6474b2648b8f4e186dc5f92cb96739c13",
+      "bytes": 2633,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Rhubarb.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Rhubarb.csv",
+      "git_blob": "3a59ab0c6b6dc787afaba71ed721cc5873f88122",
+      "sha256": "f0f34d2e196fa34835c281d48b6259b2b443e31bace78426928746ecb69d1ec8",
+      "bytes": 2567,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Runner beans.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Runner beans.csv",
+      "git_blob": "9bb528df8b694b103afee892381fbea31b03326f",
+      "sha256": "5428c9e41cfe42cdaa96b31600efa94d63b2ec7092e4fbc509534da127caee82",
+      "bytes": 2695,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Swede.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Swede.csv",
+      "git_blob": "cd7adb7688614b51bb827d3e32c5d6349a460e5e",
+      "sha256": "b25843028e62bffa221854bf5d518098bb12c4a5bd6490a133e491aa3bb0df62",
+      "bytes": 2506,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Sweetcorn.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Sweetcorn.csv",
+      "git_blob": "e3a403ce7dbaeb857dea68dcffb0eff4779cd7c5",
+      "sha256": "a948da97f69b59f2f92ac753e05aa350832569d792b0ef62c580e2b5c92bd53a",
+      "bytes": 2691,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Sweetpotato.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Sweetpotato.csv",
+      "git_blob": "dc75cf2a602f83b59713d10affa7fa682afe55ea",
+      "sha256": "676281c0928aed288fb7be3e7f96e12935f47d69a84244ffc6754f3681eb942c",
+      "bytes": 3042,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Watercress.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Watercress.csv",
+      "git_blob": "99ec53db83e2db8322949a01a8cb8f01528bd7e2",
+      "sha256": "9e933d4def50d45e267f1d05728c94620ef17648ded30661304eabeb19ae3d14",
+      "bytes": 2447,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Yam.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/Yam.csv",
+      "git_blob": "7348025ffd57d18eebb9c89ea5a60fe896e27c21",
+      "sha256": "7803e70c034bd3ee42f1691beb04b289e0bd3d604d58e3ad389accdd0a2fdcd1",
+      "bytes": 1916,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/cherries.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/cherries.csv",
+      "git_blob": "fa46c7c23aeeafc199aeced030ba346dd68076d2",
+      "sha256": "84b329f9c99c9c09444037ff9a777e778eb18e011f1a3d825ec0269503068b89",
+      "bytes": 2447,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/lentils.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/lentils.csv",
+      "git_blob": "27bc8e76446d4bfc6f8c71a6cf72cdc6b066c818",
+      "sha256": "0dd3fc80b0fe5dc0db2d1e1d9bb34f81169665238892f040f415817edc622f5a",
+      "bytes": 4389,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/mango.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/mango.csv",
+      "git_blob": "ae519460575011fd682e895193ec707470f6e025",
+      "sha256": "a705652196a856c6872b9f9132a23238ec24326d345eb57c071a00088a6321db",
+      "bytes": 2567,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/nectarines.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/nectarines.csv",
+      "git_blob": "9cf78a833c87239ab71f96e64d13e4c36acac7f6",
+      "sha256": "60fbb24572746e965756759447d9e006bfc4d00392558f30a8c90b88ebfc1988",
+      "bytes": 3256,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/parsnip.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/parsnip.csv",
+      "git_blob": "e3d48fa747bc8d1388c16e268b1e7e749be0addc",
+      "sha256": "255aaccb3f9a96918b4f979d946fc4c1be92c7ca5ee3e6926f26106388a554a9",
+      "bytes": 2494,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/pineapple.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/pineapple.csv",
+      "git_blob": "3be47f418bcfeec747b683ac01678ba8bac33ac6",
+      "sha256": "e14d295ce358cb43f26594bef69420c441b1e1f356a59ba0cafe9bbcdde4e363",
+      "bytes": 2945,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/plum.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/plum.csv",
+      "git_blob": "b0fdf847c1d8b04d4df8a6c35559746c122a8139",
+      "sha256": "c1b8fc3ee64fc54735bf2e6780b1e79ea9920c18db2060a47ddf60714fa8a6d5",
+      "bytes": 317,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/2015/raspberry.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/2015/raspberry.csv",
+      "git_blob": "34abbf893dff33b1d999df57790b02c1de8ae04a",
+      "sha256": "757d063c057ebbb354090f1c4864c2464b92c3ed5873255e9abf67d6a3710c5b",
+      "bytes": 2582,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/tables/Combined_Fruit_Veg_Samples.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/tables/Combined_Fruit_Veg_Samples.csv",
+      "git_blob": "7962e4d96b2a9140440590b56221cd946ec71742",
+      "sha256": "77b16bf93323f55da5eacae06f8cde8514c0cb8f952b0ce5a6929774cd729e7e",
+      "bytes": 11090,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf",
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "36c96442 2025-05-16",
+      "state": "80 rows, 40 from each report, with a Source_PDF column and a derived Normalized_Weight."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/text/DofHealth_text_FV2011.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/text/DofHealth_text_FV2011.csv",
+      "git_blob": "b20d38b494d2d4f19ee813c87089c767394334fd",
+      "sha256": "496be2671a69569f6648c13a6eecdae944627d5b75bb2c7e1520744b0c1d986d",
+      "bytes": 209073,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/text/PHealth_text_FV2015.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/text/PHealth_text_FV2015.csv",
+      "git_blob": "e95d12d06b064849794c79facaf4950ef7e5e685",
+      "sha256": "ec3aee44d4b88cb76823bcf380006340025ac6e1643c35cbb17ed1cb33afaefe",
+      "bytes": 142166,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "PDF-extracted table; not checked row by row against the report."
+    },
+    {
+      "path_on_main": "Data/Processed/Fruit and Veg Sample reports/text/Raw_Fruit_Veg_Samples.csv",
+      "snapshot_path": "Data/Processed/Fruit and Veg Sample reports/text/Raw_Fruit_Veg_Samples.csv",
+      "git_blob": "f57129d4fd49dbf9f537ed991a475e81a867d088",
+      "sha256": "d6a78fa00683293703fd4302129b0f5e726eaadf2b576645375e20443eecccfe",
+      "bytes": 55583,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf",
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "36c96442 2025-05-16",
+      "state": "566 rows with a Source_PDF column naming each report."
+    },
+    {
+      "path_on_main": "Data/Processed/Sample Reports/DOH2011.csv",
+      "snapshot_path": "Data/Processed/Sample Reports/DOH2011.csv",
+      "git_blob": "b1393bba2e75e9baa5cfad3f6624eb34ab255ee9",
+      "sha256": "e2fbce0bdeec25ca3e7fce96ae025936e31d67bd98bdc9bf121d1a0380e94c74",
+      "bytes": 215007,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "696 of 958 rows have a non-numeric 'Sample Weight' (other fields shifted into it); 67 rows have no composite number."
+    },
+    {
+      "path_on_main": "Data/Processed/Sample Reports/PH2015.csv",
+      "snapshot_path": "Data/Processed/Sample Reports/PH2015.csv",
+      "git_blob": "5a2622fd6e6ada381904f82e15ed9f5da0fd095b",
+      "sha256": "1002e4785d68d39cde9f897669bf8b474d1dcb7c02ed7746b901893a64830625",
+      "bytes": 64776,
+      "derives_from": [
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "c535d175 2025-05-12",
+      "state": "44 of 437 rows have a non-numeric or empty 'Sample Weight' (pack sizes such as '425g' in that column); 17 rows have no composite number."
+    },
+    {
+      "path_on_main": "Data/Processed/temp/fruit_veg_survey.csv",
+      "snapshot_path": "Data/Processed/temp/fruit_veg_survey.csv",
+      "git_blob": "162d1f5463f9b7819512c02d64fe41f54b11d52c",
+      "sha256": "e88b7bacd123e7cd4ccd58e5a84f1f88921b23cf4bf90e09175918feff0262b2",
+      "bytes": 11393,
+      "derives_from": [
+        "Nutrient_analysis_of_fruit_and_vegetables_-_Sampling_Report.pdf",
+        "fruit_and_vegetable_survey_2015_sampling_report.pdf"
+      ],
+      "first_at_this_path_on_main": "36c96442 2025-05-16",
+      "state": "Page, sample number, name and pack size only; covers both reports (Source_PDF not recorded in this file)."
+    }
+  ]
+}
