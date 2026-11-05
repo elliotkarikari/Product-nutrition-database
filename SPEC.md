@@ -8,7 +8,7 @@ updated: 2026-11-05
 
 # ShelfScale Open: Specification v0.1
 
-Status: **specification first, with two tested prototypes.** Elliot directed on November 5, 2026 that the product does not need to be fully built yet. This document is the build-ready spec. Three components exist and are tested: the NPM scorer (section 7), the single/bulk assessment API (section 13), and the CoFID 2021 importer with a service-level lookup (section 11, step 1). Everything else is specified, not built. Two activities run outside the code: a monthly source watch (section 9) and daily research on data sources and product forms (added November 5, 2026); they run in Rocky's agent environment, outside this repository, and their schedules and logs are held there. Nothing in this repository can show whether they are running.
+Status: **specification first, with tested components.** Elliot directed on November 5, 2026 that the product does not need to be fully built yet. This document is the build-ready spec. Tested and built: the NPM 2004/05 scorer (section 7), front-of-pack traffic lights (section 7), the assessment API with supplied and lookup modes (section 13), the CoFID 2021 importer (section 11, step 1) and unit-weight imports from the 2011 and 2015 fruit and vegetable sampling reports (section 11, step 2). Everything else is specified, not built. Two activities run outside the code: a monthly source watch (section 9) and daily research on data sources and product forms (added November 5, 2026); they run in Rocky's agent environment, outside this repository, and their schedules and logs are held there. Nothing in this repository can show whether they are running.
 
 ## 1. Purpose
 
@@ -96,7 +96,7 @@ Hard gates:
 - NPM 2018 is a shadow requirement from day one, not a roadmap item. DHSC published the NPM 2018 technical guidance on 27 January 2026 (free sugars replacing total sugar, updated bands) and consulted from 25 March to 17 June 2026 on applying it to the advertising and promotions restrictions, with a proposed 12-month implementation period. The outcome was still pending in November 2026. The pack therefore computes both models: 2004/05 as the law in force, 2018 as a shadow score, so a whole range can be rescored the day the outcome lands. Dual scoring ("your range under today's law vs under NPM 2018") is a headline feature.
 - The legacy repo's `scoring/hfss.py` must not be reused: it is a self-declared stub that mislabels traffic-light thresholds as HFSS.
 - Status: the scorer at `src/shelfscale/npm.py` reproduces all six worked examples in the guidance (section 4, pages 14 to 18), every A point, C point and score, in `tests/test_npm_worked_examples.py`. Band-edge fixtures cover every threshold in the guidance tables, typed independently of the module's constants. Validated November 5, 2026 against the GOV.UK copy of the guidance (sha256 `14ae1fe9…ac71c`, recorded in the test file).
-- Traffic lights are NOT implemented in this package. A traffic-light module exists in the legacy codebase on `main` (`shelfscale/scoring/traffic_lights.py`) and is to be ported (build order, section 11). The port is verified line by line against current FSA front-of-pack guidance before it ships, not copied: the legacy per-100 g and per-100 ml thresholds look plausible but are unverified, and its separate per-serving threshold table does not correspond to the FSA's per-portion rule for large portions. Traffic lights keep their own basis (per 100 ml for drinks); the NPM per-100 g rule does not apply to them.
+- Traffic lights are implemented in `src/shelfscale/traffic_lights.py` from the DH/FSA *Guide to creating a front of pack (FoP) nutrition label* (updated November 2016), Annex 3, typed from the text, not ported from the legacy module on `main`: food per 100 g whether or not sold by volume, drinks per 100 ml, red-only per-portion cut-offs above 100 g or 150 ml, no colour for energy, no summary colour. The legacy module's per-100 g/ml thresholds match the guidance; its per-serving table, missing portion-size condition and summary colour do not (listed in the November 5, 2026 build report). Both of the guidance's worked examples are tests.
 - Nutri-Score exists in the legacy repo and is kept as a future EU-pack asset. It is not the UK NPM.
 
 ## 8. Loose item matching (specified method)
@@ -124,10 +124,10 @@ A monthly source watch is scheduled in Rocky's agent environment (job name there
 
 ## 11. Build order (when Elliot gives the go)
 
-1. CoFID importer into canonical observations. (Done November 5, 2026: `src/shelfscale/cofid.py`, lookup in `src/shelfscale/lookup.py`, not yet wired into the HTTP API. Conflicts between the data model and the real files are recorded in `docs/DATA_MODEL.md`.)
-2. Portion and sample imports; port of the legacy traffic lights module, verified against FSA guidance. (NPM worked-example validation: done November 5, 2026.)
+1. CoFID importer into canonical observations. (Done November 5, 2026: `src/shelfscale/cofid.py`; lookup in `src/shelfscale/lookup.py`, served through the API as `/v1/lookup`. Conflicts between the data model and the real files are recorded in `docs/DATA_MODEL.md`.)
+2. Portion and sample imports; traffic lights; NPM worked-example validation. (Done November 5, 2026, except Food Portion Sizes: unit weights from the 2011 and 2015 fruit and vegetable sampling reports, imported from the original GOV.UK reports where each food's table reproduces the report's own stated average, 44 foods; traffic lights from the 2016 FoP guidance; worked examples validated. Food Portion Sizes 2002 is reference-only pending Elliot's licensing decision, section 12.)
 3. Watcher code and overlay imports (milk, beef, successors).
-4. Bulk "score my range" tool and the public API on the dual-model engine (the first user surface the needs research recommends, subject to Elliot's decision in section 12). The API prototype for caller-supplied values already exists; database-backed lookup follows the CoFID importer.
+4. Bulk "score my range" tool and the public API on the dual-model engine (the first user surface the needs research recommends, subject to Elliot's decision in section 12). The API serves caller-supplied values and CoFID lookups; database-backed lookup follows the CoFID importer.
 5. Recipe calculator and UK label outputs, portion first.
 6. Contribution flow; second country pack via EuroFIR discovery.
 
@@ -136,18 +136,21 @@ Roadmap detail: `docs/ROADMAP.md`.
 ## 12. Open decisions for Elliot
 
 - First user surface: the needs research recommends the open dual-model NPM engine plus a bulk "score my range" tool (a CSV of products or recipes in; 2004/05 and 2018 scores, HFSS status per UK nation, A/C breakdown and a change report out), ahead of any label-design surface. The decision is Elliot's.
-- Whether the open-source project lives in a new public repo or inside the existing Product-nutrition-database repo.
+- ~~Whether the open-source project lives in a new public repo or inside the existing Product-nutrition-database repo.~~ Decided by Elliot, November 5, 2026: branch `shelfscale-open` of the existing repository (section 14).
 - Whether a hosted or supported version is ever offered commercially. Not assumed in this spec.
 - Which licensed data partnerships (Brandbank, productDNA, Nutritics) are worth approaching, and when.
 - Rounding before NPM banding. The guidance's worked example 3 reaches its score (0) only by rounding per-100 g values to one decimal before banding; unrounded, the same drink scores 1 and is "less healthy". The guidance states no rounding rule. ShelfScale scores unrounded until this is decided (`tests/test_density.py`).
+- Fruit, vegetable and nut content for CoFID lookups. The decided rule (CoFID groups D, F, G carry 100%) also gives 100% to potatoes (DA*, 47 foods), vegetable dishes (DR, 309), seeds within nuts and seeds (GA) and sugared or syrup fruit (FA), which the NPM guidance would not count in full; fast-food chips score -4 under the rule and +1 with FVN 0. Proposal on the table: exclude DA* and DR. One table in `src/shelfscale/cofid_assess.py`.
+- Drink status for CoFID lookups: groups P, Q, BH and FC are treated as drinks. P and BH include powders as sold, which the guidance scores as reconstituted; plain milk (BA) is treated as food.
+- Food Portion Sizes (3rd edition, FSA 2002, TSO): Crown copyright sold by TSO, no open licence found, so reference-only and not in this public repository (section 6). Elliot transcribed the legacy table by hand from his own copy. Options: seek a licence through The National Archives; keep it reference-only; or publish as his own documented decision.
 
 ## 13. API, bulk assessment and image intake (added November 5, 2026)
 
 Elliot directed that the product be usable through an API, that assessment work in bulk rather than one product at a time, and that universities and retailers be designed for from the start. Full contract: `docs/API.md`.
 
-- **Endpoints (prototype live and tested):** `GET /health`, `POST /v1/assess` (one product), `POST /v1/assess/bulk` (a range in one call). Bulk rules: partial success with a per-row error list, a summary block, a 1,000-product synchronous limit, and asynchronous bulk jobs with webhook completion for larger ranges.
+- **Endpoints (prototype live and tested):** `GET /health`, `POST /v1/assess` (one product), `POST /v1/assess/bulk` (a range in one call), `POST /v1/lookup` and `POST /v1/lookup/bulk` (CoFID foods by code or exact name). Bulk rules: partial success with a per-row error list, a summary block, a 1,000-product synchronous limit, and asynchronous bulk jobs with webhook completion for larger ranges.
 - **Scoring basis:** every score is computed per 100 g, food and drink alike. A per-100 ml submission is converted by dividing by the caller's specific gravity and labelled as converted; without a gravity it is a 400.
-- **Two modes:** supplied mode (the caller provides the nutrient values; the response states they were not verified by ShelfScale) and lookup mode (ShelfScale resolves values from its own provenance-carrying data; follows the CoFID importer). Every response names the model version and, in lookup mode, the data release.
+- **Two modes:** supplied mode (the caller provides the nutrient values; the response states they were not verified by ShelfScale) and lookup mode (live for CoFID 2021 foods: `POST /v1/lookup` and `/v1/lookup/bulk` return a food's observations with provenance and the data release, and score it where every input can be sourced, naming any gap). Every response names the model version and, in lookup mode, the data release.
 - **Image intake (specified, staged; full assessment in `docs/IMAGE_ASSESSMENT.md`):** a photograph is an intake method, never evidence. Stage A reads the barcode and resolves the GTIN through the normal evidence order. Stage B OCRs the back-of-pack table into candidate values that a user confirms before they count as a label transcription. Stage C assists loose-item identification only; it cannot settle variety or weight from an image, so it hands over to the section 8 method and its estimate labelling. Each stage ships only after passing a photographed gold-set test.
 
 ## 14. Delivery: where the code lives, and what happens if Elliot cannot see it
