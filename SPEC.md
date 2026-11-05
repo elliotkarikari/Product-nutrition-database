@@ -91,12 +91,12 @@ Hard gates:
 ## 7. Scoring: NPM 2004/05
 
 - Scoring basis: per 100 g for food and drink alike, as the guidance requires. Per-100 ml values are converted to per 100 g before scoring, never relabelled; the conversion itself is not yet built (see `docs/API.md`, "Scoring basis").
-- Implement the model exactly as specified in the Department of Health technical guidance (January 2011): A points for energy, saturated fat, total sugar and sodium per 100 g; C points for fruit, vegetables and nuts, AOAC fibre and protein; the protein rule (no protein points at 11+ A points unless fruit, veg and nuts score 5); score = A minus C; food is less healthy at 4+, drink at 1+.
+- Implement the model exactly as specified in the Department of Health technical guidance (January 2011): A points for energy, saturated fat, total sugar and sodium per 100 g; C points for fruit, vegetables and nuts, fibre (NSP where known, otherwise AOAC, each on its own band table) and protein; the protein rule (no protein points at 11+ A points unless fruit, veg and nuts score 5); score = A minus C; food is less healthy at 4+, drink at 1+.
 - The implementation must reproduce the guidance's published worked examples before it is used on real products, and boundary fixtures must cover every points band edge.
 - NPM 2018 is a shadow requirement from day one, not a roadmap item. DHSC published the NPM 2018 technical guidance on 27 January 2026 (free sugars replacing total sugar, updated bands) and consulted from 25 March to 17 June 2026 on applying it to the advertising and promotions restrictions, with a proposed 12-month implementation period. The outcome was still pending in November 2026. The pack therefore computes both models: 2004/05 as the law in force, 2018 as a shadow score, so a whole range can be rescored the day the outcome lands. Dual scoring ("your range under today's law vs under NPM 2018") is a headline feature.
 - The legacy repo's `scoring/hfss.py` must not be reused: it is a self-declared stub that mislabels traffic-light thresholds as HFSS.
-- Status: a prototype implementation exists at `src/shelfscale/npm.py` with 6 passing unit tests (band fixtures, the protein rule both ways, the drink threshold, salt-to-sodium conversion). The worked-example test against the guidance's own numbers is still required before the scorer is treated as validated.
-- Traffic lights are implemented from FSA thresholds, per 100 g and with the per-portion rules for large portions.
+- Status: the scorer at `src/shelfscale/npm.py` reproduces all six worked examples in the guidance (section 4, pages 14 to 18), every A point, C point and score, in `tests/test_npm_worked_examples.py`. Band-edge fixtures cover every threshold in the guidance tables, typed independently of the module's constants. Validated November 5, 2026 against the GOV.UK copy of the guidance (sha256 `14ae1fe9…ac71c`, recorded in the test file).
+- Traffic lights are NOT implemented in this package. A traffic-light module exists in the legacy codebase on `main` (`shelfscale/scoring/traffic_lights.py`) and is to be ported (build order, section 11). The port is verified line by line against current FSA front-of-pack guidance before it ships, not copied: the legacy per-100 g and per-100 ml thresholds look plausible but are unverified, and its separate per-serving threshold table does not correspond to the FSA's per-portion rule for large portions. Traffic lights keep their own basis (per 100 ml for drinks); the NPM per-100 g rule does not apply to them.
 - Nutri-Score exists in the legacy repo and is kept as a future EU-pack asset. It is not the UK NPM.
 
 ## 8. Loose item matching (specified method)
@@ -125,7 +125,7 @@ A monthly source watch is live now (job: shelfscale-source-watch-monthly, first 
 ## 11. Build order (when Elliot gives the go)
 
 1. CoFID importer into canonical observations.
-2. Portion and sample imports; traffic lights module; NPM worked-example validation.
+2. Portion and sample imports; port of the legacy traffic lights module, verified against FSA guidance. (NPM worked-example validation: done November 5, 2026.)
 3. Watcher code and overlay imports (milk, beef, successors).
 4. Bulk "score my range" tool and the public API on the dual-model engine (the first user surface the needs research recommends, subject to Elliot's decision in section 12). The API prototype for caller-supplied values already exists; database-backed lookup follows the CoFID importer.
 5. Recipe calculator and UK label outputs, portion first.
