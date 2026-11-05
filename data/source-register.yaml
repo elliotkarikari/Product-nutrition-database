@@ -1,0 +1,192 @@
+# ShelfScale source register. Licence status is enforced at ingestion and export.
+# commercial_use: allowed | licence-required | reference-only | unknown
+# redistribution: allowed | licence-required | forbidden | unknown
+sources:
+  - id: uk-cofid-2021
+    name: "McCance and Widdowson's Composition of Foods Integrated Dataset (CoFID)"
+    publisher: GOV.UK / OHID
+    url: https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid
+    kind: composition-dataset
+    jurisdictions: [GB, UK]
+    authority: highest-generic
+    licence:
+      name: Open Government Licence v3.0
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    watch:
+      method: file-hash-and-page-change
+      cadence: monthly
+    status: importer-planned
+
+  - id: uk-dhsc-nutrient-analysis-reports
+    name: DHSC / OHID nutrient analysis reports (pork, milk, beef, successors)
+    publisher: GOV.UK / DHSC, analysis by Quadram FN-NBRI
+    url: https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid
+    kind: analysis-reports
+    jurisdictions: [UK]
+    authority: highest-measured-foods
+    licence:
+      name: GOV.UK publication terms, checked per report
+      commercial_use: unknown
+      redistribution: unknown
+      attribution_required: true
+    watch:
+      method: new-publication-scan
+      cadence: monthly
+    status: overlay-planned
+
+  - id: uk-quadram-apis
+    name: Quadram FN-NBRI CoFID API and Food Labelling API
+    publisher: Quadram Institute
+    url: https://quadram.ac.uk/blogs/how-our-food-and-nutrition-team-are-opening-up-uk-nutrition-information-through-new-digital-tools/
+    kind: api
+    jurisdictions: [UK]
+    authority: official-access-route
+    licence:
+      name: Non-commercial licence (academic, non-profit, education)
+      commercial_use: reference-only
+      redistribution: forbidden
+      attribution_required: true
+    watch:
+      method: terms-and-version-change
+      cadence: monthly
+    status: reference-only
+
+  - id: uk-npm-guidance-2011
+    name: Nutrient Profiling Model technical guidance (January 2011) and 2021 Regulations
+    publisher: Department of Health / GOV.UK
+    url: null
+    kind: rules
+    jurisdictions: [England, UK]
+    authority: legal
+    licence:
+      name: Crown copyright, published guidance
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    watch:
+      method: guidance-and-regulation-change
+      cadence: monthly
+    status: implemented
+
+  - id: uk-scotland-hfss-guidance-2025
+    name: Food (Promotion and Placement) (Scotland) Regulations 2025 implementation guidance
+    publisher: Scottish Government
+    url: https://www.gov.scot/publications/food-promotion-placement-scotland-regulations-2025-implementation-guidance/pages/10/
+    kind: rules
+    jurisdictions: [Scotland]
+    authority: legal
+    licence:
+      name: Published guidance, checked at ingestion
+      commercial_use: unknown
+      redistribution: unknown
+      attribution_required: true
+    watch:
+      method: guidance-change
+      cadence: monthly
+    status: registered
+
+  - id: legacy-shelfscale-portions-samples
+    name: Legacy ShelfScale portion and sample datasets (Food Portion Sizes; fruit and vegetable samples 2011, 2015)
+    publisher: Department of Health / Public Health England surveys, held in Elliot's research repo
+    url: https://github.com/elliotkarikari/Product-nutrition-database
+    kind: portion-and-weight-evidence
+    jurisdictions: [UK]
+    authority: primary-survey-for-weights
+    licence:
+      name: To verify before redistribution
+      commercial_use: unknown
+      redistribution: unknown
+      attribution_required: true
+    watch:
+      method: static-reverify
+      cadence: yearly
+    status: import-planned
+
+  - id: open-food-facts
+    name: Open Food Facts
+    publisher: Open Food Facts community
+    url: https://world.openfoodfacts.org/data
+    kind: branded-products-crowdsourced
+    jurisdictions: [global]
+    authority: excluded
+    licence:
+      name: ODbL (database), DbCL (contents), CC BY-SA (images)
+      commercial_use: allowed
+      redistribution: licence-required
+      attribution_required: true
+      note: Share-alike can apply to published derived databases. Legal check before any data release that includes OFF-derived data.
+    watch:
+      method: none-excluded
+      cadence: none
+    status: excluded-v1
+    note: "Excluded from the evidence base by Elliot's decision, 2026-11-05: defensible sources only until the product is solid. Revisit only on his word."
+
+  - id: niq-brandbank
+    name: NIQ Brandbank content licensing
+    publisher: NielsenIQ Brandbank
+    url: https://nielseniq.com/global/en/products/content-licensing/
+    kind: branded-products-licensed
+    jurisdictions: [global, UK]
+    authority: high-covered-gtins
+    licence:
+      name: Commercial licence, agreed use cases
+      commercial_use: licence-required
+      redistribution: licence-required
+      attribution_required: false
+    watch:
+      method: terms-review-no-scraping
+      cadence: quarterly
+    status: partnership-route
+
+  - id: gs1-uk-productdna
+    name: GS1 UK productDNA (powered by Syndigo)
+    publisher: GS1 UK / Syndigo
+    url: https://www.gs1uk.org/productDNA
+    kind: branded-products-verified
+    jurisdictions: [UK]
+    authority: high-covered-products
+    licence:
+      name: Subscription and licence
+      commercial_use: licence-required
+      redistribution: licence-required
+      attribution_required: false
+    watch:
+      method: terms-review-no-scraping
+      cadence: quarterly
+    status: partnership-route
+
+  - id: eurofir-foodexplorer
+    name: EuroFIR FoodEXplorer
+    publisher: EuroFIR AISBL
+    url: null
+    kind: dataset-directory
+    jurisdictions: [Europe]
+    authority: directory
+    licence:
+      name: Membership and per-dataset licences
+      commercial_use: licence-required
+      redistribution: licence-required
+      attribution_required: true
+    watch:
+      method: dataset-catalogue-review
+      cadence: quarterly
+    status: expansion-research
+
+  - id: usda-fooddata-central
+    name: USDA FoodData Central
+    publisher: USDA
+    url: null
+    kind: composition-dataset
+    jurisdictions: [US]
+    authority: highest-generic-us
+    licence:
+      name: Public domain
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: false
+    watch:
+      method: release-check
+      cadence: monthly
+    status: parked-until-us-pack
