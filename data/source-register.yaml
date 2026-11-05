@@ -19,6 +19,40 @@ sources:
       cadence: monthly
     status: importer-planned
 
+  - id: uk-cofid-old-foods
+    name: CoFID old foods file (legacy and superseded entries)
+    publisher: GOV.UK / OHID (originally PHE)
+    url: https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid
+    kind: composition-dataset-legacy
+    jurisdictions: [GB, UK]
+    authority: reference-history
+    licence:
+      name: Open Government Licence v3.0
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    watch:
+      method: file-hash-and-page-change
+      cadence: monthly
+    status: reference
+
+  - id: uk-fsa-labelling-ppds-guidance
+    name: FSA labelling and PPDS (Natasha's Law) guidance
+    publisher: Food Standards Agency
+    url: https://www.food.gov.uk/business-guidance/labelling-guidance-for-prepacked-for-direct-sale-ppds-food-products
+    kind: rules
+    jurisdictions: [England, Wales, Northern Ireland]
+    authority: legal-and-practical
+    licence:
+      name: Open Government Licence v3.0 (food.gov.uk site terms, checked 2026-11-05)
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    watch:
+      method: guidance-change
+      cadence: monthly
+    status: reference-for-label-outputs
+
   - id: uk-dhsc-nutrient-analysis-reports
     name: DHSC / OHID nutrient analysis reports (pork, milk, beef, successors)
     publisher: GOV.UK / DHSC, analysis by Quadram FN-NBRI
@@ -56,7 +90,8 @@ sources:
   - id: uk-npm-guidance-2011
     name: Nutrient Profiling Model technical guidance (January 2011) and 2021 Regulations
     publisher: Department of Health / GOV.UK
-    url: null
+    url: https://assets.publishing.service.gov.uk/media/695e87982a4a53b73d513855/NutrientProfilingModel_2004_2005_TechnicalGuidance.pdf
+    note: "GOV.UK republished copy (PDF modified 2026-01-07; the original 2011 asset URL now returns 410). sha256 14ae1fe9bcac3a7a92e830566f899414c75e6d3a934a088456f83999a39ac71c, retrieved 2026-11-05."
     kind: rules
     jurisdictions: [England, UK]
     authority: legal
@@ -70,12 +105,13 @@ sources:
       cadence: monthly
     status: implemented
 
-  - id: uk-scotland-hfss-guidance-2025
-    name: Food (Promotion and Placement) (Scotland) Regulations 2025 implementation guidance
+  - id: uk-devolved-hfss-guidance
+    name: Food (Promotion and Placement) (Scotland) Regulations 2025 implementation guidance; Wales and Northern Ireland equivalents
     publisher: Scottish Government
     url: https://www.gov.scot/publications/food-promotion-placement-scotland-regulations-2025-implementation-guidance/pages/10/
     kind: rules
-    jurisdictions: [Scotland]
+    jurisdictions: [Scotland, Wales, Northern Ireland]
+    note: Only the Scotland guidance URL is recorded. Wales and Northern Ireland sources are added with their URLs when ingested.
     authority: legal
     licence:
       name: Published guidance, checked at ingestion
@@ -156,6 +192,42 @@ sources:
       method: terms-review-no-scraping
       cadence: quarterly
     status: partnership-route
+
+  - id: nutritics-gb23
+    name: Nutritics GB23 (commercial enhancement of CoFID)
+    publisher: Nutritics
+    url: https://nutritics.com/en/?p=1926
+    kind: composition-dataset-commercial
+    jurisdictions: [GB, UK]
+    authority: benchmark
+    licence:
+      name: Commercial; terms by enquiry
+      commercial_use: licence-required
+      redistribution: licence-required
+      attribution_required: true
+    watch:
+      method: release-check
+      cadence: yearly
+    status: benchmark-only
+    note: Used only to compare against, never as an evidence source, unless a licence is agreed.
+
+  - id: manufacturer-specifications
+    name: Manufacturer and supplier specifications
+    publisher: The manufacturer or supplier of each product
+    url: null
+    kind: product-specifications
+    jurisdictions: [UK]
+    authority: highest-for-that-item
+    licence:
+      name: Supplied by the business for its own products, under its supply terms
+      commercial_use: licence-required
+      redistribution: licence-required
+      attribution_required: false
+      note: Use and redistribution follow each supplier's terms; nothing is redistributed without them.
+    watch:
+      method: event-driven
+      cadence: on-change
+    status: primary-route-for-customer-recipes
 
   - id: eurofir-foodexplorer
     name: EuroFIR FoodEXplorer
