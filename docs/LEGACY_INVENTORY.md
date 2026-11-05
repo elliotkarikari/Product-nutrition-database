@@ -14,22 +14,22 @@ Every data table on `main` of `elliotkarikari/Product-nutrition-database` at com
 | Family | Files | Derives from | State | In the `shelfscale-open` branch |
 |---|---|---|---|---|
 | Food Portion Sizes | 5 | The FPS book (3rd edition, FSA, TSO 2002) | See below; one of these is Elliot's hand transcription | Import pending Elliot naming the transcription file (SPEC section 12) |
-| Mixed weight tables (`ReducedwithWeights/`) | 8 | FPS, the sampling reports, retailer websites (Tesco, Ocado) and similarity matching to CoFID | Matching outputs, sources mixed row by row | **Out.** Retailer web pages are excluded as evidence (SPEC section 6); matching outputs are not raw evidence. Usable privately at the paths below. |
+| Mixed weight tables (`ReducedwithWeights/`) | 8 | FPS, the sampling reports, retailer web pages and similarity matching to CoFID | Matching outputs, sources mixed row by row | **Out.** Retailer web pages are excluded as evidence (SPEC section 6); matching outputs are not raw evidence. Usable privately at the paths below. |
 | Sampling-report tables | 76 | The 2011 (DH) and 2015 (PHE) sampling reports, OGL | PDF-extracted, with measured damage | **Snapshotted** as raw evidence: `data/raw/legacy-main-fv-sampling-tables` (byte for byte, checksums in its MANIFEST.json). Not an evidence source; values come from the original reports. |
-| CoFID and labelling-derived lists (`MW_DataReduction/`) | 57 | CoFID 2021, and a "Labelling dataset" (CoFID 2019 values recalculated for labelling, gap-filled from manufacturers' data, literature and other countries' tables) | Hand-curated product lists (which foods are sold, sale formats), several with "VJ comments" from a reviewer | **Out.** The labelling dataset's publisher and licence are unconfirmed and its gap-filling mixes sources; the VJ comments are a third party's words. Usable privately at the paths below. |
+| CoFID and labelling-derived lists (`MW_DataReduction/`) | 57 | CoFID 2021, and a "Labelling dataset" (CoFID 2019 values recalculated for labelling, gap-filled from manufacturers' data, literature and other countries' tables) | Hand-curated product lists (which foods are sold, sale formats); several carry a third-party reviewer's comments column | **Out.** The labelling dataset's publisher and licence are unconfirmed and its gap-filling mixes sources; the reviewer's comments are never published (Elliot's instruction). Usable privately at the paths below. |
 | Header-only placeholders | 122 | n/a | Header row, no data | Out; nothing to keep |
 
-## Food Portion Sizes: which file is the transcription
+## Food Portion Sizes: the transcription and the other files
 
 | File on `main` (`Data/Processed/FoodPortionSized/`) | Rows | What it is |
 |---|---|---|
 | `FoodPortionSizes_PDF.csv` | 2,920 | The tabula extraction from the book PDF: index columns, the book's hierarchy split across rows, the PDF's fraction character (U+2044) intact. UTF-8, pandas output. |
-| `Processed_Food_Portion_Sizes.csv` | 2,652 | A cleaned table: Group, Brand, Food Name, Portion Consumed, Weight. No U+2044 (typed `1/2` instead); only 1,172 of its food names appear verbatim in the extraction (names were rebuilt); saved by Excel (cp1252). **Best candidate for Elliot's hand transcription. Awaiting his confirmation.** |
-| `Processed_Food_Portion_Sizes_VJ.csv` | 2,677 | The cleaned table with 29 rows added and 4 removed, plus columns `PurEqualCon`, `Purchased`, `Format`, `Source`. Some added rows cannot be from a 2002 book (for example "Horlicks vegan malt"); `Source` cites "Tesco Website" and "Ocado Website". |
-| `FPS_VJ.csv` | 2,677 | Same rows as the `_VJ` file above, UTF-8, no index column. |
-| `FPS_VJ (version 1).csv` | 2,677 | An earlier edit of `FPS_VJ.csv`: 98 rows differ (portion wording such as "1 variety pack" vs "2 variety pack", and `PurEqualCon` values). |
+| `Processed_Food_Portion_Sizes.csv` | 2,652 | **Elliot's hand transcription of the book, made from his own copy (confirmed by Elliot, November 5, 2026).** Group, Brand, Food Name, Portion Consumed, Weight. The import source for FPS in this branch. |
+| `Processed_Food_Portion_Sizes_VJ.csv` | 2,677 | The transcription with a third-party reviewer's annotations and additions, including rows from retailer web pages. **Not a source; never copied, quoted or published in this project** (Elliot's instruction). |
+| `FPS_VJ.csv` | 2,677 | Another copy of the annotated file above. Same status: not a source; never copied, quoted or published. |
+| `FPS_VJ (version 1).csv` | 2,677 | An earlier edit of the annotated file. Same status: not a source; never copied, quoted or published. |
 
-The `_VJ` files are the transcription plus a reviewer's annotations and retailer-website additions, so they are not the book alone. Under SPEC section 6 the retailer-sourced rows cannot be imported whatever happens to FPS.
+The three `_VJ` files are listed only so they stay findable on `main`. Nothing from them is in this branch; `tests/test_no_vj_content.py` checks that.
 
 ## History flags for Elliot
 
