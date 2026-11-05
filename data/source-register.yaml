@@ -125,6 +125,24 @@ sources:
       cadence: monthly
     status: implemented
 
+  - id: uk-npm-2018-guidance
+    name: "Nutrient profiling model 2018: technical guidance, worked examples and FVNS definitions (DHSC)"
+    publisher: Department of Health and Social Care / GOV.UK
+    url: https://www.gov.uk/government/publications/nutrient-profiling-model-2018
+    kind: rules
+    jurisdictions: [UK]
+    authority: shadow-model-not-in-force
+    licence:
+      name: Open Government Licence v3.0 (stated on each document)
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    watch:
+      method: guidance-and-consultation-outcome
+      cadence: monthly
+    status: implemented-as-shadow-model
+    note: "Published 27 January 2026. Shadow model, NOT in force: the consultation on applying it to the advertising and promotion restrictions closed in June 2026 and the outcome is pending. Implemented in src/shelfscale/npm2018.py; every output is labelled as the 2018 shadow model. Retrieved 2026-11-05; HTML sha256 at retrieval: technical guidance 753bfe5c98e85f6186d9ecb2f962557e62e0d504c0495945b1d0b1f7f62dd191, worked examples 498e2560bf8e744e4210f90089d7883903b9bae21473660bd5f840dfe02790c1, FVNS definitions a6c3db4792005828de27062b5284738c0f66e332a305f95185d82b226d4a89f7."
+
   - id: uk-devolved-hfss-guidance
     name: Food (Promotion and Placement) (Scotland) Regulations 2025 implementation guidance; Wales and Northern Ireland equivalents
     publisher: Scottish Government
