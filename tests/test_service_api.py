@@ -127,6 +127,8 @@ class TestApi(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.server.shutdown()
+        cls.server.server_close()
+        cls.thread.join(timeout=5)
 
     def _post(self, path, payload):
         request = urllib.request.Request(

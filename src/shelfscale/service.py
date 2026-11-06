@@ -14,6 +14,7 @@ from __future__ import annotations
 
 from typing import Any, Iterable
 
+from .validation import number
 from .npm import calculate_npm
 from .npm2018 import MODEL_ID as NPM2018_ID, STATUS as NPM2018_STATUS, calculate_npm2018
 from .traffic_lights import traffic_lights
@@ -211,6 +212,8 @@ def assess_values(
         for optional in ("fat_g", "free_sugars_g"):
             if optional in per_100g:
                 per_portion[optional] = round(per_100g[optional] * factor, 2)
+        for name, value in per_portion.items():
+            number(value, f"per_portion.{name}")
         result["per_portion"] = per_portion
     return result
 
@@ -219,18 +222,14 @@ def _require_number(nutrients: dict, name: str) -> float:
     value = nutrients.get(name)
     if value is None:
         raise ValueError(f"nutrients.{name} is required.")
-    if isinstance(value, bool) or not isinstance(value, (int, float)):
-        raise ValueError(f"nutrients.{name} must be a number.")
-    return float(value)
+    return number(value, f"nutrients.{name}")
 
 
 def _positive(payload: dict, name: str) -> float | None:
     value = payload.get(name)
     if value is None:
         return None
-    if isinstance(value, bool) or not isinstance(value, (int, float)) or value <= 0:
-        raise ValueError(f"{name} must be a positive number.")
-    return float(value)
+    return number(value, name, positive=True)
 
 
 def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
@@ -258,7 +257,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(payload, dict):
         raise ValueError("Product payload must be an object.")
     product_id = payload.get("id") or payload.get("name")
-    if not product_id:
+    if not isinstance(product_id, str) or not product_id.strip():
         raise ValueError("Product needs an 'id' or a 'name'.")
     basis = payload.get("basis", SCORING_BASIS)
     if basis not in INPUT_BASES:
@@ -270,10 +269,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
                 "basis 'per_100ml' needs specific_gravity (g/ml). NPM scores per "
                 "100 g, and per-100 ml values cannot be converted without it."
             )
-        gravity = payload.get("specific_gravity")
-        if isinstance(gravity, bool) or not isinstance(gravity, (int, float)) or gravity <= 0:
-            raise ValueError("specific_gravity must be a positive number (g/ml).")
-        gravity = float(gravity)
+        gravity = number(payload["specific_gravity"], "specific_gravity", positive=True)
     elif payload.get("specific_gravity") is not None:
         raise ValueError("specific_gravity only applies with basis 'per_100ml'.")
     nutrients = payload.get("nutrients")
@@ -306,7 +302,7 @@ def assess_product(payload: dict[str, Any]) -> dict[str, Any]:
         per_100ml = dict(values)
         for name in _PER_AMOUNT_FIELDS:
             if name in values:
-                values[name] = values[name] / gravity
+                values[name] = number(values[name] / gravity, name)
         conversion = {
             "from_basis": "per_100ml",
             "to_basis": SCORING_BASIS,
@@ -347,7 +343,7 @@ def run_bulk(payload: dict[str, Any], key: str, handle) -> tuple[list, list, int
     if len(items) > MAX_BULK_ITEMS:
         raise ValueError(
             f"Bulk limit is {MAX_BULK_ITEMS} items per synchronous call. "
-            "Larger ranges use the asynchronous bulk job in docs/API.md."
+            "Split larger ranges into calls of at most 1000 items; asynchronous jobs are not implemented."
         )
     results: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []

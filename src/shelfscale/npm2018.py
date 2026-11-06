@@ -37,6 +37,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from .validation import number
+
 MODEL_ID = "uk-npm-2018"
 STATUS = "shadow model, not in force"
 GUIDANCE = {
@@ -103,12 +105,13 @@ def calculate_npm2018(
     is_drink: bool = False,
 ) -> NPM2018Result:
     """Score per-100 g values under the NPM 2018 shadow model."""
+    if not isinstance(is_drink, bool):
+        raise ValueError("is_drink must be a boolean.")
     values = dict(energy_kj=energy_kj, saturated_fat_g=saturated_fat_g,
                   free_sugars_g=free_sugars_g, salt_g=salt_g, protein_g=protein_g,
                   fvns_g=fvns_g, fibre_aoac_g=fibre_aoac_g)
     for name, value in values.items():
-        if value < 0:
-            raise ValueError(f"{name} cannot be negative.")
+        number(value, name)
     if fvns_g > 100:
         raise ValueError("fvns_g cannot exceed 100 g per 100 g.")
 

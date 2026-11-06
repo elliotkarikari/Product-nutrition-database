@@ -11,15 +11,15 @@ Endpoints:
 Run locally:
     PYTHONPATH=src python3 -m shelfscale.api --port 8765
 
-This is a working prototype of the API contract in docs/API.md, not a
-production deployment: authentication, rate limits, TLS and asynchronous
-bulk jobs are specified there and are added before any public hosting.
+This prototype is hosted on Railway. Authentication and rate limiting are
+queued for hardening; asynchronous bulk jobs are specified but not implemented.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import socket
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 from .cofid_assess import lookup_and_assess, lookup_bulk
@@ -40,12 +40,16 @@ class Handler(BaseHTTPRequestHandler):
     server_version = "ShelfScale/0.1"
 
     def _send_json(self, status: int, body: dict) -> None:
-        raw = json.dumps(body).encode("utf-8")
+        raw = json.dumps(body, allow_nan=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json")
         self.send_header("Content-Length", str(len(raw)))
         self.end_headers()
         self.wfile.write(raw)
+
+    def setup(self) -> None:
+        super().setup()
+        self.connection.settimeout(10)
 
     def do_GET(self) -> None:  # noqa: N802 (http.server naming)
         if self.path == "/health":
@@ -58,13 +62,29 @@ class Handler(BaseHTTPRequestHandler):
         if self.path not in ROUTES:
             self._send_json(404, {"error": "Not found."})
             return
-        length = int(self.headers.get("Content-Length") or 0)
+        lengths = self.headers.get_all("Content-Length", [])
+        if self.headers.get("Transfer-Encoding") or len(lengths) != 1 or not lengths[0].isascii() or not lengths[0].isdigit():
+            self._send_json(400, {"error": "Supply one numeric Content-Length; transfer encoding is unsupported."})
+            return
+        try:
+            length = int(lengths[0])
+        except ValueError:
+            self._send_json(400, {"error": "Invalid Content-Length."})
+            return
         if length <= 0 or length > MAX_BODY_BYTES:
             self._send_json(400, {"error": "Request body missing or too large."})
             return
         try:
-            payload = json.loads(self.rfile.read(length).decode("utf-8"))
-        except (ValueError, UnicodeDecodeError):
+            raw = self.rfile.read(length)
+            if len(raw) != length:
+                raise ValueError("Incomplete body")
+            def reject_constant(value):
+                raise ValueError(f"Non-finite JSON constant: {value}")
+            payload = json.loads(raw.decode("utf-8"), parse_constant=reject_constant)
+        except socket.timeout:
+            self._send_json(408, {"error": "Request body timed out."})
+            return
+        except (ValueError, UnicodeDecodeError, RecursionError):
             self._send_json(400, {"error": "Request body must be valid JSON."})
             return
         try:

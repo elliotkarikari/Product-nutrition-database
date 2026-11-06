@@ -21,6 +21,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from .validation import number
+
 
 def _band_points(value: float, thresholds: list[float]) -> int:
     """Points equal the number of thresholds the value strictly exceeds."""
@@ -94,11 +96,14 @@ def calculate_npm(
     if (sodium_mg is None) == (salt_g is None):
         raise ValueError("Supply exactly one of sodium_mg or salt_g.")
     if sodium_mg is None:
-        sodium_mg = sodium_mg_from_salt_g(float(salt_g))
+        sodium_mg = sodium_mg_from_salt_g(number(salt_g, "salt_g"))
     if (fibre_nsp_g is None) == (fibre_aoac_g is None):
         raise ValueError("Supply exactly one of fibre_nsp_g or fibre_aoac_g.")
     fibre_method = "nsp" if fibre_nsp_g is not None else "aoac"
     fibre_g = fibre_nsp_g if fibre_nsp_g is not None else fibre_aoac_g
+
+    if not isinstance(is_drink, bool):
+        raise ValueError("is_drink must be a boolean.")
 
     inputs = {
         "energy_kj": energy_kj,
@@ -110,8 +115,7 @@ def calculate_npm(
         "sodium_mg": sodium_mg,
     }
     for name, value in inputs.items():
-        if value < 0:
-            raise ValueError(f"{name} cannot be negative.")
+        number(value, name)
     if fruit_veg_nuts_percent > 100:
         raise ValueError("fruit_veg_nuts_percent cannot exceed 100.")
 

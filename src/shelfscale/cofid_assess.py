@@ -36,6 +36,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from .validation import number
 from .lookup import lookup_cofid
 from .npm2018 import MODEL_ID as NPM2018_ID
 from .service import MODEL_ID, assess_values, dual_summary, npm2018_block, run_bulk, verdict_changes
@@ -231,11 +232,8 @@ def _number(payload: dict, name: str, *, minimum: float, maximum: float | None =
     value = payload.get(name)
     if value is None:
         return None
-    if isinstance(value, bool) or not isinstance(value, (int, float)):
-        raise ValueError(f"{name} must be a number.")
-    if value < minimum or (not inclusive_min and value == minimum) or (maximum is not None and value > maximum):
-        raise ValueError(f"{name} is out of range.")
-    return float(value)
+    return number(value, name, positive=not inclusive_min, maximum=maximum)
+
 
 
 def lookup_and_assess(payload: dict[str, Any]) -> dict[str, Any]:

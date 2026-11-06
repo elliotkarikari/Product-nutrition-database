@@ -1,4 +1,4 @@
-"""Service-level lookup of CoFID 2021 foods (not wired into the HTTP API yet).
+"""Service-level lookup of CoFID 2021 foods (used by the HTTP lookup endpoints).
 
 Neither CoFID food codes nor food names are unique in the 2021 dataset, so
 a lookup always returns a list of matches. An empty list is a gap, reported

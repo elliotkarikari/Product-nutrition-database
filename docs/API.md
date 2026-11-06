@@ -32,7 +32,7 @@ Every assessment and lookup result is scored under two models, side by side:
 - `uk-npm-2004/05`: the model in force (DH technical guidance, January 2011). `status: "in force"`.
 - `uk-npm-2018`: the 2018 model from DHSC's technical guidance, published 27 January 2026. `status: "shadow model, not in force"`. It is not the law; it is shown so a range can be checked against the model the government has consulted on. Rules and sources: `src/shelfscale/npm2018.py`, validated against all 17 of DHSC's worked examples (`tests/test_npm2018.py`).
 
-Each result carries `models`, keyed by model id. Each block has `model`, `status`, `scorable`, and either `score`, `less_healthy`, `a_points`, `c_points`, `total_a`, `total_c`, `protein_counted` and `fibre_method`, or `missing_inputs` naming what is missing. The 2018 block also has `inputs`, saying where each 2018 input came from. `verdict_changes_under_2018` is `true` or `false` when both models scored, and `null` when either could not. (This replaces the earlier single-model top-level `score`, `less_healthy` and points fields; there is no compatibility copy.)
+Each result carries `models`, keyed by model id. Each block has `model`, `status`, `scorable`, and either `score`, `less_healthy`, `a_points`, `c_points`, `total_a`, `total_c`, `protein_counted` and (2004/05 only) `fibre_method`, or `missing_inputs` naming what is missing. The 2018 block also has `inputs`, saying where each 2018 input came from. `verdict_changes_under_2018` is `true` or `false` when both models scored, and `null` when either could not. (This replaces the earlier single-model top-level `score`, `less_healthy` and points fields; there is no compatibility copy.)
 
 What the 2018 model needs, and how ShelfScale gets it:
 
@@ -90,7 +90,7 @@ Rules that matter to bulk users:
 
 - **Partial success.** A bad row lands in `errors` with its index, id and reason. It never blocks the rest of the range.
 - **Summary first.** The response carries counts: received, assessed, failed; `scorable` and `less_healthy` per model id; and `verdict_changes_under_2018`, the number of products whose verdict differs between the two models.
-- **Synchronous limit: 1,000 products per call.** Larger ranges use the asynchronous bulk job below.
+- **Synchronous limit: 1,000 products per call.** Split larger ranges into multiple calls; asynchronous bulk jobs below are not implemented.
 - Every result names the model version, so a range scored today can be compared honestly with the same range scored after a model or data change.
 
 ### POST /v1/lookup
@@ -112,7 +112,7 @@ Response: the query, the CoFID release (source, edition, file URL, retrieval dat
 ### POST /v1/lookup/bulk
 `{"items": [ ... ]}`, each item shaped like a `/v1/lookup` request. Same rules as `/v1/assess/bulk`: partial success, per-row `errors` with index and reason, a 1,000-item synchronous limit. The summary counts received, looked up, failed, no match and foods matched, plus `scorable` and `less_healthy` per model and `verdict_changes_under_2018`.
 
-### Asynchronous bulk jobs (specified, for ranges above the sync limit)
+### Asynchronous bulk jobs (specified only; not implemented)
 - `POST /v1/bulk-jobs` accepts a file or a product list plus an optional webhook URL and an idempotency key, and returns a job id immediately.
 - On completion the API calls the webhook with the result location. A status endpoint exists for systems that cannot receive webhooks; clients should prefer the webhook over polling.
 - Results are delivered as a downloadable file (JSON and CSV) plus the same summary block as the synchronous endpoint.
@@ -123,7 +123,7 @@ Response: the query, the CoFID release (source, edition, file URL, retrieval dat
 1. **Supplied mode (live in the prototype).** The caller provides nutrient values; ShelfScale scores them and says plainly that it has not verified them. This is the mode a university teaching lab or a brand scoring its own specification data uses.
 2. **Lookup mode (live for CoFID 2021 foods: `/v1/lookup`).** The caller names a CoFID food by code or exact name; ShelfScale returns its observations with provenance and the data release, and scores it where every input can be sourced. GTIN, product-name and recipe lookup come later.
 
-## Production requirements before public hosting
+## Remaining production requirements (prototype is already publicly hosted)
 
 - API keys per organisation, with per-key rate limits and usage metering.
 - TLS, request size limits, and audit logs that record model and data-release versions per call.
@@ -136,3 +136,5 @@ Response: the query, the CoFID release (source, edition, file URL, retrieval dat
 - **Universities:** teaching and research scoring with a citable model version; bulk scoring of survey or retail datasets; reproducible results because the model and data release are named in every response.
 - **Retailers and wholesalers:** nightly or weekly range classification, change reports between releases, and a clean error list of products whose data is missing or unusable, which is the list their suppliers need to fix.
 - **Brands and manufacturers:** scoring their own specification data before a retailer asks, including the NPM 2018 shadow score (needs their free sugars figure).
+
+Numeric inputs must be finite and non-negative; portions and density must be positive. Non-finite JSON constants, invalid body framing and invalid UTF-8 are rejected. Request bodies are limited to 5,000,000 bytes and a 10-second socket timeout. IDs/names in supplied mode must be nonempty strings.

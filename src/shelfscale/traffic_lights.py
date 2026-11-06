@@ -28,6 +28,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from .validation import number
+
 GUIDANCE = {
     "title": "Guide to creating a front of pack (FoP) nutrition label for pre-packed "
              "products sold through retail outlets",
@@ -71,6 +73,10 @@ def traffic_lights(
     NUTRIENTS; a missing or None value is reported as not assessed.
     ``portion`` is in g for food and ml for drink.
     """
+    if not isinstance(is_drink, bool):
+        raise ValueError("is_drink must be a boolean.")
+    if portion is not None:
+        portion = number(portion, "portion", positive=True)
     table = _DRINK_PER_100ML if is_drink else _FOOD_PER_100G
     red_per_portion = _DRINK_RED_PER_PORTION if is_drink else _FOOD_RED_PER_PORTION
     limit = DRINK_PORTION_LIMIT_ML if is_drink else FOOD_PORTION_LIMIT_G
@@ -83,6 +89,7 @@ def traffic_lights(
         if value is None:
             colours[nutrient] = {"colour": None, "reason": f"{nutrient} not supplied"}
             continue
+        value = number(value, nutrient)
         low, high = table[nutrient]
         entry: dict[str, Any] = {
             "colour": _colour(value, low, high),
@@ -90,7 +97,7 @@ def traffic_lights(
             f"per_100{unit}": value,
         }
         if portion_rule:
-            amount = value * portion / 100.0
+            amount = number(value * portion / 100.0, f"{nutrient} per portion")
             entry["per_portion"] = amount
             if amount > red_per_portion[nutrient]:
                 entry["colour"] = "red"

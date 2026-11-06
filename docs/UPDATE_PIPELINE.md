@@ -31,7 +31,7 @@ ShelfScale's promise is not that its data never ages. It is that ageing is visib
 
 - Official datasets and guidance: monthly.
 - Official analysis reports and regulator news: monthly.
-- Open product data exports: weekly snapshot candidates.
+- Crowd-sourced/open product exports: excluded under the current source policy; no ingestion watch.
 - Licensed feeds: per contract; terms reviewed quarterly.
 - Legacy sample and portion datasets: static, re-verified yearly.
 

@@ -18,3 +18,6 @@
 - [verification/2026-11-05-rocky-record-gap.md](verification/2026-11-05-rocky-record-gap.md) — Rocky read-back evidence gap
 - [verification/2026-11-05-codex-audit.md](verification/2026-11-05-codex-audit.md) — Independent audit and scope.
 - [verification/2026-11-05-audit-tests.txt](verification/2026-11-05-audit-tests.txt) — Baseline 103-test audit log.
+- [decisions/finite-inputs.md](decisions/finite-inputs.md) — Numeric and request boundary decision.
+- [verification/2026-11-05-audit-fixes.md](verification/2026-11-05-audit-fixes.md) — Audit fix checks and repaired failures.
+- [verification/2026-11-05-fixes-tests.txt](verification/2026-11-05-fixes-tests.txt) — 111-test passing log.

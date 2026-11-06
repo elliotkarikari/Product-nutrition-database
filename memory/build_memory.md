@@ -10,10 +10,10 @@ It computes UK NPM 2004/05 and a labelled NPM 2018 shadow result plus traffic li
 Recipe calculation, label export and broader country packs remain planned.
 
 ## Verified state
-- Branch: `shelfscale-open`; synchronized base/code head: `3077478c20a6b163149f45470ebb90c47f0264a4`. This memory round changes documentation only. Resolve its resulting commit with `git log -1 --format=%H -- memory/build_memory.md`; check current local/remote HEAD every session.
-- **103 tests passed**, last run 2026-11-05 after memory creation; two socket ResourceWarnings. [Final check](verification/2026-11-05-codex-memory-check.md). CoFID: 2,887 foods / 240,340 observations; FPS: 2,606 portions; sample weights: 44 composites / 577 sub-samples. [Commands, evidence and limits](verification/2026-11-05-codex-baseline.md).
+- Branch: `shelfscale-open`; session starting head: `16c3398c14dbe37870b061082b638ecdb6b3ecd3`; audit commit `6f29f92`. Current round implements audit fixes. Resolve its resulting commit with `git log -1 --format=%H -- memory/build_memory.md`; check current local/remote HEAD every session.
+- **111 tests passed**, last run 2026-11-05 after audit fixes; socket warnings resolved. [Fix verification](verification/2026-11-05-audit-fixes.md). CoFID: 2,887 foods / 240,340 observations; FPS: 2,606 portions; sample weights: 44 composites / 577 sub-samples. [Commands, evidence and limits](verification/2026-11-05-codex-baseline.md).
 - Live [Railway health](https://product-nutrition-database-production.up.railway.app/health): HTTP 200, `{"status":"ok","models":{"uk-npm-2004/05":"in force","uk-npm-2018":"shadow model, not in force"}}`. Labels are observed responses, not independently verified legal status. Deployment SHA/settings unverified.
-- [Independent audit completed](../docs/CODEX_AUDIT.md) at 16c3398; 103 tests pass; fixes pending. [Rocky record gap](verification/2026-11-05-rocky-record-gap.md) is not a passed verification.
+- [Independent audit completed](../docs/CODEX_AUDIT.md) at 16c3398; findings 1/3/7/8 fixed; 111 tests pass. [Rocky record gap](verification/2026-11-05-rocky-record-gap.md) is not a passed verification.
 
 ## Standing rules
 - [Defensible data](decisions/defensible-data.md): three evidence tiers; gaps stay gaps.
