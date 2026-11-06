@@ -11,9 +11,13 @@ After push compare `git rev-parse HEAD` to `git ls-remote origin refs/heads/shel
 
 ## Phase 5 checkpoint
 
-Before pushing required-key hardening, Elliot must set a nonempty secret `SHELFSCALE_API_KEY` in the existing Railway service's Variables panel and confirm it is deployed. Do not put the secret in Git, docs, chat or command output. Hardening will refuse startup without it; /health and / stay public, and all assessment-producing POST routes (including lookup) require X-API-Key. Hold that push until confirmation. Current implementation status is in memory/build_memory.md.
+Before pushing required-key hardening, Elliot must set a nonempty printable-ASCII secret token (no spaces) `SHELFSCALE_API_KEY` in the existing Railway service's Variables panel and confirm it is deployed. Do not put the secret in Git, docs, chat or command output. Hardening refuses startup without it; /health and / stay public, and all assessment-producing POST routes (including lookup) require X-API-Key. Hold that push until confirmation. Current implementation status is in memory/build_memory.md.
 
-The initial limiter will be in memory, shared across the single configured key in one process: 60 authorized POST requests in a rolling minute, with 429 and Retry-After. Bulk calls count as one request, capped at 1,000 items and 5 MB. It resets on restart and is not a distributed quota or usage-metering service. Keep one replica for that contract; scaling requires a new rate-limit design.
+The implemented limiter is in memory, shared across the single configured key in one process: 60 authorized POST requests in a rolling minute, with 429 and Retry-After. Bulk calls count as one request, capped at 1,000 items and 5 MB. It resets on restart and is not a distributed quota or usage-metering service. Keep one replica for that contract; scaling requires a new rate-limit design.
+
+Before startup readiness the server verifies the source snapshots and builds the composed index. Missing/invalid keys and changed source snapshots fail startup. Railway's `RAILWAY_GIT_COMMIT_SHA`, when present and a valid SHA, is exposed as `revision` on the two public GET routes. Compare it with GitHub after deployment.
+
+For authenticated smoke checks, make the same key available to a local process through a secure environment or ignored `.env` file. Do not echo it or put it in a command-line argument. Send it only to this existing service over HTTPS; record the response facts, never the request header. Verify `/health`, unauthenticated POST rejection, and an authenticated real lookup with overlay provenance. Avoid live quota/load tests; the deterministic local suite covers 429 behavior.
 
 ## Recovery
 

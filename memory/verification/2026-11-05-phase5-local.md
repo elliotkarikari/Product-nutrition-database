@@ -1,0 +1,9 @@
+# Phase 5 local verification and Phase 4 live read-back
+
+Verifier: Codex, 2026-11-05 America/New_York. Base: 9316caaf39aac328f42760f2a10d40c423707890.
+
+PASS: PYTHONPATH=src python3 -m unittest discover -s tests -v: 131 tests in 7.863s. Full output: 2026-11-05-phase5-tests.txt. Includes all prior scoring/import checks, required-key CLI exit, exact/duplicate/wrong-header rejection, constant-time comparison path, 200 concurrent admission attempts (60 accepted), rolling-window boundary/Retry-After rounding, shared quota across four routes, public health/root under exhausted quota, key/revision configuration, and authenticated real local lookup. No new dependencies. git diff --check passed.
+
+PASS: Phase 4 push/read-back: git push origin shelfscale-open and git ls-remote origin refs/heads/shelfscale-open both resolve 9316caaf39aac328f42760f2a10d40c423707890. At 2026-11-06T04:10:51Z, Python urllib GET /health and POST /v1/lookup (18-017, FVN 0, free sugars 0) both returned HTTP 200 from the existing Railway URL. Lookup returned the composed overlay data release, beef energy 523 kJ with uk-beef-2024 source/checksum and superseded CoFID ID. 2004/05 score -3; 2018 remains unscorable where AOAC fibre is unavailable. Raw public-response evidence: 2026-11-05-phase4-live.json. Exact live deployment SHA is not exposed by Phase 4, but these overlay-specific behaviors demonstrate the new functionality is live.
+
+Limit/hold: Phase 5 is local-only pending Elliot’s explicit Railway key confirmation; it has not been pushed or tested live. No local process key or .env existed at inspection. Do not paste keys in chat or record headers. A final live authenticated lookup requires the deployed key made available securely to a local process. No live quota/load test performed. Railway account settings remain uninspected. Owner: Elliot for key checkpoint; Codex for push and post-deployment checks after confirmation.

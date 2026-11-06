@@ -2,6 +2,7 @@
 
 - [INDEX.md](INDEX.md) — Index of all memory files.
 - [build_memory.md](build_memory.md) — ShelfScale build memory
+- [decisions/api-hardening.md](decisions/api-hardening.md) — API access and request quota
 - [decisions/commit-as-elliot.md](decisions/commit-as-elliot.md) — Commit identity
 - [decisions/defensible-data.md](decisions/defensible-data.md) — Defensible data
 - [decisions/delivery-means-pushed.md](decisions/delivery-means-pushed.md) — Delivery means pushed and read back
@@ -23,7 +24,10 @@
 - [verification/2026-11-05-codex-memory-tests.txt](verification/2026-11-05-codex-memory-tests.txt) — Verification output.
 - [verification/2026-11-05-codex-tests.txt](verification/2026-11-05-codex-tests.txt) — Verification output.
 - [verification/2026-11-05-fixes-tests.txt](verification/2026-11-05-fixes-tests.txt) — Verification output.
+- [verification/2026-11-05-phase4-live.json](verification/2026-11-05-phase4-live.json) — Verification output.
 - [verification/2026-11-05-phase4-tests.txt](verification/2026-11-05-phase4-tests.txt) — Verification output.
 - [verification/2026-11-05-phase4.md](verification/2026-11-05-phase4.md) — Phase 4 verification
+- [verification/2026-11-05-phase5-local.md](verification/2026-11-05-phase5-local.md) — Phase 5 local verification and Phase 4 live read-back
+- [verification/2026-11-05-phase5-tests.txt](verification/2026-11-05-phase5-tests.txt) — Verification output.
 - [verification/2026-11-05-rocky-memory-round.md](verification/2026-11-05-rocky-memory-round.md) — Rocky memory-round verification — reconstructed
 - [verification/2026-11-05-rocky-record-gap.md](verification/2026-11-05-rocky-record-gap.md) — Rocky read-back evidence gap

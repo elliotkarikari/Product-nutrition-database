@@ -12,9 +12,9 @@ The API is how universities, retailers, brands and builders use ShelfScale witho
 
 ## Prototype status
 
-Working prototype, standard library only, in `src/shelfscale/api.py` with the scoring service in `src/shelfscale/service.py`. Covered by tests, including a live HTTP test of both POST endpoints.
+Working prototype, standard library only, in `src/shelfscale/api.py` with the scoring service in `src/shelfscale/service.py`. Covered by tests, including real HTTP tests of all four POST routes, authentication and rate limits.
 
-Run locally:
+Run locally after setting `SHELFSCALE_API_KEY` securely in the environment (nonempty printable ASCII token, no spaces). Startup refuses a missing/invalid key and validates data snapshots before serving:
 
 ```
 PYTHONPATH=src python3 -m shelfscale.api --port 8765
@@ -23,7 +23,17 @@ PYTHONPATH=src python3 -m shelfscale.api --port 8765
 ## Endpoints (v1)
 
 ### GET /health
-Returns `{"status": "ok", "models": {"uk-npm-2004/05": "in force", "uk-npm-2018": "shadow model, not in force"}}`.
+Public. Returns `status: "ok"`, both model labels, and `revision` (Railway's 40-character Git SHA when supplied; otherwise null).
+
+### GET /
+Public service summary: service name, model labels, composed data release, optional deployment revision, public/authenticated endpoints, authentication header, request/bulk/body limits and API documentation link. Never returns the key.
+
+### Authentication and rate limit
+All four POST routes below require exactly one `X-API-Key` header matching `SHELFSCALE_API_KEY`. Comparison is constant-time. Missing, wrong or duplicate keys return HTTP 401 with `{"error":"Valid X-API-Key required."}`. Key rotation takes effect on server restart; no caller credentials are logged or stored in results.
+
+The single shared key gets **60 authenticated POST requests in a rolling 60-second window per process**, across all four routes. Authenticated malformed requests count; rejected credentials and public GETs do not. Bulk counts as one request, still capped at 1,000 items and 5,000,000 bytes. The 61st request returns HTTP 429 with `{"error":"Rate limit exceeded."}` and integer `Retry-After` seconds until a slot expires (rounded up). No new slot is consumed by a 429. The lock protects concurrent admission; memory is bounded to 60 timestamps. The quota resets on restart and is not shared between replicas.
+
+All JSON responses send `Cache-Control: no-store`. Hosted TLS is supplied by Railway. This is one shared service key, not organisation accounts or metered billing. See DEPLOYMENT.md for the required-key rollout checkpoint and one-replica constraint.
 
 ## Two models in every result
 
@@ -102,7 +112,7 @@ Response: the query, the CoFID release (source, edition, file URL, retrieval dat
 
 - `inputs` says where every assessment input came from: the CoFID nutrient code and its value, "trace counted as 0", `derived_from_group`, or `caller_supplied`.
 - Energy KJ, saturated fat SATFOD, total sugars TOTSUG, sodium NA, protein PROT, fat FAT (traffic lights only). Fibre is NSP (ENGFIB) where CoFID gives a value, otherwise AOAC (AOACFIB); `fibre_method` names it.
-- **Fruit, vegetables and nuts (decided by Elliot, November 5, 2026).** CoFID has no FVN percentage. A caller-supplied `fvn_percent` always wins (`caller_supplied`). Otherwise: potatoes (CoFID groups DA*) carry 0%, labelled `excluded_by_guidance`, because the NPM guidance says potatoes do not count; vegetable dishes (DR) are composite and not yet scorable; any other food in group D (vegetables), F (fruit) or G (nuts and seeds) carries 100%, labelled `derived_from_group`; every other food is not yet scorable. FVN is never estimated from the food's name. Groups DB, DF, DG, DI, FC, GA and FA keep the 100% rule and are flagged for review: GA includes seeds and FA includes sugared and syrup fruit, which the guidance would not count in full.
+- **Fruit, vegetables and nuts (decided by Elliot, November 5, 2026).** CoFID has no FVN percentage. A caller-supplied `fvn_percent` always wins (`caller_supplied`). Otherwise: potatoes (CoFID groups DA*) carry 0%, labelled `excluded_by_guidance`, because the NPM guidance says potatoes do not count; vegetable dishes (DR) are composite and not yet scorable; any other food in group D (vegetables), F (fruit) or G (nuts and seeds) carries 100%, labelled `derived_from_group`; every other food is not yet scorable. FVN is never estimated from the food's name. For 2004/05, groups DB, DF, DG, DI, FC, GA and FA keep the 100% rule. Structured review flags identify GA (seeds) and FA (sugared/syrup fruit); the broader historical group-review list remains in SPEC §12. The 2018 exceptions and flags are described below.
 - Drink status comes from the CoFID group: P (beverages), Q (alcoholic), BH (milk-based drinks), FC (fruit juices). The response says which group decided it.
 - Alcoholic drinks (Q) are per 100 ml in CoFID; they are converted to per 100 g by the food's own CoFID specific gravity, and are not scorable without one. Other drinks have no per-100 ml values in CoFID, so their traffic lights are not assessed.
 - Each model block is either `scorable: false` with `missing_inputs` named, or scored. When 2004/05 is scorable the assessment adds the same traffic-light block as `/v1/assess`.
@@ -125,9 +135,9 @@ Response: the query, the CoFID release (source, edition, file URL, retrieval dat
 
 ## Remaining production requirements (prototype is already publicly hosted)
 
-- API keys per organisation, with per-key rate limits and usage metering.
-- TLS, request size limits, and audit logs that record model and data-release versions per call.
-- Versioned base path (`/v1`) and a published deprecation policy.
+- Multiple organisation keys and usage metering; the implemented limiter covers one shared service key.
+- Structured audit logs recording model/data release without credentials or caller payloads. Hosted TLS and request-size limits are already present.
+- Published deprecation policy; the `/v1` base path is already present.
 - For lookup mode: responses cacheable by data release, so a retailer's nightly range check only re-scores what a new release changed.
 - No caller data retained beyond the job unless the organisation opts in.
 

@@ -4,9 +4,8 @@ import http.client
 import json
 import threading
 import unittest
-from http.server import ThreadingHTTPServer
 
-from shelfscale.api import Handler
+from shelfscale.api import ShelfScaleServer
 from shelfscale.cofid_assess import lookup_and_assess, lookup_bulk
 from shelfscale.service import assess_product, assess_bulk
 from shelfscale.npm import calculate_npm
@@ -63,7 +62,7 @@ class TestNumericBoundaries(unittest.TestCase):
 class TestFraming(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.server=ThreadingHTTPServer(('127.0.0.1',0),Handler)
+        cls.server=ShelfScaleServer(('127.0.0.1',0),api_key='test-key')
         cls.thread=threading.Thread(target=cls.server.serve_forever,daemon=True); cls.thread.start()
     @classmethod
     def tearDownClass(cls):
@@ -72,6 +71,7 @@ class TestFraming(unittest.TestCase):
         conn=http.client.HTTPConnection(*self.server.server_address,timeout=5)
         try:
             conn.putrequest('POST','/v1/assess')
+            conn.putheader('X-API-Key', 'test-key')
             for k,v in headers: conn.putheader(k,v)
             conn.endheaders(body)
             r=conn.getresponse(); return r.status,json.loads(r.read())

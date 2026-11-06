@@ -44,3 +44,7 @@ Audit correction during Phase 4 inspection: `npm2018_block` does emit `fibre_met
 ## Remediation checkpoint: Phase 4
 
 Findings 4, 5 and 6 addressed: explicit 2018 DG exclusions and GA/FA flags; checksum-verified official milk/beef observations with per-value supersession and assessment provenance; FPS identity matching with ambiguity preserved. No official-example score changed. Beef vitamin D definitions differ, so their totals remain separate. Three of the six FPS comparisons used the wrong extraction rows; two differences and ambiguous pork remain documented without altering weights. Deployment config and instructions are tracked. Authentication remains the Phase 5 checkpoint. Evidence: memory/verification/2026-11-05-phase4.md.
+
+## Remediation checkpoint: Phase 5 (local pending key confirmation)
+
+Finding 2 addressed in code: required startup key, constant-time single-header authentication on all four POST routes, lock-protected 60/minute rolling quota, 429/Retry-After, and public health/root. Snapshots validate before readiness; request bodies retain timeout/size guards. 131 tests pass, including missing-key CLI refusal, wrong/duplicate credentials, concurrent quota admission, rolling expiration, all four routes sharing the quota, public routes surviving exhaustion, and both existing HTTP suites authenticated. No live load test. Push held for the mandated Railway key confirmation; local implementation is not a claim of live protection.

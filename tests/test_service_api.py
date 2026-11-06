@@ -3,9 +3,8 @@ import threading
 import unittest
 import urllib.error
 import urllib.request
-from http.server import ThreadingHTTPServer
 
-from shelfscale.api import Handler
+from shelfscale.api import ShelfScaleServer
 from shelfscale.service import assess_bulk, assess_product
 
 OLD, NEW = "uk-npm-2004/05", "uk-npm-2018"
@@ -119,7 +118,7 @@ class TestService(unittest.TestCase):
 class TestApi(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        cls.server = ShelfScaleServer(("127.0.0.1", 0), api_key="test-key")
         cls.port = cls.server.server_address[1]
         cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
         cls.thread.start()
@@ -134,7 +133,7 @@ class TestApi(unittest.TestCase):
         request = urllib.request.Request(
             f"http://127.0.0.1:{self.port}{path}",
             data=json.dumps(payload).encode("utf-8"),
-            headers={"Content-Type": "application/json"},
+            headers={"Content-Type": "application/json", "X-API-Key": "test-key"},
             method="POST",
         )
         with urllib.request.urlopen(request, timeout=5) as response:
