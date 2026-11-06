@@ -58,6 +58,18 @@ class NutrientObservation:
     method: str             # how the value was produced, as far as the source says
     status: str             # current | superseded
     release: DatasetRelease
+    period_start: str | None = None
+    period_end: str | None = None
+    analysis_period: str | None = None
+    source_locator: str | None = None
+    source_food: str | None = None
+    confidence: str = "published_compilation"
+    supersedes: str | None = None
+    superseded_by: str | None = None
+
+    @property
+    def observation_id(self) -> str:
+        return f"{self.release.source_id}:{self.food.food_id}:{self.definition.code}"
 
 
 @dataclass(frozen=True, slots=True)

@@ -10,10 +10,10 @@ It computes UK NPM 2004/05 and a labelled NPM 2018 shadow result plus traffic li
 Recipe calculation, label export and broader country packs remain planned.
 
 ## Verified state
-- Branch: `shelfscale-open`; session starting head: `16c3398c14dbe37870b061082b638ecdb6b3ecd3`; audit commit `6f29f92`. Current round implements audit fixes. Resolve its resulting commit with `git log -1 --format=%H -- memory/build_memory.md`; check current local/remote HEAD every session.
-- **111 tests passed**, last run 2026-11-05 after audit fixes; socket warnings resolved. [Fix verification](verification/2026-11-05-audit-fixes.md). CoFID: 2,887 foods / 240,340 observations; FPS: 2,606 portions; sample weights: 44 composites / 577 sub-samples. [Commands, evidence and limits](verification/2026-11-05-codex-baseline.md).
-- Live [Railway health](https://product-nutrition-database-production.up.railway.app/health): HTTP 200, `{"status":"ok","models":{"uk-npm-2004/05":"in force","uk-npm-2018":"shadow model, not in force"}}`. Labels are observed responses, not independently verified legal status. Deployment SHA/settings unverified.
-- [Independent audit completed](../docs/CODEX_AUDIT.md) at 16c3398; findings 1/3/7/8 fixed; 111 tests pass. [Rocky record gap](verification/2026-11-05-rocky-record-gap.md) is not a passed verification.
+- Branch: `shelfscale-open`; session started at `16c3398`; audit `6f29f92` and fixes `574c82e` pushed and read back. Phase 4 checked base: `574c82e1db97bc976d2ffa4824af1d3c524c47a3`; resolve this round’s commit with `git log -1 --format=%H -- memory/build_memory.md` and check local/remote HEAD every session.
+- **123 tests passed**, 2026-11-05, 7.183s. [Phase 4 verification](verification/2026-11-05-phase4.md). CoFID: 2,887 foods / 240,340 original observations; official overlays add 713 observations across 11 matched foods, retaining history; 5,013 source-only. FPS 2,606 portions; sample weights 44 composites / 577 sub-samples.
+- Live [Railway health](https://product-nutrition-database-production.up.railway.app/health), last checked after fixes push: HTTP 200, `{"status":"ok","models":{"uk-npm-2004/05":"in force","uk-npm-2018":"shadow model, not in force"}}`. Deployment SHA/settings not exposed/inspected; Phase 4 live read-back follows push.
+- [Audit](../docs/CODEX_AUDIT.md): numeric/HTTP/docs/socket and FVN/provenance/FPS findings addressed. Required-key/rate-limit/root hardening is next. [Rocky memory record](verification/2026-11-05-rocky-memory-round.md) is explicitly reconstructed; primary evidence remains missing.
 
 ## Standing rules
 - [Defensible data](decisions/defensible-data.md): three evidence tiers; gaps stay gaps.
@@ -21,7 +21,9 @@ Recipe calculation, label export and broader country packs remain planned.
 - [VJ exclusion](decisions/vj-never-publish.md): never copy/publish/use; retain guard.
 - [Banding](decisions/no-rounding-before-banding.md): never round first.
 - [Free sugars](decisions/free-sugars.md): caller input only; no total-sugar substitute.
-- [FVN](decisions/fvn-derivation.md): caller override, DA exclusion, DR gap, documented group reviews.
+- [FVN](decisions/fvn-2018-rulings.md): old derivation preserved; 22 DG exclusions for 2018, caller labels and model-specific flags.
+- [Overlays](decisions/official-overlays.md): exact/established food and nutrient identities; original values retained.
+- [FPS reconciliation](decisions/fps-reconciliation.md): ordered food/portion identity, ambiguity explicit, weights unchanged.
 - [Identity](decisions/commit-as-elliot.md): Elliot; no agent co-author trailers.
 - [Delivery](decisions/delivery-means-pushed.md): push and read back, otherwise local-only plus handoff.
 - [Memory lifecycle](decisions/memory-lifecycle.md): read first; update each round; evidence over recollection; supersede decisions explicitly. Repo/live outrank memory; SPEC governs product behavior.
@@ -29,12 +31,11 @@ Recipe calculation, label export and broader country packs remain planned.
 ## Where things live
 Canonical working directory: `/Users/elliotkarikari/Dev Projects/Product-nutrition-database`.
 
-[SPEC](../SPEC.md) governs; [docs](../docs/) hold API, architecture, data model, source and roadmap detail; [register](../data/source-register.yaml) governs source status. [Snapshots](../data/raw/) hold manifests/attribution; [engine](../src/shelfscale/), [tests](../tests/), [FPS reconciliation](../docs/fps_reconciliation.csv) and [script](../scripts/reconcile_fps.py) are local evidence. API entry point: `src/shelfscale/api.py`; Railway configuration is external/unverified, with no tracked railway.toml at baseline. [INDEX](INDEX.md) lists all memory files.
+[SPEC](../SPEC.md) governs; [docs](../docs/) hold API, architecture, data model, source and roadmap detail; [register](../data/source-register.yaml) governs source status. [Snapshots](../data/raw/) hold manifests/attribution; [engine](../src/shelfscale/), [tests](../tests/), [FPS reconciliation](../docs/fps_reconciliation.csv) and [script](../scripts/reconcile_fps.py) are local evidence. API entry point: `src/shelfscale/api.py`; [railway.toml](../railway.toml) and [deployment guide](../docs/DEPLOYMENT.md) track runtime configuration; account settings remain uninspected. [INDEX](INDEX.md) lists all memory files.
 
 ## Open threads and owners
-- **Codex:** implement the ranked audit fixes, then authorized Phase 4/5; hold hardening push for the Railway key checkpoint.
-- **Rocky:** supply primary read-back evidence; independently verify the delivered memory round. External watch/research schedules are not verifiable here (SPEC §§9, 14).
-- **Claude / Elliot:** locate and reconcile queued Phase 4/5 briefs before implementation. No briefs are in the checkout; docs/ROADMAP.md uses a different Phase 4. Exact queued scope and five rulings are unverified, so not copied as project state.
-- **Elliot (rulings), Claude (implementation):** SPEC §12 leaves 2018 tubers/seeds and powder reconstitution open. GA/FA review is documented, not a structured API flag. Official overlays remain planned in the register; API auth/rate limits/root summary and tracked deployment config are absent.
-- **Elliot:** first user surface, hosted commercial offering, data partnerships (SPEC §12); any legacy history cleanup (docs/LEGACY_INVENTORY.md).
-- **Elliot / future implementer:** parked CoFID old foods, US pack and other countries (register); recipe/label tools and watcher code (SPEC §11). Assignment beyond owner approval remains unconfirmed.
+- **Codex:** Phase 4 remote/live read-back, then Phase 5 authentication, rolling 60/minute quota and root summary; hold hardening push until Elliot confirms the Railway key is deployed.
+- **Elliot:** set SHELFSCALE_API_KEY on existing Railway service at that checkpoint; never send the key in chat.
+- **Rocky:** independently verify delivery; supply primary memory-round read-back. The reconstructed record is not a substitute. External watch/research schedules remain unverified here.
+- **Elliot / future data review:** two apparent FPS weight differences and ambiguous pork require the physical book; additional tuber species identities, unmatched overlays and GA/FA processing need evidence before broader derivation.
+- **Elliot / future implementer:** powder reconstitution, first user surface/CSV/recipe/label tools, watcher code, partnerships, other country packs and old-foods import remain parked or undecided (SPEC §12, register). Legacy history cleanup remains owner-controlled; VJ fix-forward exclusion is unchanged.

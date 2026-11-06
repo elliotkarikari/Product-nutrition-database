@@ -92,3 +92,7 @@ Found while importing Food Portion Sizes (November 5, 2026).
 | Some FPS weights are not one number of grams: volumes in ml, alternatives ("250/300g"), a range, and four unreadable values with a letter l for the digit 1. | `value_kind` says which; only a single gram value sets `grams`. Volumes are not converted (no density); alternatives and ranges keep every number without choosing; unreadable values are reported and not imported. |
 | FPS names products and brands as the book prints them, not as CoFID foods. | Matched to CoFID by exact name only (69 rows); the rest stay FPS-only rather than forcing a match. |
 
+
+## Implemented overlay observations
+
+NutrientObservation now carries collection period, analysis period, source locator/food, confidence and reciprocal supersession IDs. lookup returns current and superseded values; scoring selects current only. Different nutrient definitions (notably beef total vitamin D activity) remain separate. See OVERLAY_IMPORT_REPORT.md.

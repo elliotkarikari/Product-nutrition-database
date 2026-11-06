@@ -1,6 +1,6 @@
 # FVN derivation
 
-Status: active
+Status: superseded by [fvn-2018-rulings.md](fvn-2018-rulings.md)
 
 Decision date: 2026-11-05
 

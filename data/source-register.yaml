@@ -88,7 +88,8 @@ sources:
     watch:
       method: new-publication-scan
       cadence: monthly
-    status: overlay-planned
+    status: milk-and-beef-overlays-imported
+    note: "Versioned source-specific entries below; only explicitly matched foods and measured/equivalent nutrients supersede CoFID."
 
   - id: uk-quadram-apis
     name: Quadram FN-NBRI CoFID API and Food Labelling API
@@ -338,3 +339,29 @@ sources:
       method: release-check
       cadence: monthly
     status: parked-until-us-pack
+
+  - id: uk-milk-2022-23
+    name: Milk analysis sampled 2022-2023
+    publisher: DHSC/OHID; Quadram FN-NBRI
+    url: https://www.gov.uk/government/publications/nutrient-analysis-of-cows-milk-sampling-and-analytical-report/nutrient-analysis-of-cows-milk-sampling-and-analytical-report
+    kind: official-analysis-overlay
+    licence:
+      name: Open Government Licence v3.0
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    status: imported-reviewed-matches
+    note: "Raw official report and ODS, URL/checksum/attribution in data/raw/uk-milk-2022-23/MANIFEST.json; scope and exceptions in docs/OVERLAY_IMPORT_REPORT.md."
+
+  - id: uk-beef-2024
+    name: Beef analysis sampled 2024
+    publisher: DHSC/OHID; Quadram FN-NBRI
+    url: https://www.gov.uk/government/publications/nutrient-analysis-of-beef/nutrient-analysis-of-beef-main-report
+    kind: official-analysis-overlay
+    licence:
+      name: Open Government Licence v3.0
+      commercial_use: allowed
+      redistribution: allowed
+      attribution_required: true
+    status: imported-reviewed-matches
+    note: "Raw official report and ODS, URL/checksum/attribution in data/raw/uk-beef-2024/MANIFEST.json; scope and exceptions in docs/OVERLAY_IMPORT_REPORT.md."

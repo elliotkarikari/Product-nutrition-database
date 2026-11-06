@@ -1,0 +1,1400 @@
+{
+  "Macronutrients:4": {
+    "code": "WATER",
+    "label": "Water (g per 100g)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Macronutrients:5": {
+    "code": "TOTNIT",
+    "label": "Total nitrogen (g per 100g)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Macronutrients:6": {
+    "code": "FACTOR:Nitrogen conversion factor",
+    "label": "Nitrogen conversion factor",
+    "unit": null,
+    "basis": "food_factor"
+  },
+  "Macronutrients:7": {
+    "code": "BEEF:fatty_acid_conversion_factor",
+    "label": "Fatty acid conversion factor [note 1]",
+    "unit": null,
+    "basis": "food_factor"
+  },
+  "Macronutrients:8": {
+    "code": "PROT",
+    "label": "Protein (g per 100g) [note 2]",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Macronutrients:9": {
+    "code": "FAT",
+    "label": "Total fat (g per 100g) [note 3]",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Macronutrients:10": {
+    "code": "KCALS",
+    "label": "Energy (kcal per 100g food) [note 4]",
+    "unit": "kcal",
+    "basis": "per_100g"
+  },
+  "Macronutrients:11": {
+    "code": "KJ",
+    "label": "Energy (kJ per 100g food) [note 5]",
+    "unit": "kJ",
+    "basis": "per_100g"
+  },
+  "Macronutrients:17": {
+    "code": "CHOL",
+    "label": "Cholesterol (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:4": {
+    "code": "SATFAC",
+    "label": "Saturated fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:5": {
+    "code": "SATFOD",
+    "label": "Saturated fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:6": {
+    "code": "TOTn6PFAC",
+    "label": "Total n-6 polyunsaturated fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:7": {
+    "code": "TOTn6PFOD",
+    "label": "Total n-6 polyunsaturated fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:8": {
+    "code": "TOTn3PFAC",
+    "label": "Total n-3 polyunsaturated fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:9": {
+    "code": "TOTn3PFOD",
+    "label": "Total n-3 polyunsaturated fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:10": {
+    "code": "MONOFACc",
+    "label": "cis-Monounsaturated fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:11": {
+    "code": "MONOFODc",
+    "label": "cis-Monounsaturated fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:12": {
+    "code": "MONOFAC",
+    "label": "Monounsaturated fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:13": {
+    "code": "MONOFOD",
+    "label": "Monounsaturated fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:14": {
+    "code": "POLYFACc",
+    "label": "cis-Polyunsaturated fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:15": {
+    "code": "POLYFODc",
+    "label": "cis-Polyunsaturated fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:16": {
+    "code": "POLYFAC",
+    "label": "Polyunsaturated fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:17": {
+    "code": "POLYFOD",
+    "label": "Polyunsaturated fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:18": {
+    "code": "SATFACx6",
+    "label": "Saturated fatty acids excluding branch (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:19": {
+    "code": "SATFODx6",
+    "label": "Saturated fatty acids excluding branch (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:20": {
+    "code": "TOTBRFAC",
+    "label": "Total branched chain (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:21": {
+    "code": "TOTBRFOD",
+    "label": "Total branched chain (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Total_fatty_acids:22": {
+    "code": "FACTRANS",
+    "label": "Total Trans fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "Total_fatty_acids:23": {
+    "code": "FODTRANS",
+    "label": "Total Trans fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "Inorganics:4": {
+    "code": "NA",
+    "label": "Sodium (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Inorganics:5": {
+    "code": "K",
+    "label": "Potassium (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Inorganics:6": {
+    "code": "CA",
+    "label": "Calcium (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Inorganics:7": {
+    "code": "MG",
+    "label": "Magensium (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Inorganics:8": {
+    "code": "P",
+    "label": "Phosphorus (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Inorganics:9": {
+    "code": "FE",
+    "label": "Iron (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Inorganics:10": {
+    "code": "ZN",
+    "label": "Zinc (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Inorganics:11": {
+    "code": "SE",
+    "label": "Selenium (μg per 100g)",
+    "unit": "µg",
+    "basis": "per_100g"
+  },
+  "Inorganics:12": {
+    "code": "I",
+    "label": "Iodine (μg per 100g)",
+    "unit": "µg",
+    "basis": "per_100g"
+  },
+  "Vitamins:4": {
+    "code": "25OHD3",
+    "label": "25-hydroxy vitamin D3 (µg per 100g)",
+    "unit": "µg",
+    "basis": "per_100g"
+  },
+  "Vitamins:5": {
+    "code": "VITD3",
+    "label": "Cholecalciferol (vitamin D3) (µg per 100g)",
+    "unit": "µg",
+    "basis": "per_100g"
+  },
+  "Vitamins:6": {
+    "code": "BEEF:VITD_activity_2.5",
+    "label": "Total vitamin D activity (D₃ + 2.5 × 25(OH)D₃) (µg per 100g) [note 1]",
+    "unit": "µg",
+    "basis": "per_100g"
+  },
+  "Vitamins:7": {
+    "code": "ATOPH",
+    "label": "alpha-Tocopherol (mg per 100g) [note 2]",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Vitamins:8": {
+    "code": "VITE",
+    "label": "Vitamin E (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Vitamins:9": {
+    "code": "THIA",
+    "label": "Thiamin (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Vitamins:10": {
+    "code": "RIBO",
+    "label": "Riboflavin (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Vitamins:11": {
+    "code": "NIAC",
+    "label": "Niacin (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Vitamins:12": {
+    "code": "TRYP60",
+    "label": "Tryptophan/ 60 (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Vitamins:13": {
+    "code": "NIACEQU",
+    "label": "Niacin equivalent (mg per 100g) [note 3]",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Vitamins:14": {
+    "code": "VITB6",
+    "label": "Vitamin B6 (mg per 100g)",
+    "unit": "mg",
+    "basis": "per_100g"
+  },
+  "Vitamins:15": {
+    "code": "VITB12",
+    "label": "Vitamin B12 (µg per 100g)",
+    "unit": "µg",
+    "basis": "per_100g"
+  },
+  "Vitamins:16": {
+    "code": "FOLT",
+    "label": "Folate (µg per 100g)",
+    "unit": "µg",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_FA:4": {
+    "code": "FAC4:0",
+    "label": "C4:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:5": {
+    "code": "BEEF:SFA_per_100g_FA:5",
+    "label": "C5:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:6": {
+    "code": "FAC6:0",
+    "label": "C6:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:7": {
+    "code": "BEEF:SFA_per_100g_FA:7",
+    "label": "C7:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:8": {
+    "code": "FAC8:0",
+    "label": "C8:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:9": {
+    "code": "BEEF:SFA_per_100g_FA:9",
+    "label": "C9:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:10": {
+    "code": "FAC10:0",
+    "label": "C10:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:11": {
+    "code": "FAC12:0",
+    "label": "C12:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:12": {
+    "code": "FAC12:0xb",
+    "label": "C12:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:13": {
+    "code": "FAC13:0",
+    "label": "C13:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:14": {
+    "code": "FAC13:0xb",
+    "label": "C13:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:15": {
+    "code": "FAC14:0",
+    "label": "C14:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:16": {
+    "code": "FAC14:0xb",
+    "label": "C14:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:17": {
+    "code": "BEEF:SFA_per_100g_FA:17",
+    "label": "C14:0 iso 12 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:18": {
+    "code": "FAC15:0",
+    "label": "C15:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:19": {
+    "code": "FAC15:0xb",
+    "label": "C15:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:20": {
+    "code": "FAC16:0",
+    "label": "C16:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:21": {
+    "code": "FAC16:0xb",
+    "label": "C16:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:22": {
+    "code": "FAC17:0",
+    "label": "C17:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:23": {
+    "code": "FAC17:0xb",
+    "label": "C17:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:24": {
+    "code": "FAC18:0",
+    "label": "C18:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:25": {
+    "code": "FAC18:0xb",
+    "label": "C18:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:26": {
+    "code": "FAC20:0",
+    "label": "C20:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:27": {
+    "code": "FAC20:0xb",
+    "label": "C20:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:28": {
+    "code": "FAC22:0",
+    "label": "C22:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:29": {
+    "code": "FAC22:0xb",
+    "label": "C22:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:30": {
+    "code": "FAC24:0",
+    "label": "C24:0 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:31": {
+    "code": "FAC24:0xb",
+    "label": "C24:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_FA:32": {
+    "code": "FAC25:0xb",
+    "label": "C25:0 ex Br (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "SFA_per_100g_Fd:4": {
+    "code": "FOD4:0",
+    "label": "C4:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:5": {
+    "code": "BEEF:SFA_per_100g_Fd:5",
+    "label": "C5:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:6": {
+    "code": "FOD6:0",
+    "label": "C6:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:7": {
+    "code": "BEEF:SFA_per_100g_Fd:7",
+    "label": "C7:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:8": {
+    "code": "FOD8:0",
+    "label": "C8:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:9": {
+    "code": "BEEF:SFA_per_100g_Fd:9",
+    "label": "C9:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:10": {
+    "code": "FOD10:0",
+    "label": "C10:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:11": {
+    "code": "FOD12:0",
+    "label": "C12:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:12": {
+    "code": "FOD12:0xb",
+    "label": "C12:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:13": {
+    "code": "FOD13:0",
+    "label": "C13:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:14": {
+    "code": "FOD13:0xb",
+    "label": "C13:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:15": {
+    "code": "FOD14:0",
+    "label": "C14:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:16": {
+    "code": "FOD14:0xb",
+    "label": "C14:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:17": {
+    "code": "BEEF:SFA_per_100g_Fd:17",
+    "label": "C14:0 iso 12 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:18": {
+    "code": "FOD15:0",
+    "label": "C15:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:19": {
+    "code": "FOD15:0xb",
+    "label": "C15:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:20": {
+    "code": "FOD16:0",
+    "label": "C16:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:21": {
+    "code": "FOD16:0xb",
+    "label": "C16:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:22": {
+    "code": "FOD17:0",
+    "label": "C17:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:23": {
+    "code": "FOD17:0xb",
+    "label": "C17:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:24": {
+    "code": "FOD18:0",
+    "label": "C18:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:25": {
+    "code": "FOD18:0xb",
+    "label": "C18:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:26": {
+    "code": "FOD20:0",
+    "label": "C20:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:27": {
+    "code": "FOD20:0xb",
+    "label": "C20:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:28": {
+    "code": "FOD22:0",
+    "label": "C22:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:29": {
+    "code": "FOD22:0xb",
+    "label": "C22:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:30": {
+    "code": "FOD24:0",
+    "label": "C24:0 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:31": {
+    "code": "FOD24:0xb",
+    "label": "C24:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "SFA_per_100g_Fd:32": {
+    "code": "FOD25:0xb",
+    "label": "C25:0 ex Br (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_FA:4": {
+    "code": "FAC10:1",
+    "label": "C10:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:5": {
+    "code": "FAC10:1c",
+    "label": "cis C10:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:6": {
+    "code": "FAC12:1",
+    "label": "C12:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:7": {
+    "code": "FAC12:1c",
+    "label": "cis C12:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:8": {
+    "code": "FAC14:1",
+    "label": "C14:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:9": {
+    "code": "FAC14:1c",
+    "label": "cis C14:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:10": {
+    "code": "FAC15:1",
+    "label": "C15:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:11": {
+    "code": "FAC15:1c",
+    "label": "cis C15:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:12": {
+    "code": "FAC16:1",
+    "label": "C16:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:13": {
+    "code": "FAC16:1c",
+    "label": "cis C16:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:14": {
+    "code": "BEEF:MUFA_per_100g_FA:14",
+    "label": "cis C16:1n7 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:15": {
+    "code": "FAC17:1",
+    "label": "C17:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:16": {
+    "code": "FAC17:1c",
+    "label": "cis C17:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:17": {
+    "code": "FAC18:1",
+    "label": "C18:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:18": {
+    "code": "FAC18:1c",
+    "label": "cis C18:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:19": {
+    "code": "BEEF:MUFA_per_100g_FA:19",
+    "label": "cis C18:1n-6 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:20": {
+    "code": "BEEF:MUFA_per_100g_FA:20",
+    "label": "trans C18:1n-6 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:21": {
+    "code": "FAC18:1n7",
+    "label": "cis/trans C18:1n-7 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:22": {
+    "code": "BEEF:MUFA_per_100g_FA:22",
+    "label": "cis C18:1n-7 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:23": {
+    "code": "BEEF:MUFA_per_100g_FA:23",
+    "label": "trans C18:1n-7 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:24": {
+    "code": "FAC18:1n9",
+    "label": "cis/trans C18:1n-9 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:25": {
+    "code": "BEEF:MUFA_per_100g_FA:25",
+    "label": "cis C18:1n-9 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:26": {
+    "code": "BEEF:MUFA_per_100g_FA:26",
+    "label": "trans C18:1n-9 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:27": {
+    "code": "BEEF:MUFA_per_100g_FA:27",
+    "label": "trans C18:1n-11 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:28": {
+    "code": "FAC20:1",
+    "label": "C20:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:29": {
+    "code": "FAC20:1c",
+    "label": "cis C20:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:30": {
+    "code": "BEEF:MUFA_per_100g_FA:30",
+    "label": "cis n-9 C20:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:31": {
+    "code": "BEEF:MUFA_per_100g_FA:31",
+    "label": "cis C20:1 n11 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:32": {
+    "code": "FAC22:1",
+    "label": "C22:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:33": {
+    "code": "FAC22:1c",
+    "label": "cis C22:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:34": {
+    "code": "BEEF:MUFA_per_100g_FA:34",
+    "label": "cis n-11 C22:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:35": {
+    "code": "FAC22:1n11",
+    "label": "cis/trans C22:1n-11 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:36": {
+    "code": "FAC22:1n9",
+    "label": "cis/trans C22:1n-9 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:37": {
+    "code": "FAC24:1",
+    "label": "C24:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:38": {
+    "code": "FAC24:1c",
+    "label": "cis C24:1 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_FA:39": {
+    "code": "BEEF:MUFA_per_100g_FA:39",
+    "label": "trans monounsaturated fatty acids (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "MUFA_per_100g_Fd:4": {
+    "code": "FOD10:1",
+    "label": "C10:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:5": {
+    "code": "FOD10:1c",
+    "label": "cis C10:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:6": {
+    "code": "FOD12:1",
+    "label": "C12:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:7": {
+    "code": "FOD12:1c",
+    "label": "cis C12:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:8": {
+    "code": "FOD14:1",
+    "label": "C14:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:9": {
+    "code": "FOD14:1c",
+    "label": "cis C14:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:10": {
+    "code": "FOD15:1",
+    "label": "C15:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:11": {
+    "code": "FOD15:1c",
+    "label": "cis C15:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:12": {
+    "code": "FOD16:1",
+    "label": "C16:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:13": {
+    "code": "FOD16:1c",
+    "label": "cis C16:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:14": {
+    "code": "BEEF:MUFA_per_100g_Fd:14",
+    "label": "cis C16:1n7 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:15": {
+    "code": "FOD17:1",
+    "label": "C17:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:16": {
+    "code": "FOD17:1c",
+    "label": "cis C17:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:17": {
+    "code": "FOD18:1",
+    "label": "C18:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:18": {
+    "code": "FOD18:1c",
+    "label": "cis C18:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:19": {
+    "code": "BEEF:MUFA_per_100g_Fd:19",
+    "label": "cis C18:1n-6 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:20": {
+    "code": "BEEF:MUFA_per_100g_Fd:20",
+    "label": "trans C18:1n-6 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:21": {
+    "code": "FOD18:1n7",
+    "label": "cis/trans C18:1n-7 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:22": {
+    "code": "BEEF:MUFA_per_100g_Fd:22",
+    "label": "cis C18:1n-7 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:23": {
+    "code": "BEEF:MUFA_per_100g_Fd:23",
+    "label": "trans C18:1n-7 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:24": {
+    "code": "FOD18:1n9",
+    "label": "cis/trans C18:1n-9 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:25": {
+    "code": "BEEF:MUFA_per_100g_Fd:25",
+    "label": "cis C18:1n-9 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:26": {
+    "code": "BEEF:MUFA_per_100g_Fd:26",
+    "label": "trans C18:1n-9 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:27": {
+    "code": "BEEF:MUFA_per_100g_Fd:27",
+    "label": "trans C18:1n-11 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:28": {
+    "code": "FOD20:1",
+    "label": "C20:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:29": {
+    "code": "FOD20:1c",
+    "label": "cis C20:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:30": {
+    "code": "BEEF:MUFA_per_100g_Fd:30",
+    "label": "cis n-9 C20:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:31": {
+    "code": "BEEF:MUFA_per_100g_Fd:31",
+    "label": "cis C20:1 n11 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:32": {
+    "code": "FOD22:1",
+    "label": "C22:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:33": {
+    "code": "FOD22:1c",
+    "label": "cis C22:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:34": {
+    "code": "BEEF:MUFA_per_100g_Fd:34",
+    "label": "cis n-11 C22:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:35": {
+    "code": "FOD22:1n11",
+    "label": "cis/trans C22:1n-11 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:36": {
+    "code": "FOD22:1n9",
+    "label": "cis/trans C22:1n-9 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:37": {
+    "code": "FOD24:1",
+    "label": "C24:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:38": {
+    "code": "FOD24:1c",
+    "label": "cis C24:1 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "MUFA_per_100g_Fd:39": {
+    "code": "BEEF:MUFA_per_100g_Fd:39",
+    "label": "trans monounsaturated fatty acids (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_FA:4": {
+    "code": "FAC18:2",
+    "label": "C18:2 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:5": {
+    "code": "FAC18:2cn6",
+    "label": "cis n-6 C18:2 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:6": {
+    "code": "BEEF:PUFA_per_100g_FA:6",
+    "label": "trans n-6 C18:2 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:7": {
+    "code": "BEEF:PUFA_per_100g_FA:7",
+    "label": "C18:2 Conj (CLA) (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:8": {
+    "code": "FAC18:3",
+    "label": "C18:3 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:9": {
+    "code": "FAC18:3cn3",
+    "label": "cis n-3 C18:3 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:10": {
+    "code": "FAC18:3cn6",
+    "label": "cis n-6 C18:3 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:11": {
+    "code": "FAC18:4",
+    "label": "C18:4 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:12": {
+    "code": "FAC18:4cn3",
+    "label": "cis n-3 C18:4 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:13": {
+    "code": "FAC20:2",
+    "label": "C20:2 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:14": {
+    "code": "FAC20:2cn6",
+    "label": "cis n-6 C20:2 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:15": {
+    "code": "FAC20:3",
+    "label": "C20:3 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:16": {
+    "code": "FAC20:3cn6",
+    "label": "cis n-6 C20:3 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:17": {
+    "code": "FAC20:4",
+    "label": "C20:4 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:18": {
+    "code": "FAC20:4cn6",
+    "label": "cis n-6 C20:4 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:19": {
+    "code": "FAC20:5",
+    "label": "C20:5 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:20": {
+    "code": "FAC20:5cn3",
+    "label": "cis n-3 C20:5 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:21": {
+    "code": "FAC22:2",
+    "label": "C22:2 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:22": {
+    "code": "FAC22:2cn6",
+    "label": "cis n-6 C22:2 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:23": {
+    "code": "FAC22:4",
+    "label": "C22:4 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:24": {
+    "code": "FAC22:4cn6",
+    "label": "cis n-6 C22:4 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:25": {
+    "code": "FAC22:5",
+    "label": "C22:5 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:26": {
+    "code": "FAC22:5cn3",
+    "label": "cis n-3 C22:5 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:27": {
+    "code": "FAC22:6",
+    "label": "C22:6 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:28": {
+    "code": "FAC22:6cn3",
+    "label": "cis n-3 C22:6 (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_FA:29": {
+    "code": "BEEF:PUFA_per_100g_FA:29",
+    "label": "trans polyunsatsaturated fatty acid (g per 100g fatty acid)",
+    "unit": "g",
+    "basis": "per_100g_fatty_acids"
+  },
+  "PUFA_per_100g_Fd:4": {
+    "code": "FOD18:2",
+    "label": "C18:2 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:5": {
+    "code": "FOD18:2cn6",
+    "label": "cis n-6 C18:2 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:6": {
+    "code": "BEEF:PUFA_per_100g_Fd:6",
+    "label": "trans n-6 C18:2 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:7": {
+    "code": "BEEF:PUFA_per_100g_Fd:7",
+    "label": "C18:2 Conj (CLA) (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:8": {
+    "code": "FOD18:3",
+    "label": "C18:3 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:9": {
+    "code": "FOD18:3cn3",
+    "label": "cis n-3 C18:3 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:10": {
+    "code": "FOD18:3cn6",
+    "label": "cis n-6 C18:3 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:11": {
+    "code": "FOD18:4",
+    "label": "C18:4 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:12": {
+    "code": "FOD18:4cn3",
+    "label": "cis n-3 C18:4 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:13": {
+    "code": "FOD20:2",
+    "label": "C20:2 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:14": {
+    "code": "FOD20:2cn6",
+    "label": "cis n-6 C20:2 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:15": {
+    "code": "FOD20:3",
+    "label": "C20:3 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:16": {
+    "code": "FOD20:3cn6",
+    "label": "cis n-6 C20:3 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:17": {
+    "code": "FOD20:4",
+    "label": "C20:4 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:18": {
+    "code": "FOD20:4cn6",
+    "label": "cis n-6 C20:4 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:19": {
+    "code": "FOD20:5",
+    "label": "C20:5 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:20": {
+    "code": "FOD20:5cn3",
+    "label": "cis n-3 C20:5 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:21": {
+    "code": "FOD22:2",
+    "label": "C22:2 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:22": {
+    "code": "FOD22:2cn6",
+    "label": "cis n-6 C22:2 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:23": {
+    "code": "FOD22:4",
+    "label": "C22:4 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:24": {
+    "code": "FOD22:4cn6",
+    "label": "cis n-6 C22:4 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:25": {
+    "code": "FOD22:5",
+    "label": "C22:5 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:26": {
+    "code": "FOD22:5cn3",
+    "label": "cis n-3 C22:5 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:27": {
+    "code": "FOD22:6",
+    "label": "C22:6 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:28": {
+    "code": "FOD22:6cn3",
+    "label": "cis n-3 C22:6 (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  },
+  "PUFA_per_100g_Fd:29": {
+    "code": "BEEF:PUFA_per_100g_Fd:29",
+    "label": "trans polyunsatsaturated fatty acid (g per 100g food)",
+    "unit": "g",
+    "basis": "per_100g"
+  }
+}

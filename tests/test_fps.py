@@ -119,14 +119,25 @@ class TestReconciliationReport(unittest.TestCase):
         transcription_rows = [r for r in rows if r["transcription_row"]]
         self.assertEqual(len(transcription_rows), 2652)
         self.assertEqual(Counter(r["result"] for r in rows), {
-            "agree (same words, same weight)": 941,
-            "agree (words contained, same weight)": 165,
-            "OCR-character difference only": 77,
-            "one side has no weight": 21,
-            "DIFFERENT WEIGHT, same food and portion": 6,
-            "not located in extraction": 1442,
-            "only in extraction": 1246,
+            "agree (same words, same weight)": 793,
+            "agree (reviewed food and portion)": 3,
+            "OCR-character difference only": 58,
+            "one side has no weight": 19,
+            "DIFFERENT WEIGHT, same food and portion": 2,
+            "not located in extraction": 1765,
+            "only in extraction": 1550,
+            "ambiguous extraction matches": 8,
+            "ambiguous portion; book check required": 4,
         })
+        matched = [(r["group"], r["extraction_row"]) for r in transcription_rows if r["extraction_row"]]
+        self.assertEqual(len(matched), len(set(matched)))
+        for r in transcription_rows:
+            self.assertEqual(json.loads(r["identity_key"]), [r["group"], r["transcription_brand"].strip().casefold(),
+                r["transcription_food"].strip().casefold(), r["transcription_portion"].strip().casefold()])
+        reviews = [r for r in rows if r["result"] == "agree (reviewed food and portion)"]
+        self.assertEqual({r["extraction_row"] for r in reviews}, {"1727", "1731", "2527"})
+        self.assertTrue(all(r["transcription_weight"] == r["extraction_weight"] == "55g" for r in reviews))
+
 
 
 if __name__ == "__main__":

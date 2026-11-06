@@ -1,0 +1,21 @@
+{
+  "source_id": "uk-beef-2024",
+  "dataset": "Official nutrient analysis: beef",
+  "edition": "2026-10-02",
+  "publisher": "DHSC/OHID; Quadram FN-NBRI",
+  "retrieved": "2026-11-06T03:54:26.182280+00:00",
+  "licence": "Open Government Licence v3.0",
+  "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. DHSC/OHID; analysis coordinated by Quadram FN-NBRI.",
+  "files": [
+    {
+      "name": "report.html",
+      "url": "https://www.gov.uk/government/publications/nutrient-analysis-of-beef/nutrient-analysis-of-beef-main-report",
+      "sha256": "2a1910fc87c7ba7a7b14eea18b387d9371358cff4feed0c3f2ac4751838c8c82"
+    },
+    {
+      "name": "results.ods",
+      "url": "https://assets.publishing.service.gov.uk/media/6ab534ada9c3d267bccceebd/nutrient-analysis-of-beef-results.ods",
+      "sha256": "608305c0acf6e3994c99a6259484cab4bddf6b34857109ff3512f29698676596"
+    }
+  ]
+}

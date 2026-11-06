@@ -12,12 +12,18 @@ from typing import Any
 
 from .cofid import CoFIDImport, import_cofid
 from .model import DatasetRelease, Food, NutrientObservation
+from .overlays import import_overlays, apply_overlays
 
 
 @lru_cache(maxsize=1)
 def cofid_release() -> CoFIDImport:
     """The verified CoFID 2021 import, built once per process (about 4 s)."""
     return import_cofid()
+
+
+@lru_cache(maxsize=1)
+def overlay_release():
+    return import_overlays(cofid_release())
 
 
 @lru_cache(maxsize=1)
@@ -29,7 +35,7 @@ def _index() -> tuple[dict[str, list[Food]], dict[str, list[Food]], dict[str, li
         by_code.setdefault(food.source_code, []).append(food)
         by_name.setdefault(food.name, []).append(food)
     by_food: dict[str, list[NutrientObservation]] = {}
-    for observation in data.observations:
+    for observation in apply_overlays(data.observations, overlay_release().observations):
         by_food.setdefault(observation.food.food_id, []).append(observation)
     return by_code, by_name, by_food
 
@@ -51,6 +57,16 @@ def _release_dict(release: DatasetRelease) -> dict[str, str]:
 def _observation_dict(observation: NutrientObservation) -> dict[str, Any]:
     definition = observation.definition
     return {
+        "observation_id": observation.observation_id,
+        "release": _release_dict(observation.release),
+        "period_start": observation.period_start,
+        "period_end": observation.period_end,
+        "analysis_period": observation.analysis_period,
+        "source_locator": observation.source_locator,
+        "source_food": observation.source_food or observation.food.name,
+        "confidence": observation.confidence,
+        "supersedes": observation.supersedes,
+        "superseded_by": observation.superseded_by,
         "nutrient_code": definition.code,
         "nutrient_label": definition.label,
         "unit": definition.unit,
@@ -110,6 +126,7 @@ def lookup_cofid(*, code: str | None = None, name: str | None = None) -> dict[st
     return {
         "query": query,
         "release": _release_dict(cofid_release().release),
+        "data_release": "uk-cofid-2021+milk-2022-23+beef-2024-v1",
         "matches": [_food_dict(food, by_food.get(food.food_id, [])) for food in foods],
         "note": note,
     }

@@ -1,23 +1,29 @@
 # Memory index
 
-- [INDEX.md](INDEX.md) — One entry for every memory file.
+- [INDEX.md](INDEX.md) — Index of all memory files.
 - [build_memory.md](build_memory.md) — ShelfScale build memory
 - [decisions/commit-as-elliot.md](decisions/commit-as-elliot.md) — Commit identity
 - [decisions/defensible-data.md](decisions/defensible-data.md) — Defensible data
 - [decisions/delivery-means-pushed.md](decisions/delivery-means-pushed.md) — Delivery means pushed and read back
+- [decisions/finite-inputs.md](decisions/finite-inputs.md) — Finite inputs and bounded request parsing
 - [decisions/fps-publication.md](decisions/fps-publication.md) — Food Portion Sizes publication
+- [decisions/fps-reconciliation.md](decisions/fps-reconciliation.md) — FPS reconciliation identity
 - [decisions/free-sugars.md](decisions/free-sugars.md) — Free-sugars honesty
+- [decisions/fvn-2018-rulings.md](decisions/fvn-2018-rulings.md) — FVN derivation and the Phase 4 rulings
 - [decisions/fvn-derivation.md](decisions/fvn-derivation.md) — FVN derivation
 - [decisions/memory-lifecycle.md](decisions/memory-lifecycle.md) — Shared memory lifecycle
 - [decisions/no-rounding-before-banding.md](decisions/no-rounding-before-banding.md) — Never round before banding
+- [decisions/official-overlays.md](decisions/official-overlays.md) — Official milk and beef overlays
 - [decisions/vj-never-publish.md](decisions/vj-never-publish.md) — Never publish VJ content
+- [verification/2026-11-05-audit-fixes.md](verification/2026-11-05-audit-fixes.md) — Audit fix verification
+- [verification/2026-11-05-audit-tests.txt](verification/2026-11-05-audit-tests.txt) — Verification output.
+- [verification/2026-11-05-codex-audit.md](verification/2026-11-05-codex-audit.md) — Independent audit event
 - [verification/2026-11-05-codex-baseline.md](verification/2026-11-05-codex-baseline.md) — Codex baseline verification
 - [verification/2026-11-05-codex-memory-check.md](verification/2026-11-05-codex-memory-check.md) — Memory round verification
-- [verification/2026-11-05-codex-memory-tests.txt](verification/2026-11-05-codex-memory-tests.txt) — Verbose unittest output; 103 tests passed with socket warnings.
-- [verification/2026-11-05-codex-tests.txt](verification/2026-11-05-codex-tests.txt) — Verbose unittest output; 103 tests passed with socket warnings.
+- [verification/2026-11-05-codex-memory-tests.txt](verification/2026-11-05-codex-memory-tests.txt) — Verification output.
+- [verification/2026-11-05-codex-tests.txt](verification/2026-11-05-codex-tests.txt) — Verification output.
+- [verification/2026-11-05-fixes-tests.txt](verification/2026-11-05-fixes-tests.txt) — Verification output.
+- [verification/2026-11-05-phase4-tests.txt](verification/2026-11-05-phase4-tests.txt) — Verification output.
+- [verification/2026-11-05-phase4.md](verification/2026-11-05-phase4.md) — Phase 4 verification
+- [verification/2026-11-05-rocky-memory-round.md](verification/2026-11-05-rocky-memory-round.md) — Rocky memory-round verification — reconstructed
 - [verification/2026-11-05-rocky-record-gap.md](verification/2026-11-05-rocky-record-gap.md) — Rocky read-back evidence gap
-- [verification/2026-11-05-codex-audit.md](verification/2026-11-05-codex-audit.md) — Independent audit and scope.
-- [verification/2026-11-05-audit-tests.txt](verification/2026-11-05-audit-tests.txt) — Baseline 103-test audit log.
-- [decisions/finite-inputs.md](decisions/finite-inputs.md) — Numeric and request boundary decision.
-- [verification/2026-11-05-audit-fixes.md](verification/2026-11-05-audit-fixes.md) — Audit fix checks and repaired failures.
-- [verification/2026-11-05-fixes-tests.txt](verification/2026-11-05-fixes-tests.txt) — 111-test passing log.

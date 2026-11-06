@@ -36,6 +36,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from .fvn import TUBERS_2018
 from .validation import number
 from .lookup import lookup_cofid
 from .npm2018 import MODEL_ID as NPM2018_ID
@@ -81,7 +82,7 @@ def assess_cofid_food(food: dict[str, Any], *, fvn_percent: float | None,
                       portion_g: float | None, free_sugars_g: float | None = None,
                       fvns_g: float | None = None) -> dict[str, Any]:
     """Assessment block for one CoFID food (as returned by lookup_cofid)."""
-    by_code = {o["nutrient_code"]: o for o in food["observations"]}
+    by_code = {o["nutrient_code"]: o for o in food["observations"] if o["status"] == "current"}
     group = food["group"]
     is_drink = _is_drink(group)
     inputs: dict[str, dict[str, Any]] = {}
@@ -163,31 +164,39 @@ def assess_cofid_food(food: dict[str, Any], *, fvn_percent: float | None,
         for k in amounts:
             values[k] = values[k] / gravity
 
+    for entry in inputs.values():
+        observation = by_code.get(entry.get("cofid_code"))
+        if observation:
+            entry["provenance"] = observation
+
     npm2018 = _npm2018_for_food(by_code, values, inputs, group=group, is_drink=is_drink,
-                                alcoholic=alcoholic, free_sugars_g=free_sugars_g, fvns_g=fvns_g)
+                                alcoholic=alcoholic, free_sugars_g=free_sugars_g, fvns_g=fvns_g,
+                                food_id=food["food_id"])
     block: dict[str, Any] = {
         "is_drink": is_drink,
         "drink_status": drink_note,
         "inputs": inputs,
+        "review_flags": _review_flags(group, fvn_percent is not None, fvns_g is not None),
         "input_conversion": conversion,
     }
     if missing:
         models = {
             MODEL_ID: {"model": MODEL_ID, "status": "in force", "scorable": False,
-                       "missing_inputs": missing},
+                       "missing_inputs": missing, "inputs": inputs},
             NPM2018_ID: npm2018,
         }
         block.update(models=models, verdict_changes_under_2018=verdict_changes(models))
         return block
     block.update(assess_values(per_100g=values, is_drink=is_drink, per_100ml=per_100ml,
                                portion_g=portion_g, npm2018=npm2018))
+    block["models"][MODEL_ID]["inputs"] = inputs
     return block
 
 
 def _npm2018_for_food(by_code: dict[str, Any], values: dict[str, float],
                       inputs: dict[str, dict[str, Any]], *, group: str | None, is_drink: bool,
                       alcoholic: bool, free_sugars_g: float | None,
-                      fvns_g: float | None) -> dict[str, Any]:
+                      fvns_g: float | None, food_id: str) -> dict[str, Any]:
     """The NPM 2018 block for a CoFID food.
 
     Free sugars honesty rule (Elliot, November 5, 2026): CoFID records total
@@ -200,7 +209,12 @@ def _npm2018_for_food(by_code: dict[str, Any], values: dict[str, float],
             "non-alcoholic drinks only."))
     values_2018 = {k: values[k] for k in ("energy_kj", "saturated_fat_g", "protein_g", "sodium_mg")
                    if k in values}
-    labels = {k: f"CoFID {inputs[k]['cofid_code']} ({inputs[k]['source']})" for k in values_2018}
+    labels = {}
+    for name in values_2018:
+        code = inputs[name]["cofid_code"]
+        source = by_code[code]["source_id"]
+        source_label = "CoFID" if source == "uk-cofid-2021" else source
+        labels[name] = f"{source_label} {code} ({inputs[name]['source']})"
     if free_sugars_g is not None:
         values_2018["free_sugars_g"] = free_sugars_g
     aoac = by_code.get("AOACFIB")
@@ -211,6 +225,9 @@ def _npm2018_for_food(by_code: dict[str, Any], values: dict[str, float],
         values_2018["fibre_nsp_g"] = values["fibre_nsp_g"]    # named as the reason AOAC is missing
     if fvns_g is not None:
         values_2018["fvns_g"] = fvns_g
+    elif inputs["fruit_veg_nuts_percent"]["source"] != "caller_supplied" and food_id in TUBERS_2018:
+        values_2018["fvns_g"] = 0.0
+        labels["fvns_g"] = "excluded_by_guidance (2018 tuber exclusion; reviewed CoFID code)"
     elif "fruit_veg_nuts_percent" in values:
         fvn = inputs["fruit_veg_nuts_percent"]
         if fvn["source"] == "caller_supplied":
@@ -219,6 +236,9 @@ def _npm2018_for_food(by_code: dict[str, Any], values: dict[str, float],
             values_2018["fvns_g"] = values["fruit_veg_nuts_percent"]
             labels["fvns_g"] = f"{fvn['source']} (same CoFID group rule as 2004/05)"
     block = npm2018_block(values_2018, is_drink=is_drink, labels=labels)
+    for name, code in {**_INPUTS, "fibre_aoac_g": "AOACFIB", "salt_g": "NA"}.items():
+        if name in block.get("inputs", {}) and code in by_code:
+            block["inputs"][name]["provenance"] = by_code[code]
     if free_sugars_g is None:
         block["free_sugars_note"] = (
             "CoFID records total sugars, not free sugars. Supply free_sugars_g "
@@ -254,7 +274,7 @@ def lookup_and_assess(payload: dict[str, Any]) -> dict[str, Any]:
                                                free_sugars_g=free_sugars_g, fvns_g=fvns_g)
     result["mode"] = "lookup"
     result["evidence_note"] = (
-        "Values are CoFID 2021 observations with their provenance. Assessment inputs "
+        "Values are CoFID 2021 with reviewed official milk/beef overlays and retained history. Assessment inputs "
         "say where each came from; nothing is estimated."
     )
     return result
@@ -278,3 +298,16 @@ def lookup_bulk(payload: dict[str, Any]) -> dict[str, Any]:
         "results": results,
         "errors": errors,
     }
+
+
+def _review_flags(group: str | None, caller_fvn: bool, caller_fvns: bool) -> list[dict[str, str]]:
+    flags = []
+    if group == "GA" and not caller_fvn:
+        flags.append({"model": MODEL_ID, "reason": "GA includes seeds; seeds do not count under 2004/05. Group-derived 100% retained pending review."})
+    if group == "GA" and not caller_fvns and not caller_fvn:
+        flags.append({"model": NPM2018_ID, "reason": "Seeds count under 2018; review processing and added ingredients before relying on group-derived 100%."})
+    if group == "FA":
+        for model, supplied in ((MODEL_ID, caller_fvn), (NPM2018_ID, caller_fvns or caller_fvn)):
+            if not supplied:
+                flags.append({"model": model, "reason": "FA includes sugared/syrup fruit; group-derived 100% needs ingredient review."})
+    return flags

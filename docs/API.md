@@ -32,7 +32,7 @@ Every assessment and lookup result is scored under two models, side by side:
 - `uk-npm-2004/05`: the model in force (DH technical guidance, January 2011). `status: "in force"`.
 - `uk-npm-2018`: the 2018 model from DHSC's technical guidance, published 27 January 2026. `status: "shadow model, not in force"`. It is not the law; it is shown so a range can be checked against the model the government has consulted on. Rules and sources: `src/shelfscale/npm2018.py`, validated against all 17 of DHSC's worked examples (`tests/test_npm2018.py`).
 
-Each result carries `models`, keyed by model id. Each block has `model`, `status`, `scorable`, and either `score`, `less_healthy`, `a_points`, `c_points`, `total_a`, `total_c`, `protein_counted` and (2004/05 only) `fibre_method`, or `missing_inputs` naming what is missing. The 2018 block also has `inputs`, saying where each 2018 input came from. `verdict_changes_under_2018` is `true` or `false` when both models scored, and `null` when either could not. (This replaces the earlier single-model top-level `score`, `less_healthy` and points fields; there is no compatibility copy.)
+Each result carries `models`, keyed by model id. Each block has `model`, `status`, `scorable`, and either `score`, `less_healthy`, `a_points`, `c_points`, `total_a`, `total_c`, `protein_counted` and `fibre_method`, or `missing_inputs` naming what is missing. The 2018 block also has `inputs`, saying where each 2018 input came from. `verdict_changes_under_2018` is `true` or `false` when both models scored, and `null` when either could not. (This replaces the earlier single-model top-level `score`, `less_healthy` and points fields; there is no compatibility copy.)
 
 What the 2018 model needs, and how ShelfScale gets it:
 
@@ -106,7 +106,7 @@ Response: the query, the CoFID release (source, edition, file URL, retrieval dat
 - Drink status comes from the CoFID group: P (beverages), Q (alcoholic), BH (milk-based drinks), FC (fruit juices). The response says which group decided it.
 - Alcoholic drinks (Q) are per 100 ml in CoFID; they are converted to per 100 g by the food's own CoFID specific gravity, and are not scorable without one. Other drinks have no per-100 ml values in CoFID, so their traffic lights are not assessed.
 - Each model block is either `scorable: false` with `missing_inputs` named, or scored. When 2004/05 is scorable the assessment adds the same traffic-light block as `/v1/assess`.
-- **NPM 2018 in lookup.** CoFID records total sugars, not free sugars, so a CoFID food is not scorable under 2018 unless the caller supplies `free_sugars_g`; the block carries a `free_sugars_note` saying so. Fibre is AOAC (AOACFIB) only. Fruit, vegetables, nuts and seeds follow the same group rule as FVN, or the caller's `fvns_g`. Alcoholic drinks (Q) are outside the 2018 model.
+- **NPM 2018 in lookup.** CoFID records total sugars, not free sugars, so a CoFID food is not scorable under 2018 unless the caller supplies `free_sugars_g`; the block carries a `free_sugars_note` saying so. Fibre is AOAC (AOACFIB) only. Fruit, vegetables, nuts and seeds use the reviewed 2018 tuber exclusion list before group derivation, or the caller's `fvns_g`/labelled FVN fallback. Alcoholic drinks (Q) are outside the 2018 model.
 - Example of a verdict change: 14-834 *Peanuts, roasted and salted*, with `free_sugars_g: 0`, scores 5 (less healthy) under 2004/05 and 1 (not less healthy) under 2018, mainly because AOAC fibre (8.0 g) earns 10 points on the 2018 scale where NSP fibre (6.0 g) earned 5.
 
 ### POST /v1/lookup/bulk
@@ -138,3 +138,9 @@ Response: the query, the CoFID release (source, edition, file URL, retrieval dat
 - **Brands and manufacturers:** scoring their own specification data before a retailer asks, including the NPM 2018 shadow score (needs their free sugars figure).
 
 Numeric inputs must be finite and non-negative; portions and density must be positive. Non-finite JSON constants, invalid body framing and invalid UTF-8 are rejected. Request bodies are limited to 5,000,000 bytes and a 10-second socket timeout. IDs/names in supplied mode must be nonempty strings.
+
+## Official overlays and review flags
+
+Lookup data release `uk-cofid-2021+milk-2022-23+beef-2024-v1` composes reviewed milk and beef values with CoFID. `observations` includes history: select `status: current` for current data. Each observation includes its full release, period, source locator and reciprocal supersession IDs; assessment input `provenance` points to the current observation. The top-level `release` still identifies the base CoFID release. See OVERLAY_IMPORT_REPORT.md for exact match coverage and vitamin D definition differences.
+
+`assessment.review_flags` is a list of model/reason objects. GA flags distinguish the 2004/05 seed exclusion from 2018 seed inclusion; FA flags explain uncertain group-derived percentages. 2018 derives 0 for the 22 reviewed DG tuber/plantain codes in src/shelfscale/fvn.py; 2004/05 outcomes remain unchanged. Caller `fvns_g` takes precedence, then caller `fvn_percent` (explicitly labelled as the 2004/05 definition), then derivation. No total-to-free-sugar substitution occurs.

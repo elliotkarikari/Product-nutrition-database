@@ -1,0 +1,38 @@
+{
+  "[\"ICE-CREAMS AND ICE-LOLLIES\", \"\", \"ice-cream\", \"tub\"]": {
+    "extraction_row": "1593",
+    "previous_extraction_row": "1593",
+    "reason": "Reviewed same food and portion; apparent weight difference remains, physical book not checked.",
+    "transcription_weight": "60g"
+  },
+  "[\"MEAT AND MEAT PRODUCTS\", \"\", \"burgerbites in baked beans, burgerbites\", \"small tin\"]": {
+    "extraction_row": "1727",
+    "previous_extraction_row": "1726",
+    "reason": "Prior comparison to 1726 used the beans component. Following row names the meat component and agrees at 55g; tin context inherited from preceding row.",
+    "transcription_weight": "55g"
+  },
+  "[\"MEAT AND MEAT PRODUCTS\", \"\", \"chickbits, in baked beans, chickbits\", \"small tin\"]": {
+    "extraction_row": "1731",
+    "previous_extraction_row": "1730",
+    "reason": "Prior comparison to 1730 used the beans component. Following row names the meat component and agrees at 55g; tin context inherited from preceding row.",
+    "transcription_weight": "55g"
+  },
+  "[\"MEAT AND MEAT PRODUCTS\", \"\", \"pork chops, edible portion\", \"\"]": {
+    "extraction_row": null,
+    "previous_extraction_row": "1946",
+    "reason": "Pork chops has multiple edible-portion rows (1946 85g, 1950 140g, 1953 hOg). Transcription gives no chop subtype; cannot establish the matching portion. Book check required.",
+    "transcription_weight": "110g"
+  },
+  "[\"MISCELLANEOUS\", \"\", \"stock cube\", \"oxo, 1\"]": {
+    "extraction_row": "2099",
+    "previous_extraction_row": "2099",
+    "reason": "Reviewed same food and portion; apparent weight difference remains, physical book not checked.",
+    "transcription_weight": "6g"
+  },
+  "[\"VEGETABLES\", \"\", \"baked beans, with sausage, sausage\", \"small can\"]": {
+    "extraction_row": "2527",
+    "previous_extraction_row": "2526",
+    "reason": "Prior comparison to 2526 used the beans component. Following row names the meat component and agrees at 55g; tin context inherited from preceding row.",
+    "transcription_weight": "55g"
+  }
+}

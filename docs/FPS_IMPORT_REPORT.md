@@ -26,27 +26,29 @@ CoFID matching is exact name only. The legacy matching outputs on `main` were no
 
 Script: `scripts/reconcile_fps.py`; full row-by-row output: `docs/fps_reconciliation.csv`. The extraction (`FoodPortionSizes_PDF.csv` on `main`) is never an import source; where the two disagree the transcription is used.
 
+The reconciliation is now keyed by `(group, brand, food name, portion)` (JSON in `identity_key`), never by transcription row number. Row numbers remain source locators. Word order and repeated tokens are preserved; ambiguous candidates remain unresolved and an extraction row cannot be reused. Explicit reviewed matches live in `data/reconciliation/fps-review.json`. Removing the old word-set/subset heuristics deliberately reduces apparent coverage.
+
 | Result | Rows |
-|---|---|
-| Agree: same words, same weight | 941 |
-| Agree: words contained in one extraction record, same weight | 165 |
-| Weight differs only by OCR characters (I or l for 1, O for 0, m1 for ml) | 77 |
-| Same words, but one side has no weight | 21 |
-| **Different weight for the same food and portion** | **6** |
-| Transcription row not located in the extraction | 1,442 |
-| Extraction record with a weight not claimed by any transcription row | 1,246 |
+|---|---:|
+| Same ordered words and weight | 793 |
+| Reviewed food/portion match, same weight | 3 |
+| OCR-character weight difference | 58 |
+| One side has no weight | 19 |
+| Apparent weight disagreement | 2 |
+| Ambiguous extraction matches | 8 |
+| Ambiguous pork portion | 4 |
+| Transcription not located | 1,765 |
+| Unclaimed extraction weights | 1,550 |
 
-The six real disagreements (transcription weight used):
+## Review of the six previously reported disagreements
 
-| Transcription row | Food and portion | Transcription | Extraction |
-|---|---|---|---|
-| 1411 | Ice-cream, tub | 60g | 61g (row 1593) |
-| 1566 | Burgerbites in baked beans, burgerbites, small tin | 55g | 170g (row 1726) |
-| 1570 | Chickbits, in baked beans, chickbits, small tin | 55g | 170g (row 1730) |
-| 1770 | Pork chops, edible portion | 110g | 85g (row 1946) |
-| 1915 | Stock cube, Oxo, 1 | 6g | 7g (row 2099) |
-| 2301 | Baked beans, with sausage, sausage, small can | 55g | I70g (row 2526) |
+| Food and portion key | Previously compared | Corrected finding |
+|---|---|---|
+| Ice-cream / tub | 60g vs 61g, extraction 1593 | Apparent difference remains; book check required. |
+| Burgerbites in baked beans, burgerbites / small tin | 55g vs 170g, extraction 1726 | Wrong component: 1726 is beans; following 1727 is burgerbites 55g. Agreement. |
+| Chickbits, in baked beans, chickbits / small tin | 55g vs 170g, extraction 1730 | Wrong component: 1730 is beans; following 1731 is chickbits 55g. Agreement. |
+| Pork chops, edible portion / unspecified | 110g vs 85g, extraction 1946 | Ambiguous subtype. Extraction has multiple edible-portion entries (1946 85g, 1950 140g, 1953 hOg). No defensible unique match; all four transcription entries with this key remain unresolved. |
+| Stock cube / Oxo, 1 | 6g vs 7g, extraction 2099 | Apparent difference remains; book check required. |
+| Baked beans, with sausage, sausage / small can | 55g vs I70g, extraction 2526 | Wrong component: 2526 is beans; following 2527 is sausage 55g. Agreement. |
 
-The three 55g against 170g cases look like the component (the burgerbites, chickbits or sausage in a tin) against the whole tin. Only the book can settle them.
-
-**What this check cannot show.** The transcription shares character-level OCR artefacts with the extraction (for example "m1s" for "mls", "I" for "1", "l00g", and the same "3. 8g"). The two files are therefore not independent: where they agree, they may agree because one was built from the other. The 1,442 "not located" rows are mostly names restructured in the transcription (brand, food and portion split differently from the book's layout), not missing data; the 1,246 unclaimed extraction records are the other side of the same restructuring plus extraction noise. Both lists are in the CSV for checking against the book.
+The previous claim of six real disagreements was unsupported by row context. No transcription/imported weight has changed. Shared OCR artefacts mean agreement is not independent book verification; the extraction remains a check only. Raw extraction SHA256 is pinned in the script and snapshot manifest. Reproduce using the read-only `git show` command in the script, then run the script on that file. The six review decisions use food/portion identities, with extraction rows only as evidence locators.

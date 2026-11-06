@@ -1,0 +1,21 @@
+{
+  "source_id": "uk-milk-2022-23",
+  "dataset": "Official nutrient analysis: cows milk",
+  "edition": "2025-09-17",
+  "publisher": "DHSC/OHID; Quadram FN-NBRI",
+  "retrieved": "2026-11-06T03:54:26.180377+00:00",
+  "licence": "Open Government Licence v3.0",
+  "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. DHSC/OHID; analysis coordinated by Quadram FN-NBRI.",
+  "files": [
+    {
+      "name": "report.html",
+      "url": "https://www.gov.uk/government/publications/nutrient-analysis-of-cows-milk-sampling-and-analytical-report/nutrient-analysis-of-cows-milk-sampling-and-analytical-report",
+      "sha256": "db4c846f79d9c3071d14bbdf081dfd466594be773ef7921ac29b0164c762dee5"
+    },
+    {
+      "name": "results.ods",
+      "url": "https://assets.publishing.service.gov.uk/media/67b86966ff9676313f3533bb/nutrient-analysis-of-cows-milk-data-tables.ods",
+      "sha256": "40029adb0b502c904315a93bbcc15a7633a78134bd0549114331192c76cd8a5c"
+    }
+  ]
+}

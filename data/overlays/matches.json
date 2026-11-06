@@ -1,0 +1,260 @@
+{
+  "uk-milk-2022-23:Milk, whole, pasteurised, average": {
+    "food_id": "12-596",
+    "food_name": "Milk, whole, pasteurised, average",
+    "source_name": "Milk, whole, pasteurised, average",
+    "reason": "exact name"
+  },
+  "uk-milk-2022-23:Milk, whole, pasteurised, summer": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, whole, pasteurised, summer",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, whole, pasteurised, winter": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, whole, pasteurised, winter",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, whole, UHT, average": {
+    "food_id": "12-320",
+    "food_name": "Milk, whole, UHT",
+    "source_name": "Milk, whole, UHT, average",
+    "reason": "established: UHT average matches the unseasoned UHT entry; no seasonal record substituted"
+  },
+  "uk-milk-2022-23:Milk, whole, UHT, summer": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, whole, UHT, summer",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, whole, UHT, winter": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, whole, UHT, winter",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, semi-skimmed, pasteurised, average": {
+    "food_id": "12-313",
+    "food_name": "Milk, semi-skimmed, pasteurised, average",
+    "source_name": "Milk, semi-skimmed, pasteurised, average",
+    "reason": "exact name"
+  },
+  "uk-milk-2022-23:Milk, semi-skimmed, pasteurised, summer": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, semi-skimmed, pasteurised, summer",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, semi-skimmed, pasteurised, winter": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, semi-skimmed, pasteurised, winter",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, semi-skimmed, UHT, average": {
+    "food_id": "12-314",
+    "food_name": "Milk, semi-skimmed, UHT",
+    "source_name": "Milk, semi-skimmed, UHT, average",
+    "reason": "established: UHT average matches the unseasoned UHT entry; no seasonal record substituted"
+  },
+  "uk-milk-2022-23:Milk, semi-skimmed, UHT, summer": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, semi-skimmed, UHT, summer",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, semi-skimmed, UHT, winter": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, semi-skimmed, UHT, winter",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, skimmed, pasteurised, average": {
+    "food_id": "12-307",
+    "food_name": "Milk, skimmed, pasteurised, average",
+    "source_name": "Milk, skimmed, pasteurised, average",
+    "reason": "exact name"
+  },
+  "uk-milk-2022-23:Milk, skimmed, pasteurised, summer": {
+    "food_id": "12-308",
+    "food_name": "Milk, skimmed, pasteurised, summer",
+    "source_name": "Milk, skimmed, pasteurised, summer",
+    "reason": "exact name"
+  },
+  "uk-milk-2022-23:Milk, skimmed, pasteurised, winter": {
+    "food_id": "12-309",
+    "food_name": "Milk, skimmed, pasteurised, winter",
+    "source_name": "Milk, skimmed, pasteurised, winter",
+    "reason": "exact name"
+  },
+  "uk-milk-2022-23:Milk, skimmed, UHT, average": {
+    "food_id": "12-554",
+    "food_name": "Milk, skimmed, UHT",
+    "source_name": "Milk, skimmed, UHT, average",
+    "reason": "established: UHT average matches the unseasoned UHT entry; no seasonal record substituted"
+  },
+  "uk-milk-2022-23:Milk, skimmed, UHT, summer": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, skimmed, UHT, summer",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-milk-2022-23:Milk, skimmed, UHT, winter": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Milk, skimmed, UHT, winter",
+    "reason": "No exact season/type match; retained as source-only observation"
+  },
+  "uk-beef-2024:1.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, mince, 5% fat, raw",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:1.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, mince, 5% fat, stewed",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:2.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, mince, 10 to 15% fat, raw",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:2.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, mince, 10 to 15% fat, stewed",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:2.3": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, mince, 10 to 15% fat, grilled",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:3.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, mince, 20 to 25% fat, raw",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:3.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, mince, 20 to 25% fat, stewed",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:4.1": {
+    "food_id": "18-043",
+    "food_name": "Beef, rump steak, raw, lean",
+    "source_name": "Beef, rump steak, raw, lean only",
+    "reason": "established: raw rump lean and lean only describe the same cut/tissue/preparation"
+  },
+  "uk-beef-2024:4.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, rump steak, grilled medium, lean only",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:4.3": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, rump steak, grilled medium, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:5.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, medallion steak, raw, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:5.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, medallion steak, shallow fried medium, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:6.1": {
+    "food_id": "18-017",
+    "food_name": "Beef, fillet steak, raw, lean and fat",
+    "source_name": "Beef, fillet steak, raw, lean and fat",
+    "reason": "exact name"
+  },
+  "uk-beef-2024:6.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, fillet steak, grilled medium, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:7.1": {
+    "food_id": "18-065",
+    "food_name": "Beef, sirloin steak, raw, lean and fat",
+    "source_name": "Beef, sirloin steak, raw, lean and fat",
+    "reason": "exact name"
+  },
+  "uk-beef-2024:7.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, sirloin steak, grilled medium, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:8.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, ribeye steak, raw, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:9.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, roasting joint, roasted medium, lean only",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:9.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, roasting joint, roasted medium, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:10.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, diced, raw, lean",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:10.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, diced, stewed, lean",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:11.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, diced, raw, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:11.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, diced, stewed, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:12.1": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, stir fry strips, raw, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  },
+  "uk-beef-2024:12.2": {
+    "food_id": null,
+    "food_name": null,
+    "source_name": "Beef, stir fry strips, shallow fried, lean and fat",
+    "reason": "No exact cut/fat-class/cooking match; retained as source-only observation"
+  }
+}
