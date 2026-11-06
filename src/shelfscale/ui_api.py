@@ -21,10 +21,10 @@ from typing import Any
 
 from .cofid_assess import lookup_and_assess
 from .fps import import_fps
-from .fv_samples import import_all_samples
 from .lookup import DATA_RELEASE, _index, cofid_release
 from .model import Food
 from .validation import number
+from .as_sold import describe
 
 MAX_RESULTS = 25
 MAX_QUERY = 80
@@ -99,34 +99,17 @@ def _portions() -> dict[str, tuple[dict[str, Any], ...]]:
             },
         })
 
-    for o in import_all_samples().observations:
-        matches = by_name.get(_key(o.composite.food_name), [])
-        if len(matches) != 1:
-            continue
-        edible = o.edible_portion_mean
-        grams = o.mean_g * edible if edible is not None else o.mean_g
-        spread = f"n={o.sample_size}, {o.min_g:g} to {o.max_g:g} g" + (
-            f", sd {o.sd_g:.1f} g" if o.sd_g is not None else "")
-        if edible is not None:
-            how = (f"Edible part: mean whole weight {o.mean_g:.1f} g x mean edible proportion "
-                   f"{edible:.3f}. CoFID values are per 100 g of edible portion.")
-        else:
-            how = "Whole item as weighed; the report gives no edible proportion."
-        out.setdefault(matches[0].food_id, []).append({
-            "label": o.description.replace("Average weight of ", "").replace("Average weight ", ""),
-            "grams": grams,
-            "tappable": True,
-            "weight_text": f"{grams:.1f} g",
-            "basis": "edible part, calculated" if edible is not None else "weighed sample mean",
-            "kind": "sample_mean",
-            "source": {
-                "label": f"Sampling report {o.period_start[:4]}",
-                "citation": f"{o.release.publisher}, {o.release.dataset}",
-                "rights": o.release.licence,
-                "detail": f"{spread}; bought {o.period_start} to {o.period_end}. {how}",
-                "note": None,
-            },
-        })
+    from .as_sold import sample_units
+    for food_id, units in sample_units().items():
+        for u in units:
+            if not u["applied"]:
+                continue
+            out.setdefault(food_id, []).append({
+                "label": u["label"], "grams": u["typical_g"], "tappable": True,
+                "weight_text": f"{u['typical_g']:.1f} g", "basis": u["basis"], "kind": "sample_mean",
+                "range_g": [u["low_g"], u["high_g"]], "n": u["n"],
+                "source": {**u["source"], "detail": f"{u['source']['detail']} {u['spread']}", "note": None},
+            })
     return {k: tuple(v) for k, v in out.items()}
 
 
@@ -251,6 +234,15 @@ def food(food_id: str, params: dict[str, str] | None = None) -> dict[str, Any]:
             "source": source_card(o) if o else None,
         })
     salt = current.get("NA")
+    pack_g = _optional(params, "pack_g", positive=True, maximum=100000)
+    confirmed = frozenset(k for k in (params.get("unit") or "").split(",") if k)
+    inputs = match["assessment"]["models"]["uk-npm-2004/05"].get("inputs") or {}
+    value = lambda name: (inputs.get(name) or {}).get("value")  # noqa: E731
+    sodium = value("sodium_mg")
+    per_100 = {"fat": value("fat_g"), "saturates": value("saturated_fat_g"),
+               "sugars": value("total_sugars_g"), "salt": None if sodium is None else sodium / 400.0,
+               "energy_kj": value("energy_kj")}
+    sold = describe(food_id, record.source_code, per_100, pack_g=pack_g, confirmed=confirmed)
     shown = {code for _, _, code, _ in PANEL}
     overlay_values = [{
         "code": o["nutrient_code"], "label": o["nutrient_label"], "unit": o["unit"],
@@ -269,12 +261,13 @@ def food(food_id: str, params: dict[str, str] | None = None) -> dict[str, Any]:
         "panel_basis": "per_100g",
         "panel": panel,
         "overlay_values": overlay_values,
+        "as_sold": sold,
         "salt_from_sodium": {"rule": "salt = sodium x 2.5", "source": source_card(salt)} if salt else None,
         "portions": portions_for(food_id),
         "portion_g": portion_g,
         "caller_supplied": {k: v for k, v in (("fvn_percent", fvn), ("free_sugars_g", free_sugars))
                             if v is not None},
-        "as_sold": as_sold_flag(record.name),
+        "powder": as_sold_flag(record.name),
         "assessment": match["assessment"],
         "evidence_note": result["evidence_note"],
     }

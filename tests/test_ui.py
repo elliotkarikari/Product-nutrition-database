@@ -168,7 +168,7 @@ class TestRecipeRules(unittest.TestCase):
 
     def test_as_sold_flag(self):
         cocoa = ui_api.search('cocoa powder')['results'][0]
-        self.assertIsNotNone(ui_api.food(cocoa['food_id'])['as_sold'])
+        self.assertIsNotNone(ui_api.food(cocoa['food_id'])['powder'])
         self.assertIsNone(ui_api.as_sold_flag('Sugar, white'))
 
 
@@ -185,8 +185,9 @@ class TestPortionsAndProvenance(unittest.TestCase):
     def test_sample_weights_link_only_by_exact_name_and_use_edible_part(self):
         orange = ui_api.search('Oranges, flesh only')['results'][0]['food_id']
         (p,) = ui_api.portions_for(orange)
-        self.assertEqual(p['basis'], 'edible part, calculated')
-        self.assertAlmostEqual(p['grams'], 218.6 * 0.7064, delta=0.2)
+        self.assertEqual(p['basis'], 'edible part of each purchase: weight x its edible proportion')
+        self.assertTrue(p['range_g'][0] < p['grams'] < p['range_g'][1])
+        self.assertAlmostEqual(p['grams'], 218.6 * 0.7064, delta=5)  # per-purchase mean, not mean x mean
         banana = ui_api.search('Bananas, flesh only')['results'][0]['food_id']
         self.assertEqual(ui_api.portions_for(banana), [])  # report name differs; never guessed
 

@@ -1,0 +1,221 @@
+{
+ "comment": "Links from sampling-report composites to CoFID foods. 'draft' links are offered on the page for a person to confirm and are never applied on their own; 'reviewed' links apply automatically. weight: 'edible' uses each sub-sample's weight x its edible proportion (the CoFID food is per 100 g edible); 'whole' uses the weight as bought (the CoFID food is per 100 g weighed with skin, stone or peel, or the item is eaten whole). Raw-item weights are never linked to cooked or stewed foods.",
+ "links": [
+  {
+   "report": "uk-dh-fv-sampling-2011",
+   "composite": "Peppers, red, raw",
+   "cofid_code": "13-524",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-dh-fv-sampling-2011",
+   "composite": "Peppers, yellow, raw",
+   "cofid_code": "13-526",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-dh-fv-sampling-2011",
+   "composite": "Bananas, raw, flesh only",
+   "cofid_code": "14-318",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-dh-fv-sampling-2011",
+   "composite": "Bananas, raw, flesh only",
+   "cofid_code": "14-347",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-dh-fv-sampling-2011",
+   "composite": "Oranges, flesh only",
+   "cofid_code": "14-360",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-dh-fv-sampling-2011",
+   "composite": "Citrus fruit, soft/easy peelers, flesh only",
+   "cofid_code": "14-348",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-dh-fv-sampling-2011",
+   "composite": "Apples, eating, raw, flesh and skin",
+   "cofid_code": "14-346",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Plums, dessert, raw, flesh and skin",
+   "cofid_code": "14-374",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Pineapple, fresh, raw, flesh only",
+   "cofid_code": "14-376",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Pineapple, fresh, raw, flesh only",
+   "cofid_code": "14-377",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Mangoes, ripe, raw, flesh only",
+   "cofid_code": "14-378",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Mangoes, ripe, raw, flesh only",
+   "cofid_code": "14-379",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Cherries, raw",
+   "cofid_code": "14-382",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Grapefruit, raw, flesh only",
+   "cofid_code": "14-384",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Grapefruit, raw, flesh only",
+   "cofid_code": "14-385",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Leeks, fresh, raw",
+   "cofid_code": "13-624",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Courgettes, fresh, raw",
+   "cofid_code": "13-627",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Papaya, ripe, raw, flesh only",
+   "cofid_code": "14-390",
+   "weight": "edible",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Papaya, ripe, raw, flesh only",
+   "cofid_code": "14-397",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Radish, raw",
+   "cofid_code": "13-656",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Prunes, ready to eat, semi-dried",
+   "cofid_code": "14-391",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Apricots, ready to eat, semi-dried",
+   "cofid_code": "14-392",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Dates, dried, flesh only",
+   "cofid_code": "14-394",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  },
+  {
+   "report": "uk-phe-fv-sampling-2015",
+   "composite": "Figs, ready to eat, semi-dried",
+   "cofid_code": "14-395",
+   "weight": "whole",
+   "status": "draft",
+   "drafted_by": "builder (Claude), 2026-11-06",
+   "reviewed_by": null
+  }
+ ]
+}

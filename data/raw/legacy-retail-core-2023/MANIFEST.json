@@ -1,0 +1,12 @@
+{
+  "source_id": "legacy-retail-core-2023",
+  "dataset": "Retail-shaped CoFID list with sale formats (author-curated, 2023)",
+  "edition": "2023",
+  "publisher": "Elliot Karikari (author's own curation in the 2023 notebooks)",
+  "url": "https://github.com/elliotkarikari/Product-nutrition-database/blob/cfadc8a3f5eff7cae890ea8031d8de3ae600165f/Data/Processed/MW_DataReduction/Reduced%20Super%20Group/Cleaned/Reduced_SecondClean.csv",
+  "retrieved": "2026-11-06",
+  "rights": "Author's own curation decisions; CoFID names and codes are OGL v3.0 (Public Health England 2021).",
+  "citation": "Karikari, E. (2023). Retail-shaped reduction of CoFID with sale formats. Product-nutrition-database, main branch.",
+  "use": "Only the CoFID food code and the sale format are read. No nutrient value or weight comes from this file.",
+  "files": [{"name": "Reduced_SecondClean.csv", "sha256": "021690c0c7bd05967de36dc1ef600c0c08f089b8183353b4d1477c92e4f6f06e", "source_path": "Data/Processed/MW_DataReduction/Reduced Super Group/Cleaned/Reduced_SecondClean.csv", "source_commit": "cfadc8a3f5eff7cae890ea8031d8de3ae600165f"}]
+}

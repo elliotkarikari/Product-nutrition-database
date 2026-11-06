@@ -1,0 +1,9 @@
+{
+  "comment": "Matching assistant settings. Thresholds are provisional until Jev is measured against memory/verification/matching-eval-set.json; see memory/decisions/matching.md.",
+  "model": "jev-latest",
+  "candidates": 6,
+  "propose_at": 0.8,
+  "abstain_below": 0.2,
+  "timeout_seconds": 8,
+  "threshold_basis": "provisional, not yet measured: Jev's key is only on the live service. Every candidate still needs a person to confirm it."
+}

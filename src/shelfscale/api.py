@@ -46,7 +46,7 @@ from .npm2018 import MODEL_ID as NPM2018_ID
 from . import laws
 from .service import MODEL_ID, MAX_BULK_ITEMS, assess_bulk, assess_product
 from .lookup import DATA_RELEASE, _index
-from . import recipe, ui_api
+from . import bulk, matching, recipe, ui_api
 
 ROUTES = {
     "/v1/assess": assess_product,
@@ -59,7 +59,30 @@ MAX_BODY_BYTES = 5_000_000
 RATE_LIMIT = 60
 RATE_WINDOW_SECONDS = 60
 UI_RATE_LIMIT = 300
-UI_MAX_BODY_BYTES = 64_000
+UI_MAX_BODY_BYTES = 256_000
+PAGE_POSTS = {
+    "/ui/recipe": recipe.calculate,
+    "/ui/bulk": bulk.run,
+    "/ui/match": lambda payload: matching.propose(payload.get("name") if isinstance(payload, dict) else None),
+    "/ui/match/confirm": lambda payload: record_confirmation(payload),
+}
+CONFIRMATIONS_VAR = "SHELFSCALE_CONFIRMATIONS_PATH"
+
+
+def record_confirmation(payload):
+    """Validate a confirmed match. Kept in the visitor's browser; appended to a file only when
+    SHELFSCALE_CONFIRMATIONS_PATH names durable storage."""
+    record = matching.confirmation(payload)
+    record["confirmed_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    path = os.environ.get(CONFIRMATIONS_VAR)
+    if path:
+        with open(path, "a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record) + "\n")
+        record["stored"] = "service file"
+    else:
+        record["stored"] = ("your browser only: this service has no durable storage configured. "
+                            "Export your confirmations to add them to the reviewed mapping.")
+    return record
 WEB = Path(__file__).resolve().parent / "web"
 STATIC = {  # fixed list: nothing else on disk is ever served
     "/": ("index.html", "text/html; charset=utf-8"),
@@ -162,7 +185,7 @@ class Handler(BaseHTTPRequestHandler):
                 "laws": [laws.label(m) for m in laws.models()],
                 "endpoints": {"public": ["GET / (page)", "GET /api", "GET /health"],
                               "authenticated": [f"POST {path}" for path in ROUTES],
-                              "page": ["GET /ui/search", "GET /ui/food/<food_id>", "POST /ui/recipe"]},
+                              "page": ["GET /ui/search", "GET /ui/food/<food_id>", *(f"POST {p}" for p in PAGE_POSTS)]},
                 "authentication": {"header": "X-API-Key", "required_for_post": True},
                 "limits": {"requests": RATE_LIMIT, "window_seconds": RATE_WINDOW_SECONDS,
                            "scope": "one shared key per process; resets on restart",
@@ -187,14 +210,14 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(404, {"error": "Not found."})
 
     def do_POST(self) -> None:  # noqa: N802
-        page = self.path == "/ui/recipe"
+        page = self.path in PAGE_POSTS
         if self.path not in ROUTES and not page:
             self._send_json(404, {"error": "Not found."})
             return
         if page:
             if not self._ui_admitted():
                 return
-            handler = recipe.calculate
+            handler = PAGE_POSTS[self.path]
         else:
             keys = self.headers.get_all("X-API-Key", [])
             if len(keys) != 1 or not hmac.compare_digest(keys[0].encode("utf-8"), self.server.api_key):
@@ -243,6 +266,7 @@ def run(host: str = "127.0.0.1", port: int = 8765) -> None:
     with ShelfScaleServer((host, port)) as server:
         # Verify snapshots and compose the index before advertising readiness.
         laws.models()               # refuse to start on a bad law configuration
+        matching.settings()
         _index()
         ui_api.foods_by_id()
         ui_api.search("warm")       # builds the portion and overlay tables before readiness
