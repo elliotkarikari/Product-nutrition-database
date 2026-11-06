@@ -31,3 +31,4 @@
 - [verification/2026-11-05-phase5-tests.txt](verification/2026-11-05-phase5-tests.txt) — Verification output.
 - [verification/2026-11-05-rocky-memory-round.md](verification/2026-11-05-rocky-memory-round.md) — Rocky memory-round verification — reconstructed
 - [verification/2026-11-05-rocky-record-gap.md](verification/2026-11-05-rocky-record-gap.md) — Rocky read-back evidence gap
+- [verification/2026-11-05-local-key-setup.md](verification/2026-11-05-local-key-setup.md) — Local token creation and pending Railway checkpoint.

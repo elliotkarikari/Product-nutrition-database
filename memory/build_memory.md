@@ -36,7 +36,9 @@ Canonical working directory: `/Users/elliotkarikari/Dev Projects/Product-nutriti
 
 ## Open threads and owners
 - **Codex:** Phase 5 implemented/tested; push held until Elliot confirms the Railway key is deployed, then rerun tests, push/read back and verify live health/authenticated lookup.
-- **Elliot:** confirm SHELFSCALE_API_KEY is set/deployed on the existing Railway service; make the same key available securely locally for the final authenticated check. Never send the key in chat.
+- **Elliot:** confirm SHELFSCALE_API_KEY is set/deployed on the existing Railway service; the token is now generated in ignored local `.env` (0600), ready for Railway setup and the final authenticated check. Never send the key in chat.
 - **Rocky:** independently verify delivery; supply primary memory-round read-back. The reconstructed record is not a substitute. External watch/research schedules remain unverified here.
 - **Elliot / future data review:** two apparent FPS weight differences and ambiguous pork require the physical book; additional tuber species identities, unmatched overlays and GA/FA processing need evidence before broader derivation.
 - **Elliot / future implementer:** powder reconstitution, first user surface/CSV/recipe/label tools, watcher code, partnerships, other country packs and old-foods import remain parked or undecided (SPEC §12, register). Legacy history cleanup remains owner-controlled; VJ fix-forward exclusion is unchanged.
+
+Local credential setup: [2026-11-05 verification](verification/2026-11-05-local-key-setup.md); no secret in memory.
