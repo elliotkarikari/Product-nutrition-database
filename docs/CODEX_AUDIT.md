@@ -48,3 +48,7 @@ Findings 4, 5 and 6 addressed: explicit 2018 DG exclusions and GA/FA flags; chec
 ## Remediation checkpoint: Phase 5 (local pending key confirmation)
 
 Finding 2 addressed in code: required startup key, constant-time single-header authentication on all four POST routes, lock-protected 60/minute rolling quota, 429/Retry-After, and public health/root. Snapshots validate before readiness; request bodies retain timeout/size guards. 131 tests pass, including missing-key CLI refusal, wrong/duplicate credentials, concurrent quota admission, rolling expiration, all four routes sharing the quota, public routes surviving exhaustion, and both existing HTTP suites authenticated. No live load test. Push held for the mandated Railway key confirmation; local implementation is not a claim of live protection.
+
+## Phase 5 deployment confirmed
+
+Elliot confirmed the Railway variable, the 131-test pre-push suite passed, and 994d2c1a was pushed/read back and observed as the live revision. Public health/root returned 200, unauthenticated lookup 401, authenticated lookup 200 with official beef overlay provenance. The earlier hold is resolved. Evidence: memory/verification/2026-11-05-phase5-deployed.md.

@@ -32,3 +32,6 @@
 - [verification/2026-11-05-rocky-memory-round.md](verification/2026-11-05-rocky-memory-round.md) — Rocky memory-round verification — reconstructed
 - [verification/2026-11-05-rocky-record-gap.md](verification/2026-11-05-rocky-record-gap.md) — Rocky read-back evidence gap
 - [verification/2026-11-05-local-key-setup.md](verification/2026-11-05-local-key-setup.md) — Local token creation and pending Railway checkpoint.
+- [verification/2026-11-05-phase5-deployed.md](verification/2026-11-05-phase5-deployed.md) — Deployment checks and resolved key checkpoint.
+- [verification/2026-11-05-phase5-deployed.json](verification/2026-11-05-phase5-deployed.json) — Sanitized live response evidence; no credential.
+- [verification/2026-11-05-phase5-deployed-tests.txt](verification/2026-11-05-phase5-deployed-tests.txt) — 131-test pre-deployment log.

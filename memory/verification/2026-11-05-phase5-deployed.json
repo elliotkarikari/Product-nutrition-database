@@ -1,0 +1,118 @@
+{
+  "checked_at_utc": "2026-11-06T04:28:02.641739+00:00",
+  "expected_revision": "994d2c1a1a1cc39c0f699af1469d7a3dd516aba4",
+  "health": {
+    "http_status": 200,
+    "body": {
+      "status": "ok",
+      "models": {
+        "uk-npm-2004/05": "in force",
+        "uk-npm-2018": "shadow model, not in force"
+      },
+      "revision": "994d2c1a1a1cc39c0f699af1469d7a3dd516aba4"
+    }
+  },
+  "root": {
+    "http_status": 200,
+    "body": {
+      "service": "ShelfScale Open",
+      "models": {
+        "uk-npm-2004/05": "in force",
+        "uk-npm-2018": "shadow model, not in force"
+      },
+      "data_release": "uk-cofid-2021+milk-2022-23+beef-2024-v1",
+      "revision": "994d2c1a1a1cc39c0f699af1469d7a3dd516aba4",
+      "endpoints": {
+        "public": [
+          "GET /",
+          "GET /health"
+        ],
+        "authenticated": [
+          "POST /v1/assess",
+          "POST /v1/assess/bulk",
+          "POST /v1/lookup",
+          "POST /v1/lookup/bulk"
+        ]
+      },
+      "authentication": {
+        "header": "X-API-Key",
+        "required_for_post": true
+      },
+      "limits": {
+        "requests": 60,
+        "window_seconds": 60,
+        "scope": "one shared key per process; resets on restart",
+        "bulk_items": 1000,
+        "body_bytes": 5000000
+      },
+      "docs": "https://github.com/elliotkarikari/Product-nutrition-database/blob/shelfscale-open/docs/API.md"
+    }
+  },
+  "unauthenticated_lookup": {
+    "http_status": 401,
+    "body": {
+      "error": "Valid X-API-Key required."
+    }
+  },
+  "authenticated_lookup": {
+    "http_status": 200,
+    "data_release": "uk-cofid-2021+milk-2022-23+beef-2024-v1",
+    "food": "Beef, fillet steak, raw, lean and fat",
+    "energy_kj": {
+      "cofid_code": "KJ",
+      "value": 523.0,
+      "source": "number",
+      "provenance": {
+        "observation_id": "uk-beef-2024:18-017:KJ",
+        "release": {
+          "source_id": "uk-beef-2024",
+          "dataset": "Official nutrient analysis: beef",
+          "edition": "2026-10-02",
+          "publisher": "DHSC/OHID; Quadram FN-NBRI",
+          "url": "https://assets.publishing.service.gov.uk/media/6ab534ada9c3d267bccceebd/nutrient-analysis-of-beef-results.ods",
+          "retrieved": "2026-11-06T03:54:26.182280+00:00",
+          "sha256": "608305c0acf6e3994c99a6259484cab4bddf6b34857109ff3512f29698676596",
+          "licence": "Open Government Licence v3.0",
+          "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. DHSC/OHID; analysis coordinated by Quadram FN-NBRI."
+        },
+        "period_start": "2024",
+        "period_end": "2024",
+        "analysis_period": "2024-06 to 2024-10",
+        "source_locator": "Macronutrients row 18 column 11",
+        "source_food": "Beef, fillet steak, raw, lean and fat",
+        "confidence": "official_composite_analysis",
+        "supersedes": "uk-cofid-2021:18-017:KJ",
+        "superseded_by": null,
+        "nutrient_code": "KJ",
+        "nutrient_label": "Energy (kJ per 100g food) [note 5]",
+        "unit": "kJ",
+        "method": null,
+        "value": 523.0,
+        "value_text": "523",
+        "value_kind": "number",
+        "basis": "per_100g",
+        "state": "as_described_in_food_name",
+        "value_method": "calculated_from_laboratory_analysis",
+        "status": "current",
+        "source_id": "uk-beef-2024",
+        "edition": "2026-10-02",
+        "food_code": "18-017",
+        "table": "Macronutrients"
+      }
+    },
+    "models": {
+      "uk-npm-2004/05": {
+        "scorable": true,
+        "score": -3,
+        "missing_inputs": null
+      },
+      "uk-npm-2018": {
+        "scorable": false,
+        "score": null,
+        "missing_inputs": [
+          "fibre_aoac_g (NPM 2018 uses AOAC fibre; only NSP is available and the guidance names no conversion factor)"
+        ]
+      }
+    }
+  }
+}
