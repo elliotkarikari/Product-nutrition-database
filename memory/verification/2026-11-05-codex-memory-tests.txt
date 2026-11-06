@@ -1,0 +1,115 @@
+test_alcoholic_beverages_are_per_100ml (test_cofid.TestCount.test_alcoholic_beverages_are_per_100ml) ... ok
+test_every_food_has_observations (test_cofid.TestCount.test_every_food_has_observations) ... ok
+test_food_count_from_the_files (test_cofid.TestCount.test_food_count_from_the_files) ... ok
+test_nsp_and_aoac_stay_separate (test_cofid.TestFibre.test_nsp_and_aoac_stay_separate) ... ok
+test_manifest_matches_register_and_files (test_cofid.TestProvenance.test_manifest_matches_register_and_files) ... ok
+test_no_observation_without_source_and_edition (test_cofid.TestProvenance.test_no_observation_without_source_and_edition) ... ok
+test_refuses_a_file_that_does_not_match_the_manifest (test_cofid.TestProvenance.test_refuses_a_file_that_does_not_match_the_manifest) ... ok
+test_named_foods (test_cofid.TestSpotChecks.test_named_foods) ... ok
+test_value_kinds (test_cofid.TestSpotChecks.test_value_kinds) ... ok
+test_watercress_numeric_cells (test_cofid.TestSpotChecks.test_watercress_numeric_cells) ... ok
+test_dividing_reproduces_the_guidance_milk_per_100g (test_density.TestExample3Reconciliation.test_dividing_reproduces_the_guidance_milk_per_100g) ... ok
+test_example_3_end_to_end (test_density.TestExample3Reconciliation.test_example_3_end_to_end) ... ok
+test_same_score_different_values (test_density.TestExample6UnderDivision.test_same_score_different_values) ... ok
+test_bulk_counts_verdict_changes (test_dual_scoring.TestLookupMode.test_bulk_counts_verdict_changes) ... ok
+test_cofid_food_is_not_scorable_under_2018_without_free_sugars (test_dual_scoring.TestLookupMode.test_cofid_food_is_not_scorable_under_2018_without_free_sugars) ... ok
+test_real_verdict_change_salted_peanuts (test_dual_scoring.TestLookupMode.test_real_verdict_change_salted_peanuts) ... ok
+test_bulk_counts_per_model (test_dual_scoring.TestSuppliedMode.test_bulk_counts_per_model) ... ok
+test_caller_free_sugars_scores_worked_example_12 (test_dual_scoring.TestSuppliedMode.test_caller_free_sugars_scores_worked_example_12) ... ok
+test_fvn_percent_stands_in_for_fvns_and_says_so (test_dual_scoring.TestSuppliedMode.test_fvn_percent_stands_in_for_fvns_and_says_so) ... ok
+test_no_free_sugars_means_no_2018_score (test_dual_scoring.TestSuppliedMode.test_no_free_sugars_means_no_2018_score) ... ok
+test_nsp_only_is_not_converted (test_dual_scoring.TestSuppliedMode.test_nsp_only_is_not_converted) ... ok
+test_sodium_becomes_salt_and_says_so (test_dual_scoring.TestSuppliedMode.test_sodium_becomes_salt_and_says_so) ... ok
+test_worked_example_17_through_volume_conversion (test_dual_scoring.TestSuppliedMode.test_worked_example_17_through_volume_conversion) ... ok
+test_cofid_matches_are_exact_names_only (test_fps.TestCounts.test_cofid_matches_are_exact_names_only) ... ok
+test_reconciled_with_the_source_file (test_fps.TestCounts.test_reconciled_with_the_source_file) ... ok
+test_every_portion_carries_the_book (test_fps.TestProvenance.test_every_portion_carries_the_book) ... ok
+test_fps_is_never_called_ogl_or_licensed (test_fps.TestProvenance.test_fps_is_never_called_ogl_or_licensed) ... ok
+test_refuses_a_file_that_does_not_match_the_manifest (test_fps.TestProvenance.test_refuses_a_file_that_does_not_match_the_manifest) ... ok
+test_report_is_complete_and_consistent (test_fps.TestReconciliationReport.test_report_is_complete_and_consistent) ... /Users/elliotkarikari/Dev Projects/Product-nutrition-database/tests/test_fps.py:118: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/elliotkarikari/Dev Projects/Product-nutrition-database/docs/fps_reconciliation.csv' mode='r' encoding='utf-8'>
+  rows = list(csv.DictReader((ROOT / "docs" / "fps_reconciliation.csv").open(encoding="utf-8")))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_named_portions (test_fps.TestSpotChecks.test_named_portions) ... ok
+test_weights_are_read_not_corrected (test_fps.TestSpotChecks.test_weights_are_read_not_corrected) ... ok
+test_counts (test_fv_samples.TestCounts.test_counts) ... ok
+test_every_import_reproduces_the_stated_average (test_fv_samples.TestCounts.test_every_import_reproduces_the_stated_average) ... ok
+test_every_table_is_accounted_for (test_fv_samples.TestCounts.test_every_table_is_accounted_for) ... ok
+test_manifests_name_the_legacy_route (test_fv_samples.TestProvenance.test_manifests_name_the_legacy_route) ... ok
+test_no_portion_observation_without_source_and_period (test_fv_samples.TestProvenance.test_no_portion_observation_without_source_and_period) ... ok
+test_refuses_a_file_that_does_not_match_the_manifest (test_fv_samples.TestProvenance.test_refuses_a_file_that_does_not_match_the_manifest) ... ok
+test_medium_banana (test_fv_samples.TestSpotChecks.test_medium_banana) ... ok
+test_other_named_foods (test_fv_samples.TestSpotChecks.test_other_named_foods) ... ok
+test_report_disagreeing_with_itself_is_not_imported (test_fv_samples.TestSpotChecks.test_report_disagreeing_with_itself_is_not_imported) ... ok
+test_every_file_matches_its_manifest (test_legacy_snapshot.TestLegacySnapshot.test_every_file_matches_its_manifest) ... ok
+test_by_code (test_lookup.TestLookup.test_by_code) ... ok
+test_by_exact_name (test_lookup.TestLookup.test_by_exact_name) ... ok
+test_exactly_one_query (test_lookup.TestLookup.test_exactly_one_query) ... ok
+test_name_is_exact (test_lookup.TestLookup.test_name_is_exact) ... ok
+test_shared_code_returns_both_foods (test_lookup.TestLookup.test_shared_code_returns_both_foods) ... ok
+test_shared_name_returns_both_foods (test_lookup.TestLookup.test_shared_name_returns_both_foods) ... ok
+test_unknown_is_a_gap (test_lookup.TestLookup.test_unknown_is_a_gap) ... ok
+test_alcoholic_drink_without_gravity_names_it (test_lookup_api.TestLookupApi.test_alcoholic_drink_without_gravity_names_it) ... ok
+test_bad_requests (test_lookup_api.TestLookupApi.test_bad_requests) ... /opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/tempfile.py:484: ResourceWarning: Implicitly cleaning up <HTTPError 400: 'Bad Request'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_bulk_partial_success (test_lookup_api.TestLookupApi.test_bulk_partial_success) ... ok
+test_caller_supplied_fvn (test_lookup_api.TestLookupApi.test_caller_supplied_fvn) ... ok
+test_duplicate_code_returns_both_and_scores_the_hand_checked_one (test_lookup_api.TestLookupApi.test_duplicate_code_returns_both_and_scores_the_hand_checked_one) ... ok
+test_not_yet_scorable_names_fvn (test_lookup_api.TestLookupApi.test_not_yet_scorable_names_fvn) ... ok
+test_potato_fvn_can_be_overridden_by_the_caller (test_lookup_api.TestLookupApi.test_potato_fvn_can_be_overridden_by_the_caller) ... ok
+test_potatoes_score_with_fvn_zero_excluded_by_guidance (test_lookup_api.TestLookupApi.test_potatoes_score_with_fvn_zero_excluded_by_guidance) ... ok
+test_protein_rule_applies_once_potato_fvn_is_zero (test_lookup_api.TestLookupApi.test_protein_rule_applies_once_potato_fvn_is_zero) ... ok
+test_vegetable_dishes_need_caller_fvn (test_lookup_api.TestLookupApi.test_vegetable_dishes_need_caller_fvn) ... ok
+test_no_vj_content_anywhere_in_the_branch (test_no_vj_content.TestNoVJContent.test_no_vj_content_anywhere_in_the_branch) ... ok
+test_baked_beans_fixture (test_npm.TestNPM.test_baked_beans_fixture) ... ok
+test_drink_threshold_is_one (test_npm.TestNPM.test_drink_threshold_is_one) ... ok
+test_full_fruit_veg_nut_points_rescue_protein (test_npm.TestNPM.test_full_fruit_veg_nut_points_rescue_protein) ... ok
+test_protein_rule_blocks_protein_at_high_a (test_npm.TestNPM.test_protein_rule_blocks_protein_at_high_a) ... ok
+test_salt_conversion (test_npm.TestNPM.test_salt_conversion) ... ok
+test_sodium_source_must_be_unambiguous (test_npm.TestNPM.test_sodium_source_must_be_unambiguous) ... ok
+test_every_edge (test_npm2018.TestBandEdges.test_every_edge) ... ok
+test_fvns_bands (test_npm2018.TestBandEdges.test_fvns_bands) ... ok
+test_maximums (test_npm2018.TestBandEdges.test_maximums) ... ok
+test_protein_rule (test_npm2018.TestRules.test_protein_rule) ... ok
+test_thresholds (test_npm2018.TestRules.test_thresholds) ... ok
+test_all_17 (test_npm2018.TestWorkedExamples.test_all_17) ... ok
+test_every_band_edge (test_npm_worked_examples.TestBandEdges.test_every_band_edge) ... ok
+test_fibre_basis_must_be_unambiguous (test_npm_worked_examples.TestBandEdges.test_fibre_basis_must_be_unambiguous) ... ok
+test_fruit_veg_nut_bands (test_npm_worked_examples.TestBandEdges.test_fruit_veg_nut_bands) ... ok
+test_nsp_and_aoac_scales_differ (test_npm_worked_examples.TestBandEdges.test_nsp_and_aoac_scales_differ) ... ok
+test_every_worked_example (test_npm_worked_examples.TestWorkedExamples.test_every_worked_example) ... ok
+test_example_5_fruit_veg_nut_percentage (test_npm_worked_examples.TestWorkedExamples.test_example_5_fruit_veg_nut_percentage) ... ok
+test_health_and_bulk_endpoints (test_service_api.TestApi.test_health_and_bulk_endpoints) ... ok
+test_non_boolean_is_drink_is_400 (test_service_api.TestApi.test_non_boolean_is_drink_is_400) ... ok
+test_basis_is_per_100g_for_drinks_too (test_service_api.TestService.test_basis_is_per_100g_for_drinks_too) ... ok
+test_bulk_partial_success (test_service_api.TestService.test_bulk_partial_success) ... ok
+test_bulk_requires_products (test_service_api.TestService.test_bulk_requires_products) ... ok
+test_fibre_nsp_or_aoac_exactly_one (test_service_api.TestService.test_fibre_nsp_or_aoac_exactly_one) ... ok
+test_is_drink_must_be_boolean (test_service_api.TestService.test_is_drink_must_be_boolean) ... ok
+test_per_100ml_needs_specific_gravity (test_service_api.TestService.test_per_100ml_needs_specific_gravity) ... ok
+test_portion_view (test_service_api.TestService.test_portion_view) ... ok
+test_single_assessment (test_service_api.TestService.test_single_assessment) ... ok
+test_drink_per_100g_is_not_assessed (test_service_traffic_lights.TestServiceTrafficLights.test_drink_per_100g_is_not_assessed) ... ok
+test_drink_uses_per_100ml_values (test_service_traffic_lights.TestServiceTrafficLights.test_drink_uses_per_100ml_values) ... ok
+test_food_matches_guidance_example_a (test_service_traffic_lights.TestServiceTrafficLights.test_food_matches_guidance_example_a) ... ok
+test_missing_fat_is_named (test_service_traffic_lights.TestServiceTrafficLights.test_missing_fat_is_named) ... ok
+test_portion_ml_is_for_drinks_only (test_service_traffic_lights.TestServiceTrafficLights.test_portion_ml_is_for_drinks_only) ... ok
+test_salt_from_sodium (test_service_traffic_lights.TestServiceTrafficLights.test_salt_from_sodium) ... ok
+test_every_entry_has_licence_fields (test_source_register.TestSourceRegister.test_every_entry_has_licence_fields) ... ok
+test_register_and_doc_name_the_same_sources (test_source_register.TestSourceRegister.test_register_and_doc_name_the_same_sources) ... ok
+test_example_a_ready_meal (test_traffic_lights.TestGuidanceWorkedExamples.test_example_a_ready_meal) ... ok
+test_example_b_smoothie (test_traffic_lights.TestGuidanceWorkedExamples.test_example_b_smoothie) ... ok
+test_every_edge (test_traffic_lights.TestPer100Edges.test_every_edge) ... ok
+test_portion_condition_is_strictly_more_than (test_traffic_lights.TestPortionRule.test_portion_condition_is_strictly_more_than) ... ok
+test_portion_rule_only_raises_to_red (test_traffic_lights.TestPortionRule.test_portion_rule_only_raises_to_red) ... ok
+test_red_per_portion_edges (test_traffic_lights.TestPortionRule.test_red_per_portion_edges) ... ok
+test_missing_nutrient_is_not_assessed (test_traffic_lights.TestShape.test_missing_nutrient_is_not_assessed) ... ok
+test_no_summary_colour (test_traffic_lights.TestShape.test_no_summary_colour) ... ok
+
+----------------------------------------------------------------------
+Ran 103 tests in 6.063s
+
+OK
+<sys>:0: ResourceWarning: unclosed <socket.socket fd=3, family=2, type=1, proto=0, laddr=('127.0.0.1', 55666)>
+<sys>:0: ResourceWarning: unclosed <socket.socket fd=4, family=2, type=1, proto=0, laddr=('127.0.0.1', 55681)>

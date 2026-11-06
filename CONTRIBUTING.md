@@ -1,5 +1,10 @@
 # Contributing
 
+Start each session with the sync check in [AGENTS.md](AGENTS.md), then read
+[memory/build_memory.md](memory/build_memory.md) before changing code. End every
+round with updated memory, decision records and verification evidence in the
+same round’s commits; see [the lifecycle decision](memory/decisions/memory-lifecycle.md).
+
 ## Code
 
 - Run the test suite before proposing a change: `PYTHONPATH=src python3 -m unittest discover -s tests`.
