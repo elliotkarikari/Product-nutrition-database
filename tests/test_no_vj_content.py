@@ -16,7 +16,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FINGERPRINTS = json.loads((Path(__file__).parent / "vj_fingerprints.json").read_text())
-TEXT_SUFFIXES = {".csv", ".json", ".md", ".yaml", ".yml", ".txt", ".py", ".toml"}
+TEXT_SUFFIXES = {".csv", ".json", ".md", ".yaml", ".yml", ".txt", ".py", ".toml",
+                 ".html", ".js", ".css", ".svg"}
 
 
 def _norm(text: str) -> str:

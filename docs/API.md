@@ -26,7 +26,19 @@ PYTHONPATH=src python3 -m shelfscale.api --port 8765
 Public. Returns `status: "ok"`, both model labels, and `revision` (Railway's 40-character Git SHA when supplied; otherwise null).
 
 ### GET /
-Public service summary: service name, model labels, composed data release, optional deployment revision, public/authenticated endpoints, authentication header, request/bulk/body limits and API documentation link. Never returns the key.
+The ShelfScale page (HTML). Static files are a fixed list under `/static/` (`app.css`, `app.js`, `icon.svg`); nothing else on disk is served. Sent with a strict Content-Security-Policy (same-origin scripts, styles and requests only).
+
+### GET /api
+Public service summary, moved here from `/` on 2026-11-06: service name, model labels, composed data release, optional deployment revision, public/authenticated endpoints, authentication header, request/bulk/body limits and API documentation link. Never returns the key.
+
+### Page routes (same origin; no key in the browser)
+The page calls three routes on the same service. They run in-process on the same functions as the keyed API (`cofid_assess.lookup_and_assess`, `service.assess_values`, `service.npm2018_block`), so the browser never holds the key and nothing is scored in JavaScript.
+
+- `GET /ui/search?q=` returns up to 25 CoFID 2021 foods whose name contains every word (or whose code matches), with food_id, code, group, whether an official overlay applies and how many one-tap portion weights exist. No match is reported as a gap.
+- `GET /ui/food/<food_id>` returns the lookup assessment for that one food (optional `portion_g`, `fvn_percent`, `free_sugars_g`, all caller-supplied and labelled), a per-100 g panel with a source card per value, values only an official overlay measured, portion weights with their source, and an as-sold flag for powders and concentrates (name-based; it changes no value).
+- `POST /ui/recipe` calculates a recipe: `{"ingredients":[{"food_id":"11-888","grams":225},...], "servings":12, "fvn_percent":18, "free_sugars_g":26}`. Up to 60 ingredients, body up to 64,000 bytes. Returns per-100 g and per-serving values, per-ingredient contributions with sources, both models, traffic lights per serving and the UK nutrition declaration. See `src/shelfscale/recipe.py` and `src/shelfscale/label.py` for the rules.
+
+These routes share their own rolling quota, **300 requests per 60 seconds per process** across all page visitors, separate from the key's 60. They are a narrow public surface (one food or one recipe per request, no bulk) and are not a substitute for the keyed API. Like the key quota, it resets on restart and is not shared between replicas.
 
 ### Authentication and rate limit
 All four POST routes below require exactly one `X-API-Key` header matching `SHELFSCALE_API_KEY`. Comparison is constant-time. Missing, wrong or duplicate keys return HTTP 401 with `{"error":"Valid X-API-Key required."}`. Key rotation takes effect on server restart; no caller credentials are logged or stored in results.

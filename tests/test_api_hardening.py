@@ -100,14 +100,14 @@ class TestHttpHardening(unittest.TestCase):
             self.assertEqual(status, 200)
             compare.assert_called_once()
 
-    def test_health_root_are_public_and_never_reveal_key(self):
-        for path in ('/', '/health'):
+    def test_health_and_summary_are_public_and_never_reveal_key(self):
+        for path in ('/api', '/health'):
             status, headers, body = self.request(path, method='GET')
             self.assertEqual(status, 200)
             self.assertEqual(headers['Cache-Control'], 'no-store')
             self.assertNotIn(KEY, json.dumps(body))
             self.assertIn('shadow model', body['models']['uk-npm-2018'])
-            if path == '/':
+            if path == '/api':
                 self.assertEqual(body['data_release'], DATA_RELEASE)
                 self.assertEqual(body['limits']['requests'], 60)
                 self.assertEqual(len(body['endpoints']['authenticated']), 4)
@@ -123,7 +123,7 @@ class TestHttpHardening(unittest.TestCase):
         self.assertEqual((status, headers['Retry-After']), (429, '60'))
         self.assertNotIn(KEY, json.dumps(body))
         self.assertEqual(self.request('/health', method='GET')[0], 200)
-        self.assertEqual(self.request('/', method='GET')[0], 200)
+        self.assertEqual(self.request('/api', method='GET')[0], 200)
         self.assertEqual(self.request('/v1/lookup')[0], 401)
         self.now[0] += 59.5
         self.assertEqual(self.request('/v1/assess', keys=(KEY,))[1]['Retry-After'], '1')

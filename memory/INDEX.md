@@ -14,7 +14,10 @@
 - [decisions/fvn-derivation.md](decisions/fvn-derivation.md) — FVN derivation
 - [decisions/memory-lifecycle.md](decisions/memory-lifecycle.md) — Shared memory lifecycle
 - [decisions/no-rounding-before-banding.md](decisions/no-rounding-before-banding.md) — Never round before banding
+- [decisions/label-from-cofid.md](decisions/label-from-cofid.md) — UK nutrition declaration from CoFID
 - [decisions/official-overlays.md](decisions/official-overlays.md) — Official milk and beef overlays
+- [decisions/portion-links.md](decisions/portion-links.md) — One-tap portion weights
+- [decisions/ui-design.md](decisions/ui-design.md) — First user interface: concept and motif
 - [decisions/vj-never-publish.md](decisions/vj-never-publish.md) — Never publish VJ content
 - [verification/2026-11-05-audit-fixes.md](verification/2026-11-05-audit-fixes.md) — Audit fix verification
 - [verification/2026-11-05-audit-tests.txt](verification/2026-11-05-audit-tests.txt) — Verification output.
@@ -35,3 +38,4 @@
 - [verification/2026-11-05-phase5-deployed.md](verification/2026-11-05-phase5-deployed.md) — Deployment checks and resolved key checkpoint.
 - [verification/2026-11-05-phase5-deployed.json](verification/2026-11-05-phase5-deployed.json) — Sanitized live response evidence; no credential.
 - [verification/2026-11-05-phase5-deployed-tests.txt](verification/2026-11-05-phase5-deployed-tests.txt) — 131-test pre-deployment log.
+- [verification/2026-11-06-ui-tests.txt](verification/2026-11-06-ui-tests.txt) — UI round pre-push test log.
