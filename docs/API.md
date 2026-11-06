@@ -31,6 +31,14 @@ The ShelfScale page (HTML). Static files are a fixed list under `/static/` (`app
 ### GET /api
 Public service summary, moved here from `/` on 2026-11-06: service name, model labels, composed data release, optional deployment revision, public/authenticated endpoints, authentication header, request/bulk/body limits and API documentation link. Never returns the key.
 
+Since the data-first round (branch `shelfscale-data-first`, 2026-11-06) it also carries `release`: `foods` (CoFID 2021 foods in the release), `foods_with_as_sold_unit` (foods with an applied unit weight from the sampling reports; draft links not counted), `sources_in_register` (entries in data/source-register.yaml, whatever their status), with `labels`, `notes` and `data_release`. The home page shows this block unchanged. Additive; no existing field changed.
+
+### Downloads (no key)
+Built once per process by `release.current()` from the same in-process data the API serves, written to `data/releases/<release>/` (or `SHELFSCALE_RELEASE_DIR`). Fixed list; nothing else in that folder is served. Gzip-encoded when the browser accepts it; checksums are of the CSV itself. Counted against the page quota.
+
+- `GET /download/foods.csv`, `nutrient_observations.csv` (long; SPEC section 5 provenance on every row), `portions.csv`, `scores.csv` (both laws with status; a reason instead of a number where no score can be given), `match_decisions.csv`, `release_manifest.json` (row counts, SHA-256, citation, laws, attribution).
+- `GET /download/food/<food_id>.csv` one food as its page shows it, taking the same optional parameters as `GET /ui/food/<id>`.
+
 ### Page routes (same origin; no key in the browser)
 The page calls three routes on the same service. They run in-process on the same functions as the keyed API (`cofid_assess.lookup_and_assess`, `service.assess_values`, `service.npm2018_block`), so the browser never holds the key and nothing is scored in JavaScript.
 
@@ -40,6 +48,7 @@ The page calls three routes on the same service. They run in-process on the same
 
 - `POST /ui/bulk` scores up to 200 rows: `{"rows":[{"name":"Raisins, dried","free_sugars_g":0},{"code":"11-886"},{"name":"My flapjack","energy_kj":1900,...}],"confirmed":[...]}`. Rows resolve by code, exact CoFID name, a confirmed match, or the user's own label figures; others are gaps with reasons and candidates. Flips sort first. Every model block carries its `law`.
 - `POST /ui/match` `{"name": "..."}` returns candidates and the engine record (Jev with model and probabilities, or the deterministic fallback with its reason). `POST /ui/match/confirm` validates a confirmation and returns its recorded basis.
+- `GET /ui/groups` the 14 CoFID main groups with food counts; `GET /ui/group/<code>` one main group's sub-groups and foods. Names from the CoFID 2021 user guide, Appendix B (data/mapping/cofid_groups.json).
 - `GET /ui/food/<id>` also returns `as_sold` (sale format, unit with range, band, proposed units); `pack_g` and `unit` (comma-separated confirmed unit keys) are optional parameters.
 
 Every model block in every response carries `law` (model, name, version, status, role) from data/laws.json; see docs/LAW_CHANGE.md.

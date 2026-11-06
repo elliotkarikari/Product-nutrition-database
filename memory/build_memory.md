@@ -10,6 +10,7 @@ It computes UK NPM 2004/05 and a labelled NPM 2018 shadow result plus traffic li
 The page at `/` serves small producers: today's and the coming law's verdict, with receipts, for one product, a whole range (CSV in and out) or a recipe and its label.
 
 ## Verified state
+- **Data-first round (2026-11-06), branch `shelfscale-data-first` from `48705b3c`, NOT merged, Railway untouched:** release files and `/download/*`, `/api` gains a `release` counts block, group browse, four-destination navigation, data-led home, downloads page, food-first food pages with per-food CSV, range modes named. **190 tests passed.** [Verification](verification/2026-11-06-data-first.md), [decision](decisions/data-first.md) proposed only. Production stays on `shelfscale-open`; Elliot decides on the look. Hero line and citation are drafts.
 - **Round 2 (2026-11-06), base `1318abc`:** law status as configuration (data/laws.json), Your range (`/ui/bulk`), matching assistant (`/ui/match`, Jev gate when TYPESAFE_API_KEY is set), as-sold units with measured ranges, copy and visual rewrite. **167 tests passed.** [Verification](verification/2026-11-06-round2.md). Live unverified until Elliot pushes (session has no GitHub write access). Resolve the round head with `git log -1 --format=%H -- memory/build_memory.md`.
 - **UI round (2026-11-06), base `cec82dcb22b1d5e9ae5623fe8da5df17d5755f30`:** page at `/`, summary moved to `/api`, page routes `/ui/search`, `/ui/food/<id>`, `POST /ui/recipe` with their own 300/min quota; recipe and label engine. **150 tests passed** before push (131 + 19 new), [log](verification/2026-11-06-ui-tests.txt). Live verification: see the UI verification record once added; until then treat live state as unverified.
 - Branch: `shelfscale-open`; session started at `16c3398`. Audit `6f29f92`, fixes `574c82e`, Phase 4 `9316caaf39aac328f42760f2a10d40c423707890` pushed and read back. **Phase 5 pushed and live at `994d2c1a1a1cc39c0f699af1469d7a3dd516aba4`**, after Elliot confirmed the variable. This final round records deployment evidence; resolve its commit with `git log -1 --format=%H -- memory/build_memory.md`; compare local/remote HEAD before work.
@@ -29,7 +30,7 @@ The page at `/` serves small producers: today's and the coming law's verdict, wi
 - [API hardening](decisions/api-hardening.md): required key, shared rolling quota, public root/health; Railway-variable checkpoint satisfied.
 - [Identity](decisions/commit-as-elliot.md): Elliot; no agent co-author trailers.
 - [Delivery](decisions/delivery-means-pushed.md): push and read back, otherwise local-only plus handoff.
-- [Product direction](decisions/product-direction.md): today, coming, receipts; products as sold; small producers.
+- [Product direction](decisions/product-direction.md): today, coming, receipts; products as sold; small producers. Proposed successor framing on branch only: [data first](decisions/data-first.md).
 - [Law status](decisions/law-status-config.md): statuses in data/laws.json; adoption in docs/LAW_CHANGE.md.
 - [Matching](decisions/matching.md): retrieval proposes, Jev gates, a person confirms; thresholds provisional.
 - [As sold](decisions/as-sold-units.md): unit ranges from sampling purchases; draft links need confirmation.

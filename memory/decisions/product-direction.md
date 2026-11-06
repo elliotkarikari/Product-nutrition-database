@@ -1,6 +1,6 @@
 # Product direction: today, coming, receipts
 
-Status: active
+Status: active on `shelfscale-open`. A proposed successor for the site's framing, [data-first.md](data-first.md), is on branch `shelfscale-data-first` for Elliot's review; this file stays in force until he adopts it.
 
 Decision date: 2026-11-06
 

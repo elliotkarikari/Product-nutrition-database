@@ -22,6 +22,7 @@
 - [decisions/product-direction.md](decisions/product-direction.md) — Product direction: today, coming, receipts
 - [decisions/portion-links.md](decisions/portion-links.md) — One-tap portion weights
 - [decisions/ui-design.md](decisions/ui-design.md) — First user interface: concept and motif
+- [decisions/data-first.md](decisions/data-first.md) — Data first: proposed on branch shelfscale-data-first, pending Elliot's review
 - [decisions/vj-never-publish.md](decisions/vj-never-publish.md) — Never publish VJ content
 - [verification/2026-11-05-audit-fixes.md](verification/2026-11-05-audit-fixes.md) — Audit fix verification
 - [verification/2026-11-05-audit-tests.txt](verification/2026-11-05-audit-tests.txt) — Verification output.
@@ -47,3 +48,5 @@
 - [verification/2026-11-06-round2-tests.txt](verification/2026-11-06-round2-tests.txt) — Round 2 test log.
 - [verification/2026-11-06-matching-baseline.json](verification/2026-11-06-matching-baseline.json) — Matching baseline measurement.
 - [verification/matching-eval-set.json](verification/matching-eval-set.json) — Draft matching evaluation set.
+- [verification/2026-11-06-data-first.md](verification/2026-11-06-data-first.md) — Data-first round verification (branch only).
+- [verification/2026-11-06-data-first-tests.txt](verification/2026-11-06-data-first-tests.txt) — Data-first round test log.
