@@ -16,3 +16,5 @@
 - [verification/2026-11-05-codex-memory-tests.txt](verification/2026-11-05-codex-memory-tests.txt) — Verbose unittest output; 103 tests passed with socket warnings.
 - [verification/2026-11-05-codex-tests.txt](verification/2026-11-05-codex-tests.txt) — Verbose unittest output; 103 tests passed with socket warnings.
 - [verification/2026-11-05-rocky-record-gap.md](verification/2026-11-05-rocky-record-gap.md) — Rocky read-back evidence gap
+- [verification/2026-11-05-codex-audit.md](verification/2026-11-05-codex-audit.md) — Independent audit and scope.
+- [verification/2026-11-05-audit-tests.txt](verification/2026-11-05-audit-tests.txt) — Baseline 103-test audit log.
