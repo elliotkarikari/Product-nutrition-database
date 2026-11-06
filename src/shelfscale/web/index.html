@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ShelfScale</title>
-<meta name="description" content="For each product a small food producer sells: its score under the law in force today, its score under the law that is coming, and the source of every number.">
+<meta name="description" content="The foods sold in the UK as they are sold: what they weigh, what is in them and where every number came from. Browse it, download it, and score a product with it.">
 <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/static/app.css">
 <script src="/static/app.js" defer></script>
@@ -17,10 +17,10 @@
     <span>ShelfScale</span>
   </a>
   <nav class="tabs" aria-label="Sections">
-    <a href="#/" data-tab="lookup">Look up</a>
-    <a href="#/range" data-tab="range">Your range</a>
-    <a href="#/recipe" data-tab="recipe">Recipe <span class="count" id="tab-count"></span></a>
-    <a href="#/label" data-tab="label">Label</a>
+    <a href="#/" data-tab="browse">Browse the data</a>
+    <a href="#/score" data-tab="score">Score a product</a>
+    <a href="#/range" data-tab="range">Score your range</a>
+    <a href="#/download" data-tab="download">Download the data</a>
   </nav>
 </header>
 
@@ -36,6 +36,6 @@
   </section>
 </div>
 
-<noscript><p class="noscript">ShelfScale needs JavaScript to run in your browser. The data API is described at <a href="/api">/api</a>.</p></noscript>
+<noscript><p class="noscript">ShelfScale needs JavaScript to run in your browser. The release files download without it: <a href="/download/release_manifest.json">release_manifest.json</a> lists them. The data API is described at <a href="/api">/api</a>.</p></noscript>
 </body>
 </html>

@@ -204,6 +204,11 @@ def _optional(params: dict[str, str], name: str, *, maximum: float | None = None
     return number(value, name, positive=positive, maximum=maximum)
 
 
+def group_name(code: str) -> str:
+    from .release import _name  # CoFID user guide names; one table for the page and the files
+    return _name(code)
+
+
 def food(food_id: str, params: dict[str, str] | None = None) -> dict[str, Any]:
     params = params or {}
     record = foods_by_id().get(food_id)
@@ -257,6 +262,7 @@ def food(food_id: str, params: dict[str, str] | None = None) -> dict[str, Any]:
         "name": record.name,
         "description": record.description,
         "group": record.group,
+        "group_name": group_name((record.group or "")[:1]),
         "data_release": DATA_RELEASE,
         "panel_basis": "per_100g",
         "panel": panel,

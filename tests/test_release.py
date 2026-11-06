@@ -41,6 +41,25 @@ class TestCounts(unittest.TestCase):
         self.assertEqual(s["data_release"], DATA_RELEASE)
 
 
+    def test_page_shows_the_api_counts_and_no_number_of_its_own(self):
+        """The home page shows the release block of GET /api unchanged (TestRoutes checks /api
+        against summary()). Its renderer restates no count, so the page cannot drift from the API."""
+        js = (WEB / "app.js").read_text(encoding="utf-8")
+        home = js[js.index("function countsHtml("):js.index("function filesBrief(")]
+        self.assertIn('api("/api")', js)
+        self.assertIn("countsHtml(summary.value.release)", js)
+        for key in release.COUNT_LABELS:
+            self.assertIn(f"release.{key}", home)
+            self.assertIn(f'"{key}"', js[js.index("const COUNT_KEYS"):js.index("const whole")])
+        self.assertIn("release.labels[k]", home)
+        self.assertIn("release.data_release", home)
+        self.assertNotRegex(home, r"\d{2,}")
+        page = js + (WEB / "index.html").read_text(encoding="utf-8")
+        s = release.summary()
+        for text in (f"{s['foods']:,}", str(s["foods"])):  # the one count long enough to search for
+            self.assertNotRegex(page, rf"(?<![\w.]){re.escape(text)}(?![\w.])")
+
+
 class TestGroups(unittest.TestCase):
     def test_fourteen_main_groups_cover_every_food(self):
         g = release.groups()

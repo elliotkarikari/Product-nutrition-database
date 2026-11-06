@@ -50,7 +50,8 @@ if (!recipe || !Array.isArray(recipe.ingredients)) recipe = { name: "", servings
 function saveRecipe() {
   write(STORE, recipe);
   const n = recipe.ingredients.length;
-  document.getElementById("tab-count").textContent = n ? String(n) : "";
+  const badge = document.getElementById("tab-count");
+  if (badge) badge.textContent = n ? String(n) : "";
 }
 const matches = () => read(MATCHES, []);
 function keepMatch(record) {
@@ -92,7 +93,7 @@ function sourceHtml(card) {
 }
 
 /* ---------- laws and the two-law ticket ---------- */
-const INPUT_WORDS = { fruit_veg_nuts_percent: "fruit, veg and nuts %", free_sugars_g: "free sugars",
+const INPUT_WORDS = { fruit_veg_nuts_percent: "fruit, veg and nuts %", fvn_percent: "fruit, veg and nuts %", free_sugars_g: "free sugars",
   fvns_g: "fruit, veg, nuts and seeds", fibre: "fibre", fibre_aoac_g: "AOAC fibre", energy_kj: "energy",
   saturated_fat_g: "saturates", total_sugars_g: "sugars", sodium_mg: "sodium", protein_g: "protein", salt_g: "salt" };
 const needWord = (m) => { const k = m.split(" (")[0].split(":")[0].trim(); return INPUT_WORDS[k] || k.replace(/_/g, " "); };
@@ -234,9 +235,10 @@ async function runSearch(q, target, mode) {
         return `<li class="result ticket"><span class="name">${esc(r.name)}</span><span class="meta">${esc(meta)}</span>
           <button class="btn ticket act" type="button" data-add="${esc(r.food_id)}" data-name="${esc(r.name)}">Add</button></li>`;
       }
-      return `<li><a class="result ticket" href="#/food/${encodeURIComponent(r.food_id)}"><span class="name">${esc(r.name)}</span><span class="meta">${esc(meta)}</span></a></li>`;
+      const base = mode === "score" ? "#/score/" : "#/food/";
+      return `<li><a class="result ticket" href="${base}${encodeURIComponent(r.food_id)}"><span class="name">${esc(r.name)}</span><span class="meta">${esc(meta)}</span></a></li>`;
     }).join("");
-    const empty = !data.results.length && data.note ? `<p class="note">${esc(data.note)} For a product with its own label, score it from your figures on <a href="#/range">Your range</a>.</p>` : "";
+    const empty = !data.results.length && data.note ? `<p class="note">${esc(data.note)} For a product with its own label, score it from your own figures on <a href="#/range">Score your range</a>.</p>` : "";
     box.innerHTML = (items ? `<ul class="results">${items}</ul>` : "") + (data.results.length && data.note ? `<p class="note">${esc(data.note)}</p>` : "") + empty;
   } catch (e) {
     if (e.name !== "AbortError") box.innerHTML = `<p class="note">${esc(e.message)}</p>`;
@@ -249,46 +251,180 @@ function wireSearch(id, target, mode) {
   input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); runSearch(input.value, target, mode); } });
 }
 
-/* ---------- Home ---------- */
+/* ---------- Home: the data first ---------- */
+/* Drafted for Elliot's review (data-first round, 2026-11-06); not settled copy. */
+const HERO = "The foods sold in the UK, as they are sold: what they weigh, what is in them, and where every number came from.";
+const HERO_LEDE = "ShelfScale Open is a public data release built on the UK's official food tables. Browse it here, download every file without an account, and use it to score a product under today's law and the law that is coming.";
+const COUNT_KEYS = ["foods", "foods_with_as_sold_unit", "sources_in_register"];
+const whole = (n) => Number(n).toLocaleString("en-GB");
+
+function countsHtml(release) {
+  /* Every number here is the release block of GET /api, unchanged. */
+  const values = { foods: release.foods, foods_with_as_sold_unit: release.foods_with_as_sold_unit,
+    sources_in_register: release.sources_in_register };
+  return `<dl class="counts">${COUNT_KEYS.map((k) => `<div class="count-cell">
+      <dt>${esc(release.labels[k])}</dt><dd><span class="count-big">${whole(values[k])}</span>
+      <span class="count-rel">Data release ${esc(release.data_release)}</span></dd></div>`).join("")}</dl>`;
+}
+
+function filesBrief(manifest) {
+  return `<ul class="file-brief">${manifest.files.map((f) => `<li><a href="/download/${encodeURIComponent(f.name)}" download>${esc(f.name)}</a>
+    <span class="muted small">${whole(f.rows)} rows</span></li>`).join("")}
+    <li><a href="/download/release_manifest.json" download>release_manifest.json</a> <span class="muted small">counts, checksums, attribution</span></li></ul>`;
+}
+
+function citationHtml(manifest, id) {
+  return `<div class="cite"><p class="small muted">Cite this release as:</p>
+    <p class="cite-text" id="${id}">${esc(manifest.citation)}</p>
+    <button class="btn btn-ghost" type="button" data-copy="${id}">Copy the citation</button> <span class="note" id="${id}-status" role="status"></span></div>`;
+}
+
 async function renderHome() {
   sources = [];
   view().innerHTML = `<section class="scene home">
-    <div class="backtype" aria-hidden="true">Today<br>Tomorrow</div>
+    <div class="backtype" aria-hidden="true">ABCDF<br>GHJMO<br>PQSW</div>
     <div class="home-head">
-      <h1 class="headline home-title">Every product you sell, scored under today's law and the law that is coming.</h1>
-      <p class="lede">ShelfScale is for small food producers. For each product, see whether it is less healthy under the rules in force now and under the 2018 model that may replace them, and see the source of every number behind both.</p>
-      <p class="small muted">It scores products as sold: the pack on the shelf, or a loose item at its weighed typical size. It does not score diets or meals.</p>
+      <p class="kicker">ShelfScale Open data</p>
+      <h1 class="headline home-title">${esc(HERO)}</h1>
     </div>
-    <div id="example" class="example"><p class="note">Loading a worked example from the service.</p></div>
-    <div class="paths">
-      <div class="path ticket">
-        <h2>Look up one product</h2>
-        <div class="searchbox field">
-          <label for="q">Search the UK composition tables (CoFID 2021)</label>
-          <input class="input" id="q" type="search" autocomplete="off" placeholder="For example: raisins, butter, onions" enterkeyhint="search">
-        </div>
-        <div id="found"></div>
+    <section class="groups-hero ticket" aria-labelledby="groups-h">
+      <p class="lede">${esc(HERO_LEDE)}</p>
+      <div id="counts"><p class="note">Loading the release counts.</p></div>
+      <h2 id="groups-h" class="groups-title">Browse the foods by group</h2>
+      <ol class="groups" id="groups"><li class="note">Loading the food groups.</li></ol>
+      <div class="searchbox field">
+        <label for="q">Or find a food by name or CoFID code</label>
+        <input class="input" id="q" type="search" autocomplete="off" placeholder="For example: raisins, butter, onions" enterkeyhint="search">
       </div>
-      <a class="path ticket go" href="#/range"><h2>Score your whole range</h2><p>Paste a list or upload a spreadsheet. Products whose verdict flips come first, and you can export the run.</p><span class="btn ticket">Open your range</span></a>
-      <a class="path ticket go" href="#/recipe"><h2>Build a recipe and its label</h2><p>Add what goes in by weight. Get both scores and a UK nutrition declaration to print.</p><span class="btn ticket">Start a recipe</span></a>
+      <div id="found"></div>
+    </section>
+    <div class="home-panels">
+      <section class="panel ticket" aria-labelledby="dl-h">
+        <p class="eyebrow">Download the data</p>
+        <h2 id="dl-h">The whole release as CSV</h2>
+        <p class="small">No account and no key. Generated from the same data the service uses.</p>
+        <div id="dlbrief"><p class="note">Loading the release files.</p></div>
+        <p><a class="btn ticket" href="#/download">All files and how to cite them</a></p>
+      </section>
+      <section class="panel ticket can-do" aria-labelledby="can-h">
+        <p class="eyebrow">One thing the data can do</p>
+        <h2 id="can-h">Score a product under today's law and the law that is coming</h2>
+        <div id="example"><p class="note">Loading a worked example from the service.</p></div>
+        <p><a class="btn ticket" href="#/score">Score a product</a></p>
+      </section>
     </div>
   </section>`;
   wireSearch("q", "found", "view");
-  try {
-    const food = await api("/ui/food/14-393?free_sugars_g=0");
+  const [summary, groupList, manifest, food] = await Promise.allSettled([
+    api("/api"), api("/ui/groups"), api("/download/release_manifest.json"), api("/ui/food/14-393?free_sugars_g=0")]);
+  const put = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+  if (summary.status === "fulfilled") put("counts", countsHtml(summary.value.release));
+  else put("counts", `<p class="note">The counts did not load: ${esc(summary.reason.message)}</p>`);
+  if (groupList.status === "fulfilled") {
+    put("groups", groupList.value.groups.map((g) => `<li><a class="group-link" href="#/browse/${encodeURIComponent(g.code)}">
+      <span class="group-name">${esc(g.name)}</span><span class="group-n">${whole(g.foods)} foods</span></a></li>`).join(""));
+  } else put("groups", `<li class="note">The food groups did not load: ${esc(groupList.reason.message)}</li>`);
+  if (manifest.status === "fulfilled") {
+    put("dlbrief", `<p class="small">Release <strong>${esc(manifest.value.data_release)}</strong></p>${filesBrief(manifest.value)}${citationHtml(manifest.value, "cite-home")}`);
+  } else put("dlbrief", `<p class="note">The release files did not load: ${esc(manifest.reason.message)}</p>`);
+  if (food.status === "fulfilled") {
+    const f = food.value;
     sources = [];
-    document.getElementById("example").innerHTML = `
-      <p class="example-label">Worked example, live from the service: <a href="#/food/14-393">${esc(food.name)}</a></p>
-      ${ticket(food.assessment, { hero: true })}
-      <p class="small example-note">Free sugars are entered as 0 g, as for whole dried fruit with nothing added. That one figure is entered, and labelled as entered; CoFID records total sugars only. Every other number is CoFID 2021, ${srcButton(food.panel[0].source, "with its source")}.</p>`;
+    put("example", `<p class="example-label">Worked example, live from the service: <a href="#/score/14-393">${esc(f.name)}</a></p>
+      ${ticket(f.assessment)}
+      <p class="small example-note">Free sugars are entered as 0 g, as for whole dried fruit with nothing added. That one figure is entered, and labelled as entered; CoFID records total sugars only. Every other number is CoFID 2021, ${srcButton(f.panel[0].source, "with its source")}.</p>`);
     revealTear();
-  } catch (e) {
-    document.getElementById("example").innerHTML = `<p class="note">The worked example did not load: ${esc(e.message)}</p>`;
+  } else put("example", `<p class="note">The worked example did not load: ${esc(food.reason.message)}</p>`);
+}
+
+/* ---------- Browse: one food group ---------- */
+async function renderGroup(code) {
+  sources = [];
+  view().innerHTML = `<section class="scene"><p class="note">Loading the group.</p></section>`;
+  let g;
+  try { g = await api(`/ui/group/${encodeURIComponent(code)}`); } catch (e) {
+    view().innerHTML = `<section class="scene"><h1 class="headline">This group did not load</h1><p>${esc(e.message)}</p><p><a class="btn ticket" href="#/">Back to the data</a></p></section>`;
+    return;
   }
+  view().innerHTML = `<section class="scene browse">
+    <div class="backtype" aria-hidden="true">${esc(g.name)}</div>
+    <p class="kicker"><a href="#/">All groups</a></p>
+    <h1 class="headline">${esc(g.name)}</h1>
+    <p class="lede">${whole(g.foods)} foods in CoFID 2021, in ${g.subgroups.length} group${g.subgroups.length === 1 ? "" : "s"}. Data release ${esc(g.data_release)}. Each food opens with what it weighs as sold, what is in it and where each value came from.</p>
+    <nav class="sub-jump" aria-label="Groups in ${esc(g.name)}">${g.subgroups.map((s) => `<a href="#/browse/${encodeURIComponent(code)}" data-jump="sg-${esc(s.code)}">${esc(s.name)} <span class="muted">${s.foods.length}</span></a>`).join("")}</nav>
+    ${g.subgroups.map((s) => `<section class="panel ticket subgroup" id="sg-${esc(s.code)}" aria-labelledby="sgh-${esc(s.code)}">
+      <h2 id="sgh-${esc(s.code)}">${esc(s.name)} <span class="muted small">CoFID group ${esc(s.code)}, ${s.foods.length} food${s.foods.length === 1 ? "" : "s"}</span></h2>
+      <ul class="food-list">${s.foods.map((f) => `<li><a href="#/food/${encodeURIComponent(f.food_id)}">${esc(f.name)}</a>${f.portions ? `<span class="muted small"> ${f.portions} unit weight${f.portions > 1 ? "s" : ""}</span>` : ""}</li>`).join("")}</ul>
+    </section>`).join("")}
+  </section>`;
+}
+
+/* ---------- Score a product ---------- */
+function renderScoreStart() {
+  sources = [];
+  view().innerHTML = `<section class="scene score-start">
+    <div class="backtype" aria-hidden="true">Score</div>
+    <h1 class="headline">Score a product</h1>
+    <p class="lede">Pick a food from the data and see its score under the law in force today and under the 2018 model that may replace it, with the source of every number behind both.</p>
+    <div class="paths">
+      <div class="path ticket">
+        <h2>From ShelfScale reference data</h2>
+        <div class="searchbox field">
+          <label for="sq">Find the food by name or CoFID code</label>
+          <input class="input" id="sq" type="search" autocomplete="off" placeholder="For example: raisins, butter, onions" enterkeyhint="search">
+        </div>
+        <div id="sfound"></div>
+      </div>
+      <a class="path ticket go" href="#/range"><h2>From your own figures</h2><p>Your product has its own label? Score it, or a whole range, from your per 100 g figures.</p><span class="btn ticket">Score your range</span></a>
+      <a class="path ticket go" href="#/recipe"><h2>From a recipe</h2><p>Add what goes in by weight. Get both scores and a UK nutrition declaration to print.</p><span class="btn ticket">Start a recipe</span></a>
+    </div>
+  </section>`;
+  wireSearch("sq", "sfound", "score");
+}
+
+/* ---------- Download the data ---------- */
+const kb = (bytes) => (bytes >= 1048576 ? `${fmt(bytes / 1048576, "g")} MB` : `${whole(Math.ceil(bytes / 1024))} KB`);
+
+async function renderDownloads() {
+  sources = [];
+  view().innerHTML = `<section class="scene downloads"><div class="backtype" aria-hidden="true">CSV</div>
+    <h1 class="headline">Download the data</h1><div id="dl"><p class="note">Loading the release.</p></div></section>`;
+  let m;
+  try { m = await api("/download/release_manifest.json"); } catch (e) {
+    document.getElementById("dl").innerHTML = `<p class="note">The release did not load: ${esc(e.message)}</p>`;
+    return;
+  }
+  const decisions = m.match_decision_categories;
+  document.getElementById("dl").innerHTML = `
+    <p class="lede">The whole release as CSV files. No account and no key. Every file is generated from the same data the service and its API use, so a number you download is the number the page shows.</p>
+    <section class="panel ticket release-id">
+      <p class="eyebrow">Data release</p>
+      <p class="release-string">${esc(m.data_release)}</p>
+      ${citationHtml(m, "cite-dl")}
+    </section>
+    <div class="table-wrap"><table class="figures files">
+      <thead><tr><th>File</th><th>What is in it</th><th>Rows</th><th>Size</th><th>SHA-256</th></tr></thead>
+      <tbody>${m.files.map((f) => `<tr><th scope="row"><a href="/download/${encodeURIComponent(f.name)}" download>${esc(f.name)}</a></th>
+        <td>${esc(f.description)}</td><td class="n">${whole(f.rows)}</td><td class="n">${kb(f.bytes)}</td><td><code class="sha">${esc(f.sha256)}</code></td></tr>`).join("")}
+        <tr><th scope="row"><a href="/download/release_manifest.json" download>release_manifest.json</a></th><td colspan="4">Row counts, checksums, the laws and their status, and the attribution for every source.</td></tr>
+      </tbody></table></div>
+    <div class="band two">
+      <section class="panel ticket">
+        <h2>Match decisions</h2>
+        <p class="small">match_decisions.csv holds every decision that links a source record to a CoFID food, as recorded.</p>
+        <ul class="gaps">${decisions.map((c) => `<li><strong>${esc(c.description)}</strong>: ${c.rows ? `${whole(c.rows)} rows` : esc(c.statement)}</li>`).join("")}</ul>
+      </section>
+      <section class="panel ticket">
+        <h2>Sources and rights</h2>
+        <ul class="gaps">${m.attribution.map((a) => `<li><strong>${esc(a.dataset)}</strong>${a.edition ? `, ${esc(a.edition)}` : ""}. ${esc(a.licence)}${a.extraction ? ` Extraction: ${esc(a.extraction)}.` : ""}${a.attribution ? `<br><span class="small">${esc(a.attribution)}</span>` : ""}</li>`).join("")}</ul>
+        <p class="small">${m.not_included.map(esc).join(" ")}</p>
+      </section>
+    </div>
+    <p class="note">One food at a time: every food page has its own CSV, built from what that page shows. Laws in this release: ${m.laws.map((l) => esc(lawStatus(l))).join("; ")}.</p>`;
 }
 
 /* ---------- Food ---------- */
-const foodState = { id: null, portion: null, fvn: "", fs: "", pack: "", data: null };
+const foodState = { id: null, portion: null, fvn: "", fs: "", pack: "", data: null, scoreFirst: false };
 
 function panelTable(food, portionG) {
   const rows = food.panel.map((p) => {
@@ -305,7 +441,8 @@ function panelTable(food, portionG) {
   return `<table class="figures"><thead><tr><th>Nutrient</th><th>${basis}</th>${portionG ? `<th>Per ${grams(portionG)}</th>` : ""}</tr></thead><tbody>${rows}</tbody></table>`;
 }
 
-async function loadFood(id) {
+/* The query that sets what a food page shows; the page and its CSV use the same one. */
+function foodParams(id) {
   const p = new URLSearchParams();
   if (foodState.portion) p.set("portion_g", String(foodState.portion));
   if (foodState.fvn !== "") p.set("fvn_percent", foodState.fvn);
@@ -313,16 +450,26 @@ async function loadFood(id) {
   if (foodState.pack !== "") p.set("pack_g", foodState.pack);
   const keys = unitKeys(id);
   if (keys.length) p.set("unit", keys.join(","));
-  return api(`/ui/food/${encodeURIComponent(id)}?${p}`);
+  return p;
 }
 
-async function renderFood(id) {
+async function loadFood(id) {
+  return api(`/ui/food/${encodeURIComponent(id)}?${foodParams(id)}`);
+}
+
+function foodCsvHref(id) {
+  const p = foodParams(id).toString();
+  return `/download/food/${encodeURIComponent(id)}.csv${p ? `?${p}` : ""}`;
+}
+
+async function renderFood(id, { scoreFirst = false } = {}) {
+  foodState.scoreFirst = scoreFirst;
   if (foodState.id !== id) Object.assign(foodState, { id, portion: null, fvn: "", fs: "", pack: "", data: null });
   sources = [];
   if (!foodState.data) view().innerHTML = `<section class="scene"><p class="note">Loading the product.</p></section>`;
   let food;
   try { food = await loadFood(id); } catch (e) {
-    view().innerHTML = `<section class="scene"><h1 class="headline">This product did not load</h1><p>${esc(e.message)}</p><p><a class="btn ticket" href="#/">Search again</a></p></section>`;
+    view().innerHTML = `<section class="scene"><h1 class="headline">This food did not load</h1><p>${esc(e.message)}</p><p><a class="btn ticket" href="#/">Back to the data</a></p></section>`;
     return;
   }
   if (foodState.portion === null) {
@@ -344,28 +491,27 @@ async function renderFood(id) {
   const fsMissing = neu && neu.scorable === false && neu.applicable !== false;
   const caller = food.caller_supplied || {};
 
-  view().innerHTML = `<section class="scene food">
-    <div class="backtype" aria-hidden="true">${esc(food.name)}</div>
-    <h1 class="headline">${esc(food.name)}</h1>
-    ${ticket(a, { hero: true })}
-    ${yours(caller)}
-    ${quote(a, food.data_release)}
-    <p class="muted small desc">CoFID ${esc(food.code)}, group ${esc(food.group)}. ${esc(food.description || "")}</p>
-    <div class="band">
-      ${food.powder ? `<div class="flag"><strong>As sold, not made up</strong>${esc(food.powder.text)}</div>` : ""}
-      ${soldHtml(food)}
-      ${(needsFvn || fsMissing || caller.fvn_percent !== undefined || caller.free_sugars_g !== undefined) ? `<section class="panel ticket">
-        <h2>Your figures</h2>
+  const figuresForm = (needsFvn || fsMissing || caller.fvn_percent !== undefined || caller.free_sugars_g !== undefined) ? `
+        <h3>Your figures</h3>
         <p class="small">CoFID cannot supply these. What you enter is labelled as yours wherever the score appears.</p>
         <div class="inline-form">
           ${needsFvn || caller.fvn_percent !== undefined ? `<div class="field"><label for="fvn">Fruit, veg and nuts (% of weight)</label><input class="input num" id="fvn" type="number" inputmode="decimal" min="0" max="100" step="any" value="${esc(foodState.fvn)}"></div>` : ""}
           ${fsMissing || caller.free_sugars_g !== undefined ? `<div class="field"><label for="fs">Free sugars (g per 100 g)</label><input class="input num" id="fs" type="number" inputmode="decimal" min="0" max="100" step="any" value="${esc(foodState.fs)}"></div>` : ""}
           <button class="btn ticket" type="button" data-act="apply-figures">Score with these</button>
         </div>
-        ${fsMissing && neu.free_sugars_note ? `<p class="note">${esc(neu.free_sugars_note)}</p>` : ""}
-      </section>` : ""}
-      <div class="band two">
-        <section class="panel ticket">
+        ${fsMissing && neu.free_sugars_note ? `<p class="note">${esc(neu.free_sugars_note)}</p>` : ""}` : "";
+  const scorePanel = `<section class="panel score-panel" id="score" aria-labelledby="score-h">
+      <p class="eyebrow">Score this food</p>
+      <h2 id="score-h">Under today's law and the law that is coming</h2>
+      ${ticket(a)}
+      ${yours(caller)}
+      ${quote(a, food.data_release)}
+      ${figuresForm}
+      <h3>Front of pack</h3>
+      ${lights(a.traffic_lights, "Traffic lights")}
+      ${a.traffic_lights && a.traffic_lights.portion_rule_applied ? `<p class="note">The unit is over 100 g, so the per-portion red limits were checked too.</p>` : ""}
+    </section>`;
+  const composition = `<section class="panel ticket">
           <h2>What is in it</h2>
           <div class="chips">
             ${tappable.map((p) => chip(p.label, p.grams, grams(p.grams))).join("")}
@@ -380,16 +526,34 @@ async function renderFood(id) {
           ${tappable.length ? `<p class="note">Unit weights: ${tappable.map((p) => srcButton(p.source, `${p.label}, ${p.source.label}`)).join(" ")}</p>` : ""}
           ${listed.length ? `<p class="note">Also printed, not offered as one tap: ${listed.map((p) => `${esc(p.label)} ${esc(p.weight_text)} ${srcButton(p.source, "why")}`).join("; ")}</p>` : ""}
           ${food.overlay_values.length ? `<h3>Also measured by an official overlay</h3><table class="figures"><tbody>${food.overlay_values.map((o) => `<tr><th scope="row">${esc(o.label)}<span class="srcrow">${srcButton(o.source)}</span></th><td class="n">${o.value === null ? esc(o.value_text) : `${fmt(o.value, o.unit)}<span class="u">${esc(o.unit)}</span>`}</td></tr>`).join("")}</tbody></table>` : ""}
-        </section>
-        <section class="panel ticket">
-          <h2>Front of pack</h2>
-          ${lights(a.traffic_lights, "Traffic lights")}
-          ${a.traffic_lights && a.traffic_lights.portion_rule_applied ? `<p class="note">The unit is over 100 g, so the per-portion red limits were checked too.</p>` : ""}
-          <h3>Use it in a recipe</h3>
+        </section>`;
+  const recipePanel = `<section class="panel ticket">
+          <h2>Use it in a recipe</h2>
           <div class="inline-form">
             <div class="field"><label for="addg">Weight (g)</label><input class="input num" id="addg" type="number" inputmode="decimal" min="0.1" step="any" value="${g ? Math.round(g * 10) / 10 : 100}"></div>
             <button class="btn ticket" type="button" data-act="add-food">Add to recipe</button>
           </div>
+        </section>`;
+  const record = `
+      ${food.powder ? `<div class="flag"><strong>As sold, not made up</strong>${esc(food.powder.text)}</div>` : ""}
+      <div class="band two">
+        ${soldHtml(food)}
+        ${composition}
+      </div>`;
+  view().innerHTML = `<section class="scene food">
+    <div class="backtype" aria-hidden="true">${esc(food.name)}</div>
+    <p class="kicker">${scoreFirst ? `<a href="#/score">Score a product</a>` : `<a href="#/browse/${encodeURIComponent((food.group || "").slice(0, 1))}">${esc(food.group_name || "Food group")}</a>`}</p>
+    <h1 class="headline">${esc(food.name)}</h1>
+    <p class="muted small desc">CoFID ${esc(food.code)}, group ${esc(food.group)}. ${esc(food.description || "")}</p>
+    <div class="band">
+      ${scoreFirst ? scorePanel + record : record + scorePanel}
+      <div class="band two">
+        ${recipePanel}
+        <section class="panel ticket">
+          <h2>This food as data</h2>
+          <p class="small">Its identity, weights, composition with sources, and both scores with their laws, as this page shows them now.</p>
+          <p><a class="btn ticket" href="${esc(foodCsvHref(food.food_id))}" download>Download this food as CSV</a></p>
+          <p class="small">${scoreFirst ? `<a href="#/food/${encodeURIComponent(food.food_id)}">Open the full record</a>` : `<a href="#/score/${encodeURIComponent(food.food_id)}">Open the score view</a>`}</p>
         </section>
       </div>
       <p class="note">${esc(food.evidence_note)} Data release ${esc(food.data_release)}.</p>
@@ -450,6 +614,14 @@ function verdictCell(m) {
   return `<td class="vcell"><span class="vscore">${m.score}</span><span class="vword"><span aria-hidden="true">${m.less_healthy ? "&#9632;" : "&#9633;"}</span> ${m.less_healthy ? "less healthy" : "not less healthy"}</span></td>`;
 }
 
+/* Which of the two modes scored a row. Read from the service's own row: a row with no
+   CoFID food was scored from the visitor's figures. */
+function scoredFrom(r) {
+  if (!r.resolved.food_id) return "Your figures";
+  const own = Object.keys(r.caller_supplied || {}).map(needWord);
+  return `ShelfScale reference data${own.length ? `, with your ${own.join(" and ")}` : ""}`;
+}
+
 function rowHtml(r, laws) {
   const order = laws.map((l) => l.model);
   const flips = r.verdict_changes_under_2018 === true;
@@ -457,6 +629,7 @@ function rowHtml(r, laws) {
   const unit = sold.unit;
   const unitCell = !unit && sold.proposed_units && r.resolved.food_id ? `<a href="#/food/${encodeURIComponent(r.resolved.food_id)}">Confirm a unit weight</a>` : unit ? `${grams(unit.low_g)}${unit.low_g !== unit.high_g ? ` to ${grams(unit.high_g)}` : ""}${sold.band && sold.band.crosses && sold.band.crosses.length ? `<br><span class="tag red">${esc(sold.band.crosses.join(", "))} crosses</span>` : ""}` : "";
   const srcCard = { label: "Where this row came from", html: `<h2 id="sheet-title">${esc(r.input)}</h2><dl>
+      <dt>Scored from</dt><dd>${esc(scoredFrom(r))}</dd>
       <dt>Matched to</dt><dd>${esc(r.resolved.name)}${r.resolved.code ? ` (CoFID ${esc(r.resolved.code)})` : ""}</dd>
       <dt>How</dt><dd>${esc(r.resolved.basis)}</dd><dt>Values from</dt><dd>${esc(r.sources.join(", "))}</dd>
       ${Object.keys(r.caller_supplied || {}).length ? `<dt>You entered</dt><dd>${esc(Object.entries(r.caller_supplied).map(([k, v]) => `${k.replace(/_/g, " ")} ${v}`).join(", "))}</dd>` : ""}
@@ -464,7 +637,8 @@ function rowHtml(r, laws) {
       <dt>Sold as</dt><dd>${esc(sold.kind)}${sold.sale_format ? `, ${esc(sold.sale_format)}` : ""}${unit ? `; unit ${esc(unit.label)}, ${esc(unit.spread)}` : ""}</dd></dl>` };
   return `<tr class="${flips ? "flip-row" : ""}">
     <th scope="row"><span class="pname">${esc(r.input)}</span>${flips ? '<span class="torn" title="Verdict flips">Flips</span>' : ""}
-      <span class="pmeta">${esc(r.resolved.name)}${sold.kind === "loose" ? ", sold loose" : ""}</span>${srcButton(srcCard, "Receipts")}</th>
+      <span class="pmeta">${esc(r.resolved.name)}${sold.kind === "loose" ? ", sold loose" : ""}</span>
+      <span class="mode-tag">Scored from: ${esc(scoredFrom(r))}</span>${srcButton(srcCard, "Receipts")}</th>
     ${order.map((id) => verdictCell(r.models[id])).join("")}
     <td class="n">${unitCell}</td>
   </tr>`;
@@ -475,8 +649,12 @@ function renderRange() {
   const saved = read(RANGE, "");
   view().innerHTML = `<section class="scene range">
     <div class="backtype" aria-hidden="true">Range</div>
-    <h1 class="headline">Your range</h1>
-    <p class="lede">Bring your whole range. Paste one product per line, or upload a spreadsheet saved as CSV. Each row can be a CoFID name or code, or your own per-100 g label figures. Products whose verdict flips come first.</p>
+    <h1 class="headline">Score your range</h1>
+    <p class="lede">Bring your whole range. Paste one product per line, or upload a spreadsheet saved as CSV. Products whose verdict flips come first.</p>
+    <div class="modes">
+      <div class="mode ticket"><h2>From your own figures</h2><p class="small">Give your label values per 100 g. The row is scored from your figures, and says so.</p></div>
+      <div class="mode ticket"><h2>From ShelfScale reference data</h2><p class="small">Give a CoFID name or code. The row is scored from CoFID values and their sources, and says so.</p></div>
+    </div>
     <div class="panel ticket">
       <div class="field"><label for="rows">Products, one per line, or CSV with a header row</label>
         <textarea class="input area" id="rows" rows="8" spellcheck="false" placeholder="Raisins, dried&#10;Jaffa cakes&#10;11-886">${esc(saved)}</textarea></div>
@@ -513,6 +691,7 @@ function paintRun() {
   box.innerHTML = `
     <div class="run-head">
       <p class="run-big">${s.verdict_changes_under_2018}<span> verdict${s.verdict_changes_under_2018 === 1 ? "" : "s"} flip</span></p>
+      <p class="small">${r.rows.filter((x) => !x.resolved.food_id).length} scored from your figures, ${r.rows.filter((x) => x.resolved.food_id).length} from ShelfScale reference data.</p>
       <p class="small">${s.scored} of ${s.received} scored. ${s.gaps} gap${s.gaps === 1 ? "" : "s"}, ${s.errors} row error${s.errors === 1 ? "" : "s"}, ${s.loose} sold loose. Data release ${esc(r.data_release)}.</p>
       <div class="label-actions noprint">
         <button class="btn ticket" type="button" data-act="export-csv">Export CSV</button>
@@ -531,18 +710,18 @@ function paintRun() {
 function exportRows() {
   const r = lastRun;
   const laws = r.laws;
-  const head = ["product", "status", "matched_cofid_code", "matched_name", "match_basis",
+  const head = ["product", "status", "scored_from", "matched_cofid_code", "matched_name", "match_basis",
     ...laws.flatMap((l) => [`${l.model} score`, `${l.model} verdict`, `${l.model} law`]),
     "verdict_changes", "sold_as", "unit_low_g", "unit_high_g", "unit_basis", "values_from", "you_entered", "reason", "data_release"];
   const out = [head];
-  r.rows.forEach((x) => out.push([x.input, "scored", x.resolved.code || "", x.resolved.name, x.resolved.basis,
+  r.rows.forEach((x) => out.push([x.input, "scored", scoredFrom(x), x.resolved.code || "", x.resolved.name, x.resolved.basis,
     ...laws.flatMap((l) => { const m = x.models[l.model]; return [m.scorable ? m.score : "", m.scorable ? (m.less_healthy ? "less healthy" : "not less healthy") : `not scored: ${m.missing.join("; ")}`, lawStatus(l)]; }),
     x.verdict_changes_under_2018 === null ? "unknown" : String(x.verdict_changes_under_2018), x.as_sold.kind,
     x.as_sold.unit ? x.as_sold.unit.low_g.toFixed(1) : "", x.as_sold.unit ? x.as_sold.unit.high_g.toFixed(1) : "",
     x.as_sold.unit ? x.as_sold.unit.basis : "", x.sources.join("; "),
     Object.entries(x.caller_supplied || {}).map(([k, v]) => `${k}=${v}`).join("; "), "", r.data_release]));
-  r.gaps.forEach((g) => out.push([g.input, "gap", "", "", "", ...laws.flatMap(() => ["", "", ""]), "", "", "", "", "", "", "", g.reason, r.data_release]));
-  r.errors.forEach((e) => out.push([e.input || `row ${e.index + 1}`, "error", "", "", "", ...laws.flatMap(() => ["", "", ""]), "", "", "", "", "", "", "", e.error, r.data_release]));
+  r.gaps.forEach((g) => out.push([g.input, "gap", "not scored", "", "", "", ...laws.flatMap(() => ["", "", ""]), "", "", "", "", "", "", "", g.reason, r.data_release]));
+  r.errors.forEach((e) => out.push([e.input || `row ${e.index + 1}`, "error", "not scored", "", "", "", ...laws.flatMap(() => ["", "", ""]), "", "", "", "", "", "", "", e.error, r.data_release]));
   return out;
 }
 const csvCell = (v) => (/[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v));
@@ -802,12 +981,16 @@ function revealTear() {
 /* ---------- routing and events ---------- */
 function route() {
   const hash = location.hash || "#/";
-  let tab = "lookup";
+  let tab = "browse";
   closeSheet();
   if (hash.startsWith("#/food/")) renderFood(decodeURIComponent(hash.slice(7)));
+  else if (hash.startsWith("#/browse/")) renderGroup(decodeURIComponent(hash.slice(9)));
+  else if (hash.startsWith("#/score/")) { tab = "score"; renderFood(decodeURIComponent(hash.slice(8)), { scoreFirst: true }); }
+  else if (hash === "#/score") { tab = "score"; renderScoreStart(); }
   else if (hash === "#/range") { tab = "range"; renderRange(); }
-  else if (hash === "#/recipe") { tab = "recipe"; renderRecipe(); }
-  else if (hash.startsWith("#/label")) { tab = "label"; renderLabel(hash.includes("method")); }
+  else if (hash === "#/download") { tab = "download"; renderDownloads(); }
+  else if (hash === "#/recipe") { tab = "score"; renderRecipe(); }
+  else if (hash.startsWith("#/label")) { tab = "score"; renderLabel(hash.includes("method")); }
   else renderHome();
   document.querySelectorAll(".tabs a").forEach((a) => {
     if (a.dataset.tab === tab) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
@@ -842,9 +1025,10 @@ document.addEventListener("click", async (ev) => {
   const t = ev.target.closest("button, [data-close]");
   if (!t) return;
   if (t.hasAttribute("data-close")) { closeSheet(); return; }
+  if (t.dataset.copy) { copyText(document.getElementById(t.dataset.copy).textContent, `${t.dataset.copy}-status`); return; }
   if (t.dataset.src !== undefined) { openSheet(sourceHtml(sources[Number(t.dataset.src)])); return; }
-  if (t.dataset.portion !== undefined) { foodState.portion = Number(t.dataset.portion) || 0; renderFood(foodState.id); return; }
-  if (t.dataset.unit) { keepUnit(foodState.id, t.dataset.unit); foodState.portion = null; renderFood(foodState.id); return; }
+  if (t.dataset.portion !== undefined) { foodState.portion = Number(t.dataset.portion) || 0; renderFood(foodState.id, { scoreFirst: foodState.scoreFirst }); return; }
+  if (t.dataset.unit) { keepUnit(foodState.id, t.dataset.unit); foodState.portion = null; renderFood(foodState.id, { scoreFirst: foodState.scoreFirst }); return; }
   if (t.dataset.match) { openMatch(t.dataset.match); return; }
   if (t.dataset.confirm !== undefined) {
     const r = window.__match;
@@ -876,13 +1060,13 @@ document.addEventListener("click", async (ev) => {
     recalc(); return;
   }
   switch (t.dataset.act) {
-    case "set-portion": { const v = Number(document.getElementById("pg").value); if (v > 0) { foodState.portion = v; renderFood(foodState.id); } break; }
-    case "set-pack": { const v = document.getElementById("packg").value; foodState.pack = Number(v) > 0 ? v : ""; foodState.portion = Number(v) > 0 ? Number(v) : null; renderFood(foodState.id); break; }
+    case "set-portion": { const v = Number(document.getElementById("pg").value); if (v > 0) { foodState.portion = v; renderFood(foodState.id, { scoreFirst: foodState.scoreFirst }); } break; }
+    case "set-pack": { const v = document.getElementById("packg").value; foodState.pack = Number(v) > 0 ? v : ""; foodState.portion = Number(v) > 0 ? Number(v) : null; renderFood(foodState.id, { scoreFirst: foodState.scoreFirst }); break; }
     case "apply-figures": {
       const f = document.getElementById("fvn"), s = document.getElementById("fs");
       if (f) foodState.fvn = f.value;
       if (s) foodState.fs = s.value;
-      renderFood(foodState.id); break;
+      renderFood(foodState.id, { scoreFirst: foodState.scoreFirst }); break;
     }
     case "apply-recipe": {
       recipe.fvn_percent = document.getElementById("rfvn").value || null;
@@ -914,6 +1098,14 @@ document.addEventListener("click", async (ev) => {
     case "copy": copyText(labelText(), "copied"); break;
     default: break;
   }
+});
+
+document.addEventListener("click", (ev) => {
+  const j = ev.target.closest("a[data-jump]");
+  if (!j) return;
+  ev.preventDefault();
+  const el = document.getElementById(j.dataset.jump);
+  if (el) el.scrollIntoView({ block: "start" });
 });
 
 document.addEventListener("change", async (ev) => {
