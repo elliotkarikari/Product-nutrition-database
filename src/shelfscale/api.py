@@ -16,6 +16,12 @@ Run locally:
 Browser routes (same origin, used by the page; no key in the browser):
     GET  /ui/search?q=    -> food names and codes (ui_api.search)
     GET  /ui/food/<id>    -> one CoFID food with portions and provenance (ui_api.food)
+    GET  /ui/groups       -> the 14 CoFID main groups with food counts (release.groups)
+    GET  /ui/group/<code> -> one main group: sub-groups and their foods (release.group)
+
+Downloads (no key, page quota):
+    GET  /download/<file> -> the release files and release_manifest.json (release.current)
+    GET  /download/food/<id>.csv -> one food as its page shows it (release.food_csv)
     POST /ui/recipe       -> a recipe, scored and labelled (recipe.calculate)
 These call the same in-process functions as the keyed API and share their
 own rolling quota (UI_RATE_LIMIT), separate from the API key's quota.
@@ -46,7 +52,7 @@ from .npm2018 import MODEL_ID as NPM2018_ID
 from . import laws
 from .service import MODEL_ID, MAX_BULK_ITEMS, assess_bulk, assess_product
 from .lookup import DATA_RELEASE, _index
-from . import bulk, matching, recipe, ui_api
+from . import bulk, matching, recipe, release, ui_api
 
 ROUTES = {
     "/v1/assess": assess_product,
@@ -84,6 +90,7 @@ def record_confirmation(payload):
                             "Export your confirmations to add them to the reviewed mapping.")
     return record
 WEB = Path(__file__).resolve().parent / "web"
+DOWNLOADS = (*release.FILES, release.MANIFEST)  # fixed list: nothing else in the release folder is served
 STATIC = {  # fixed list: nothing else on disk is ever served
     "/": ("index.html", "text/html; charset=utf-8"),
     "/static/app.css": ("app.css", "text/css; charset=utf-8"),
@@ -182,10 +189,13 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(200, {
                 "service": "ShelfScale Open", "models": models,
                 "data_release": DATA_RELEASE, "revision": self.server.revision,
+                "release": release.summary(),
                 "laws": [laws.label(m) for m in laws.models()],
                 "endpoints": {"public": ["GET / (page)", "GET /api", "GET /health"],
                               "authenticated": [f"POST {path}" for path in ROUTES],
-                              "page": ["GET /ui/search", "GET /ui/food/<food_id>", *(f"POST {p}" for p in PAGE_POSTS)]},
+                              "page": ["GET /ui/search", "GET /ui/food/<food_id>", "GET /ui/groups",
+                                       "GET /ui/group/<code>", *(f"POST {p}" for p in PAGE_POSTS)],
+                              "downloads": [f"GET /download/{name}" for name in DOWNLOADS] + ["GET /download/food/<food_id>.csv"]},
                 "authentication": {"header": "X-API-Key", "required_for_post": True},
                 "limits": {"requests": RATE_LIMIT, "window_seconds": RATE_WINDOW_SECONDS,
                            "scope": "one shared key per process; resets on restart",
@@ -193,13 +203,21 @@ class Handler(BaseHTTPRequestHandler):
                            "page_requests": UI_RATE_LIMIT},
                 "docs": "https://github.com/elliotkarikari/Product-nutrition-database/blob/shelfscale-open/docs/API.md",
             })
-        elif path == "/ui/search" or path.startswith("/ui/food/"):
+        elif path.startswith("/download/"):
+            if not self._ui_admitted():
+                return
+            self._download(path, parts.query)
+        elif path in ("/ui/search", "/ui/groups") or path.startswith(("/ui/food/", "/ui/group/")):
             if not self._ui_admitted():
                 return
             params = {k: v[-1] for k, v in parse_qs(parts.query, max_num_fields=8).items()}
             try:
                 if path == "/ui/search":
                     self._send_json(200, ui_api.search(params.get("q", "")))
+                elif path == "/ui/groups":
+                    self._send_json(200, release.groups())
+                elif path.startswith("/ui/group/"):
+                    self._send_json(200, release.group(unquote(path[len("/ui/group/"):])))
                 else:
                     self._send_json(200, ui_api.food(unquote(path[len("/ui/food/"):]), params))
             except LookupError as exc:
@@ -208,6 +226,58 @@ class Handler(BaseHTTPRequestHandler):
                 self._send_json(400, {"error": str(exc)})
         else:
             self._send_json(404, {"error": "Not found."})
+
+    def _send_download(self, name: str, content_type: str, raw: bytes | None = None,
+                       path: Path | None = None) -> None:
+        """Send bytes or a file from the built release, gzip-encoded when the browser accepts it."""
+        encoding = None
+        if path is not None:
+            packed = path.with_name(path.name + ".gz")
+            if "gzip" in self.headers.get("Accept-Encoding", "") and packed.exists():
+                path, encoding = packed, "gzip"
+            size = path.stat().st_size
+        else:
+            size = len(raw)
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(size))
+        self.send_header("Content-Disposition", f'attachment; filename="{name}"')
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        if encoding:
+            self.send_header("Content-Encoding", encoding)
+        self.send_header("Vary", "Accept-Encoding")
+        self.end_headers()
+        if raw is not None:
+            self.wfile.write(raw)
+            return
+        with open(path, "rb") as handle:
+            while chunk := handle.read(1 << 16):
+                self.wfile.write(chunk)
+
+    def _download(self, path: str, query: str) -> None:
+        name = path[len("/download/"):]
+        if name in DOWNLOADS:
+            directory, _ = release.current()
+            kind = "application/json" if name.endswith(".json") else "text/csv; charset=utf-8"
+            self._send_download(name, kind, path=directory / name)
+            return
+        match = re.fullmatch(r"food/([^/]+)\.csv", name)
+        if not match:
+            self._send_json(404, {"error": "Not found."})
+            return
+        food_id = unquote(match.group(1))
+        params = {k: v[-1] for k, v in parse_qs(query, max_num_fields=8).items()}
+        try:
+            raw = release.food_csv(ui_api.food(food_id, params))
+        except LookupError as exc:
+            self._send_json(404, {"error": str(exc)})
+            return
+        except ValueError as exc:
+            self._send_json(400, {"error": str(exc)})
+            return
+        safe = re.sub(r"[^A-Za-z0-9-]", "_", food_id)
+        self._send_download(f"shelfscale-{safe}.csv", "text/csv; charset=utf-8", raw=raw)
 
     def do_POST(self) -> None:  # noqa: N802
         page = self.path in PAGE_POSTS
@@ -270,6 +340,7 @@ def run(host: str = "127.0.0.1", port: int = 8765) -> None:
         _index()
         ui_api.foods_by_id()
         ui_api.search("warm")       # builds the portion and overlay tables before readiness
+        release.current()           # writes the release files before readiness
         print(f"ShelfScale API listening on http://{host}:{port} (laws: {laws.summary()})", flush=True)
         server.serve_forever()
 
