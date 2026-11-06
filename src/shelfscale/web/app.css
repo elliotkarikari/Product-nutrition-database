@@ -65,13 +65,13 @@ a { color: var(--signal); }
 .brand { display: flex; gap: 10px; align-items: center; color: var(--ink); text-decoration: none; font: 700 22px/1 var(--display); font-stretch: condensed; }
 .brand-mark { width: 40px; height: 24px; fill: var(--ink); }
 .tabs {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: grid; grid-template-columns: repeat(3, 1fr);
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: grid; grid-template-columns: repeat(4, 1fr);
   background: var(--paper); border-top: 1px solid var(--rule);
   padding-bottom: env(safe-area-inset-bottom);
 }
 .tabs a {
   min-height: var(--tabbar); display: flex; align-items: center; justify-content: center; gap: 6px;
-  color: var(--signal); text-decoration: none; font-weight: 600; font-size: 16px;
+  color: var(--signal); text-decoration: none; font-weight: 600; font-size: 15px; text-align: center; padding: 0 4px;
 }
 .tabs a[aria-current="page"] { color: var(--signal-ink); background: var(--signal); }
 .count:empty { display: none; }
@@ -83,7 +83,8 @@ a { color: var(--signal); }
 }
 
 /* Scene: giant background type behind everything. */
-.scene { position: relative; padding: 0 var(--gutter) 48px; max-width: 1180px; margin: 0 auto; }
+.scene { position: relative; padding: 0 var(--gutter) calc(var(--tabbar) + 56px); max-width: 1180px; margin: 0 auto; }
+@media (min-width: 860px) { .scene { padding-bottom: 72px; } }
 .backtype {
   position: absolute; inset: -10px 0 auto 0; z-index: 0; pointer-events: none; user-select: none;
   font: 800 clamp(96px, 26vw, 300px)/0.78 var(--display); font-stretch: condensed;
@@ -276,4 +277,122 @@ table.figures { border-collapse: collapse; width: 100%; font-size: 16px; }
   .mast, .tabs, .noprint, .backtype, .sheet { display: none !important; }
   .scene { padding: 0; }
   .decl { border: 2px solid #000; }
+}
+
+
+/* ---------- 2026-11-06 pass: say what it is, and make it beautiful ---------- */
+
+/* Layered scene: a shelf edge runs behind every view. */
+body { background:
+  linear-gradient(180deg, transparent 0 62%, var(--ghost) 62% 62.4%, transparent 62.4%) fixed,
+  var(--ground); }
+.backtype.low { inset: 34% 0 auto 0; }
+
+.lede { font-size: 19px; line-height: 1.5; max-width: 54ch; }
+.home-head { padding-top: 8vh; display: grid; gap: 18px; }
+.home-title { font-size: clamp(40px, 7.4vw, 96px); max-width: 15ch; letter-spacing: -0.015em; }
+.example { margin-top: 8px; }
+.example-label { font-size: 15px; color: var(--graphite); margin: 24px 0 0; }
+.example-note { max-width: 62ch; margin: 18px 0 0 auto; text-align: right; }
+
+/* The hero ticket: decisively the largest thing on the screen, overlapping the headline. */
+.dual-wrap.hero .dual { width: min(100%, 860px); margin-top: -34px; }
+.dual-wrap.hero .half { min-height: 320px; }
+.dual-wrap.hero .score { font-size: clamp(104px, 24vw, 210px); }
+@media (min-width: 860px) {
+  .food .headline, .recipe .headline { max-width: 12ch; }
+  .dual-wrap.hero .dual { margin-top: -96px; }
+}
+.quote { font-size: 14px; max-width: 72ch; margin: 18px 0 0 auto; text-align: right; }
+.desc { margin-top: 18px; max-width: 72ch; }
+
+/* The tear: once, when a flip first appears. Shape and words carry it. */
+.stamp { animation: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .dual.flips .law-2018 { transition: transform 520ms cubic-bezier(.2, .9, .3, 1.2); }
+  .dual.flips.tearing .law-2018 { transform: none; }
+  .dual-wrap:has(.dual.flips) .stamp { animation: stamp 420ms 380ms both cubic-bezier(.3, 1.6, .5, 1); }
+  @keyframes stamp { from { opacity: 0; transform: rotate(-8deg) scale(1.7); } to { opacity: 1; transform: rotate(-8deg) scale(1); } }
+}
+
+/* Three ways in, each a ticket. */
+.paths { display: grid; gap: 16px; margin-top: 56px; }
+@media (min-width: 860px) { .paths { grid-template-columns: 1.4fr 1fr 1fr; align-items: start; } }
+.path { --notch: 12px; padding: 22px 26px 26px; display: grid; gap: 12px; }
+.path h2 { font-size: 26px; }
+.path.go { color: var(--ink); text-decoration: none; }
+.path.go p { font-size: 15px; margin: 0; }
+.path.go .btn { justify-self: start; }
+
+/* As sold */
+.sold h2 { font-size: 30px; }
+.unit-line { display: grid; gap: 4px; margin: 6px 0 4px; }
+.unit-big { font: 800 clamp(40px, 8vw, 64px)/1 var(--display); font-stretch: condensed; letter-spacing: -0.02em; }
+.unit-what { font-size: 17px; }
+.band.figures, table.band { margin-top: 12px; }
+table.band thead th { text-align: right; }
+table.band thead th:first-child { text-align: left; }
+.tag { display: inline-block; margin-left: 6px; font: 600 11px/1 var(--text); padding: 3px 6px; border-left: 4px solid var(--rule); background: var(--ghost); color: var(--ink); vertical-align: middle; }
+.tag.green { border-left-color: var(--tl-green); }
+.tag.amber { border-left-color: var(--tl-amber); }
+.tag.red { border-left-color: var(--tl-red); }
+td.cross { outline: 2px dashed var(--ink); outline-offset: -3px; }
+.proposals, .cands { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 10px; }
+.proposal, .cand { --notch: 7px; display: grid; grid-template-columns: 1fr auto; gap: 10px 16px; align-items: center; padding: 12px 20px; background: var(--ground); }
+.cand.abstain { opacity: 0.7; }
+.cand.proposed strong::after { content: " proposed"; font: 600 12px var(--text); margin-left: 6px; border: 1.5px solid var(--ink); padding: 1px 5px; }
+
+/* Your range */
+.area { min-height: 180px; font: 15px/1.5 ui-monospace, Menlo, Consolas, monospace; resize: vertical; }
+.file { border-bottom-width: 0; padding-left: 0; background: transparent; }
+.grow { flex: 1 1 240px; }
+.run-head { margin: 36px 0 14px; }
+.run-big { font: 800 clamp(64px, 14vw, 132px)/0.9 var(--display); font-stretch: condensed; margin: 0; letter-spacing: -0.02em; }
+.run-big span { font-size: 0.32em; letter-spacing: 0; margin-left: 10px; }
+.table-wrap { overflow-x: auto; background: var(--paper); -webkit-overflow-scrolling: touch; }
+table.run { min-width: 640px; }
+table.run th[scope="row"] { min-width: 210px; }
+.pname { display: block; font-weight: 600; }
+.pmeta { display: block; font-size: 13px; color: var(--graphite); }
+.vcell { text-align: right; white-space: nowrap; }
+.vscore { display: block; font: 800 30px/1 var(--display); font-stretch: condensed; }
+.vword { font-size: 13px; color: var(--graphite); }
+.vcell.none .vscore { font-size: 16px; color: var(--graphite); }
+.flip-row th, .flip-row td { background: var(--ghost); }
+.torn { display: inline-block; margin-left: 8px; font: 800 12px/1 var(--display); font-stretch: condensed; padding: 4px 7px 4px 12px; border: 2px solid var(--ink);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 6px 80%, 0 60%, 6px 40%, 0 20%); }
+.gaps { padding-left: 18px; display: grid; gap: 8px; }
+.basis { margin-top: 14px; }
+.basis a { font-weight: 600; }
+
+/* Printed label: a designed sheet. */
+.print-sheet { display: grid; gap: 10px; justify-items: start; margin-top: 8px; }
+.print-name { font: 700 22px/1.2 Arial, Helvetica, sans-serif; margin: 0; }
+.print-foot { font: 12px/1.4 Arial, Helvetica, sans-serif; color: var(--graphite); margin: 0; }
+@media print {
+  .print-sheet { margin: 12mm; }
+  .print-foot { color: #000; }
+  @page { margin: 10mm; }
+}
+
+@media (max-width: 520px) {
+  .home-title { font-size: 40px; }
+  .lede { font-size: 17px; }
+  .dual-wrap.hero .half { min-height: 250px; }
+  .dual-wrap.hero .dual { margin-top: -12px; }
+  .example-note, .quote, .flip-key { text-align: left; }
+  .proposal, .cand { grid-template-columns: 1fr; }
+}
+
+/* Home: the caption names the example, then the ticket takes the space under it. */
+.home .dual-wrap.hero .dual { margin-top: 18px; }
+.example-label { position: relative; z-index: 2; }
+
+.dual-wrap.hero .half.unscored .score { font-size: clamp(30px, 6vw, 48px); line-height: 1; }
+@media (max-width: 520px) { .dual-wrap.hero .dual { margin-top: 10px; } }
+.decl td, .decl th { white-space: nowrap; }
+.decl td:first-child { white-space: normal; }
+@media print {
+  body { background: #fff !important; }
+  .scene.label { padding: 0; }
 }

@@ -105,6 +105,7 @@ def _lookup_row(index: int, row: dict, food_id: str, basis: str, extra: dict) ->
         "sources": _sources(match),
         "caller_supplied": {k: v for k, v in extra.items() if v is not None and k != "pack_g"},
         "as_sold": {"kind": sold["kind"], "unit": sold["unit"], "band": sold.get("band"),
+                    "proposed_units": len(sold["proposed_units"]),
                     "sale_format": (sold["sale"] or {}).get("sale_format"), "note": sold.get("note")},
     }
 

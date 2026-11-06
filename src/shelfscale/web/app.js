@@ -4,9 +4,10 @@
    rounding for reading) and never feeds a score. */
 "use strict";
 
-const OLD = "uk-npm-2004/05";
-const NEW = "uk-npm-2018";
 const STORE = "shelfscale.recipe.v1";
+const MATCHES = "shelfscale.matches.v1";
+const UNITS = "shelfscale.units.v1";
+const RANGE = "shelfscale.range.v1";
 const view = () => document.getElementById("view");
 
 /* ---------- small helpers ---------- */
@@ -14,7 +15,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
 
 function fmt(value, unit) {
-  if (value === null || value === undefined || Number.isNaN(value)) return "";
+  if (value === null || value === undefined || Number.isNaN(Number(value))) return "";
   const v = Number(value);
   let d;
   if (unit === "kJ" || unit === "kcal" || unit === "mg" || unit === "%") d = 0;
@@ -38,19 +39,30 @@ async function api(path, body) {
   return data;
 }
 
-/* ---------- recipe storage (this browser only) ---------- */
-function loadRecipe() {
-  try {
-    const r = JSON.parse(localStorage.getItem(STORE) || "null");
-    if (r && Array.isArray(r.ingredients)) return r;
-  } catch (_) { /* storage unavailable or damaged */ }
-  return { name: "", servings: 1, ingredients: [], fvn_percent: null, free_sugars_g: null };
+/* ---------- storage: this browser only ---------- */
+function read(key, fallback) {
+  try { const v = JSON.parse(localStorage.getItem(key) || "null"); return v ?? fallback; } catch (_) { return fallback; }
 }
-let recipe = loadRecipe();
+function write(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch (_) { /* private mode */ } }
+
+let recipe = read(STORE, null);
+if (!recipe || !Array.isArray(recipe.ingredients)) recipe = { name: "", servings: 1, ingredients: [], fvn_percent: null, free_sugars_g: null };
 function saveRecipe() {
-  try { localStorage.setItem(STORE, JSON.stringify(recipe)); } catch (_) { /* private mode: keep in memory */ }
+  write(STORE, recipe);
   const n = recipe.ingredients.length;
   document.getElementById("tab-count").textContent = n ? String(n) : "";
+}
+const matches = () => read(MATCHES, []);
+function keepMatch(record) {
+  const all = matches().filter((m) => m.query.toLowerCase() !== record.query.toLowerCase());
+  all.push(record);
+  write(MATCHES, all);
+}
+const unitKeys = (foodId) => (read(UNITS, {})[foodId] || []);
+function keepUnit(foodId, key) {
+  const all = read(UNITS, {});
+  all[foodId] = Array.from(new Set([...(all[foodId] || []), key]));
+  write(UNITS, all);
 }
 
 /* ---------- provenance sheet ---------- */
@@ -68,59 +80,76 @@ function openSheet(html) {
 }
 function closeSheet() { document.getElementById("sheet").hidden = true; }
 function sourceHtml(card) {
-  if (card.kind === "contributions") return card.html;
+  if (card.html) return card.html;
   const rows = [
     ["Dataset", card.dataset], ["Edition", card.edition], ["Publisher", card.publisher],
     ["Period", card.period], ["Where in the source", card.locator], ["Rights", card.rights],
     ["Citation", card.citation], ["Record", card.observation_id], ["Replaces", card.supersedes],
     ["Detail", card.detail], ["Note", card.note],
   ].filter(([, v]) => v);
-  const link = card.url ? `<p><a href="${esc(card.url)}" rel="noopener" target="_blank">Open the source file</a></p>` : "";
+  const link = card.url ? `<p><a href="${esc(card.url)}" rel="noopener" target="_blank">Open the source</a></p>` : "";
   return `<h2 id="sheet-title">${esc(card.label)}</h2><dl>${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>${link}`;
 }
 
-/* ---------- the dual-law ticket ---------- */
-function half(model, cls, title, sub) {
-  if (model && model.scorable) {
+/* ---------- laws and the two-law ticket ---------- */
+const INPUT_WORDS = { fruit_veg_nuts_percent: "fruit, veg and nuts %", free_sugars_g: "free sugars",
+  fvns_g: "fruit, veg, nuts and seeds", fibre: "fibre", fibre_aoac_g: "AOAC fibre", energy_kj: "energy",
+  saturated_fat_g: "saturates", total_sugars_g: "sugars", sodium_mg: "sodium", protein_g: "protein", salt_g: "salt" };
+const needWord = (m) => { const k = m.split(" (")[0].split(":")[0].trim(); return INPUT_WORDS[k] || k.replace(/_/g, " "); };
+const ROLE_TITLE = { today: "Today's law", coming: "When the law changes", past: "Past law" };
+const lawName = (law) => `${law.name.replace("UK Nutrient Profiling Model", "NPM")} ${law.version}`;
+const lawStatus = (law) => `${lawName(law)}, ${law.status_text}`;
+
+function ordered(models) {
+  const rank = { today: 0, coming: 1, past: 2 };
+  return Object.values(models).filter((m) => m && m.law).sort((a, b) => rank[a.law.role] - rank[b.law.role]);
+}
+
+function half(model, cls) {
+  const law = model.law;
+  const head = `<div class="law"><strong>${esc(ROLE_TITLE[law.role] || law.role)}</strong>${esc(lawStatus(law))}</div>`;
+  if (model.scorable) {
     const less = model.less_healthy;
-    return `<div class="half ${cls}">
-      <div class="law"><strong>${esc(title)}</strong>${esc(sub)}</div>
+    return `<div class="half ${cls}">${head}
       <div class="score" aria-label="Score ${model.score}">${model.score}</div>
       <div class="verdict"><span class="mark" aria-hidden="true">${less ? "&#9632;" : "&#9633;"}</span> ${less ? "Less healthy" : "Not less healthy"}</div>
-      <div class="points">${model.total_a} A points, ${model.total_c} C points${model.protein_counted === false ? ". Protein not counted" : ""}</div>
+      ${model.total_a !== undefined ? `<div class="points">${model.total_a} A points, ${model.total_c} C points${model.protein_counted === false ? ". Protein not counted" : ""}</div>` : ""}
     </div>`;
   }
   let why = "";
-  if (model && model.applicable === false) why = model.reason;
-  else if (model && model.missing_inputs) why = "Needs: " + model.missing_inputs.map((m) => m.split(" (")[0].split(":")[0].replace(/_/g, " ")).join(", ") + ".";
-  return `<div class="half ${cls} unscored">
-    <div class="law"><strong>${esc(title)}</strong>${esc(sub)}</div>
-    <div class="score">Not scored</div>
-    <p class="why">${esc(why)}</p>
-  </div>`;
+  if (model.applicable === false) why = model.reason;
+  else if (model.missing_inputs) why = "Needs " + model.missing_inputs.map(needWord).join(", ") + ".";
+  return `<div class="half ${cls} unscored">${head}<div class="score">No score yet</div><p class="why">${esc(why)}</p></div>`;
 }
-function dualTicket(assessment) {
-  const m = assessment.models;
+
+function ticket(assessment, { hero = false } = {}) {
+  const [first, second] = ordered(assessment.models);
   const flips = assessment.verdict_changes_under_2018 === true;
   let key;
-  if (flips) key = "Torn ticket: the verdict changes when the 2018 model comes in.";
-  else if (assessment.verdict_changes_under_2018 === false) key = "Whole ticket: the same verdict under both models.";
-  else key = "One model cannot score this yet, so a change of verdict cannot be checked.";
-  return `<div class="dual-wrap">
+  if (flips) key = "The ticket tears: this product's verdict changes when the law changes.";
+  else if (assessment.verdict_changes_under_2018 === false) key = "The ticket holds: the same verdict under both laws.";
+  else key = "One law cannot score this yet, so a change of verdict cannot be checked.";
+  return `<div class="dual-wrap${hero ? " hero" : ""}">
     ${flips ? '<div class="stamp" aria-hidden="true">Verdict flips</div>' : ""}
-    <div class="dual${flips ? " flips" : ""}" role="group" aria-label="Scores under two models">
-      ${half(m[OLD], "law-now", "Today's law", "NPM 2004/05, in force")}
-      ${half(m[NEW], "law-2018", "The 2018 model", "Shadow score, not in force")}
+    <div class="dual${flips ? " flips" : ""}" role="group" aria-label="Scores under two laws">
+      ${half(first, "law-now")}${half(second, "law-2018")}
     </div>
     <p class="flip-key">${esc(key)}</p>
   </div>`;
+}
+
+function quote(assessment, release) {
+  const parts = ordered(assessment.models).map((m) => m.scorable
+    ? `score ${m.score}, ${m.less_healthy ? "less healthy" : "not less healthy"}, under ${lawStatus(m.law)}`
+    : `no score under ${lawStatus(m.law)}`);
+  return `<p class="quote"><span class="muted">Quote as:</span> ${esc(parts.join("; "))}. Data release ${esc(release)}.</p>`;
 }
 
 function yours(c) {
   const parts = [];
   if (c && c.fvn_percent !== undefined) parts.push(`fruit, veg and nuts ${fmt(c.fvn_percent, "g")}%`);
   if (c && c.free_sugars_g !== undefined) parts.push(`free sugars ${fmt(c.free_sugars_g, "g")} g per 100 g`);
-  return parts.length ? `<p class="flip-key">Scored with your figures: ${esc(parts.join(", "))}. ShelfScale has not checked them.</p>` : "";
+  return parts.length ? `<p class="flip-key">Scored with figures you entered: ${esc(parts.join(", "))}. ShelfScale has not checked them.</p>` : "";
 }
 
 const LEVEL = { green: "Low", amber: "Medium", red: "High" };
@@ -136,7 +165,58 @@ function lights(tl, label) {
   }).join("")}</div>`;
 }
 
-/* ---------- Look up ---------- */
+/* ---------- as sold: the unit and its band ---------- */
+function bandHtml(sold) {
+  const u = sold.unit;
+  if (!u) return "";
+  const b = sold.band;
+  const ranged = u.low_g !== u.high_g;
+  let table = "";
+  if (b && b.available) {
+    const ends = [["low", "Light end"], ["typical", "Typical"], ["high", "Heavy end"]].filter(([k]) => b.ends[k] && (ranged || k === "typical"));
+    const rows = [["energy_kj", "Energy", "kJ"], ["fat", "Fat", "g"], ["saturates", "Saturates", "g"], ["sugars", "Sugars", "g"], ["salt", "Salt", "g"]];
+    table = `<table class="figures band"><thead><tr><th>Per unit</th>${ends.map(([k, l]) => `<th>${l}<br><span class="u">${grams(b.ends[k].grams)}</span></th>`).join("")}</tr></thead><tbody>
+      ${rows.map(([k, label, unit]) => `<tr><th scope="row">${label}</th>${ends.map(([e]) => {
+        const amount = b.ends[e].amounts[k];
+        const colour = b.ends[e].colours[k];
+        const crosses = b.crosses.includes(k);
+        return `<td class="n${crosses ? " cross" : ""}">${amount === null ? "" : fmt(amount, unit)}<span class="u">${unit}</span>${colour ? `<span class="tag ${colour}">${LEVEL[colour]}</span>` : ""}</td>`;
+      }).join("")}</tr>`).join("")}
+    </tbody></table>
+    ${b.crosses.length ? `<div class="flag"><strong>The band crosses a line</strong>${esc(b.crosses.join(", "))} changes colour across this weight range, because a unit over 100 g is also checked against the per-portion red limits. Both ends are shown; the per-100 g verdict does not move.</div>` : `<p class="note">The colours hold across the whole range. ${esc(b.rule)}</p>`}`;
+  }
+  return `<div class="unit">
+    <p class="unit-line"><span class="unit-big">${ranged ? `${grams(u.low_g)} to ${grams(u.high_g)}` : grams(u.typical_g)}</span>
+    <span class="unit-what">One ${esc(u.label)}${ranged ? `, typical ${grams(u.typical_g)}` : ""}</span></p>
+    <p class="note">${esc(u.basis)}. ${esc(u.spread)} ${u.source ? srcButton(u.source, u.source.label) : ""}${u.link === "user_confirmed" ? " You confirmed this is the same food." : ""}</p>
+    ${table}
+  </div>`;
+}
+
+function soldHtml(food) {
+  const sold = food.as_sold;
+  const sale = sold.sale;
+  let lead;
+  if (sold.kind === "loose") lead = `Sold loose${sale && sale.sale_format ? ` (${esc(sale.sale_format)})` : ""}. No pack, no declared weight and no label to copy, so the unit below comes from weighed evidence.`;
+  else if (sold.kind === "packaged") lead = "Packaged. Scored as the unit on the shelf, at the weight you declared.";
+  else if (sale) lead = `Sold as: ${esc(sale.sale_format || "not recorded")}.`;
+  else lead = "How this food is sold is not on record.";
+  const proposals = (sold.proposed_units || []).map((u) => `<li class="ticket proposal"><span><strong>${esc(u.label)}</strong>: ${grams(u.low_g)} to ${grams(u.high_g)} from ${u.n} purchase${u.n > 1 ? "s" : ""}, ${esc(u.source.label)}. ${srcButton(u.source, "Source")}</span>
+      <button class="btn ticket" type="button" data-unit="${esc(u.key)}">Confirm it is this food</button></li>`).join("");
+  return `<section class="panel ticket sold" aria-labelledby="sold-h">
+    <h2 id="sold-h">As sold</h2>
+    <p>${lead} ${sale ? srcButton(sale.source, "Sale format source") : ""}</p>
+    ${bandHtml(sold)}
+    ${sold.note ? `<p class="note">${esc(sold.note)}</p>` : ""}
+    ${proposals ? `<h3>Possible unit evidence</h3><p class="small">The sampling reports name this food differently. A person has not yet confirmed the link, so it is not used until you do.</p><ul class="proposals">${proposals}</ul>` : ""}
+    <div class="inline-form">
+      <div class="field"><label for="packg">Packaged? Declared pack weight (g)</label><input class="input num" id="packg" type="number" inputmode="decimal" min="0.1" step="any" value="${esc(foodState.pack)}"></div>
+      <button class="btn btn-ghost" type="button" data-act="set-pack">Use pack weight</button>
+    </div>
+  </section>`;
+}
+
+/* ---------- search ---------- */
 let searchCtl = null;
 async function runSearch(q, target, mode) {
   if (searchCtl) searchCtl.abort();
@@ -147,56 +227,68 @@ async function runSearch(q, target, mode) {
   try {
     const res = await fetch(`/ui/search?q=${encodeURIComponent(q)}`, { signal: searchCtl.signal });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || "Search failed.");
+    if (!res.ok) throw new Error(data.error || "Search did not work. Try again.");
     const items = data.results.map((r) => {
-      const meta = [`CoFID ${r.code}`, r.overlay ? "official overlay values" : "", r.portions ? `${r.portions} portion weight${r.portions > 1 ? "s" : ""}` : ""].filter(Boolean).join(", ");
+      const meta = [`CoFID ${r.code}`, r.overlay ? "official overlay values" : "", r.portions ? `${r.portions} unit weight${r.portions > 1 ? "s" : ""}` : ""].filter(Boolean).join(", ");
       if (mode === "add") {
         return `<li class="result ticket"><span class="name">${esc(r.name)}</span><span class="meta">${esc(meta)}</span>
           <button class="btn ticket act" type="button" data-add="${esc(r.food_id)}" data-name="${esc(r.name)}">Add</button></li>`;
       }
       return `<li><a class="result ticket" href="#/food/${encodeURIComponent(r.food_id)}"><span class="name">${esc(r.name)}</span><span class="meta">${esc(meta)}</span></a></li>`;
     }).join("");
-    box.innerHTML = (items ? `<ul class="results">${items}</ul>` : "") + (data.note ? `<p class="note">${esc(data.note)}</p>` : "");
+    const empty = !data.results.length && data.note ? `<p class="note">${esc(data.note)} For a product with its own label, score it from your figures on <a href="#/range">Your range</a>.</p>` : "";
+    box.innerHTML = (items ? `<ul class="results">${items}</ul>` : "") + (data.results.length && data.note ? `<p class="note">${esc(data.note)}</p>` : "") + empty;
   } catch (e) {
     if (e.name !== "AbortError") box.innerHTML = `<p class="note">${esc(e.message)}</p>`;
   }
 }
+function wireSearch(id, target, mode) {
+  const input = document.getElementById(id);
+  const go = debounce(() => runSearch(input.value, target, mode), 200);
+  ["input", "search", "change"].forEach((evt) => input.addEventListener(evt, go));
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); runSearch(input.value, target, mode); } });
+}
 
-function renderLookup() {
-  view().innerHTML = `<section class="scene">
-    <div class="backtype" aria-hidden="true">Two laws</div>
-    <div class="hero-search">
-      <h1>One food. Two laws.</h1>
-      <p>Every food is scored under the nutrient profiling law in force today and under the 2018 model that may replace it. Search the UK composition tables, see both verdicts, then build a recipe and print its label.</p>
-      <div class="searchbox field">
-        <label for="q">Search CoFID 2021 foods</label>
-        <input class="input" id="q" type="search" autocomplete="off" placeholder="For example: raisins, butter, flour" enterkeyhint="search">
-      </div>
-      <div id="found"></div>
-      <figure class="keyticket" aria-label="How to read a score ticket">
-        <div class="dual-wrap">
-          <div class="stamp" aria-hidden="true">Verdict flips</div>
-          <div class="dual flips">
-            <div class="half law-now"><div class="law"><strong>Today's law</strong>NPM 2004/05, in force</div>
-              <p class="keytext">The score that decides advertising and promotions now.</p></div>
-            <div class="half law-2018"><div class="law"><strong>The 2018 model</strong>Shadow score, not in force</div>
-              <p class="keytext">The score the same food gets if the 2018 model is adopted.</p></div>
-          </div>
+/* ---------- Home ---------- */
+async function renderHome() {
+  sources = [];
+  view().innerHTML = `<section class="scene home">
+    <div class="backtype" aria-hidden="true">Today<br>Tomorrow</div>
+    <div class="home-head">
+      <h1 class="headline home-title">Every product you sell, scored under today's law and the law that is coming.</h1>
+      <p class="lede">ShelfScale is for small food producers. For each product, see whether it is less healthy under the rules in force now and under the 2018 model that may replace them, and see the source of every number behind both.</p>
+      <p class="small muted">It scores products as sold: the pack on the shelf, or a loose item at its weighed typical size. It does not score diets or meals.</p>
+    </div>
+    <div id="example" class="example"><p class="note">Loading a worked example from the service.</p></div>
+    <div class="paths">
+      <div class="path ticket">
+        <h2>Look up one product</h2>
+        <div class="searchbox field">
+          <label for="q">Search the UK composition tables (CoFID 2021)</label>
+          <input class="input" id="q" type="search" autocomplete="off" placeholder="For example: raisins, butter, onions" enterkeyhint="search">
         </div>
-        <figcaption class="flip-key">How to read it. Every food gets one ticket with both scores. When the ticket tears, the verdict changes between the two laws.</figcaption>
-      </figure>
+        <div id="found"></div>
+      </div>
+      <a class="path ticket go" href="#/range"><h2>Score your whole range</h2><p>Paste a list or upload a spreadsheet. Products whose verdict flips come first, and you can export the run.</p><span class="btn ticket">Open your range</span></a>
+      <a class="path ticket go" href="#/recipe"><h2>Build a recipe and its label</h2><p>Add what goes in by weight. Get both scores and a UK nutrition declaration to print.</p><span class="btn ticket">Start a recipe</span></a>
     </div>
   </section>`;
-  const input = document.getElementById("q");
-  const go = debounce(() => runSearch(input.value, "found", "view"), 220);
-  input.addEventListener("input", go);
-  input.focus({ preventScroll: true });
+  wireSearch("q", "found", "view");
+  try {
+    const food = await api("/ui/food/14-393?free_sugars_g=0");
+    sources = [];
+    document.getElementById("example").innerHTML = `
+      <p class="example-label">Worked example, live from the service: <a href="#/food/14-393">${esc(food.name)}</a></p>
+      ${ticket(food.assessment, { hero: true })}
+      <p class="small example-note">Free sugars are entered as 0 g, as for whole dried fruit with nothing added. That one figure is entered, and labelled as entered; CoFID records total sugars only. Every other number is CoFID 2021, ${srcButton(food.panel[0].source, "with its source")}.</p>`;
+    revealTear();
+  } catch (e) {
+    document.getElementById("example").innerHTML = `<p class="note">The worked example did not load: ${esc(e.message)}</p>`;
+  }
 }
 
 /* ---------- Food ---------- */
-const foodState = { id: null, portion: null, fvn: "", fs: "", data: null };
-
-function scaled(value, g) { return value === null || value === undefined ? null : value * g / 100; }
+const foodState = { id: null, portion: null, fvn: "", fs: "", pack: "", data: null };
 
 function panelTable(food, portionG) {
   const rows = food.panel.map((p) => {
@@ -205,12 +297,12 @@ function panelTable(food, portionG) {
     if (p.value === null) v100 = `<span class="muted">${p.value_kind === "present_not_quantified" ? "present, amount unknown (N)" : "not given"}</span>`;
     else if (p.value_kind === "trace") v100 = "trace";
     else v100 = `${fmt(p.value, p.unit)}<span class="u">${esc(p.unit)}</span>`;
-    const per = portionG && p.value !== null && p.value_kind === "number" ? `${fmt(scaled(p.value, portionG), p.unit)}<span class="u">${esc(p.unit)}</span>` : (p.value_kind === "trace" ? "trace" : "");
+    const per = portionG && p.value !== null && p.value_kind === "number" ? `${fmt(p.value * portionG / 100, p.unit)}<span class="u">${esc(p.unit)}</span>` : (p.value_kind === "trace" ? "trace" : "");
     return `<tr class="${sub ? "sub" : ""}"><th scope="row">${esc(p.label)}<span class="srcrow">${srcButton(p.source)}</span></th>
       <td class="n">${v100}</td>${portionG ? `<td class="n">${per}</td>` : ""}</tr>`;
   }).join("");
   const basis = food.panel.some((p) => p.basis === "per_100ml") ? "Per 100 ml" : "Per 100 g";
-  return `<table class="figures"><thead><tr><th>Nutrient</th><th>${basis}</th>${portionG ? `<th>Per portion, ${grams(portionG)}</th>` : ""}</tr></thead><tbody>${rows}</tbody></table>`;
+  return `<table class="figures"><thead><tr><th>Nutrient</th><th>${basis}</th>${portionG ? `<th>Per ${grams(portionG)}</th>` : ""}</tr></thead><tbody>${rows}</tbody></table>`;
 }
 
 async function loadFood(id) {
@@ -218,86 +310,260 @@ async function loadFood(id) {
   if (foodState.portion) p.set("portion_g", String(foodState.portion));
   if (foodState.fvn !== "") p.set("fvn_percent", foodState.fvn);
   if (foodState.fs !== "") p.set("free_sugars_g", foodState.fs);
+  if (foodState.pack !== "") p.set("pack_g", foodState.pack);
+  const keys = unitKeys(id);
+  if (keys.length) p.set("unit", keys.join(","));
   return api(`/ui/food/${encodeURIComponent(id)}?${p}`);
 }
 
 async function renderFood(id) {
-  if (foodState.id !== id) Object.assign(foodState, { id, portion: null, fvn: "", fs: "", data: null });
+  if (foodState.id !== id) Object.assign(foodState, { id, portion: null, fvn: "", fs: "", pack: "", data: null });
   sources = [];
-  if (!foodState.data) view().innerHTML = `<section class="scene"><p class="note">Loading the food.</p></section>`;
+  if (!foodState.data) view().innerHTML = `<section class="scene"><p class="note">Loading the product.</p></section>`;
   let food;
   try { food = await loadFood(id); } catch (e) {
-    view().innerHTML = `<section class="scene"><h1 class="headline">Food not loaded</h1><p>${esc(e.message)}</p><p><a class="btn ticket" href="#/">Search again</a></p></section>`;
+    view().innerHTML = `<section class="scene"><h1 class="headline">This product did not load</h1><p>${esc(e.message)}</p><p><a class="btn ticket" href="#/">Search again</a></p></section>`;
     return;
   }
   if (foodState.portion === null) {
-    // Default to a portion someone would eat in one go; tiny unit weights stay one tap away.
+    const unit = food.as_sold && food.as_sold.unit;
     const first = food.portions.find((x) => x.tappable && x.grams >= 10);
-    if (first) { foodState.portion = first.grams; food = await loadFood(id).catch(() => food); }
+    const pick = unit ? unit.typical_g : (first ? first.grams : null);
+    if (pick) { foodState.portion = pick; food = await loadFood(id).catch(() => food); }
   }
   foodState.data = food;
+  sources = [];
   const a = food.assessment;
   const g = foodState.portion;
   const tappable = food.portions.filter((x) => x.tappable);
   const listed = food.portions.filter((x) => !x.tappable);
   const chip = (label, value, sub) => `<button class="chip ticket" type="button" data-portion="${value}" aria-pressed="${g === value}">${esc(label)}<small>${esc(sub)}</small></button>`;
-  const old = a.models[OLD], neu = a.models[NEW];
-  const needsFvn = !old.scorable && (old.missing_inputs || []).some((m) => m.startsWith("fruit_veg_nuts_percent"));
+  const models = ordered(a.models);
+  const needsFvn = models.some((m) => !m.scorable && (m.missing_inputs || []).some((x) => x.startsWith("fruit_veg_nuts_percent")));
+  const neu = a.models["uk-npm-2018"];
   const fsMissing = neu && neu.scorable === false && neu.applicable !== false;
   const caller = food.caller_supplied || {};
 
-  view().innerHTML = `<section class="scene">
+  view().innerHTML = `<section class="scene food">
     <div class="backtype" aria-hidden="true">${esc(food.name)}</div>
     <h1 class="headline">${esc(food.name)}</h1>
-    <p class="muted small">CoFID ${esc(food.code)}, group ${esc(food.group)}. ${esc(food.description || "")}</p>
-    ${dualTicket(a)}
-    ${yours(food.caller_supplied)}
+    ${ticket(a, { hero: true })}
+    ${yours(caller)}
+    ${quote(a, food.data_release)}
+    <p class="muted small desc">CoFID ${esc(food.code)}, group ${esc(food.group)}. ${esc(food.description || "")}</p>
     <div class="band">
-      <div>
-        <h2 class="small muted">Portion</h2>
-        <div class="chips">
-          ${tappable.map((p) => chip(p.label, p.grams, grams(p.grams))).join("")}
-          ${chip("Per 100 g only", 0, "no portion")}
-        </div>
-        <div class="inline-form noprint">
-          <div class="field"><label for="pg">Or weigh it (g)</label><input class="input num" id="pg" type="number" inputmode="decimal" min="0.1" step="any" value="${g && !tappable.some((p) => p.grams === g) ? g : ""}"></div>
-          <button class="btn btn-ghost" type="button" data-act="set-portion">Use this weight</button>
-        </div>
-        ${tappable.length ? `<p class="note">Portion weights: ${tappable.map((p) => srcButton(p.source, `${p.label}, ${p.source.label}`)).join(" ")}</p>` : `<p class="note">No portion weight is on record for this food. Weigh it, or use per 100 g.</p>`}
-        ${listed.length ? `<p class="note">Also printed, not offered as one tap: ${listed.map((p) => `${esc(p.label)} ${esc(p.weight_text)} ${srcButton(p.source, "why")}`).join("; ")}</p>` : ""}
-      </div>
-      ${food.as_sold ? `<div class="flag"><strong>As sold, not made up</strong>${esc(food.as_sold.text)}</div>` : ""}
-      ${(needsFvn || fsMissing || caller.fvn_percent !== undefined || caller.free_sugars_g !== undefined) ? `<div class="panel ticket">
+      ${food.powder ? `<div class="flag"><strong>As sold, not made up</strong>${esc(food.powder.text)}</div>` : ""}
+      ${soldHtml(food)}
+      ${(needsFvn || fsMissing || caller.fvn_percent !== undefined || caller.free_sugars_g !== undefined) ? `<section class="panel ticket">
         <h2>Your figures</h2>
-        <p class="small">CoFID cannot supply these. Anything you enter is labelled as yours in the result.</p>
+        <p class="small">CoFID cannot supply these. What you enter is labelled as yours wherever the score appears.</p>
         <div class="inline-form">
           ${needsFvn || caller.fvn_percent !== undefined ? `<div class="field"><label for="fvn">Fruit, veg and nuts (% of weight)</label><input class="input num" id="fvn" type="number" inputmode="decimal" min="0" max="100" step="any" value="${esc(foodState.fvn)}"></div>` : ""}
           ${fsMissing || caller.free_sugars_g !== undefined ? `<div class="field"><label for="fs">Free sugars (g per 100 g)</label><input class="input num" id="fs" type="number" inputmode="decimal" min="0" max="100" step="any" value="${esc(foodState.fs)}"></div>` : ""}
           <button class="btn ticket" type="button" data-act="apply-figures">Score with these</button>
         </div>
         ${fsMissing && neu.free_sugars_note ? `<p class="note">${esc(neu.free_sugars_note)}</p>` : ""}
-      </div>` : ""}
+      </section>` : ""}
       <div class="band two">
-        <div class="panel ticket">
+        <section class="panel ticket">
           <h2>What is in it</h2>
+          <div class="chips">
+            ${tappable.map((p) => chip(p.label, p.grams, grams(p.grams))).join("")}
+            ${chip("Per 100 g only", 0, "no unit")}
+          </div>
+          <div class="inline-form">
+            <div class="field"><label for="pg">Or weigh one (g)</label><input class="input num" id="pg" type="number" inputmode="decimal" min="0.1" step="any" value="${g && !tappable.some((p) => p.grams === g) ? Math.round(g * 10) / 10 : ""}"></div>
+            <button class="btn btn-ghost" type="button" data-act="set-portion">Use this weight</button>
+          </div>
           ${panelTable(food, g)}
-          ${food.salt_from_sodium ? `<p class="note">Salt for traffic lights and scores is sodium x 2.5.</p>` : ""}
+          ${food.salt_from_sodium ? `<p class="note">Salt for colours and scores is sodium x 2.5.</p>` : ""}
+          ${tappable.length ? `<p class="note">Unit weights: ${tappable.map((p) => srcButton(p.source, `${p.label}, ${p.source.label}`)).join(" ")}</p>` : ""}
+          ${listed.length ? `<p class="note">Also printed, not offered as one tap: ${listed.map((p) => `${esc(p.label)} ${esc(p.weight_text)} ${srcButton(p.source, "why")}`).join("; ")}</p>` : ""}
           ${food.overlay_values.length ? `<h3>Also measured by an official overlay</h3><table class="figures"><tbody>${food.overlay_values.map((o) => `<tr><th scope="row">${esc(o.label)}<span class="srcrow">${srcButton(o.source)}</span></th><td class="n">${o.value === null ? esc(o.value_text) : `${fmt(o.value, o.unit)}<span class="u">${esc(o.unit)}</span>`}</td></tr>`).join("")}</tbody></table>` : ""}
-        </div>
-        <div class="panel ticket">
+        </section>
+        <section class="panel ticket">
           <h2>Front of pack</h2>
           ${lights(a.traffic_lights, "Traffic lights")}
-          ${a.traffic_lights && a.traffic_lights.portion_rule_applied ? `<p class="note">The portion is over 100 g, so the per-portion red rule was checked.</p>` : ""}
-          <h3>Add to your recipe</h3>
+          ${a.traffic_lights && a.traffic_lights.portion_rule_applied ? `<p class="note">The unit is over 100 g, so the per-portion red limits were checked too.</p>` : ""}
+          <h3>Use it in a recipe</h3>
           <div class="inline-form">
-            <div class="field"><label for="addg">Weight (g)</label><input class="input num" id="addg" type="number" inputmode="decimal" min="0.1" step="any" value="${g || 100}"></div>
+            <div class="field"><label for="addg">Weight (g)</label><input class="input num" id="addg" type="number" inputmode="decimal" min="0.1" step="any" value="${g ? Math.round(g * 10) / 10 : 100}"></div>
             <button class="btn ticket" type="button" data-act="add-food">Add to recipe</button>
           </div>
-        </div>
+        </section>
       </div>
       <p class="note">${esc(food.evidence_note)} Data release ${esc(food.data_release)}.</p>
     </div>
   </section>`;
+  revealTear();
+}
+
+/* ---------- Your range (bulk) ---------- */
+const COLUMNS = ["name", "code", "free_sugars_g", "fvn_percent", "pack_g", "energy_kj", "fat_g", "saturated_fat_g",
+  "total_sugars_g", "salt_g", "sodium_mg", "protein_g", "fibre_aoac_g", "fibre_nsp_g", "fruit_veg_nuts_percent", "fvns_g", "is_drink"];
+let lastRun = null;
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [], cell = "", quoted = false;
+  for (let i = 0; i < text.length; i += 1) {
+    const ch = text[i];
+    if (quoted) {
+      if (ch === '"' && text[i + 1] === '"') { cell += '"'; i += 1; } else if (ch === '"') quoted = false; else cell += ch;
+    } else if (ch === '"') quoted = true;
+    else if (ch === ",") { row.push(cell); cell = ""; }
+    else if (ch === "\n" || ch === "\r") { if (ch === "\r" && text[i + 1] === "\n") i += 1; row.push(cell); rows.push(row); row = []; cell = ""; }
+    else cell += ch;
+  }
+  if (cell !== "" || row.length) { row.push(cell); rows.push(row); }
+  return rows.filter((r) => r.some((c) => c.trim() !== ""));
+}
+
+function toRows(text) {
+  const lines = text.trim();
+  if (!lines) return [];
+  const table = parseCsv(lines);
+  const header = table[0].map((h) => h.trim().toLowerCase());
+  if (header.includes("name") || header.includes("code")) {
+    return table.slice(1).map((cells) => {
+      // CoFID names contain commas. An unquoted name in the first column spills into extra
+      // cells; join the overflow back into the name rather than misreading the row.
+      const extra = cells.length - header.length;
+      const r = header[0] === "name" && extra > 0 ? [cells.slice(0, extra + 1).join(","), ...cells.slice(extra + 1)] : cells;
+      const row = {};
+      header.forEach((h, i) => {
+        const v = (r[i] || "").trim();
+        if (!COLUMNS.includes(h) || v === "") return;
+        if (h === "name" || h === "code") row[h] = v;
+        else if (h === "is_drink") row[h] = /^(1|y|yes|true)$/i.test(v);
+        else row[h] = Number(v);
+      });
+      return row;
+    });
+  }
+  return lines.split(/\r?\n/).map((l) => l.trim()).filter(Boolean)
+    .map((l) => (/^\d{2}-\d{3,4}(@row\d+)?$/.test(l) ? { code: l } : { name: l }));
+}
+
+function verdictCell(m) {
+  if (!m.scorable) return `<td class="vcell none"><span class="vscore">No score</span><span class="vword">needs ${esc(m.missing.length ? m.missing.map(needWord).join(", ") : "an input")}</span></td>`;
+  return `<td class="vcell"><span class="vscore">${m.score}</span><span class="vword"><span aria-hidden="true">${m.less_healthy ? "&#9632;" : "&#9633;"}</span> ${m.less_healthy ? "less healthy" : "not less healthy"}</span></td>`;
+}
+
+function rowHtml(r, laws) {
+  const order = laws.map((l) => l.model);
+  const flips = r.verdict_changes_under_2018 === true;
+  const sold = r.as_sold;
+  const unit = sold.unit;
+  const unitCell = !unit && sold.proposed_units && r.resolved.food_id ? `<a href="#/food/${encodeURIComponent(r.resolved.food_id)}">Confirm a unit weight</a>` : unit ? `${grams(unit.low_g)}${unit.low_g !== unit.high_g ? ` to ${grams(unit.high_g)}` : ""}${sold.band && sold.band.crosses && sold.band.crosses.length ? `<br><span class="tag red">${esc(sold.band.crosses.join(", "))} crosses</span>` : ""}` : "";
+  const srcCard = { label: "Where this row came from", html: `<h2 id="sheet-title">${esc(r.input)}</h2><dl>
+      <dt>Matched to</dt><dd>${esc(r.resolved.name)}${r.resolved.code ? ` (CoFID ${esc(r.resolved.code)})` : ""}</dd>
+      <dt>How</dt><dd>${esc(r.resolved.basis)}</dd><dt>Values from</dt><dd>${esc(r.sources.join(", "))}</dd>
+      ${Object.keys(r.caller_supplied || {}).length ? `<dt>You entered</dt><dd>${esc(Object.entries(r.caller_supplied).map(([k, v]) => `${k.replace(/_/g, " ")} ${v}`).join(", "))}</dd>` : ""}
+      ${ordered(r.models).map((m) => `<dt>${esc(ROLE_TITLE[m.law.role])}</dt><dd>${esc(lawStatus(m.law))}: ${m.scorable ? `score ${m.score}` : esc(m.missing.join("; "))}</dd>`).join("")}
+      <dt>Sold as</dt><dd>${esc(sold.kind)}${sold.sale_format ? `, ${esc(sold.sale_format)}` : ""}${unit ? `; unit ${esc(unit.label)}, ${esc(unit.spread)}` : ""}</dd></dl>` };
+  return `<tr class="${flips ? "flip-row" : ""}">
+    <th scope="row"><span class="pname">${esc(r.input)}</span>${flips ? '<span class="torn" title="Verdict flips">Flips</span>' : ""}
+      <span class="pmeta">${esc(r.resolved.name)}${sold.kind === "loose" ? ", sold loose" : ""}</span>${srcButton(srcCard, "Receipts")}</th>
+    ${order.map((id) => verdictCell(r.models[id])).join("")}
+    <td class="n">${unitCell}</td>
+  </tr>`;
+}
+
+function renderRange() {
+  sources = [];
+  const saved = read(RANGE, "");
+  view().innerHTML = `<section class="scene range">
+    <div class="backtype" aria-hidden="true">Range</div>
+    <h1 class="headline">Your range</h1>
+    <p class="lede">Bring your whole range. Paste one product per line, or upload a spreadsheet saved as CSV. Each row can be a CoFID name or code, or your own per-100 g label figures. Products whose verdict flips come first.</p>
+    <div class="panel ticket">
+      <div class="field"><label for="rows">Products, one per line, or CSV with a header row</label>
+        <textarea class="input area" id="rows" rows="8" spellcheck="false" placeholder="Raisins, dried&#10;Jaffa cakes&#10;11-886">${esc(saved)}</textarea></div>
+      <div class="inline-form">
+        <div class="field"><label for="csv">Or upload a CSV</label><input class="input file" id="csv" type="file" accept=".csv,text/csv"></div>
+        <button class="btn ticket" type="button" data-act="run-range">Score the range</button>
+        <button class="btn btn-ghost" type="button" data-act="template">Download a CSV template</button>
+      </div>
+      <p class="note">CSV columns: name or code; optional free_sugars_g, fvn_percent and pack_g; or your own label figures per 100 g (energy_kj, fat_g, saturated_fat_g, total_sugars_g, salt_g, protein_g, fibre_aoac_g, fruit_veg_nuts_percent). The 2018 model needs a free sugars figure for each row; total sugars are never used instead.</p>
+    </div>
+    <div id="run"></div>
+  </section>`;
+  if (lastRun) paintRun();
+}
+
+async function runRange() {
+  const text = document.getElementById("rows").value;
+  write(RANGE, text);
+  const rows = toRows(text);
+  const box = document.getElementById("run");
+  if (!rows.length) { box.innerHTML = `<p class="note">Add at least one product first.</p>`; return; }
+  box.innerHTML = `<p class="note">Scoring ${rows.length} row${rows.length > 1 ? "s" : ""}.</p>`;
+  try { lastRun = await api("/ui/bulk", { rows, confirmed: matches() }); paintRun(); }
+  catch (e) { box.innerHTML = `<div class="flag"><strong>Not scored</strong>${esc(e.message)}</div>`; }
+}
+
+function paintRun() {
+  const box = document.getElementById("run");
+  if (!box || !lastRun) return;
+  sources = [];
+  const r = lastRun;
+  const s = r.summary;
+  const laws = r.laws.slice().sort((a, b) => ({ today: 0, coming: 1, past: 2 }[a.role] - { today: 0, coming: 1, past: 2 }[b.role]));
+  box.innerHTML = `
+    <div class="run-head">
+      <p class="run-big">${s.verdict_changes_under_2018}<span> verdict${s.verdict_changes_under_2018 === 1 ? "" : "s"} flip</span></p>
+      <p class="small">${s.scored} of ${s.received} scored. ${s.gaps} gap${s.gaps === 1 ? "" : "s"}, ${s.errors} row error${s.errors === 1 ? "" : "s"}, ${s.loose} sold loose. Data release ${esc(r.data_release)}.</p>
+      <div class="label-actions noprint">
+        <button class="btn ticket" type="button" data-act="export-csv">Export CSV</button>
+        <button class="btn ticket" type="button" data-act="export-text">Copy as text</button>
+        <span id="exported" class="note" role="status"></span>
+      </div>
+    </div>
+    ${r.rows.length ? `<div class="table-wrap"><table class="figures run"><thead><tr><th>Product</th>${laws.map((l) => `<th>${esc(ROLE_TITLE[l.role])}<br><span class="u">${esc(lawStatus(l))}</span></th>`).join("")}<th>Unit as sold</th></tr></thead>
+      <tbody>${r.rows.map((x) => rowHtml(x, laws)).join("")}</tbody></table></div>` : ""}
+    ${r.gaps.length ? `<section class="panel ticket"><h2>Gaps</h2><p class="small">These rows were not scored. Nothing is guessed: confirm a match, give the CoFID code, or score them from your label figures.</p>
+      <ul class="gaps">${r.gaps.map((g) => `<li><strong>${esc(g.input)}</strong>: ${esc(g.reason)} ${g.candidates.length ? `<button class="btn btn-ghost" type="button" data-match="${esc(g.input)}">Find a match</button>` : ""}</li>`).join("")}</ul></section>` : ""}
+    ${r.errors.length ? `<section class="panel ticket"><h2>Rows to fix</h2><ul class="gaps">${r.errors.map((e) => `<li>Row ${e.index + 1}${e.input ? ` (${esc(e.input)})` : ""}: ${esc(e.error)}</li>`).join("")}</ul></section>` : ""}
+    <p class="note">${esc(r.rule)}</p>`;
+}
+
+function exportRows() {
+  const r = lastRun;
+  const laws = r.laws;
+  const head = ["product", "status", "matched_cofid_code", "matched_name", "match_basis",
+    ...laws.flatMap((l) => [`${l.model} score`, `${l.model} verdict`, `${l.model} law`]),
+    "verdict_changes", "sold_as", "unit_low_g", "unit_high_g", "unit_basis", "values_from", "you_entered", "reason", "data_release"];
+  const out = [head];
+  r.rows.forEach((x) => out.push([x.input, "scored", x.resolved.code || "", x.resolved.name, x.resolved.basis,
+    ...laws.flatMap((l) => { const m = x.models[l.model]; return [m.scorable ? m.score : "", m.scorable ? (m.less_healthy ? "less healthy" : "not less healthy") : `not scored: ${m.missing.join("; ")}`, lawStatus(l)]; }),
+    x.verdict_changes_under_2018 === null ? "unknown" : String(x.verdict_changes_under_2018), x.as_sold.kind,
+    x.as_sold.unit ? x.as_sold.unit.low_g.toFixed(1) : "", x.as_sold.unit ? x.as_sold.unit.high_g.toFixed(1) : "",
+    x.as_sold.unit ? x.as_sold.unit.basis : "", x.sources.join("; "),
+    Object.entries(x.caller_supplied || {}).map(([k, v]) => `${k}=${v}`).join("; "), "", r.data_release]));
+  r.gaps.forEach((g) => out.push([g.input, "gap", "", "", "", ...laws.flatMap(() => ["", "", ""]), "", "", "", "", "", "", "", g.reason, r.data_release]));
+  r.errors.forEach((e) => out.push([e.input || `row ${e.index + 1}`, "error", "", "", "", ...laws.flatMap(() => ["", "", ""]), "", "", "", "", "", "", "", e.error, r.data_release]));
+  return out;
+}
+const csvCell = (v) => (/[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v));
+
+async function openMatch(name) {
+  openSheet(`<h2 id="sheet-title">Match "${esc(name)}"</h2><p class="note">Looking for candidates.</p>`);
+  let r;
+  try { r = await api("/ui/match", { name }); } catch (e) { document.getElementById("sheet-body").innerHTML += `<p class="note">${esc(e.message)}</p>`; return; }
+  const engine = r.engine.engine === "jev"
+    ? `Candidates found by shared words, then scored by Jev (${esc(r.engine.model)}) as the probability that each is the same food. Above ${r.thresholds.propose_at} a candidate is proposed; below ${r.thresholds.abstain_below} it is set aside. Thresholds: ${esc(r.thresholds.basis)}`
+    : `Candidates found by shared words only. ${esc(r.engine.reason)}`;
+  const items = r.candidates.map((c, i) => `<li class="ticket cand ${c.verdict}">
+      <span><strong>${esc(c.name)}</strong> <span class="muted small">CoFID ${esc(c.code)}, group ${esc(c.group)}</span><br>
+      <span class="small">${c.probability === null ? `possible match, word overlap ${fmt(c.retrieval_score, "g")}` : `${c.verdict === "proposed" ? "proposed" : c.verdict === "abstain" ? "unlikely" : "possible"}, Jev probability ${fmt(c.probability, "g")}`}</span></span>
+      <button class="btn ticket" type="button" data-confirm="${i}">This is it</button></li>`).join("");
+  window.__match = r;
+  document.getElementById("sheet-body").innerHTML = `<h2 id="sheet-title">Match "${esc(name)}"</h2>
+    <p class="small">${engine}</p>
+    <p class="small"><strong>${esc(r.rule)}</strong></p>
+    ${items ? `<ol class="cands">${items}</ol>` : `<p class="note">No CoFID food shares a word with this name. Score it from your own label figures instead.</p>`}
+    <p class="small">None of these? Close this and leave the row as a gap, or score it from your label figures.</p>`;
 }
 
 /* ---------- Recipe ---------- */
@@ -326,7 +592,6 @@ async function calculate() {
 const recalc = debounce(calculate, 320);
 
 function ingredientHtml(item, index) {
-  const flag = lastResult && lastResult.ingredients.find((x) => x.food_id === item.food_id && x.as_sold);
   return `<li class="ing ticket" data-index="${index}">
     <div class="ing-top"><span class="ing-name">${esc(item.name)}</span>
       <button class="btn btn-ghost" type="button" data-remove="${index}" aria-label="Remove ${esc(item.name)}">Remove</button></div>
@@ -335,7 +600,7 @@ function ingredientHtml(item, index) {
         <input class="input num" id="g${index}" type="number" inputmode="decimal" min="0.1" step="any" value="${esc(item.grams)}" data-grams="${index}"></div>
       <div class="chips" data-chips="${index}"></div>
     </div>
-    <p class="note${flag ? "" : " hidden"}" data-flag="${esc(item.food_id)}"><strong>As sold.</strong> This is the powder or concentrate as sold. Weigh it dry and add any water or milk as its own ingredient. The score treats it as sold, not made up.</p>
+    <p class="note hidden" data-flag="${esc(item.food_id)}"><strong>As sold.</strong> This is the powder or concentrate as sold. Weigh it dry and add any water or milk as its own ingredient. The score treats it as sold, not made up.</p>
   </li>`;
 }
 
@@ -351,19 +616,20 @@ async function paintChips() {
 function renderRecipe() {
   sources = [];
   const items = recipe.ingredients;
-  view().innerHTML = `<section class="scene">
-    <div class="backtype" aria-hidden="true">${esc(recipe.name || "Recipe")}</div>
+  view().innerHTML = `<section class="scene recipe">
+    <div class="backtype low" aria-hidden="true">${esc(recipe.name || "Recipe")}</div>
     <h1 class="headline">${esc(recipe.name || "Your recipe")}</h1>
+    <p class="lede">For a small producer the recipe is the product. Add what goes in, by weight as used, and see the finished product under both laws.</p>
     <div id="result-hero"></div>
     <div class="band">
       <div class="inline-form">
-        <div class="field"><label for="rname">Recipe name</label><input class="input" id="rname" type="text" maxlength="120" value="${esc(recipe.name)}" placeholder="Name it for the label"></div>
-        <div class="field"><label>Servings</label><div class="stepper">
-          <button class="btn ticket" type="button" data-act="less" aria-label="Fewer servings">&minus;</button>
+        <div class="field grow"><label for="rname">Product name</label><input class="input" id="rname" type="text" maxlength="120" value="${esc(recipe.name)}" placeholder="Name it for the label"></div>
+        <div class="field"><label>Portions it makes</label><div class="stepper">
+          <button class="btn ticket" type="button" data-act="less" aria-label="Fewer portions">&minus;</button>
           <output id="servings" aria-live="polite">${recipe.servings}</output>
-          <button class="btn ticket" type="button" data-act="more" aria-label="More servings">+</button></div></div>
+          <button class="btn ticket" type="button" data-act="more" aria-label="More portions">+</button></div></div>
       </div>
-      ${items.length ? `<ul class="ingredients">${items.map(ingredientHtml).join("")}</ul>` : `<div class="panel ticket empty"><h2>No ingredients yet</h2><p>Search below and add what goes in. Weights stay in this browser only.</p></div>`}
+      ${items.length ? `<ul class="ingredients">${items.map(ingredientHtml).join("")}</ul>` : `<div class="panel ticket empty"><h2>No ingredients yet</h2><p>Search below and add what goes in. The recipe stays in this browser only.</p></div>`}
       <div class="adder panel ticket">
         <div class="field"><label for="addq">Add an ingredient</label><input class="input" id="addq" type="search" autocomplete="off" placeholder="Search CoFID foods" enterkeyhint="search"></div>
         <div id="addfound"></div>
@@ -372,24 +638,22 @@ function renderRecipe() {
       ${items.length ? `<p><button class="btn btn-ghost" type="button" data-act="clear">Start a new recipe</button></p>` : ""}
     </div>
   </section>`;
-  const q = document.getElementById("addq");
-  q.addEventListener("input", debounce(() => runSearch(q.value, "addfound", "add"), 220));
+  wireSearch("addq", "addfound", "add");
   paintResult();
   paintChips();
   recalc();
 }
 
+const REQUIRED = ["energy_kj", "fat_g", "saturated_fat_g", "total_sugars_g", "protein_g", "sodium_mg"];
 function contributionsCard(name, label, unit) {
   const rows = (lastResult.contributions[name] || []);
-  const html = `<h2 id="sheet-title">${esc(label)} in this recipe</h2>
-    <p class="small">Each ingredient's value per 100 g, scaled by its weight. Then the sum is divided by the total raw weight, ${grams(lastResult.total_g)}.</p>
+  return { label, html: `<h2 id="sheet-title">${esc(label)} in this recipe</h2>
+    <p class="small">Each ingredient's value per 100 g, scaled by its weight, then divided by the total raw weight, ${grams(lastResult.total_g)}.</p>
     <table class="figures"><thead><tr><th>Ingredient</th><th>Per 100 g</th><th>In recipe</th></tr></thead><tbody>
     ${rows.map((r) => `<tr><th scope="row">${esc(r.name)}, ${grams(r.grams)}<span class="srcrow muted small">${esc(r.source.label)}, ${esc(r.source.observation_id)}</span></th><td class="n">${fmt(r.per_100g, unit)}</td><td class="n">${fmt(r.amount, unit)}<span class="u">${esc(unit)}</span></td></tr>`).join("")}
-    </tbody></table>`;
-  return { kind: "contributions", label, html };
+    </tbody></table>` };
 }
 
-const REQUIRED = ["energy_kj", "fat_g", "saturated_fat_g", "total_sugars_g", "protein_g", "sodium_mg"];
 function paintResult() {
   const hero = document.getElementById("result-hero");
   const detail = document.getElementById("result-detail");
@@ -399,7 +663,8 @@ function paintResult() {
   if (!lastResult) { hero.innerHTML = ""; detail.innerHTML = ""; return; }
   const r = lastResult;
   const a = r.assessment;
-  const old = a.models[OLD], neu = a.models[NEW];
+  const old = a.models["uk-npm-2004/05"];
+  const neu = a.models["uk-npm-2018"];
   const fvnNeeded = !old.scorable && (old.missing_inputs || []).some((m) => m.startsWith("fruit_veg_nuts_percent"));
   const known = r.fruit_veg_nuts.known;
   const rows = [
@@ -410,61 +675,55 @@ function paintResult() {
   const mine = {};
   if (recipe.fvn_percent !== null && recipe.fvn_percent !== "") mine.fvn_percent = Number(recipe.fvn_percent);
   if (recipe.free_sugars_g !== null && recipe.free_sugars_g !== "") mine.free_sugars_g = Number(recipe.free_sugars_g);
-  hero.innerHTML = `${dualTicket(a)}${yours(mine)}
-    <p class="muted small">${grams(r.total_g)} in all, ${r.servings} serving${r.servings > 1 ? "s" : ""} of ${grams(r.serving_g)}. ${esc(r.yield_note)}</p>`;
+  hero.innerHTML = `${ticket(a, { hero: true })}${yours(mine)}${quote(a, r.data_release)}
+    <p class="muted small">${grams(r.total_g)} in all, ${r.servings} portion${r.servings > 1 ? "s" : ""} of ${grams(r.serving_g)}. ${esc(r.yield_note)}</p>`;
   detail.innerHTML = `
-    <div class="panel ticket">
+    <section class="panel ticket">
       <h2>Your figures</h2>
       <p class="small">CoFID cannot supply these for a recipe. What you enter is labelled as yours.</p>
       <div class="inline-form">
         <div class="field"><label for="rfvn">Fruit, veg and nuts (% of weight)</label><input class="input num" id="rfvn" type="number" inputmode="decimal" min="0" max="100" step="any" value="${esc(recipe.fvn_percent ?? "")}"></div>
         <div class="field"><label for="rfs">Free sugars (g per 100 g)</label><input class="input num" id="rfs" type="number" inputmode="decimal" min="0" max="100" step="any" value="${esc(recipe.free_sugars_g ?? "")}"></div>
+        <button class="btn ticket" type="button" data-act="apply-recipe">Score with these</button>
       </div>
       ${fvnNeeded ? `<p class="note">Today's law needs this. Fruit, vegetable and nut ingredients make up ${fmt(known.share_of_weight_percent, "%")}% of the weight; the rest have no value under the group rule, so ShelfScale will not assume one.</p>` : ""}
       ${r.fruit_veg_nuts.source === "derived_from_ingredients" ? `<p class="note">Fruit, veg and nuts: ${fmt(r.fruit_veg_nuts.value, "%")}%, worked out from the ingredients by group.</p>` : ""}
       ${neu.free_sugars_note ? `<p class="note">${esc(neu.free_sugars_note)}</p>` : ""}
-    </div>
+    </section>
     ${r.review_flags.length ? `<div class="flag"><strong>Check before relying on it</strong>${r.review_flags.map((f) => `${esc(f.ingredient)}: ${esc(f.reason)}`).join("<br>")}</div>` : ""}
     <div class="band two">
-      <div class="panel ticket">
-        <h2>Per 100 g and per serving</h2>
-        <table class="figures"><thead><tr><th>Nutrient</th><th>Per 100 g</th><th>Per serving, ${grams(r.serving_g)}</th></tr></thead><tbody>
+      <section class="panel ticket">
+        <h2>Per 100 g and per portion</h2>
+        <table class="figures"><thead><tr><th>Nutrient</th><th>Per 100 g</th><th>Per ${grams(r.serving_g)}</th></tr></thead><tbody>
         ${rows.map(([k, label, unit]) => {
           const v = r.per_100g[k];
-          const card = contributionsCard(k, label, unit);
-          sources.push(card);
+          sources.push(contributionsCard(k, label, unit));
           const btn = `<button class="src" type="button" data-src="${sources.length - 1}">Where from</button>`;
           if (v === undefined) return `<tr><th scope="row">${esc(label)}<span class="srcrow">${btn}</span></th><td class="n muted" colspan="2">not recorded for every ingredient</td></tr>`;
           return `<tr class="${label.startsWith("of which") ? "sub" : ""}"><th scope="row">${esc(label)}<span class="srcrow">${btn}</span></th><td class="n">${fmt(v, unit)}<span class="u">${unit}</span></td><td class="n">${fmt(r.per_serving[k], unit)}<span class="u">${unit}</span></td></tr>`;
         }).join("")}
         </tbody></table>
-        <p class="note">These are the CoFID values the scores use. The label converts them to the declaration's conventions.</p>
-      </div>
-      <div class="panel ticket">
-        <h2>Front of pack, per serving</h2>
+        <div class="flag basis"><strong>Why the label shows different numbers</strong>These are the CoFID values the scores use. The label is worked out under the labelling rules: carbohydrate by weight, protein from nitrogen and the Regulation's energy factors. <a href="#/label?method">See how the label is worked out</a>.</div>
+      </section>
+      <section class="panel ticket">
+        <h2>Front of pack, per portion</h2>
         ${a.traffic_lights ? lights(a.traffic_lights, "Traffic lights") : `<p class="note">Traffic lights need fat, saturates, sugars and salt for every ingredient.</p>`}
-        ${a.traffic_lights ? `<p class="note">Colours follow per 100 g; a serving over 100 g is also checked against the per-portion red limits. Serving: ${grams(r.serving_g)}.</p>` : ""}
+        ${a.traffic_lights ? `<p class="note">Colours follow per 100 g. A portion over 100 g is also checked against the per-portion red limits. Portion: ${grams(r.serving_g)}.</p>` : ""}
         <p><a class="btn ticket" href="#/label">Get the label</a></p>
-      </div>
+      </section>
     </div>`;
-  const keep = (id, field) => {
-    const el = document.getElementById(id);
-    el.addEventListener("change", () => { recipe[field] = el.value === "" ? null : el.value; saveRecipe(); recalc(); });
-  };
-  keep("rfvn", "fvn_percent");
-  keep("rfs", "free_sugars_g");
   document.querySelectorAll("[data-flag]").forEach((el) => {
-    const sold = r.ingredients.some((x) => x.food_id === el.dataset.flag && x.as_sold);
-    el.classList.toggle("hidden", !sold);
+    el.classList.toggle("hidden", !r.ingredients.some((x) => x.food_id === el.dataset.flag && x.as_sold));
   });
+  revealTear();
 }
 
 /* ---------- Label ---------- */
 function declRows(r) {
   const L = r.label;
   const pick = (side, key) => L[side].find((x) => x.key === key);
-  const cell = (row) => row.display === null ? "n/a" : `${row.display} ${row.unit}`;
-  const lines = [
+  const cell = (row) => (row.display === null ? "n/a" : `${row.display} ${row.unit}`);
+  return [
     ["Energy", (s) => `${cell(pick(s, "energy_kj"))} / ${cell(pick(s, "energy_kcal"))}`, false],
     ["Fat", (s) => cell(pick(s, "fat_g")), false],
     ["of which saturates", (s) => cell(pick(s, "saturates_g")), true],
@@ -472,14 +731,13 @@ function declRows(r) {
     ["of which sugars", (s) => cell(pick(s, "sugars_g")), true],
     ["Protein", (s) => cell(pick(s, "protein_g")), false],
     ["Salt", (s) => cell(pick(s, "salt_g")), false],
-  ];
-  return lines.map(([name, f, sub]) => ({ name, sub, per100: f("per_100g"), serving: f("per_serving") }));
+  ].map(([name, f, sub]) => ({ name, sub, per100: f("per_100g"), serving: f("per_serving") }));
 }
 
-async function renderLabel() {
+async function renderLabel(focusMethod) {
   sources = [];
   if (recipe.ingredients.length && !lastResult) {
-    view().innerHTML = `<section class="scene"><p class="note">Calculating the recipe.</p></section>`;
+    view().innerHTML = `<section class="scene"><p class="note">Working out the recipe.</p></section>`;
     await calculate();
   }
   const r = lastResult;
@@ -493,39 +751,52 @@ async function renderLabel() {
   const L = r.label;
   const missing = Object.keys(L.missing);
   const excl = Object.entries(L.energy_excludes);
-  view().innerHTML = `<section class="scene">
+  view().innerHTML = `<section class="scene label">
     <div class="backtype noprint" aria-hidden="true">Label</div>
     <h1 class="headline noprint">${esc(r.name || "Your recipe")}</h1>
-    <div class="decl" id="decl">
-      <table>
-        <caption>Nutrition</caption>
-        <thead><tr><th>Typical values</th><th>Per 100 g</th><th>Per portion (${esc(grams(r.serving_g))})</th></tr></thead>
-        <tbody>${rows.map((x) => `<tr class="${x.sub ? "sub" : ""}"><td>${esc(x.name)}</td><td>${esc(x.per100)}</td><td>${esc(x.serving)}</td></tr>`).join("")}</tbody>
-        <tfoot><tr><td colspan="3">This pack makes ${r.servings} portion${r.servings > 1 ? "s" : ""}. ${esc(L.statement)}</td></tr></tfoot>
-      </table>
+    <div class="print-sheet">
+      <p class="print-name">${esc(r.name || "Your recipe")}</p>
+      <div class="decl" id="decl">
+        <table>
+          <caption>Nutrition</caption>
+          <thead><tr><th>Typical values</th><th>Per 100 g</th><th>Per portion (${esc(grams(r.serving_g))})</th></tr></thead>
+          <tbody>${rows.map((x) => `<tr class="${x.sub ? "sub" : ""}"><td>${esc(x.name)}</td><td>${esc(x.per100)}</td><td>${esc(x.serving)}</td></tr>`).join("")}</tbody>
+          <tfoot><tr><td colspan="3">This pack makes ${r.servings} portion${r.servings > 1 ? "s" : ""}. ${esc(L.statement)}</td></tr></tfoot>
+        </table>
+      </div>
+      <p class="print-foot">Worked out with ShelfScale from CoFID 2021, data release ${esc(r.data_release)}.</p>
     </div>
     <div class="label-actions noprint">
       <button class="btn ticket" type="button" data-act="print">Print the label</button>
       <button class="btn ticket" type="button" data-act="copy">Copy as text</button>
       <span id="copied" class="note" role="status"></span>
     </div>
-    <div class="panel ticket noprint">
-      <h2>How these figures were made</h2>
-      <p class="small">Carbohydrate and sugars are converted from CoFID's monosaccharide equivalents to weight, protein is total nitrogen x 6.25, and energy uses the Regulation's factors, all as the CoFID user guide sets out. ${esc(L.method)}.</p>
+    <section class="panel ticket noprint" id="method" tabindex="-1">
+      <h2>How these figures are worked out</h2>
+      <p class="small">The label follows the labelling rules, not CoFID's own conventions. Carbohydrate and sugars are converted from CoFID's monosaccharide equivalents to weight, protein is total nitrogen x 6.25, and energy uses the Regulation's factors, all as the CoFID user guide sets out. That is why these figures differ from the recipe screen, which shows the values the scores use. ${esc(L.method)}.</p>
       <p class="small">Rounding: ${esc(L.rounding)}. Per 100 g and per portion are rounded separately from unrounded values.</p>
       ${missing.length ? `<div class="flag"><strong>Not declared</strong>${missing.map((k) => `${esc(k.replace(/_g$/, "").replace(/_/g, " "))}: not recorded for ${esc(L.missing[k].join(", "))}`).join("<br>")}</div>` : ""}
       ${excl.length ? `<div class="flag"><strong>Energy leaves out</strong>${excl.map(([part, names]) => `${esc(part)} for ${esc(names.join(", "))}, because CoFID records no value`).join("<br>")}</div>` : ""}
       <p class="small">${esc(r.yield_note)} Data release ${esc(r.data_release)}.</p>
-    </div>
+    </section>
   </section>`;
+  if (focusMethod) { const m = document.getElementById("method"); m.scrollIntoView(); m.focus({ preventScroll: true }); }
 }
 
 function labelText() {
   const r = lastResult;
-  const rows = declRows(r);
   return [`Nutrition${r.name ? `: ${r.name}` : ""}`, `Typical values\tPer 100 g\tPer portion (${grams(r.serving_g)})`,
-    ...rows.map((x) => `${x.sub ? "  " : ""}${x.name}\t${x.per100}\t${x.serving}`),
+    ...declRows(r).map((x) => `${x.sub ? "  " : ""}${x.name}\t${x.per100}\t${x.serving}`),
     `This pack makes ${r.servings} portion${r.servings > 1 ? "s" : ""}. ${r.label.statement}`].join("\n");
+}
+
+/* ---------- the tear, once, when a flip appears ---------- */
+function revealTear() {
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll(".dual.flips:not(.torn-in)").forEach((el) => {
+    el.classList.add("tearing");
+    requestAnimationFrame(() => requestAnimationFrame(() => { el.classList.add("torn-in"); el.classList.remove("tearing"); }));
+  });
 }
 
 /* ---------- routing and events ---------- */
@@ -534,13 +805,14 @@ function route() {
   let tab = "lookup";
   closeSheet();
   if (hash.startsWith("#/food/")) renderFood(decodeURIComponent(hash.slice(7)));
+  else if (hash === "#/range") { tab = "range"; renderRange(); }
   else if (hash === "#/recipe") { tab = "recipe"; renderRecipe(); }
-  else if (hash === "#/label") { tab = "label"; renderLabel(); }
-  else renderLookup();
+  else if (hash.startsWith("#/label")) { tab = "label"; renderLabel(hash.includes("method")); }
+  else renderHome();
   document.querySelectorAll(".tabs a").forEach((a) => {
     if (a.dataset.tab === tab) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
   });
-  window.scrollTo(0, 0);
+  if (!hash.includes("method")) window.scrollTo(0, 0);
 }
 
 function addIngredient(food_id, name, g) {
@@ -548,23 +820,49 @@ function addIngredient(food_id, name, g) {
   saveRecipe();
 }
 
+function download(name, text, type) {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const a = document.createElement("a");
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+async function copyText(text, statusId) {
+  const status = document.getElementById(statusId);
+  try { await navigator.clipboard.writeText(text); status.textContent = "Copied."; }
+  catch (_) {
+    const ta = document.createElement("textarea");
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    status.textContent = document.execCommand("copy") ? "Copied." : "Copy is blocked here. Select the text and copy it.";
+    ta.remove();
+  }
+}
+
 document.addEventListener("click", async (ev) => {
   const t = ev.target.closest("button, [data-close]");
   if (!t) return;
   if (t.hasAttribute("data-close")) { closeSheet(); return; }
   if (t.dataset.src !== undefined) { openSheet(sourceHtml(sources[Number(t.dataset.src)])); return; }
-  if (t.dataset.portion !== undefined) {
-    foodState.portion = Number(t.dataset.portion) || 0;
-    if (!foodState.portion) foodState.portion = 0;
-    renderFood(foodState.id); return;
+  if (t.dataset.portion !== undefined) { foodState.portion = Number(t.dataset.portion) || 0; renderFood(foodState.id); return; }
+  if (t.dataset.unit) { keepUnit(foodState.id, t.dataset.unit); foodState.portion = null; renderFood(foodState.id); return; }
+  if (t.dataset.match) { openMatch(t.dataset.match); return; }
+  if (t.dataset.confirm !== undefined) {
+    const r = window.__match;
+    const c = r.candidates[Number(t.dataset.confirm)];
+    try {
+      const record = await api("/ui/match/confirm", { query: r.query, food_id: c.food_id, engine: r.engine, probability: c.probability });
+      keepMatch(record);
+      closeSheet();
+      if (document.getElementById("rows")) runRange();
+    } catch (e) { document.getElementById("sheet-body").insertAdjacentHTML("beforeend", `<p class="note">${esc(e.message)}</p>`); }
+    return;
   }
   if (t.dataset.add) {
     const ps = await portionsFor(t.dataset.add);
     const usual = ps.find((p) => p.grams >= 10);
-    addIngredient(t.dataset.add, t.dataset.name, usual ? usual.grams : 100);
+    addIngredient(t.dataset.add, t.dataset.name, usual ? Math.round(usual.grams * 10) / 10 : 100);
     renderRecipe();
-    const idx = recipe.ingredients.length - 1;
-    const el = document.getElementById(`g${idx}`);
+    const el = document.getElementById(`g${recipe.ingredients.length - 1}`);
     if (el) { el.focus(); el.select(); }
     return;
   }
@@ -578,48 +876,52 @@ document.addEventListener("click", async (ev) => {
     recalc(); return;
   }
   switch (t.dataset.act) {
-    case "set-portion": {
-      const v = Number(document.getElementById("pg").value);
-      if (v > 0) { foodState.portion = v; renderFood(foodState.id); }
-      break;
-    }
+    case "set-portion": { const v = Number(document.getElementById("pg").value); if (v > 0) { foodState.portion = v; renderFood(foodState.id); } break; }
+    case "set-pack": { const v = document.getElementById("packg").value; foodState.pack = Number(v) > 0 ? v : ""; foodState.portion = Number(v) > 0 ? Number(v) : null; renderFood(foodState.id); break; }
     case "apply-figures": {
       const f = document.getElementById("fvn"), s = document.getElementById("fs");
       if (f) foodState.fvn = f.value;
       if (s) foodState.fs = s.value;
-      renderFood(foodState.id);
-      break;
+      renderFood(foodState.id); break;
+    }
+    case "apply-recipe": {
+      recipe.fvn_percent = document.getElementById("rfvn").value || null;
+      recipe.free_sugars_g = document.getElementById("rfs").value || null;
+      saveRecipe(); calculate(); break;
     }
     case "add-food": {
       const v = Number(document.getElementById("addg").value);
       if (v > 0 && foodState.data) { addIngredient(foodState.data.food_id, foodState.data.name, v); location.hash = "#/recipe"; }
       break;
     }
-    case "less": case "more": {
+    case "less": case "more":
       recipe.servings = Math.min(1000, Math.max(1, recipe.servings + (t.dataset.act === "more" ? 1 : -1)));
       document.getElementById("servings").textContent = recipe.servings;
       saveRecipe(); recalc(); break;
-    }
     case "clear":
       if (window.confirm("Start a new recipe? This removes the current one from this browser.")) {
         recipe = { name: "", servings: 1, ingredients: [], fvn_percent: null, free_sugars_g: null };
         lastResult = null; saveRecipe(); renderRecipe();
       }
       break;
+    case "run-range": runRange(); break;
+    case "template":
+      download("shelfscale-range-template.csv", `${COLUMNS.slice(0, 5).join(",")}\nRaisins, dried,,0,,\nJaffa cakes,,,,,\n,11-886,,,,\n`, "text/csv"); break;
+    case "export-csv": download(`shelfscale-range-${new Date().toISOString().slice(0, 10)}.csv`, exportRows().map((r) => r.map(csvCell).join(",")).join("\n"), "text/csv");
+      document.getElementById("exported").textContent = "Exported."; break;
+    case "export-text": copyText(exportRows().map((r) => r.join("\t")).join("\n"), "exported"); break;
     case "print": window.print(); break;
-    case "copy": {
-      const text = labelText();
-      const status = document.getElementById("copied");
-      try { await navigator.clipboard.writeText(text); status.textContent = "Copied."; }
-      catch (_) {
-        const ta = document.createElement("textarea");
-        ta.value = text; document.body.appendChild(ta); ta.select();
-        status.textContent = document.execCommand("copy") ? "Copied." : "Copy is blocked here. Select the label and copy it.";
-        ta.remove();
-      }
-      break;
-    }
+    case "copy": copyText(labelText(), "copied"); break;
     default: break;
+  }
+});
+
+document.addEventListener("change", async (ev) => {
+  const t = ev.target;
+  if (t.id === "csv" && t.files && t.files[0]) {
+    const text = await t.files[0].text();
+    document.getElementById("rows").value = text;
+    runRange();
   }
 });
 
