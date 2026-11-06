@@ -65,24 +65,31 @@ def tokens(text: str) -> list[str]:
 
 
 @lru_cache(maxsize=1)
-def _catalogue() -> list[tuple[str, frozenset[str], str]]:
-    return [(f.food_id, frozenset(tokens(f.name)), f.name) for f in foods_by_id().values()]
+def _catalogue() -> list[tuple[str, frozenset[str], str, str]]:
+    out = []
+    for f in foods_by_id().values():
+        words = tokens(f.name)
+        if words:
+            out.append((f.food_id, frozenset(words), f.name, words[0]))
+    return out
 
 
 def retrieve(query: str, k: int | None = None) -> list[dict[str, Any]]:
-    """Deterministic candidates: shared words, weighted toward the head word."""
+    """Deterministic candidates: shared words, weighted toward CoFID's head word."""
     k = k or settings()["candidates"]
     q = tokens(query)
     if not q:
         return []
-    qset, head = set(q), q[0]
+    qset = set(q)
     scored = []
-    for food_id, words, name in _catalogue():
+    for food_id, words, name, head in _catalogue():
         shared = qset & words
         if not shared:
             continue
         overlap = len(shared) / len(qset | words)
-        score = 0.7 * overlap + 0.3 * (head in words)
+        # CoFID names lead with the food ("Eggs, chicken, ..."); producers often lead with a
+        # describing word ("free range eggs"), so CoFID's head word anywhere in the query counts.
+        score = 0.65 * overlap + 0.25 * (head in qset) + 0.10 * (q[0] in words)
         scored.append((round(score, 4), -len(words), name, food_id))
     scored.sort(reverse=True)
     foods = foods_by_id()

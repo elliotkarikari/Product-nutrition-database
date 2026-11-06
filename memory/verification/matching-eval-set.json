@@ -1,0 +1,352 @@
+{
+ "comment": "Evaluation set for the matching assistant. 'gold' lists every CoFID code that is an acceptable match; an empty list means no CoFID food is the same product, so the right answer is to abstain. All labels are drafts by the builder (Claude), 2026-11-06, pending Elliot's spot-check: change 'labels_status' to 'reviewed' once checked. The legacy 2023 match files were not used as gold: they record CoFID food against a weight, not against a source record, and include algorithmic errors.",
+ "labels_status": "draft",
+ "items": [
+  {
+   "query": "Apples, eating, raw, flesh and skin",
+   "kind": "sampling composite",
+   "gold": [
+    "14-319",
+    "14-346"
+   ]
+  },
+  {
+   "query": "Apricots, ready to eat, semi-dried",
+   "kind": "sampling composite",
+   "gold": [
+    "14-392"
+   ]
+  },
+  {
+   "query": "Bananas, raw, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "14-318",
+    "14-347"
+   ]
+  },
+  {
+   "query": "Beans, green, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-514"
+   ]
+  },
+  {
+   "query": "Blackberries, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "14-388"
+   ]
+  },
+  {
+   "query": "Cabbage, green, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-510"
+   ]
+  },
+  {
+   "query": "Cherries, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "14-382"
+   ]
+  },
+  {
+   "query": "Citrus fruit, soft/easy peelers, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "14-326",
+    "14-348"
+   ]
+  },
+  {
+   "query": "Courgettes, fresh, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-627"
+   ]
+  },
+  {
+   "query": "Dates, dried, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "14-394"
+   ]
+  },
+  {
+   "query": "Figs, ready to eat, semi-dried",
+   "kind": "sampling composite",
+   "gold": [
+    "14-395"
+   ]
+  },
+  {
+   "query": "Grapefruit, raw, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "14-384",
+    "14-385"
+   ]
+  },
+  {
+   "query": "Leeks, fresh, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-624"
+   ]
+  },
+  {
+   "query": "Mangoes, ripe, raw, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "14-378",
+    "14-379"
+   ]
+  },
+  {
+   "query": "Onions, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-499"
+   ]
+  },
+  {
+   "query": "Oranges, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "14-327",
+    "14-360"
+   ]
+  },
+  {
+   "query": "Papaya, ripe, raw, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "14-390",
+    "14-397"
+   ]
+  },
+  {
+   "query": "Pears, raw, flesh and skin",
+   "kind": "sampling composite",
+   "gold": [
+    "14-321"
+   ]
+  },
+  {
+   "query": "Peppers, red, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-524"
+   ]
+  },
+  {
+   "query": "Peppers, yellow, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-526"
+   ]
+  },
+  {
+   "query": "Pineapple, fresh, raw, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "14-376",
+    "14-377"
+   ]
+  },
+  {
+   "query": "Plums, dessert, raw, flesh and skin",
+   "kind": "sampling composite",
+   "gold": [
+    "14-374"
+   ]
+  },
+  {
+   "query": "Potatoes, old, raw, flesh only",
+   "kind": "sampling composite",
+   "gold": [
+    "13-489"
+   ]
+  },
+  {
+   "query": "Prunes, ready to eat, semi-dried",
+   "kind": "sampling composite",
+   "gold": [
+    "14-391"
+   ]
+  },
+  {
+   "query": "Radish, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-656"
+   ]
+  },
+  {
+   "query": "Raisins, dried",
+   "kind": "sampling composite",
+   "gold": [
+    "14-393"
+   ]
+  },
+  {
+   "query": "Raspberries, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "14-375"
+   ]
+  },
+  {
+   "query": "Watercress, raw",
+   "kind": "sampling composite",
+   "gold": [
+    "13-669"
+   ]
+  },
+  {
+   "query": "rock cakes",
+   "kind": "producer name",
+   "gold": [
+    "11-1109"
+   ]
+  },
+  {
+   "query": "flapjack",
+   "kind": "producer name",
+   "gold": [
+    "11-814",
+    "11-1071"
+   ]
+  },
+  {
+   "query": "salted butter",
+   "kind": "producer name",
+   "gold": [
+    "17-685"
+   ]
+  },
+  {
+   "query": "carrot cake",
+   "kind": "producer name",
+   "gold": [
+    "11-836",
+    "11-1041"
+   ]
+  },
+  {
+   "query": "scones",
+   "kind": "producer name",
+   "gold": [
+    "11-827",
+    "11-958"
+   ]
+  },
+  {
+   "query": "shortbread",
+   "kind": "producer name",
+   "gold": [
+    "11-802"
+   ]
+  },
+  {
+   "query": "beef sausages",
+   "kind": "producer name",
+   "gold": [
+    "19-656"
+   ]
+  },
+  {
+   "query": "plain flour",
+   "kind": "producer name",
+   "gold": [
+    "11-886"
+   ]
+  },
+  {
+   "query": "apple juice",
+   "kind": "producer name",
+   "gold": [
+    "14-331"
+   ]
+  },
+  {
+   "query": "oatcakes",
+   "kind": "producer name",
+   "gold": [
+    "11-823",
+    "11-1100"
+   ]
+  },
+  {
+   "query": "free range eggs",
+   "kind": "producer name",
+   "gold": [
+    "12-937"
+   ]
+  },
+  {
+   "query": "mature cheddar",
+   "kind": "producer name",
+   "gold": [
+    "12-346"
+   ]
+  },
+  {
+   "query": "strawberry jam",
+   "kind": "producer name",
+   "gold": [
+    "17-073"
+   ]
+  },
+  {
+   "query": "victoria sponge",
+   "kind": "producer name",
+   "gold": [
+    "11-831",
+    "11-956"
+   ]
+  },
+  {
+   "query": "chocolate brownie",
+   "kind": "producer name",
+   "gold": [
+    "11-1127"
+   ]
+  },
+  {
+   "query": "hummus",
+   "kind": "producer name",
+   "gold": [
+    "13-556"
+   ]
+  },
+  {
+   "query": "granola",
+   "kind": "producer name",
+   "gold": []
+  },
+  {
+   "query": "sourdough bread",
+   "kind": "producer name",
+   "gold": []
+  },
+  {
+   "query": "kombucha",
+   "kind": "producer name",
+   "gold": []
+  },
+  {
+   "query": "oat milk",
+   "kind": "producer name",
+   "gold": []
+  },
+  {
+   "query": "sea salt crisps",
+   "kind": "producer name",
+   "gold": []
+  }
+ ]
+}
