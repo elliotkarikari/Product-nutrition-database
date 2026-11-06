@@ -36,6 +36,7 @@ from .cofid_assess import (ALCOHOLIC_GROUP_PREFIX, FVN_EXCLUDED_BY_GUIDANCE, FVN
                            FVN_NOT_DERIVED, _review_flags)
 from .fvn import TUBERS_2018
 from .label import GUIDE, ROUNDING, ingredient_label_values, round_declaration
+from . import laws
 from .lookup import DATA_RELEASE, _index
 from .npm2018 import MODEL_ID as NPM2018_ID
 from .service import MODEL_ID, assess_values, npm2018_block, verdict_changes
@@ -231,7 +232,8 @@ def calculate(payload: Any) -> dict[str, Any]:
 
     if missing:
         models = {
-            MODEL_ID: {"model": MODEL_ID, "status": "in force", "scorable": False,
+            MODEL_ID: {"model": MODEL_ID, "status": laws.status_text(MODEL_ID),
+                       "law": laws.label(MODEL_ID), "scorable": False,
                        "missing_inputs": missing},
             NPM2018_ID: npm2018,
         }

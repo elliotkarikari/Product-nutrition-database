@@ -40,6 +40,7 @@ from .fvn import TUBERS_2018
 from .validation import number
 from .lookup import lookup_cofid
 from .npm2018 import MODEL_ID as NPM2018_ID
+from . import laws
 from .service import MODEL_ID, assess_values, dual_summary, npm2018_block, run_bulk, verdict_changes
 
 FVN_GROUP_PREFIXES = ("D", "F", "G")
@@ -181,7 +182,8 @@ def assess_cofid_food(food: dict[str, Any], *, fvn_percent: float | None,
     }
     if missing:
         models = {
-            MODEL_ID: {"model": MODEL_ID, "status": "in force", "scorable": False,
+            MODEL_ID: {"model": MODEL_ID, "status": laws.status_text(MODEL_ID),
+                       "law": laws.label(MODEL_ID), "scorable": False,
                        "missing_inputs": missing, "inputs": inputs},
             NPM2018_ID: npm2018,
         }

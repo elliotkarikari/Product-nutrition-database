@@ -1,0 +1,19 @@
+{
+  "comment": "Which scoring law is in force. Changing a status here is the whole adoption step; see docs/LAW_CHANGE.md. Scores never depend on this file.",
+  "decided": "2026-11-06",
+  "models": {
+    "uk-npm-2004/05": {
+      "name": "UK Nutrient Profiling Model",
+      "version": "2004/05",
+      "status": "in_force",
+      "guidance": "Department of Health, Nutrient Profiling Technical Guidance (January 2011)"
+    },
+    "uk-npm-2018": {
+      "name": "UK Nutrient Profiling Model",
+      "version": "2018",
+      "status": "shadow",
+      "guidance": "DHSC, Nutrient profiling model 2018: technical guidance (27 January 2026)",
+      "note": "Consultation on applying it closed June 2026; outcome pending."
+    }
+  }
+}

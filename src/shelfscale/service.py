@@ -16,7 +16,8 @@ from typing import Any, Iterable
 
 from .validation import number
 from .npm import calculate_npm
-from .npm2018 import MODEL_ID as NPM2018_ID, STATUS as NPM2018_STATUS, calculate_npm2018
+from . import laws
+from .npm2018 import MODEL_ID as NPM2018_ID, calculate_npm2018
 from .traffic_lights import traffic_lights
 
 MODEL_ID = "uk-npm-2004/05"
@@ -72,7 +73,8 @@ def npm2018_block(
     (default: caller_supplied).
     """
     labels = labels or {}
-    block: dict[str, Any] = {"model": NPM2018_ID, "status": NPM2018_STATUS}
+    block: dict[str, Any] = {"model": NPM2018_ID, "status": laws.status_text(NPM2018_ID),
+                             "law": laws.label(NPM2018_ID)}
     if not_applicable:
         return {**block, "applicable": False, "scorable": False, "reason": not_applicable}
     inputs: dict[str, Any] = {}
@@ -132,7 +134,8 @@ def npm0405_block(values: dict[str, float], *, is_drink: bool) -> dict[str, Any]
     npm = calculate_npm(is_drink=is_drink, **{k: v for k, v in values.items() if k in _NPM_FIELDS})
     return {
         "model": MODEL_ID,
-        "status": "in force",
+        "status": laws.status_text(MODEL_ID),
+        "law": laws.label(MODEL_ID),
         "scorable": True,
         "score": npm.score,
         "less_healthy": npm.less_healthy,

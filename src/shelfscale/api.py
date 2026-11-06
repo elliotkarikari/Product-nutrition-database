@@ -42,7 +42,8 @@ from urllib.parse import parse_qs, unquote, urlsplit
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 from .cofid_assess import lookup_and_assess, lookup_bulk
-from .npm2018 import MODEL_ID as NPM2018_ID, STATUS as NPM2018_STATUS
+from .npm2018 import MODEL_ID as NPM2018_ID
+from . import laws
 from .service import MODEL_ID, MAX_BULK_ITEMS, assess_bulk, assess_product
 from .lookup import DATA_RELEASE, _index
 from . import recipe, ui_api
@@ -148,7 +149,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:  # noqa: N802 (http.server naming)
         parts = urlsplit(self.path)
         path = parts.path
-        models = {MODEL_ID: "in force", NPM2018_ID: NPM2018_STATUS}
+        models = laws.summary()
         if path in STATIC and (path != "/" or not parts.query):
             self._send_file(*STATIC[path])
         elif path == "/health":
@@ -158,6 +159,7 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(200, {
                 "service": "ShelfScale Open", "models": models,
                 "data_release": DATA_RELEASE, "revision": self.server.revision,
+                "laws": [laws.label(m) for m in laws.models()],
                 "endpoints": {"public": ["GET / (page)", "GET /api", "GET /health"],
                               "authenticated": [f"POST {path}" for path in ROUTES],
                               "page": ["GET /ui/search", "GET /ui/food/<food_id>", "POST /ui/recipe"]},
@@ -240,10 +242,11 @@ class Handler(BaseHTTPRequestHandler):
 def run(host: str = "127.0.0.1", port: int = 8765) -> None:
     with ShelfScaleServer((host, port)) as server:
         # Verify snapshots and compose the index before advertising readiness.
+        laws.models()               # refuse to start on a bad law configuration
         _index()
         ui_api.foods_by_id()
         ui_api.search("warm")       # builds the portion and overlay tables before readiness
-        print(f"ShelfScale API listening on http://{host}:{port} (models {MODEL_ID}; {NPM2018_ID}, {NPM2018_STATUS})", flush=True)
+        print(f"ShelfScale API listening on http://{host}:{port} (laws: {laws.summary()})", flush=True)
         server.serve_forever()
 
 

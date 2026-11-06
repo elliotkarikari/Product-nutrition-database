@@ -40,14 +40,12 @@ from dataclasses import dataclass
 from .validation import number
 
 MODEL_ID = "uk-npm-2018"
-STATUS = "shadow model, not in force"
 GUIDANCE = {
     "title": "Nutrient profiling model 2018: technical guidance",
     "publisher": "Department of Health and Social Care (DHSC)",
     "published": "2026-01-27",
     "url": "https://www.gov.uk/government/publications/nutrient-profiling-model-2018/"
            "nutrient-profiling-model-2018-technical-guidance",
-    "status": "Shadow model, not in force. Consultation on applying it closed June 2026; outcome pending.",
 }
 
 # Table 1: 'A' points per 100 g. Lower bounds of points 1 to 10 (score if value > bound).

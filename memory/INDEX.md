@@ -12,10 +12,12 @@
 - [decisions/free-sugars.md](decisions/free-sugars.md) — Free-sugars honesty
 - [decisions/fvn-2018-rulings.md](decisions/fvn-2018-rulings.md) — FVN derivation and the Phase 4 rulings
 - [decisions/fvn-derivation.md](decisions/fvn-derivation.md) — FVN derivation
+- [decisions/law-status-config.md](decisions/law-status-config.md) — Law status is configuration
 - [decisions/memory-lifecycle.md](decisions/memory-lifecycle.md) — Shared memory lifecycle
 - [decisions/no-rounding-before-banding.md](decisions/no-rounding-before-banding.md) — Never round before banding
 - [decisions/label-from-cofid.md](decisions/label-from-cofid.md) — UK nutrition declaration from CoFID
 - [decisions/official-overlays.md](decisions/official-overlays.md) — Official milk and beef overlays
+- [decisions/product-direction.md](decisions/product-direction.md) — Product direction: today, coming, receipts
 - [decisions/portion-links.md](decisions/portion-links.md) — One-tap portion weights
 - [decisions/ui-design.md](decisions/ui-design.md) — First user interface: concept and motif
 - [decisions/vj-never-publish.md](decisions/vj-never-publish.md) — Never publish VJ content
