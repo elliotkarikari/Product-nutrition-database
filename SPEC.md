@@ -184,3 +184,7 @@ All four assessment-producing POST routes require X-API-Key, checked in constant
 ## First user interface (2026-11-06)
 
 The service serves a plain HTML/CSS/JavaScript page at `/` (JSON summary moved to `/api`). Flow: look up a CoFID food, build a recipe with gram weights and one-tap portion weights, read both models' scores and traffic lights per serving, and print or copy the UK nutrition declaration. Recipes stay in the visitor's browser. Page routes run in-process on the keyed API's functions with their own public quota; the browser never sees the key. Design concept and motif: memory/decisions/ui-design.md. Label conversion from CoFID by the user guide's rules: memory/decisions/label-from-cofid.md. Portion links: memory/decisions/portion-links.md. Not built: cooking yields and water loss, powder reconstitution (flagged, not computed), drinks as recipes, allergen and ingredient-list output.
+
+## Round 2: today, coming, receipts (2026-11-06)
+
+Elliot's product decisions (memory/decisions/product-direction.md): every screen answers whether a product is less healthy under today's law, under the coming law, and how every number is proved; bulk is first-class; products are scored as sold; the user is the small producer. Built: law status as configuration (docs/LAW_CHANGE.md), Your range (CSV in and out), the matching assistant (memory/decisions/matching.md), as-sold units with measured ranges (memory/decisions/as-sold-units.md).

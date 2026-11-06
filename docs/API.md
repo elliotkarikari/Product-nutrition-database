@@ -38,6 +38,12 @@ The page calls three routes on the same service. They run in-process on the same
 - `GET /ui/food/<food_id>` returns the lookup assessment for that one food (optional `portion_g`, `fvn_percent`, `free_sugars_g`, all caller-supplied and labelled), a per-100 g panel with a source card per value, values only an official overlay measured, portion weights with their source, and an as-sold flag for powders and concentrates (name-based; it changes no value).
 - `POST /ui/recipe` calculates a recipe: `{"ingredients":[{"food_id":"11-888","grams":225},...], "servings":12, "fvn_percent":18, "free_sugars_g":26}`. Up to 60 ingredients, body up to 64,000 bytes. Returns per-100 g and per-serving values, per-ingredient contributions with sources, both models, traffic lights per serving and the UK nutrition declaration. See `src/shelfscale/recipe.py` and `src/shelfscale/label.py` for the rules.
 
+- `POST /ui/bulk` scores up to 200 rows: `{"rows":[{"name":"Raisins, dried","free_sugars_g":0},{"code":"11-886"},{"name":"My flapjack","energy_kj":1900,...}],"confirmed":[...]}`. Rows resolve by code, exact CoFID name, a confirmed match, or the user's own label figures; others are gaps with reasons and candidates. Flips sort first. Every model block carries its `law`.
+- `POST /ui/match` `{"name": "..."}` returns candidates and the engine record (Jev with model and probabilities, or the deterministic fallback with its reason). `POST /ui/match/confirm` validates a confirmation and returns its recorded basis.
+- `GET /ui/food/<id>` also returns `as_sold` (sale format, unit with range, band, proposed units); `pack_g` and `unit` (comma-separated confirmed unit keys) are optional parameters.
+
+Every model block in every response carries `law` (model, name, version, status, role) from data/laws.json; see docs/LAW_CHANGE.md.
+
 These routes share their own rolling quota, **300 requests per 60 seconds per process** across all page visitors, separate from the key's 60. They are a narrow public surface (one food or one recipe per request, no bulk) and are not a substitute for the keyed API. Like the key quota, it resets on restart and is not shared between replicas.
 
 ### Authentication and rate limit

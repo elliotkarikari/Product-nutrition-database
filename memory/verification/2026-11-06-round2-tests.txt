@@ -1,0 +1,30 @@
+test_every_edge (test_traffic_lights.TestPer100Edges.test_every_edge) ... ok
+test_portion_condition_is_strictly_more_than (test_traffic_lights.TestPortionRule.test_portion_condition_is_strictly_more_than) ... ok
+test_portion_rule_only_raises_to_red (test_traffic_lights.TestPortionRule.test_portion_rule_only_raises_to_red) ... ok
+test_red_per_portion_edges (test_traffic_lights.TestPortionRule.test_red_per_portion_edges) ... ok
+test_missing_nutrient_is_not_assessed (test_traffic_lights.TestShape.test_missing_nutrient_is_not_assessed) ... ok
+test_no_summary_colour (test_traffic_lights.TestShape.test_no_summary_colour) ... ok
+test_conversions_follow_the_cofid_guide (test_ui.TestLabel.test_conversions_follow_the_cofid_guide) ... ok
+test_recipe_label_is_per_100g_and_per_serving_with_method (test_ui.TestLabel.test_recipe_label_is_per_100g_and_per_serving_with_method) ... ok
+test_rounding_table_edges (test_ui.TestLabel.test_rounding_table_edges) ... ok
+test_fps_citation_travels_with_every_fps_weight (test_ui.TestPortionsAndProvenance.test_fps_citation_travels_with_every_fps_weight) ... ok
+test_overlay_values_name_their_overlay_and_period (test_ui.TestPortionsAndProvenance.test_overlay_values_name_their_overlay_and_period) ... ok
+test_sample_weights_link_only_by_exact_name_and_use_edible_part (test_ui.TestPortionsAndProvenance.test_sample_weights_link_only_by_exact_name_and_use_edible_part) ... ok
+test_as_sold_flag (test_ui.TestRecipeRules.test_as_sold_flag) ... ok
+test_fibre_methods_never_mix (test_ui.TestRecipeRules.test_fibre_methods_never_mix) ... ok
+test_fvn_needs_caller_value_unless_every_ingredient_has_one (test_ui.TestRecipeRules.test_fvn_needs_caller_value_unless_every_ingredient_has_one) ... ok
+test_no_2018_score_without_caller_free_sugars (test_ui.TestRecipeRules.test_no_2018_score_without_caller_free_sugars) ... ok
+test_refusals (test_ui.TestRecipeRules.test_refusals) ... ok
+test_food_view_carries_the_lookup_assessment (test_ui.TestSameScores.test_food_view_carries_the_lookup_assessment) ... ok
+test_recipe_scores_equal_assess_on_the_same_unrounded_values (test_ui.TestSameScores.test_recipe_scores_equal_assess_on_the_same_unrounded_values) ... ok
+test_weighted_sums_are_exact_and_unrounded (test_ui.TestSameScores.test_weighted_sums_are_exact_and_unrounded) ... ok
+test_page_quota_is_separate_from_the_key_quota (test_ui.TestServing.test_page_quota_is_separate_from_the_key_quota) ... ok
+test_page_recipe_body_is_bounded (test_ui.TestServing.test_page_recipe_body_is_bounded) ... ok
+test_page_routes_need_no_key_and_keyed_routes_still_do (test_ui.TestServing.test_page_routes_need_no_key_and_keyed_routes_still_do) ... ok
+test_root_is_the_page_and_files_are_a_fixed_list (test_ui.TestServing.test_root_is_the_page_and_files_are_a_fixed_list) ... ok
+test_summary_moved_to_api_and_health_unchanged (test_ui.TestServing.test_summary_moved_to_api_and_health_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 167 tests in 13.515s
+
+OK

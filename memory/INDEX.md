@@ -3,6 +3,7 @@
 - [INDEX.md](INDEX.md) — Index of all memory files.
 - [build_memory.md](build_memory.md) — ShelfScale build memory
 - [decisions/api-hardening.md](decisions/api-hardening.md) — API access and request quota
+- [decisions/as-sold-units.md](decisions/as-sold-units.md) — Products as sold: units, ranges and links
 - [decisions/commit-as-elliot.md](decisions/commit-as-elliot.md) — Commit identity
 - [decisions/defensible-data.md](decisions/defensible-data.md) — Defensible data
 - [decisions/delivery-means-pushed.md](decisions/delivery-means-pushed.md) — Delivery means pushed and read back
@@ -13,6 +14,7 @@
 - [decisions/fvn-2018-rulings.md](decisions/fvn-2018-rulings.md) — FVN derivation and the Phase 4 rulings
 - [decisions/fvn-derivation.md](decisions/fvn-derivation.md) — FVN derivation
 - [decisions/law-status-config.md](decisions/law-status-config.md) — Law status is configuration
+- [decisions/matching.md](decisions/matching.md) — Matching assistant
 - [decisions/memory-lifecycle.md](decisions/memory-lifecycle.md) — Shared memory lifecycle
 - [decisions/no-rounding-before-banding.md](decisions/no-rounding-before-banding.md) — Never round before banding
 - [decisions/label-from-cofid.md](decisions/label-from-cofid.md) — UK nutrition declaration from CoFID
@@ -41,3 +43,7 @@
 - [verification/2026-11-05-phase5-deployed.json](verification/2026-11-05-phase5-deployed.json) — Sanitized live response evidence; no credential.
 - [verification/2026-11-05-phase5-deployed-tests.txt](verification/2026-11-05-phase5-deployed-tests.txt) — 131-test pre-deployment log.
 - [verification/2026-11-06-ui-tests.txt](verification/2026-11-06-ui-tests.txt) — UI round pre-push test log.
+- [verification/2026-11-06-round2.md](verification/2026-11-06-round2.md) — Round 2 verification.
+- [verification/2026-11-06-round2-tests.txt](verification/2026-11-06-round2-tests.txt) — Round 2 test log.
+- [verification/2026-11-06-matching-baseline.json](verification/2026-11-06-matching-baseline.json) — Matching baseline measurement.
+- [verification/matching-eval-set.json](verification/matching-eval-set.json) — Draft matching evaluation set.

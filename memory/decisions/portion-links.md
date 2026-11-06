@@ -1,6 +1,6 @@
 # One-tap portion weights
 
-Status: active
+Status: superseded by as-sold-units.md (2026-11-06)
 
 Decision date: 2026-11-06
 
